@@ -1,0 +1,223 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "undefined" ],
+    "baseIris" : [ "http://www.w3.org/2000/01/rdf-schema", "https://w3id.org/question", "http://www.w3.org/2001/XMLSchema" ],
+    "title" : {
+      "undefined" : "The Question Ontology"
+    },
+    "iri" : "https://w3id.org/question",
+    "version" : "v1.0.0",
+    "author" : [ "Hernan Vargas" ],
+    "description" : {
+      "undefined" : "An ontology to define templates, variables and options for scientific question creation."
+    },
+    "other" : {
+      "license" : [ {
+        "identifier" : "license",
+        "language" : "undefined",
+        "value" : "https://creativecommons.org/licenses/by/2.0/",
+        "type" : "label"
+      } ],
+      "creator" : [ {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "Hernan Vargas",
+        "type" : "label"
+      } ],
+      "versionInfo" : [ {
+        "identifier" : "versionInfo",
+        "language" : "undefined",
+        "value" : "v1.0.0",
+        "type" : "label"
+      } ],
+      "title" : [ {
+        "identifier" : "title",
+        "language" : "undefined",
+        "value" : "The Question Ontology",
+        "type" : "label"
+      } ]
+    }
+  },
+  "namespace" : [ ],
+  "class" : [ {
+    "id" : "2",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "4",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "7",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "6",
+    "type" : "owl:Class"
+  }, {
+    "id" : "1",
+    "type" : "owl:Class"
+  }, {
+    "id" : "9",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "10",
+    "type" : "rdfs:Datatype"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "2",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "4",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "7",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "https://w3id.org/question#QuestionVariable",
+    "baseIri" : "https://w3id.org/question",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "QuestionVariable",
+      "undefined" : "Question Variable"
+    },
+    "id" : "6"
+  }, {
+    "iri" : "https://w3id.org/question#Question",
+    "baseIri" : "https://w3id.org/question",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Question",
+      "undefined" : "Question"
+    },
+    "id" : "1"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "9",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "10",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  } ],
+  "property" : [ {
+    "id" : "0",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "3",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "5",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "8",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "11",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "12",
+    "type" : "owl:datatypeProperty"
+  } ],
+  "propertyAttribute" : [ {
+    "iri" : "https://w3id.org/question#hasQuestionPattern",
+    "baseIri" : "https://w3id.org/question",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "hasQuestionPattern",
+      "undefined" : "Has question pattern"
+    },
+    "domain" : "1",
+    "comment" : {
+      "undefined" : "SPARQL-like pattern that defines the semantic representation that this question will have when the user has filled all forms"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "0"
+  }, {
+    "iri" : "https://w3id.org/question#hasQuestionTemplate",
+    "baseIri" : "https://w3id.org/question",
+    "range" : "4",
+    "label" : {
+      "IRI-based" : "hasQuestionTemplate",
+      "undefined" : "Has question template"
+    },
+    "domain" : "1",
+    "comment" : {
+      "undefined" : "Text representation of the question that the user must fill, includes SPARQL variable names that will be replaced for appropriate inputs"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "3"
+  }, {
+    "iri" : "https://w3id.org/question#hasQuestionVariable",
+    "baseIri" : "https://w3id.org/question",
+    "range" : "6",
+    "label" : {
+      "IRI-based" : "hasQuestionVariable",
+      "undefined" : "Has question variable"
+    },
+    "domain" : "1",
+    "comment" : {
+      "undefined" : "List a Question with all Question Variables used on the Question Template"
+    },
+    "attributes" : [ "object" ],
+    "id" : "5"
+  }, {
+    "iri" : "https://w3id.org/question#hasVariableName",
+    "baseIri" : "https://w3id.org/question",
+    "range" : "7",
+    "label" : {
+      "IRI-based" : "hasVariableName",
+      "undefined" : "Has variable name"
+    },
+    "domain" : "6",
+    "comment" : {
+      "undefined" : "SPARQL name of this variable. Used on the question pattern and template"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "8"
+  }, {
+    "iri" : "https://w3id.org/question#hasConstraints",
+    "baseIri" : "https://w3id.org/question",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "hasConstraints",
+      "undefined" : "Has constraints"
+    },
+    "domain" : "6",
+    "comment" : {
+      "undefined" : "An SPARQL query that will determine the options for this variable"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "11"
+  }, {
+    "iri" : "https://w3id.org/question#hasFixedOptions",
+    "baseIri" : "https://w3id.org/question",
+    "range" : "10",
+    "label" : {
+      "IRI-based" : "hasFixedOptions",
+      "undefined" : "Has fixed options"
+    },
+    "domain" : "6",
+    "comment" : {
+      "undefined" : "List of fixed options for this variable. Alternative to \"has contraints\""
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "12"
+  } ]
+}

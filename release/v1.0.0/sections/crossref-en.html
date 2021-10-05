@@ -1,0 +1,231 @@
+<h2 id="crossreference" class="list">Cross reference for The Question Ontology classes, properties and dataproperties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by The Question Ontology.
+<div id="classes">
+   <h3 id="classes-headline" class="list">Classes</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#Question" title="https://w3id.org/question#Question">Question</a>
+      </li>
+      <li>
+         <a href="#QuestionVariable" title="https://w3id.org/question#QuestionVariable">Question Variable</a>
+      </li>
+   </ul>
+   <div class="entity" id="Question">
+      <h3>Question<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/question#Question</p>
+      <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#hasQuestionPattern" title="https://w3id.org/question#hasQuestionPattern">Has question pattern</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasQuestionTemplate" title="https://w3id.org/question#hasQuestionTemplate">Has question template</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasQuestionVariable" title="https://w3id.org/question#hasQuestionVariable">Has question variable</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="QuestionVariable">
+      <h3>Question Variable<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/question#QuestionVariable</p>
+      <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#hasConstraints" title="https://w3id.org/question#hasConstraints">Has constraints</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasFixedOptions" title="https://w3id.org/question#hasFixedOptions">Has fixed options</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasVariableName" title="https://w3id.org/question#hasVariableName">Has variable name</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasQuestionVariable" title="https://w3id.org/question#hasQuestionVariable">Has question variable</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+</div><div id="objectproperties">
+   <h3 id="properties" class="list">Object Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#hasQuestionVariable" title="https://w3id.org/question#hasQuestionVariable">Has question variable</a>
+      </li>
+   </ul>
+   <div class="entity" id="hasQuestionVariable">
+      <h3>Has question variable<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/question#hasQuestionVariable</p>
+      <div class="comment">
+         <span class="markdown">List a Question with all Question Variables used on the Question Template</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Question" title="https://w3id.org/question#Question">Question</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#QuestionVariable" title="https://w3id.org/question#QuestionVariable">Question Variable</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div id="dataproperties">
+   <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#hasConstraints" title="https://w3id.org/question#hasConstraints">Has constraints</a>
+      </li>
+      <li>
+         <a href="#hasFixedOptions" title="https://w3id.org/question#hasFixedOptions">Has fixed options</a>
+      </li>
+      <li>
+         <a href="#hasQuestionPattern" title="https://w3id.org/question#hasQuestionPattern">Has question pattern</a>
+      </li>
+      <li>
+         <a href="#hasQuestionTemplate" title="https://w3id.org/question#hasQuestionTemplate">Has question template</a>
+      </li>
+      <li>
+         <a href="#hasVariableName" title="https://w3id.org/question#hasVariableName">Has variable name</a>
+      </li>
+   </ul>
+   <div class="entity" id="hasConstraints">
+      <h3>Has constraints<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/question#hasConstraints</p>
+      <div class="comment">
+         <span class="markdown">An SPARQL query that will determine the options for this variable</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#QuestionVariable" title="https://w3id.org/question#QuestionVariable">Question Variable</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasFixedOptions">
+      <h3>Has fixed options<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/question#hasFixedOptions</p>
+      <div class="comment">
+         <span class="markdown">List of fixed options for this variable. Alternative to "has contraints"</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#QuestionVariable" title="https://w3id.org/question#QuestionVariable">Question Variable</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasQuestionPattern">
+      <h3>Has question pattern<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/question#hasQuestionPattern</p>
+      <div class="comment">
+         <span class="markdown">SPARQL-like pattern that defines the semantic representation that this question will have when the user has filled all forms</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Question" title="https://w3id.org/question#Question">Question</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasQuestionTemplate">
+      <h3>Has question template<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/question#hasQuestionTemplate</p>
+      <div class="comment">
+         <span class="markdown">Text representation of the question that the user must fill, includes SPARQL variable names that will be replaced for appropriate inputs</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Question" title="https://w3id.org/question#Question">Question</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasVariableName">
+      <h3>Has variable name<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/question#hasVariableName</p>
+      <div class="comment">
+         <span class="markdown">SPARQL name of this variable. Used on the question pattern and template</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#QuestionVariable" title="https://w3id.org/question#QuestionVariable">Question Variable</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+<sup class="type-ni" title="Named Individuals">ni</sup>: Named Individuals
+</div>
+</div>
