@@ -11,46 +11,53 @@
   "@id" : "http://purl.org/dc/terms/title",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
-  "@id" : "https://w3id.org/question",
+  "@id" : "https://w3id.org/sqo",
   "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
   "http://purl.org/dc/terms/creator" : [ {
+    "@value" : "Daniel Garijo"
+  }, {
     "@value" : "Hernan Vargas"
+  }, {
+    "@value" : "Yolanda Gil"
   } ],
   "http://purl.org/dc/terms/description" : [ {
-    "@value" : "An ontology to define templates, variables and options for scientific question creation."
+    "@value" : "An ontology to define semantic templates for scientific questions. Defines questions, variables, options and constraints."
   } ],
   "http://purl.org/dc/terms/license" : [ {
     "@value" : "https://creativecommons.org/licenses/by/2.0/"
   } ],
   "http://purl.org/dc/terms/title" : [ {
-    "@value" : "The Question Ontology"
-  } ],
-  "http://www.w3.org/2002/07/owl#versionIRI" : [ {
-    "@id" : "https://w3id.org/question/1.0.0/"
+    "@value" : "The Scientific Questions Ontology"
   } ],
   "http://www.w3.org/2002/07/owl#versionInfo" : [ {
     "@value" : "v1.0.0"
   } ]
 }, {
-  "@id" : "https://w3id.org/question#Question",
+  "@id" : "https://w3id.org/sqo#Question",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Class that represents a scientific question. Is linked to the template, the pattern and all the variables this question uses."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Question"
   } ]
 }, {
-  "@id" : "https://w3id.org/question#QuestionVariable",
+  "@id" : "https://w3id.org/sqo#QuestionVariable",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Class that represents a variable used on a Question. This variable name must be present on the template and pattern of the question that uses it. Can have contraints in the form of a query (hasConstraint property) or a list of possible options (hasFixedOptions property)."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Question Variable"
   } ]
 }, {
-  "@id" : "https://w3id.org/question#hasConstraints",
+  "@id" : "https://w3id.org/sqo#hasConstraints",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "An SPARQL query that will determine the options for this variable"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/question#QuestionVariable"
+    "@id" : "https://w3id.org/sqo#QuestionVariable"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Has constraints"
@@ -59,13 +66,13 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
 }, {
-  "@id" : "https://w3id.org/question#hasFixedOptions",
+  "@id" : "https://w3id.org/sqo#hasFixedOptions",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "List of fixed options for this variable. Alternative to \"has contraints\""
+    "@value" : "List of possible options for this variable. Alternative to \"has contraints\" property"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/question#QuestionVariable"
+    "@id" : "https://w3id.org/sqo#QuestionVariable"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Has fixed options"
@@ -74,13 +81,13 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
 }, {
-  "@id" : "https://w3id.org/question#hasQuestionPattern",
+  "@id" : "https://w3id.org/sqo#hasQuestionPattern",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "SPARQL-like pattern that defines the semantic representation that this question will have when the user has filled all forms"
+    "@value" : "SPARQL-like pattern that defines the semantic representation that this question will have. All variables used on the question template will be replaced for the user selected values."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/question#Question"
+    "@id" : "https://w3id.org/sqo#Question"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Has question pattern"
@@ -89,13 +96,13 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
 }, {
-  "@id" : "https://w3id.org/question#hasQuestionTemplate",
+  "@id" : "https://w3id.org/sqo#hasQuestionTemplate",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "Text representation of the question that the user must fill, includes SPARQL variable names that will be replaced for appropriate inputs"
+    "@value" : "Text representation of the question that will create a form that the user must fill. All \"question variable\" names used on this template will be replaced for inputs with constraints."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/question#Question"
+    "@id" : "https://w3id.org/sqo#Question"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Has question template"
@@ -104,28 +111,28 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
 }, {
-  "@id" : "https://w3id.org/question#hasQuestionVariable",
+  "@id" : "https://w3id.org/sqo#hasQuestionVariable",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "List a Question with all Question Variables used on the Question Template"
+    "@value" : "Link a Question with all of the Question Variables that used on the question template and pattern"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/question#Question"
+    "@id" : "https://w3id.org/sqo#Question"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Has question variable"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/question#QuestionVariable"
+    "@id" : "https://w3id.org/sqo#QuestionVariable"
   } ]
 }, {
-  "@id" : "https://w3id.org/question#hasVariableName",
+  "@id" : "https://w3id.org/sqo#hasVariableName",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "SPARQL name of this variable. Used on the question pattern and template"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/question#QuestionVariable"
+    "@id" : "https://w3id.org/sqo#QuestionVariable"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Has variable name"

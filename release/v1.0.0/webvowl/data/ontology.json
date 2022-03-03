@@ -2,15 +2,15 @@
   "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
   "header" : {
     "languages" : [ "undefined" ],
-    "baseIris" : [ "http://www.w3.org/2000/01/rdf-schema", "https://w3id.org/question", "http://www.w3.org/2001/XMLSchema" ],
+    "baseIris" : [ "http://www.w3.org/2000/01/rdf-schema", "http://www.w3.org/2001/XMLSchema", "https://w3id.org/sqo" ],
     "title" : {
-      "undefined" : "The Question Ontology"
+      "undefined" : "The Scientific Questions Ontology"
     },
-    "iri" : "https://w3id.org/question",
+    "iri" : "https://w3id.org/sqo",
     "version" : "v1.0.0",
-    "author" : [ "Hernan Vargas" ],
+    "author" : [ "Hernan Vargas", "Yolanda Gil", "Daniel Garijo" ],
     "description" : {
-      "undefined" : "An ontology to define templates, variables and options for scientific question creation."
+      "undefined" : "An ontology to define semantic templates for scientific questions. Defines questions, variables, options and constraints."
     },
     "other" : {
       "license" : [ {
@@ -20,6 +20,16 @@
         "type" : "label"
       } ],
       "creator" : [ {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "Daniel Garijo",
+        "type" : "label"
+      }, {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "Yolanda Gil",
+        "type" : "label"
+      }, {
         "identifier" : "creator",
         "language" : "undefined",
         "value" : "Hernan Vargas",
@@ -34,38 +44,38 @@
       "title" : [ {
         "identifier" : "title",
         "language" : "undefined",
-        "value" : "The Question Ontology",
+        "value" : "The Scientific Questions Ontology",
         "type" : "label"
       } ]
     }
   },
   "namespace" : [ ],
   "class" : [ {
-    "id" : "2",
+    "id" : "3",
     "type" : "rdfs:Datatype"
   }, {
     "id" : "4",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "7",
+    "id" : "2",
     "type" : "rdfs:Datatype"
   }, {
     "id" : "6",
     "type" : "owl:Class"
   }, {
-    "id" : "1",
-    "type" : "owl:Class"
+    "id" : "8",
+    "type" : "rdfs:Datatype"
   }, {
     "id" : "9",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "10",
-    "type" : "rdfs:Datatype"
+    "id" : "1",
+    "type" : "owl:Class"
   } ],
   "classAttribute" : [ {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "2",
+    "id" : "3",
     "label" : {
       "IRI-based" : "string"
     }
@@ -79,28 +89,29 @@
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "7",
+    "id" : "2",
     "label" : {
       "IRI-based" : "string"
     }
   }, {
-    "iri" : "https://w3id.org/question#QuestionVariable",
-    "baseIri" : "https://w3id.org/question",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "QuestionVariable",
-      "undefined" : "Question Variable"
-    },
-    "id" : "6"
-  }, {
-    "iri" : "https://w3id.org/question#Question",
-    "baseIri" : "https://w3id.org/question",
+    "iri" : "https://w3id.org/sqo#Question",
+    "baseIri" : "https://w3id.org/sqo",
     "instances" : 0,
     "label" : {
       "IRI-based" : "Question",
       "undefined" : "Question"
     },
-    "id" : "1"
+    "comment" : {
+      "undefined" : "Class that represents a scientific question. Is linked to the template, the pattern and all the variables this question uses."
+    },
+    "id" : "6"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "8",
+    "label" : {
+      "IRI-based" : "string"
+    }
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
@@ -109,24 +120,29 @@
       "IRI-based" : "string"
     }
   }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#string",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "10",
+    "iri" : "https://w3id.org/sqo#QuestionVariable",
+    "baseIri" : "https://w3id.org/sqo",
+    "instances" : 0,
     "label" : {
-      "IRI-based" : "string"
-    }
+      "IRI-based" : "QuestionVariable",
+      "undefined" : "Question Variable"
+    },
+    "comment" : {
+      "undefined" : "Class that represents a variable used on a Question. This variable name must be present on the template and pattern of the question that uses it. Can have contraints in the form of a query (hasConstraint property) or a list of possible options (hasFixedOptions property)."
+    },
+    "id" : "1"
   } ],
   "property" : [ {
     "id" : "0",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "3",
+    "id" : "5",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "5",
+    "id" : "7",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "8",
+    "id" : "10",
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "11",
@@ -136,86 +152,86 @@
     "type" : "owl:datatypeProperty"
   } ],
   "propertyAttribute" : [ {
-    "iri" : "https://w3id.org/question#hasQuestionPattern",
-    "baseIri" : "https://w3id.org/question",
+    "iri" : "https://w3id.org/sqo#hasVariableName",
+    "baseIri" : "https://w3id.org/sqo",
     "range" : "2",
-    "label" : {
-      "IRI-based" : "hasQuestionPattern",
-      "undefined" : "Has question pattern"
-    },
-    "domain" : "1",
-    "comment" : {
-      "undefined" : "SPARQL-like pattern that defines the semantic representation that this question will have when the user has filled all forms"
-    },
-    "attributes" : [ "datatype" ],
-    "id" : "0"
-  }, {
-    "iri" : "https://w3id.org/question#hasQuestionTemplate",
-    "baseIri" : "https://w3id.org/question",
-    "range" : "4",
-    "label" : {
-      "IRI-based" : "hasQuestionTemplate",
-      "undefined" : "Has question template"
-    },
-    "domain" : "1",
-    "comment" : {
-      "undefined" : "Text representation of the question that the user must fill, includes SPARQL variable names that will be replaced for appropriate inputs"
-    },
-    "attributes" : [ "datatype" ],
-    "id" : "3"
-  }, {
-    "iri" : "https://w3id.org/question#hasQuestionVariable",
-    "baseIri" : "https://w3id.org/question",
-    "range" : "6",
-    "label" : {
-      "IRI-based" : "hasQuestionVariable",
-      "undefined" : "Has question variable"
-    },
-    "domain" : "1",
-    "comment" : {
-      "undefined" : "List a Question with all Question Variables used on the Question Template"
-    },
-    "attributes" : [ "object" ],
-    "id" : "5"
-  }, {
-    "iri" : "https://w3id.org/question#hasVariableName",
-    "baseIri" : "https://w3id.org/question",
-    "range" : "7",
     "label" : {
       "IRI-based" : "hasVariableName",
       "undefined" : "Has variable name"
     },
-    "domain" : "6",
+    "domain" : "1",
     "comment" : {
       "undefined" : "SPARQL name of this variable. Used on the question pattern and template"
     },
     "attributes" : [ "datatype" ],
-    "id" : "8"
+    "id" : "0"
   }, {
-    "iri" : "https://w3id.org/question#hasConstraints",
-    "baseIri" : "https://w3id.org/question",
+    "iri" : "https://w3id.org/sqo#hasQuestionPattern",
+    "baseIri" : "https://w3id.org/sqo",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "hasQuestionPattern",
+      "undefined" : "Has question pattern"
+    },
+    "domain" : "6",
+    "comment" : {
+      "undefined" : "SPARQL-like pattern that defines the semantic representation that this question will have. All variables used on the question template will be replaced for the user selected values."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "5"
+  }, {
+    "iri" : "https://w3id.org/sqo#hasQuestionVariable",
+    "baseIri" : "https://w3id.org/sqo",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "hasQuestionVariable",
+      "undefined" : "Has question variable"
+    },
+    "domain" : "6",
+    "comment" : {
+      "undefined" : "Link a Question with all of the Question Variables that used on the question template and pattern"
+    },
+    "attributes" : [ "object" ],
+    "id" : "7"
+  }, {
+    "iri" : "https://w3id.org/sqo#hasFixedOptions",
+    "baseIri" : "https://w3id.org/sqo",
     "range" : "9",
+    "label" : {
+      "IRI-based" : "hasFixedOptions",
+      "undefined" : "Has fixed options"
+    },
+    "domain" : "1",
+    "comment" : {
+      "undefined" : "List of possible options for this variable. Alternative to \"has contraints\" property"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "10"
+  }, {
+    "iri" : "https://w3id.org/sqo#hasConstraints",
+    "baseIri" : "https://w3id.org/sqo",
+    "range" : "8",
     "label" : {
       "IRI-based" : "hasConstraints",
       "undefined" : "Has constraints"
     },
-    "domain" : "6",
+    "domain" : "1",
     "comment" : {
       "undefined" : "An SPARQL query that will determine the options for this variable"
     },
     "attributes" : [ "datatype" ],
     "id" : "11"
   }, {
-    "iri" : "https://w3id.org/question#hasFixedOptions",
-    "baseIri" : "https://w3id.org/question",
-    "range" : "10",
+    "iri" : "https://w3id.org/sqo#hasQuestionTemplate",
+    "baseIri" : "https://w3id.org/sqo",
+    "range" : "4",
     "label" : {
-      "IRI-based" : "hasFixedOptions",
-      "undefined" : "Has fixed options"
+      "IRI-based" : "hasQuestionTemplate",
+      "undefined" : "Has question template"
     },
     "domain" : "6",
     "comment" : {
-      "undefined" : "List of fixed options for this variable. Alternative to \"has contraints\""
+      "undefined" : "Text representation of the question that will create a form that the user must fill. All \"question variable\" names used on this template will be replaced for inputs with constraints."
     },
     "attributes" : [ "datatype" ],
     "id" : "12"

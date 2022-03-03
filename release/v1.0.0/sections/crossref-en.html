@@ -1,13 +1,13 @@
-<h2 id="crossreference" class="list">Cross reference for The Question Ontology classes, properties and dataproperties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
-This section provides details for each class and property defined by The Question Ontology.
+<h2 id="crossreference" class="list">Cross reference for The Scientific Questions Ontology classes, properties and dataproperties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by The Scientific Questions Ontology.
 <div id="classes">
    <h3 id="classes-headline" class="list">Classes</h3>
    <ul class="hlist">
       <li>
-         <a href="#Question" title="https://w3id.org/question#Question">Question</a>
+         <a href="#Question" title="https://w3id.org/sqo#Question">Question</a>
       </li>
       <li>
-         <a href="#QuestionVariable" title="https://w3id.org/question#QuestionVariable">Question Variable</a>
+         <a href="#QuestionVariable" title="https://w3id.org/sqo#QuestionVariable">Question Variable</a>
       </li>
    </ul>
    <div class="entity" id="Question">
@@ -16,13 +16,16 @@ This section provides details for each class and property defined by The Questio
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/question#Question</p>
+         <strong>IRI:</strong> https://w3id.org/sqo#Question</p>
+      <div class="comment">
+         <span class="markdown">Class that represents a scientific question. Is linked to the template, the pattern and all the variables this question uses.</span>
+      </div>
       <dl class="description">
          <dt>is in domain of</dt>
          <dd>
-            <a href="#hasQuestionPattern" title="https://w3id.org/question#hasQuestionPattern">Has question pattern</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasQuestionTemplate" title="https://w3id.org/question#hasQuestionTemplate">Has question template</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasQuestionVariable" title="https://w3id.org/question#hasQuestionVariable">Has question variable</a>
+            <a href="#hasQuestionPattern" title="https://w3id.org/sqo#hasQuestionPattern">Has question pattern</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasQuestionTemplate" title="https://w3id.org/sqo#hasQuestionTemplate">Has question template</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasQuestionVariable" title="https://w3id.org/sqo#hasQuestionVariable">Has question variable</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -33,18 +36,21 @@ This section provides details for each class and property defined by The Questio
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/question#QuestionVariable</p>
+         <strong>IRI:</strong> https://w3id.org/sqo#QuestionVariable</p>
+      <div class="comment">
+         <span class="markdown">Class that represents a variable used on a Question. This variable name must be present on the template and pattern of the question that uses it. Can have contraints in the form of a query (hasConstraint property) or a list of possible options (hasFixedOptions property).</span>
+      </div>
       <dl class="description">
          <dt>is in domain of</dt>
          <dd>
-            <a href="#hasConstraints" title="https://w3id.org/question#hasConstraints">Has constraints</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasFixedOptions" title="https://w3id.org/question#hasFixedOptions">Has fixed options</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasVariableName" title="https://w3id.org/question#hasVariableName">Has variable name</a>
+            <a href="#hasConstraints" title="https://w3id.org/sqo#hasConstraints">Has constraints</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasFixedOptions" title="https://w3id.org/sqo#hasFixedOptions">Has fixed options</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasVariableName" title="https://w3id.org/sqo#hasVariableName">Has variable name</a>
             <sup class="type-dp" title="data property">dp</sup>
          </dd>
          <dt>is in range of</dt>
          <dd>
-            <a href="#hasQuestionVariable" title="https://w3id.org/question#hasQuestionVariable">Has question variable</a>
+            <a href="#hasQuestionVariable" title="https://w3id.org/sqo#hasQuestionVariable">Has question variable</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -53,7 +59,7 @@ This section provides details for each class and property defined by The Questio
    <h3 id="properties" class="list">Object Properties</h3>
    <ul class="hlist">
       <li>
-         <a href="#hasQuestionVariable" title="https://w3id.org/question#hasQuestionVariable">Has question variable</a>
+         <a href="#hasQuestionVariable" title="https://w3id.org/sqo#hasQuestionVariable">Has question variable</a>
       </li>
    </ul>
    <div class="entity" id="hasQuestionVariable">
@@ -62,20 +68,20 @@ This section provides details for each class and property defined by The Questio
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/question#hasQuestionVariable</p>
+         <strong>IRI:</strong> https://w3id.org/sqo#hasQuestionVariable</p>
       <div class="comment">
-         <span class="markdown">List a Question with all Question Variables used on the Question Template</span>
+         <span class="markdown">Link a Question with all of the Question Variables that used on the question template and pattern</span>
       </div>
       <div class="description">
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#Question" title="https://w3id.org/question#Question">Question</a>
+               <a href="#Question" title="https://w3id.org/sqo#Question">Question</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
-               <a href="#QuestionVariable" title="https://w3id.org/question#QuestionVariable">Question Variable</a>
+               <a href="#QuestionVariable" title="https://w3id.org/sqo#QuestionVariable">Question Variable</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -85,19 +91,19 @@ This section provides details for each class and property defined by The Questio
    <h3 id="dataproperties-headline" class="list">Data Properties</h3>
    <ul class="hlist">
       <li>
-         <a href="#hasConstraints" title="https://w3id.org/question#hasConstraints">Has constraints</a>
+         <a href="#hasConstraints" title="https://w3id.org/sqo#hasConstraints">Has constraints</a>
       </li>
       <li>
-         <a href="#hasFixedOptions" title="https://w3id.org/question#hasFixedOptions">Has fixed options</a>
+         <a href="#hasFixedOptions" title="https://w3id.org/sqo#hasFixedOptions">Has fixed options</a>
       </li>
       <li>
-         <a href="#hasQuestionPattern" title="https://w3id.org/question#hasQuestionPattern">Has question pattern</a>
+         <a href="#hasQuestionPattern" title="https://w3id.org/sqo#hasQuestionPattern">Has question pattern</a>
       </li>
       <li>
-         <a href="#hasQuestionTemplate" title="https://w3id.org/question#hasQuestionTemplate">Has question template</a>
+         <a href="#hasQuestionTemplate" title="https://w3id.org/sqo#hasQuestionTemplate">Has question template</a>
       </li>
       <li>
-         <a href="#hasVariableName" title="https://w3id.org/question#hasVariableName">Has variable name</a>
+         <a href="#hasVariableName" title="https://w3id.org/sqo#hasVariableName">Has variable name</a>
       </li>
    </ul>
    <div class="entity" id="hasConstraints">
@@ -106,7 +112,7 @@ This section provides details for each class and property defined by The Questio
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/question#hasConstraints</p>
+         <strong>IRI:</strong> https://w3id.org/sqo#hasConstraints</p>
       <div class="comment">
          <span class="markdown">An SPARQL query that will determine the options for this variable</span>
       </div>
@@ -114,7 +120,7 @@ This section provides details for each class and property defined by The Questio
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#QuestionVariable" title="https://w3id.org/question#QuestionVariable">Question Variable</a>
+               <a href="#QuestionVariable" title="https://w3id.org/sqo#QuestionVariable">Question Variable</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -130,15 +136,15 @@ This section provides details for each class and property defined by The Questio
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/question#hasFixedOptions</p>
+         <strong>IRI:</strong> https://w3id.org/sqo#hasFixedOptions</p>
       <div class="comment">
-         <span class="markdown">List of fixed options for this variable. Alternative to "has contraints"</span>
+         <span class="markdown">List of possible options for this variable. Alternative to "has contraints" property</span>
       </div>
       <div class="description">
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#QuestionVariable" title="https://w3id.org/question#QuestionVariable">Question Variable</a>
+               <a href="#QuestionVariable" title="https://w3id.org/sqo#QuestionVariable">Question Variable</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -154,15 +160,15 @@ This section provides details for each class and property defined by The Questio
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/question#hasQuestionPattern</p>
+         <strong>IRI:</strong> https://w3id.org/sqo#hasQuestionPattern</p>
       <div class="comment">
-         <span class="markdown">SPARQL-like pattern that defines the semantic representation that this question will have when the user has filled all forms</span>
+         <span class="markdown">SPARQL-like pattern that defines the semantic representation that this question will have. All variables used on the question template will be replaced for the user selected values.</span>
       </div>
       <div class="description">
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#Question" title="https://w3id.org/question#Question">Question</a>
+               <a href="#Question" title="https://w3id.org/sqo#Question">Question</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -178,15 +184,15 @@ This section provides details for each class and property defined by The Questio
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/question#hasQuestionTemplate</p>
+         <strong>IRI:</strong> https://w3id.org/sqo#hasQuestionTemplate</p>
       <div class="comment">
-         <span class="markdown">Text representation of the question that the user must fill, includes SPARQL variable names that will be replaced for appropriate inputs</span>
+         <span class="markdown">Text representation of the question that will create a form that the user must fill. All "question variable" names used on this template will be replaced for inputs with constraints.</span>
       </div>
       <div class="description">
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#Question" title="https://w3id.org/question#Question">Question</a>
+               <a href="#Question" title="https://w3id.org/sqo#Question">Question</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -202,7 +208,7 @@ This section provides details for each class and property defined by The Questio
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/question#hasVariableName</p>
+         <strong>IRI:</strong> https://w3id.org/sqo#hasVariableName</p>
       <div class="comment">
          <span class="markdown">SPARQL name of this variable. Used on the question pattern and template</span>
       </div>
@@ -210,7 +216,7 @@ This section provides details for each class and property defined by The Questio
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#QuestionVariable" title="https://w3id.org/question#QuestionVariable">Question Variable</a>
+               <a href="#QuestionVariable" title="https://w3id.org/sqo#QuestionVariable">Question Variable</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>

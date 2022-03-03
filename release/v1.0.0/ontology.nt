@@ -1,10 +1,11 @@
-<https://w3id.org/question> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
-<https://w3id.org/question> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/question/1.0.0/> .
-<https://w3id.org/question> <http://purl.org/dc/terms/creator> "Hernan Vargas" .
-<https://w3id.org/question> <http://purl.org/dc/terms/description> "An ontology to define templates, variables and options for scientific question creation." .
-<https://w3id.org/question> <http://purl.org/dc/terms/license> "https://creativecommons.org/licenses/by/2.0/" .
-<https://w3id.org/question> <http://purl.org/dc/terms/title> "The Question Ontology" .
-<https://w3id.org/question> <http://www.w3.org/2002/07/owl#versionInfo> "v1.0.0" .
+<https://w3id.org/sqo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://w3id.org/sqo> <http://purl.org/dc/terms/creator> "Daniel Garijo" .
+<https://w3id.org/sqo> <http://purl.org/dc/terms/creator> "Hernan Vargas" .
+<https://w3id.org/sqo> <http://purl.org/dc/terms/creator> "Yolanda Gil" .
+<https://w3id.org/sqo> <http://purl.org/dc/terms/description> "An ontology to define semantic templates for scientific questions. Defines questions, variables, options and constraints." .
+<https://w3id.org/sqo> <http://purl.org/dc/terms/license> "https://creativecommons.org/licenses/by/2.0/" .
+<https://w3id.org/sqo> <http://purl.org/dc/terms/title> "The Scientific Questions Ontology" .
+<https://w3id.org/sqo> <http://www.w3.org/2002/07/owl#versionInfo> "v1.0.0" .
 # 
 # 
 # #################################################################
@@ -35,12 +36,12 @@
 # #################################################################
 # 
 # 
-# https://w3id.org/question#hasQuestionVariable
-<https://w3id.org/question#hasQuestionVariable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/question#hasQuestionVariable> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/question#Question> .
-<https://w3id.org/question#hasQuestionVariable> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/question#QuestionVariable> .
-<https://w3id.org/question#hasQuestionVariable> <http://www.w3.org/2000/01/rdf-schema#comment> "List a Question with all Question Variables used on the Question Template" .
-<https://w3id.org/question#hasQuestionVariable> <http://www.w3.org/2000/01/rdf-schema#label> "Has question variable" .
+# https://w3id.org/sqo#hasQuestionVariable
+<https://w3id.org/sqo#hasQuestionVariable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/sqo#hasQuestionVariable> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/sqo#Question> .
+<https://w3id.org/sqo#hasQuestionVariable> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/sqo#QuestionVariable> .
+<https://w3id.org/sqo#hasQuestionVariable> <http://www.w3.org/2000/01/rdf-schema#comment> "Link a Question with all of the Question Variables that used on the question template and pattern" .
+<https://w3id.org/sqo#hasQuestionVariable> <http://www.w3.org/2000/01/rdf-schema#label> "Has question variable" .
 # 
 # 
 # 
@@ -51,40 +52,40 @@
 # #################################################################
 # 
 # 
-# https://w3id.org/question#hasConstraints
-<https://w3id.org/question#hasConstraints> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/question#hasConstraints> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/question#QuestionVariable> .
-<https://w3id.org/question#hasConstraints> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<https://w3id.org/question#hasConstraints> <http://www.w3.org/2000/01/rdf-schema#comment> "An SPARQL query that will determine the options for this variable" .
-<https://w3id.org/question#hasConstraints> <http://www.w3.org/2000/01/rdf-schema#label> "Has constraints" .
+# https://w3id.org/sqo#hasConstraints
+<https://w3id.org/sqo#hasConstraints> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/sqo#hasConstraints> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/sqo#QuestionVariable> .
+<https://w3id.org/sqo#hasConstraints> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/sqo#hasConstraints> <http://www.w3.org/2000/01/rdf-schema#comment> "An SPARQL query that will determine the options for this variable" .
+<https://w3id.org/sqo#hasConstraints> <http://www.w3.org/2000/01/rdf-schema#label> "Has constraints" .
 # 
-# https://w3id.org/question#hasFixedOptions
-<https://w3id.org/question#hasFixedOptions> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/question#hasFixedOptions> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/question#QuestionVariable> .
-<https://w3id.org/question#hasFixedOptions> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<https://w3id.org/question#hasFixedOptions> <http://www.w3.org/2000/01/rdf-schema#comment> "List of fixed options for this variable. Alternative to \"has contraints\"" .
-<https://w3id.org/question#hasFixedOptions> <http://www.w3.org/2000/01/rdf-schema#label> "Has fixed options" .
+# https://w3id.org/sqo#hasFixedOptions
+<https://w3id.org/sqo#hasFixedOptions> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/sqo#hasFixedOptions> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/sqo#QuestionVariable> .
+<https://w3id.org/sqo#hasFixedOptions> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/sqo#hasFixedOptions> <http://www.w3.org/2000/01/rdf-schema#comment> "List of possible options for this variable. Alternative to \"has contraints\" property" .
+<https://w3id.org/sqo#hasFixedOptions> <http://www.w3.org/2000/01/rdf-schema#label> "Has fixed options" .
 # 
-# https://w3id.org/question#hasQuestionPattern
-<https://w3id.org/question#hasQuestionPattern> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/question#hasQuestionPattern> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/question#Question> .
-<https://w3id.org/question#hasQuestionPattern> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<https://w3id.org/question#hasQuestionPattern> <http://www.w3.org/2000/01/rdf-schema#comment> "SPARQL-like pattern that defines the semantic representation that this question will have when the user has filled all forms" .
-<https://w3id.org/question#hasQuestionPattern> <http://www.w3.org/2000/01/rdf-schema#label> "Has question pattern" .
+# https://w3id.org/sqo#hasQuestionPattern
+<https://w3id.org/sqo#hasQuestionPattern> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/sqo#hasQuestionPattern> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/sqo#Question> .
+<https://w3id.org/sqo#hasQuestionPattern> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/sqo#hasQuestionPattern> <http://www.w3.org/2000/01/rdf-schema#comment> "SPARQL-like pattern that defines the semantic representation that this question will have. All variables used on the question template will be replaced for the user selected values." .
+<https://w3id.org/sqo#hasQuestionPattern> <http://www.w3.org/2000/01/rdf-schema#label> "Has question pattern" .
 # 
-# https://w3id.org/question#hasQuestionTemplate
-<https://w3id.org/question#hasQuestionTemplate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/question#hasQuestionTemplate> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/question#Question> .
-<https://w3id.org/question#hasQuestionTemplate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<https://w3id.org/question#hasQuestionTemplate> <http://www.w3.org/2000/01/rdf-schema#comment> "Text representation of the question that the user must fill, includes SPARQL variable names that will be replaced for appropriate inputs" .
-<https://w3id.org/question#hasQuestionTemplate> <http://www.w3.org/2000/01/rdf-schema#label> "Has question template" .
+# https://w3id.org/sqo#hasQuestionTemplate
+<https://w3id.org/sqo#hasQuestionTemplate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/sqo#hasQuestionTemplate> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/sqo#Question> .
+<https://w3id.org/sqo#hasQuestionTemplate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/sqo#hasQuestionTemplate> <http://www.w3.org/2000/01/rdf-schema#comment> "Text representation of the question that will create a form that the user must fill. All \"question variable\" names used on this template will be replaced for inputs with constraints." .
+<https://w3id.org/sqo#hasQuestionTemplate> <http://www.w3.org/2000/01/rdf-schema#label> "Has question template" .
 # 
-# https://w3id.org/question#hasVariableName
-<https://w3id.org/question#hasVariableName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/question#hasVariableName> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/question#QuestionVariable> .
-<https://w3id.org/question#hasVariableName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<https://w3id.org/question#hasVariableName> <http://www.w3.org/2000/01/rdf-schema#comment> "SPARQL name of this variable. Used on the question pattern and template" .
-<https://w3id.org/question#hasVariableName> <http://www.w3.org/2000/01/rdf-schema#label> "Has variable name" .
+# https://w3id.org/sqo#hasVariableName
+<https://w3id.org/sqo#hasVariableName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/sqo#hasVariableName> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/sqo#QuestionVariable> .
+<https://w3id.org/sqo#hasVariableName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/sqo#hasVariableName> <http://www.w3.org/2000/01/rdf-schema#comment> "SPARQL name of this variable. Used on the question pattern and template" .
+<https://w3id.org/sqo#hasVariableName> <http://www.w3.org/2000/01/rdf-schema#label> "Has variable name" .
 # 
 # 
 # 
@@ -95,12 +96,14 @@
 # #################################################################
 # 
 # 
-# https://w3id.org/question#Question
-<https://w3id.org/question#Question> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/question#Question> <http://www.w3.org/2000/01/rdf-schema#label> "Question" .
+# https://w3id.org/sqo#Question
+<https://w3id.org/sqo#Question> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/sqo#Question> <http://www.w3.org/2000/01/rdf-schema#comment> "Class that represents a scientific question. Is linked to the template, the pattern and all the variables this question uses." .
+<https://w3id.org/sqo#Question> <http://www.w3.org/2000/01/rdf-schema#label> "Question" .
 # 
-# https://w3id.org/question#QuestionVariable
-<https://w3id.org/question#QuestionVariable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/question#QuestionVariable> <http://www.w3.org/2000/01/rdf-schema#label> "Question Variable" .
+# https://w3id.org/sqo#QuestionVariable
+<https://w3id.org/sqo#QuestionVariable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/sqo#QuestionVariable> <http://www.w3.org/2000/01/rdf-schema#comment> "Class that represents a variable used on a Question. This variable name must be present on the template and pattern of the question that uses it. Can have contraints in the form of a query (hasConstraint property) or a list of possible options (hasFixedOptions property)." .
+<https://w3id.org/sqo#QuestionVariable> <http://www.w3.org/2000/01/rdf-schema#label> "Question Variable" .
 # 
 # Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/
