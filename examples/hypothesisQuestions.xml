@@ -234,6 +234,7 @@
 
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/question/OtherClimateVariable">
         <rdf:type rdf:resource="http://disk-project.org/ontology/disk#QuestionVariable"/>
+        <ns0:hasVariableName>?OtherClimateVar</ns0:hasVariableName>
     </owl:NamedIndividual>
     
 
@@ -242,6 +243,7 @@
 
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/question/OtherSiteVariable">
         <rdf:type rdf:resource="http://disk-project.org/ontology/disk#QuestionVariable"/>
+        <ns0:hasVariableName>?OtherSite</ns0:hasVariableName>
     </owl:NamedIndividual>
     
 
