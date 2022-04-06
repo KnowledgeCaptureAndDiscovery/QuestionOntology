@@ -59,9 +59,9 @@
 
     <owl:NamedIndividual rdf:about="http://disk-project.org/examples/HQ3">
         <rdf:type rdf:resource="https://w3id.org/sqo#Question"/>
-        <ns0:hasQuestionPattern>:goal hyp:associatedWith ?ClimateVariable1 .
-:goal hyp:associatedWith ?ClimateVariable2 .
-:goal hyp:associatedWith ?ClimateVariable3 .</ns0:hasQuestionPattern>
+        <ns0:hasQuestionPattern>:goal hyp:associatedWith ?ClimateVariable1
+:goal hyp:associatedWith ?ClimateVariable2
+:goal hyp:associatedWith ?ClimateVariable3</ns0:hasQuestionPattern>
         <ns0:hasQuestionTemplate>Is the number of rented bikes associated with ?ClimateVariable1, ?ClimateVariable2 and ?ClimateVariable3</ns0:hasQuestionTemplate>
         <ns0:hasQuestionVariable rdf:resource="http://disk-project.org/examples/ClimateVariable1"/>
         <ns0:hasQuestionVariable rdf:resource="http://disk-project.org/examples/ClimateVariable2"/>
