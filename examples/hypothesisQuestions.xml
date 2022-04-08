@@ -30,7 +30,9 @@
 
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/question/ClimateVariable">
         <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
-        <ns1:hasConstraints>?ClimateVar a &lt;http://linked.earth/ontology#ClimateIndex&gt;</ns1:hasConstraints>
+        <ns1:hasConstraints>?ClimateVar a ?varType ;
+  &lt;http://linked.earth/ontology#hasVariableID&gt; ?ClimateVarLabel
+VALUES ?varType {&lt;http://linked.earth/ontology#InferredVariable&gt; &lt;http://linked.earth/ontology#ProxyObservation&gt;}</ns1:hasConstraints>
         <ns1:hasVariableName>?ClimateVar</ns1:hasVariableName>
     </owl:NamedIndividual>
     
@@ -42,6 +44,48 @@
         <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <ns1:hasConstraints>?Dataset a &lt;http://linked.earth/ontology#Dataset&gt; .</ns1:hasConstraints>
         <ns1:hasVariableName>?Dataset</ns1:hasVariableName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://disk-project.org/resources/question/OtherClimateVariable -->
+
+    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/question/OtherClimateVariable">
+        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
+        <ns1:hasConstraints>?OtherClimateVar a ?varType ;
+  &lt;http://linked.earth/ontology#hasVariableID&gt; ?OtherClimateVarLabel
+VALUES ?varType {&lt;http://linked.earth/ontology#InferredVariable&gt; &lt;http://linked.earth/ontology#ProxyObservation&gt;}</ns1:hasConstraints>
+        <ns1:hasVariableName>?OtherClimateVar</ns1:hasVariableName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://disk-project.org/resources/question/OtherSiteVariable -->
+
+    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/question/OtherSiteVariable">
+        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
+        <ns1:hasConstraints>?OtherSite a &lt;http://linked.earth/ontology#Location&gt; ;
+  &lt;http://linked.earth/ontology#name&gt; ?name ;
+  &lt;http://www.w3.org/2003/01/geo/wgs84_pos#alt&gt; ?alt ;
+  &lt;http://www.w3.org/2003/01/geo/wgs84_pos#lat&gt; ?lat ;
+  &lt;http://www.w3.org/2003/01/geo/wgs84_pos#long&gt; ?long .
+BIND(CONCAT(?name, " - (", ?alt, " ", ?lat, " ", ?long, ")") AS ?OtherSiteLabel)</ns1:hasConstraints>
+        <ns1:hasVariableName>?OtherSite</ns1:hasVariableName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://disk-project.org/resources/question/SiteVariable -->
+
+    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/question/SiteVariable">
+        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
+        <ns1:hasConstraints>?Site a &lt;http://linked.earth/ontology#Location&gt; ;
+  &lt;http://linked.earth/ontology#name&gt; ?name ;
+  &lt;http://www.w3.org/2003/01/geo/wgs84_pos#alt&gt; ?alt ;
+  &lt;http://www.w3.org/2003/01/geo/wgs84_pos#lat&gt; ?lat ;
+  &lt;http://www.w3.org/2003/01/geo/wgs84_pos#long&gt; ?long .
+BIND(CONCAT(?name, " - (", ?alt, " ", ?lat, " ", ?long, ")") AS ?SiteLabel)</ns1:hasConstraints>
+        <ns1:hasVariableName>?Site</ns1:hasVariableName>
     </owl:NamedIndividual>
     
 
@@ -156,33 +200,6 @@
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/question/ModelOutputVariable">
         <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <ns1:hasVariableName>?ModelOutput</ns1:hasVariableName>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://disk-project.org/resources/question/OtherClimateVariable -->
-
-    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/question/OtherClimateVariable">
-        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
-        <ns1:hasVariableName>?OtherClimateVar</ns1:hasVariableName>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://disk-project.org/resources/question/OtherSiteVariable -->
-
-    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/question/OtherSiteVariable">
-        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
-        <ns1:hasVariableName>?OtherSite</ns1:hasVariableName>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://disk-project.org/resources/question/SiteVariable -->
-
-    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/question/SiteVariable">
-        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
-        <ns1:hasVariableName>?Site</ns1:hasVariableName>
     </owl:NamedIndividual>
 </rdf:RDF>
 
