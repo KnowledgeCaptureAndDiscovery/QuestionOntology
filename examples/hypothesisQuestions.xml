@@ -52,9 +52,9 @@
         <rdf:type rdf:resource="https://w3id.org/sqo#Question"/>
         <ns1:hasQuestionVariable rdf:resource="http://disk-project.org/resources/question/ClimateVariable"/>
         <ns1:hasQuestionVariable rdf:resource="http://disk-project.org/resources/question/DatasetVariable"/>
-        <ns1:hasQuestionPattern>:goal       a                 hyp:PeriodicitiesExistenceHypothesis .
-:goal       hyp:hasVariable   ?ClimateVar .
-?ClimateVar disk:fromDataset  ?Dataset .</ns1:hasQuestionPattern>
+        <ns1:hasQuestionPattern>:goal a hyp:PeriodicitiesExistenceHypothesis
+:goal hyp:hasVariable ?ClimateVar
+?ClimateVar hyp:fromDataset ?Dataset</ns1:hasQuestionPattern>
         <ns1:hasQuestionTemplate>Are there periodicities present in ?ClimateVar for record at ?Dataset</ns1:hasQuestionTemplate>
         <rdfs:label>Are there periodicities present in &lt;Climate Variable&gt; for record at &lt;Dataset&gt;</rdfs:label>
     </owl:NamedIndividual>
@@ -67,10 +67,10 @@
         <rdf:type rdf:resource="https://w3id.org/sqo#Question"/>
         <ns1:hasQuestionVariable rdf:resource="http://disk-project.org/resources/question/ClimateVariable"/>
         <ns1:hasQuestionVariable rdf:resource="http://disk-project.org/resources/question/SiteVariable"/>
-        <ns1:hasQuestionPattern>:goal       a                   hyp:PeriodicitiesExistenceHypothesis .
-:goal       hyp:hasVariable     ?ClimateVar .
-?ClimateVar disk:fromDataset    ?Dataset .
-?Dataset    disk:fromRepository ?Site .</ns1:hasQuestionPattern>
+        <ns1:hasQuestionPattern>:goal a hyp:PeriodicitiesExistenceHypothesis
+:goal hyp:hasVariable ?ClimateVar
+?ClimateVar hyp:fromDataset ?Dataset
+?Dataset hyp:fromSite ?Site</ns1:hasQuestionPattern>
         <ns1:hasQuestionTemplate>Are there periodicities present in ?ClimateVar for record at ?Site</ns1:hasQuestionTemplate>
         <rdfs:label>Are there periodicities present in &lt;Climate Variable&gt; for record at &lt;Site&gt;</rdfs:label>
     </owl:NamedIndividual>
@@ -83,10 +83,10 @@
         <rdf:type rdf:resource="https://w3id.org/sqo#Question"/>
         <ns1:hasQuestionVariable rdf:resource="http://disk-project.org/resources/question/ClimateVariable"/>
         <ns1:hasQuestionVariable rdf:resource="http://disk-project.org/resources/question/SiteVariable"/>
-        <ns1:hasQuestionPattern>:goal       a                    hyp:PeriodicitiesIntermitenceHypothesis .
-:goal       hyp:hasVariable      ?ClimateVar .
-?ClimateVar disk:fromDataset     ?Dataset .
-?Dataset    disk:fromRepository  ?Site .</ns1:hasQuestionPattern>
+        <ns1:hasQuestionPattern>:goal a hyp:PeriodicitiesIntermitenceHypothesis
+:goal hyp:hasVariable ?ClimateVar
+?ClimateVar hyp:fromDataset ?Dataset
+?Dataset hyp:fromSite ?Site</ns1:hasQuestionPattern>
         <ns1:hasQuestionTemplate>Are the periodicities continuous or intermittent in ?ClimateVar for record at ?Site</ns1:hasQuestionTemplate>
         <rdfs:label>Are the periodicities continuous or intermittent in &lt;Climate Variable&gt; for record at &lt;Site&gt;</rdfs:label>
     </owl:NamedIndividual>
@@ -101,13 +101,13 @@
         <ns1:hasQuestionVariable rdf:resource="http://disk-project.org/resources/question/OtherClimateVariable"/>
         <ns1:hasQuestionVariable rdf:resource="http://disk-project.org/resources/question/OtherSiteVariable"/>
         <ns1:hasQuestionVariable rdf:resource="http://disk-project.org/resources/question/SiteVariable"/>
-        <ns1:hasQuestionPattern>:goal        a                    hyp:CoherenceHypothesis .
-:goal        hyp:hasVariable      ?ClimateVar .
-:goal        hyp:hasVariable      ?OtherClimateVar .
-?ClimateVar disk:fromDataset     ?Dataset1 .
-?OtherClimateVar disk:fromDataset     ?Dataset2 .
-?Dataset1    disk:fromRepository  ?Site .
-?Dataset2    disk:fromRepository  ?OtherSite .</ns1:hasQuestionPattern>
+        <ns1:hasQuestionPattern>:goal a hyp:CoherenceHypothesis
+:goal hyp:hasVariable ?ClimateVar
+:goal hyp:hasVariable ?OtherClimateVar
+?ClimateVar hyp:fromDataset ?Dataset1
+?OtherClimateVar hyp:fromDataset ?Dataset2
+?Dataset1 hyp:fromSite ?Site
+?Dataset2 hyp:fromSite ?OtherSite</ns1:hasQuestionPattern>
         <ns1:hasQuestionTemplate>Are the records of ?ClimateVar from ?Site and ?OtherClimateVar from ?OtherSite coherent in the frequency domain</ns1:hasQuestionTemplate>
         <rdfs:label>Are the records of &lt;Climate Variable&gt; from &lt;Site&gt; and &lt;Climate Variable&gt; from &lt;Site&gt; coherent in the frequency domain</rdfs:label>
     </owl:NamedIndividual>
@@ -119,16 +119,16 @@
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/question/HQ5">
         <rdf:type rdf:resource="https://w3id.org/sqo#Question"/>
         <ns1:hasQuestionVariable rdf:resource="http://disk-project.org/resources/question/ClimateVariable"/>
-        <ns1:hasQuestionVariable rdf:resource="http://disk-project.org/resources/question/DatasetVariable"/>
         <ns1:hasQuestionVariable rdf:resource="http://disk-project.org/resources/question/OtherClimateVariable"/>
         <ns1:hasQuestionVariable rdf:resource="http://disk-project.org/resources/question/OtherSiteVariable"/>
-        <ns1:hasQuestionPattern>:goal       a                    hyp:CorrelationHypothesis .
-:goal       hyp:hasVariable            ?ClimateVar .
-:goal       hyp:hasVariable            ?OtherClimateVar .
-?ClimateVar disk:fromDataset            ?Dataset1 .
-?OtherClimateVar disk:fromDataset    ?Dataset2 .
-?Dataset1    disk:fromRepository         ?Site .
-?Dataset2    disk:fromRepository         ?OtherSite .</ns1:hasQuestionPattern>
+        <ns1:hasQuestionVariable rdf:resource="http://disk-project.org/resources/question/SiteVariable"/>
+        <ns1:hasQuestionPattern>:goal a hyp:CorrelationHypothesis
+:goal hyp:usesDataset :dataset1
+:goal hyp:usesDataset :dataset2
+:dataset1 hyp:hasVariable ?ClimateVar
+:dataset1 hyp:fromSite ?Site
+:dataset2 hyp:hasVariable ?OtherClimateVar
+:dataset2 hyp:fromSite ?OtherSite</ns1:hasQuestionPattern>
         <ns1:hasQuestionTemplate>Are the records of ?ClimateVar from ?Site and ?OtherClimateVar from ?OtherSite significantly correlated</ns1:hasQuestionTemplate>
         <rdfs:label>Are the records of &lt;Climate Variable&gt; from &lt;Site&gt; and &lt;Climate Variable&gt; from &lt;Site&gt; significantly correlated</rdfs:label>
     </owl:NamedIndividual>
@@ -142,9 +142,9 @@
         <ns1:hasQuestionVariable rdf:resource="http://disk-project.org/resources/question/ClimateVariable"/>
         <ns1:hasQuestionVariable rdf:resource="http://disk-project.org/resources/question/ModelOutputVariable"/>
         <ns1:hasQuestionVariable rdf:resource="http://disk-project.org/resources/question/SiteVariable"/>
-        <ns1:hasQuestionPattern>:goal       a                    hyp:CompareRecordsHypothesis .
-:goal       hyp:hasRecord        ?record1 .
-:goal       hyp:hasRecord        ?record2 .</ns1:hasQuestionPattern>
+        <ns1:hasQuestionPattern>:goal a hyp:CompareRecordsHypothesis
+:goal hyp:hasRecord ?record1
+:goal hyp:hasRecord ?record2</ns1:hasQuestionPattern>
         <ns1:hasQuestionTemplate>Is ?ClimateVar the same between observational data from record at ?Site as in ?ModelOutput</ns1:hasQuestionTemplate>
         <rdfs:label>Is &lt;Climate Variable&gt; the same between observational data from record at &lt;site&gt; as in &lt;Model Output&gt;</rdfs:label>
     </owl:NamedIndividual>
