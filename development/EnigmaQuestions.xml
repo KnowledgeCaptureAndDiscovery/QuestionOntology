@@ -25,25 +25,25 @@
     
 
 
-    <!-- https://w3id.org/sqo/resource/HQ1 -->
+    <!-- https://w3id.org/sqo/resource/EnigmaQuestion1 -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/sqo/resource/HQ1">
+    <owl:NamedIndividual rdf:about="https://w3id.org/sqo/resource/EnigmaQuestion1">
         <rdf:type rdf:resource="https://w3id.org/sqo#Question"/>
         <rdfs:label>Is the effect size of &lt;Genotype&gt; in &lt;Brain Imaging Trait&gt; associated with &lt;Demographic Attribute&gt;</rdfs:label>
         <question:hasQuestionPattern>?EffectSize neuro:sourceGene ?Genotype
 ?EffectSize neuro:targetCharacteristic ?BrainImagingTrait
 ?EffectSize hyp:associatedWith ?DemographicAttribute</question:hasQuestionPattern>
         <question:hasQuestionTemplate>Is the effect size of ?Genotype on ?BrainImagingTrait associated with ?DemographicAttribute</question:hasQuestionTemplate>
-        <question:hasQuestionVariable rdf:resource="https://w3id.org/sqo/resource/HQ1V1"/>
-        <question:hasQuestionVariable rdf:resource="https://w3id.org/sqo/resource/HQ1V2"/>
-        <question:hasQuestionVariable rdf:resource="https://w3id.org/sqo/resource/HQ1V3"/>
+        <question:hasQuestionVariable rdf:resource="https://w3id.org/sqo/resource/EnigmaQuestion1V1"/>
+        <question:hasQuestionVariable rdf:resource="https://w3id.org/sqo/resource/EnigmaQuestion1V2"/>
+        <question:hasQuestionVariable rdf:resource="https://w3id.org/sqo/resource/EnigmaQuestion1V3"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/sqo/resource/HQ1V1 -->
+    <!-- https://w3id.org/sqo/resource/EnigmaQuestion1V1 -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/sqo/resource/HQ1V1">
+    <owl:NamedIndividual rdf:about="https://w3id.org/sqo/resource/EnigmaQuestion1V1">
         <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <question:hasConstraints>[] ?geneticDatatypeProp ?Genotype .
 ?Genotype a ?type .
@@ -54,9 +54,9 @@
     
 
 
-    <!-- https://w3id.org/sqo/resource/HQ1V2 -->
+    <!-- https://w3id.org/sqo/resource/EnigmaQuestion1V2 -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/sqo/resource/HQ1V2">
+    <owl:NamedIndividual rdf:about="https://w3id.org/sqo/resource/EnigmaQuestion1V2">
         <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <question:hasFixedOptions>HippocampalVolume</question:hasFixedOptions>
         <question:hasVariableName>?BrainImagingTrait</question:hasVariableName>
@@ -64,9 +64,9 @@
     
 
 
-    <!-- https://w3id.org/sqo/resource/HQ1V3 -->
+    <!-- https://w3id.org/sqo/resource/EnigmaQuestion1V3 -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/sqo/resource/HQ1V3">
+    <owl:NamedIndividual rdf:about="https://w3id.org/sqo/resource/EnigmaQuestion1V3">
         <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <question:hasFixedOptions>Age</question:hasFixedOptions>
         <question:hasVariableName>?DemographicAttribute</question:hasVariableName>
@@ -74,22 +74,22 @@
     
 
 
-    <!-- https://w3id.org/sqo/resource/HQ2 -->
+    <!-- https://w3id.org/sqo/resource/EnigmaQuestion2 -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/sqo/resource/HQ2">
+    <owl:NamedIndividual rdf:about="https://w3id.org/sqo/resource/EnigmaQuestion2">
         <rdf:type rdf:resource="https://w3id.org/sqo#Question"/>
         <rdfs:label>Is &lt;Brain Characteristic&gt; associated with &lt;Neurological Disorder&gt; in comparison to healthy controls</rdfs:label>
         <question:hasQuestionPattern>?NeurologicalDisorder hyp:associatedWith ?BrainCharacteristic</question:hasQuestionPattern>
         <question:hasQuestionTemplate>Is ?BrainCharacteristic associated with ?NeurologicalDisorder</question:hasQuestionTemplate>
-        <question:hasQuestionVariable rdf:resource="https://w3id.org/sqo/resource/HQ2V1"/>
-        <question:hasQuestionVariable rdf:resource="https://w3id.org/sqo/resource/HQ2V2"/>
+        <question:hasQuestionVariable rdf:resource="https://w3id.org/sqo/resource/EnigmaQuestion2V1"/>
+        <question:hasQuestionVariable rdf:resource="https://w3id.org/sqo/resource/EnigmaQuestion2V2"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/sqo/resource/HQ2V1 -->
+    <!-- https://w3id.org/sqo/resource/EnigmaQuestion2V1 -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/sqo/resource/HQ2V1">
+    <owl:NamedIndividual rdf:about="https://w3id.org/sqo/resource/EnigmaQuestion2V1">
         <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <question:hasConstraints>?corticaldataset ?brainCharProp ?BrainCharacteristic .
 ?brainCharProp rdfs:label &quot;HasBrainCharacteristic&quot; .</question:hasConstraints>
@@ -98,9 +98,9 @@
     
 
 
-    <!-- https://w3id.org/sqo/resource/HQ2V2 -->
+    <!-- https://w3id.org/sqo/resource/EnigmaQuestion2V2 -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/sqo/resource/HQ2V2">
+    <owl:NamedIndividual rdf:about="https://w3id.org/sqo/resource/EnigmaQuestion2V2">
         <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <question:hasConstraints>?cohort ?studiesDiseaseProp ?NeurologicalDisorder .
 ?studiesDiseaseProp rdfs:label &quot;StudiesDisorder (E)&quot; .</question:hasConstraints>
@@ -109,9 +109,9 @@
     
 
 
-    <!-- https://w3id.org/sqo/resource/HQ3 -->
+    <!-- https://w3id.org/sqo/resource/EnigmaQuestion3 -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/sqo/resource/HQ3">
+    <owl:NamedIndividual rdf:about="https://w3id.org/sqo/resource/EnigmaQuestion3">
         <rdf:type rdf:resource="https://w3id.org/sqo#Question"/>
         <rdfs:label>Is the effect size of &lt;Genotype&gt; on &lt;Brain Imaging Trait&gt; of &lt;Region&gt; associated with &lt;Demographic Attribute&gt;</rdfs:label>
         <question:hasQuestionPattern>?EffectSize neuro:sourceGene ?Genotype
@@ -121,17 +121,17 @@
 optional { ?DemographicAttribute hyp:lessThan ?maxAge }
 optional { ?DemographicAttribute hyp:moreThan ?minAge }</question:hasQuestionPattern>
         <question:hasQuestionTemplate>Is the EffectSize of ?Genotype on ?BrainImagingTrait of ?Region associated with ?DemographicAttribute</question:hasQuestionTemplate>
-        <question:hasQuestionVariable rdf:resource="https://w3id.org/sqo/resource/HQ3V1"/>
-        <question:hasQuestionVariable rdf:resource="https://w3id.org/sqo/resource/HQ3V2"/>
-        <question:hasQuestionVariable rdf:resource="https://w3id.org/sqo/resource/HQ3V3"/>
-        <question:hasQuestionVariable rdf:resource="https://w3id.org/sqo/resource/HQ3V4"/>
+        <question:hasQuestionVariable rdf:resource="https://w3id.org/sqo/resource/EnigmaQuestion3V1"/>
+        <question:hasQuestionVariable rdf:resource="https://w3id.org/sqo/resource/EnigmaQuestion3V2"/>
+        <question:hasQuestionVariable rdf:resource="https://w3id.org/sqo/resource/EnigmaQuestion3V3"/>
+        <question:hasQuestionVariable rdf:resource="https://w3id.org/sqo/resource/EnigmaQuestion3V4"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/sqo/resource/HQ3V1 -->
+    <!-- https://w3id.org/sqo/resource/EnigmaQuestion3V1 -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/sqo/resource/HQ3V1">
+    <owl:NamedIndividual rdf:about="https://w3id.org/sqo/resource/EnigmaQuestion3V1">
         <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <question:hasConstraints>[] ?snpprop ?Genotype .
 ?snpprop rdfs:label &quot;SNP&quot; .</question:hasConstraints>
@@ -140,9 +140,9 @@ optional { ?DemographicAttribute hyp:moreThan ?minAge }</question:hasQuestionPat
     
 
 
-    <!-- https://w3id.org/sqo/resource/HQ3V2 -->
+    <!-- https://w3id.org/sqo/resource/EnigmaQuestion3V2 -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/sqo/resource/HQ3V2">
+    <owl:NamedIndividual rdf:about="https://w3id.org/sqo/resource/EnigmaQuestion3V2">
         <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <question:hasConstraints>[] ?traitprop ?BrainImagingTrait .
 ?traitprop rdfs:label &quot;Trait&quot; .
@@ -153,9 +153,9 @@ BIND(REPLACE (REPLACE (?BrainImagingTrait, &quot;SA&quot;, &quot;Surface Area&qu
     
 
 
-    <!-- https://w3id.org/sqo/resource/HQ3V3 -->
+    <!-- https://w3id.org/sqo/resource/EnigmaQuestion3V3 -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/sqo/resource/HQ3V3">
+    <owl:NamedIndividual rdf:about="https://w3id.org/sqo/resource/EnigmaQuestion3V3">
         <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <question:hasConstraints>[] ?regprop ?Region .
 ?regprop rdfs:label &quot;BrainRegion&quot; .</question:hasConstraints>
@@ -164,9 +164,9 @@ BIND(REPLACE (REPLACE (?BrainImagingTrait, &quot;SA&quot;, &quot;Surface Area&qu
 
 
 
-    <!-- http://w3id.org/sqo/resource/HQ3V4 -->
+    <!-- https://w3id.org/sqo/resource/EnigmaQuestion3V4 -->
 
-    <owl:NamedIndividual rdf:about="http://w3id.org/sqo/resource/HQ3V4">
+    <owl:NamedIndividual rdf:about="https://w3id.org/sqo/resource/EnigmaQuestion3V4">
         <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <question:hasConstraints>?hasCohortProj rdfs:label &quot;HasCohortProject (E)&quot; .
 [] ?hasCohortProj ?CohortProjects .
@@ -183,18 +183,18 @@ FILTER (
     
 
 
-    <!-- https://w3id.org/sqo/resource/HQ4 -->
+    <!-- https://w3id.org/sqo/resource/EnigmaQuestion4 -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/sqo/resource/HQ4">
+    <owl:NamedIndividual rdf:about="https://w3id.org/sqo/resource/EnigmaQuestion4">
         <rdf:type rdf:resource="https://w3id.org/sqo#Question"/>
         <rdfs:label>What is the effect size of &lt;Genotype&gt; on &lt;Region&gt;&lt;Brain Imaging Trait&gt;</rdfs:label>
         <question:hasQuestionPattern>?EffectSize neuro:sourceGene ?Genotype
 ?EffectSize neuro:targetCharacteristic ?BrainImagingTrait
 ?EffectSize neuro:targetCharacteristic ?Region</question:hasQuestionPattern>
         <question:hasQuestionTemplate>What is the Effect Size of ?Genotype on ?Region ?BrainImagingTrait</question:hasQuestionTemplate>
-        <question:hasQuestionVariable rdf:resource="https://w3id.org/sqo/resource/HQ3V1"/>
-        <question:hasQuestionVariable rdf:resource="https://w3id.org/sqo/resource/HQ3V2"/>
-        <question:hasQuestionVariable rdf:resource="https://w3id.org/sqo/resource/HQ3V3"/>
+        <question:hasQuestionVariable rdf:resource="https://w3id.org/sqo/resource/EnigmaQuestion3V1"/>
+        <question:hasQuestionVariable rdf:resource="https://w3id.org/sqo/resource/EnigmaQuestion3V2"/>
+        <question:hasQuestionVariable rdf:resource="https://w3id.org/sqo/resource/EnigmaQuestion3V3"/>
     </owl:NamedIndividual>
 </rdf:RDF>
 
