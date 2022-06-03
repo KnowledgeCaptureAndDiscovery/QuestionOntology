@@ -121,10 +121,10 @@
 optional { ?DemographicAttribute hyp:lessThan ?maxAge }
 optional { ?DemographicAttribute hyp:moreThan ?minAge }</question:hasQuestionPattern>
         <question:hasQuestionTemplate>Is the EffectSize of ?Genotype on ?BrainImagingTrait of ?Region associated with ?DemographicAttribute</question:hasQuestionTemplate>
-        <question:hasQuestionVariable rdf:resource="https://w3id.org/sqo/resource/HQ1V3"/>
         <question:hasQuestionVariable rdf:resource="https://w3id.org/sqo/resource/HQ3V1"/>
         <question:hasQuestionVariable rdf:resource="https://w3id.org/sqo/resource/HQ3V2"/>
         <question:hasQuestionVariable rdf:resource="https://w3id.org/sqo/resource/HQ3V3"/>
+        <question:hasQuestionVariable rdf:resource="https://w3id.org/sqo/resource/HQ3V4"/>
     </owl:NamedIndividual>
     
 
@@ -160,6 +160,25 @@ BIND(REPLACE (REPLACE (?BrainImagingTrait, &quot;SA&quot;, &quot;Surface Area&qu
         <question:hasConstraints>[] ?regprop ?Region .
 ?regprop rdfs:label &quot;BrainRegion&quot; .</question:hasConstraints>
         <question:hasVariableName>?Region</question:hasVariableName>
+    </owl:NamedIndividual>
+
+
+
+    <!-- http://w3id.org/sqo/resource/HQ3V4 -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/sqo/resource/HQ3V4">
+        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
+        <question:hasConstraints>?hasCohortProj rdfs:label &quot;HasCohortProject (E)&quot; .
+[] ?hasCohortProj ?CohortProjects .
+?CohortProjects ?DemographicAttribute [] .
+?DemographicAttribute rdfs:label ?DemographicAttributeLabel .
+FILTER (
+  REGEX(?DemographicAttributeLabel, &quot;HasAge Mean&quot;) ||
+  REGEX(?DemographicAttributeLabel, &quot;HasNumberOfParticipants&quot;) ||
+  REGEX(?DemographicAttributeLabel, &quot;HasNumberOfMaleSex&quot;) ||
+  REGEX(?DemographicAttributeLabel, &quot;HasNumberOfFemaleSex&quot;)
+)</question:hasConstraints>
+        <question:hasVariableName>?DemographicAttribute</question:hasVariableName>
     </owl:NamedIndividual>
     
 
