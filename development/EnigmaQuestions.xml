@@ -29,7 +29,7 @@
 
     <owl:NamedIndividual rdf:about="https://w3id.org/sqo/resource/EnigmaQuestion1">
         <rdf:type rdf:resource="https://w3id.org/sqo#Question"/>
-        <rdfs:label>Is the effect size of &lt;Genotype&gt; in &lt;Brain Imaging Trait&gt; associated with &lt;Demographic Attribute&gt;</rdfs:label>
+        <rdfs:label>Is the effect size of &lt;Genotype&gt; in &lt;Brain Imaging Trait&gt; associated with &lt;Demographic Attribute&gt;?</rdfs:label>
         <question:hasQuestionPattern>?EffectSize neuro:sourceGene ?Genotype
 ?EffectSize neuro:targetCharacteristic ?BrainImagingTrait
 ?EffectSize hyp:associatedWith ?DemographicAttribute</question:hasQuestionPattern>
@@ -78,7 +78,7 @@
 
     <owl:NamedIndividual rdf:about="https://w3id.org/sqo/resource/EnigmaQuestion2">
         <rdf:type rdf:resource="https://w3id.org/sqo#Question"/>
-        <rdfs:label>Is &lt;Brain Characteristic&gt; associated with &lt;Neurological Disorder&gt; in comparison to healthy controls</rdfs:label>
+        <rdfs:label>Is &lt;Brain Characteristic&gt; associated with &lt;Neurological Disorder&gt; in comparison to healthy controls?</rdfs:label>
         <question:hasQuestionPattern>?NeurologicalDisorder hyp:associatedWith ?BrainCharacteristic</question:hasQuestionPattern>
         <question:hasQuestionTemplate>Is ?BrainCharacteristic associated with ?NeurologicalDisorder</question:hasQuestionTemplate>
         <question:hasQuestionVariable rdf:resource="https://w3id.org/sqo/resource/EnigmaQuestion2V1"/>
@@ -113,7 +113,7 @@
 
     <owl:NamedIndividual rdf:about="https://w3id.org/sqo/resource/EnigmaQuestion3">
         <rdf:type rdf:resource="https://w3id.org/sqo#Question"/>
-        <rdfs:label>Is the effect size of &lt;Genotype&gt; on &lt;Brain Imaging Trait&gt; of &lt;Region&gt; associated with &lt;Demographic Attribute&gt;</rdfs:label>
+        <rdfs:label>Is the effect size of &lt;Genotype&gt; on &lt;Brain Imaging Trait&gt; of &lt;Region&gt; associated with &lt;Demographic Attribute&gt;?</rdfs:label>
         <question:hasQuestionPattern>?EffectSize neuro:sourceGene ?Genotype
 ?EffectSize neuro:targetCharacteristic ?BrainImagingTrait
 ?EffectSize neuro:targetCharacteristic ?Region
@@ -161,7 +161,7 @@ BIND(REPLACE (REPLACE (?BrainImagingTrait, &quot;SA&quot;, &quot;Surface Area&qu
 ?regprop rdfs:label &quot;BrainRegion&quot; .</question:hasConstraints>
         <question:hasVariableName>?Region</question:hasVariableName>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- https://w3id.org/sqo/resource/EnigmaQuestion3V4 -->
@@ -187,7 +187,7 @@ FILTER (
 
     <owl:NamedIndividual rdf:about="https://w3id.org/sqo/resource/EnigmaQuestion4">
         <rdf:type rdf:resource="https://w3id.org/sqo#Question"/>
-        <rdfs:label>What is the effect size of &lt;Genotype&gt; on &lt;Region&gt;&lt;Brain Imaging Trait&gt;</rdfs:label>
+        <rdfs:label>What is the effect size of &lt;Genotype&gt; on &lt;Region&gt;&lt;Brain Imaging Trait&gt;?</rdfs:label>
         <question:hasQuestionPattern>?EffectSize neuro:sourceGene ?Genotype
 ?EffectSize neuro:targetCharacteristic ?BrainImagingTrait
 ?EffectSize neuro:targetCharacteristic ?Region</question:hasQuestionPattern>
