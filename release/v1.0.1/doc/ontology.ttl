@@ -1,0 +1,194 @@
+@prefix : <http://disk-project.org/resources/question/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://disk-project.org/resources/question/> .
+
+<http://disk-project.org/resources/question/> rdf:type owl:Ontology ;
+                                               owl:imports <https://w3id.org/sqo> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  https://w3id.org/sqo#hasConstraints
+<https://w3id.org/sqo#hasConstraints> rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/sqo#hasQuestionPattern
+<https://w3id.org/sqo#hasQuestionPattern> rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/sqo#hasQuestionTemplate
+<https://w3id.org/sqo#hasQuestionTemplate> rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/sqo#hasQuestionVariable
+<https://w3id.org/sqo#hasQuestionVariable> rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/sqo#hasVariableName
+<https://w3id.org/sqo#hasVariableName> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://w3id.org/sqo#Question
+<https://w3id.org/sqo#Question> rdf:type owl:Class .
+
+
+###  https://w3id.org/sqo#QuestionVariable
+<https://w3id.org/sqo#QuestionVariable> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://disk-project.org/resources/question/ClimateVariable
+:ClimateVariable rdf:type owl:NamedIndividual ,
+                          <https://w3id.org/sqo#QuestionVariable> ;
+                 <https://w3id.org/sqo#hasConstraints> """[] ?prop ?ClimateVar.
+?ClimateVar <http://www.w3.org/2000/01/rdf-schema#label> ?ClimateVarLabel
+VALUES ?prop {<http://linked.earth/ontology#proxyObservationType> <http://linked.earth/ontology#inferredVariableType>}""" ;
+                 <https://w3id.org/sqo#hasVariableName> "?ClimateVar" .
+
+
+###  http://disk-project.org/resources/question/DatasetVariable
+:DatasetVariable rdf:type owl:NamedIndividual ,
+                          <https://w3id.org/sqo#QuestionVariable> ;
+                 <https://w3id.org/sqo#hasConstraints> "?Dataset a <http://linked.earth/ontology#Dataset> ." ;
+                 <https://w3id.org/sqo#hasVariableName> "?Dataset" .
+
+
+###  http://disk-project.org/resources/question/HQ1
+:HQ1 rdf:type owl:NamedIndividual ,
+              <https://w3id.org/sqo#Question> ;
+     rdfs:label "Are there periodicities present in <Climate Variable> for record at <Dataset>?" ;
+     <https://w3id.org/sqo#hasQuestionPattern> """:goal a hyp:PeriodicitiesExistenceHypothesis
+:goal hyp:hasVariable ?ClimateVar
+?ClimateVar hyp:fromDataset ?Dataset""" ;
+     <https://w3id.org/sqo#hasQuestionTemplate> "Are there periodicities present in ?ClimateVar for record at ?Dataset" ;
+     <https://w3id.org/sqo#hasQuestionVariable> :ClimateVariable ,
+                                                :DatasetVariable .
+
+
+###  http://disk-project.org/resources/question/HQ2
+:HQ2 rdf:type owl:NamedIndividual ,
+              <https://w3id.org/sqo#Question> ;
+     rdfs:label "Are there periodicities present in <Climate Variable> for record at <Site>?" ;
+     <https://w3id.org/sqo#hasQuestionPattern> """:goal a hyp:PeriodicitiesExistenceHypothesis
+:goal hyp:hasVariable ?ClimateVar
+?ClimateVar hyp:fromDataset ?Dataset
+?Dataset hyp:fromSite ?Site""" ;
+     <https://w3id.org/sqo#hasQuestionTemplate> "Are there periodicities present in ?ClimateVar for record at ?Site" ;
+     <https://w3id.org/sqo#hasQuestionVariable> :ClimateVariable ,
+                                                :SiteVariable .
+
+
+###  http://disk-project.org/resources/question/HQ3
+:HQ3 rdf:type owl:NamedIndividual ,
+              <https://w3id.org/sqo#Question> ;
+     rdfs:label "Are the periodicities continuous or intermittent in <Climate Variable> for record at <Site>?" ;
+     <https://w3id.org/sqo#hasQuestionPattern> """:goal a hyp:PeriodicitiesIntermitenceHypothesis
+:goal hyp:hasVariable ?ClimateVar
+?ClimateVar hyp:fromDataset ?Dataset
+?Dataset hyp:fromSite ?Site""" ;
+     <https://w3id.org/sqo#hasQuestionTemplate> "Are the periodicities continuous or intermittent in ?ClimateVar for record at ?Site" ;
+     <https://w3id.org/sqo#hasQuestionVariable> :ClimateVariable ,
+                                                :SiteVariable .
+
+
+###  http://disk-project.org/resources/question/HQ4
+:HQ4 rdf:type owl:NamedIndividual ,
+              <https://w3id.org/sqo#Question> ;
+     rdfs:label "Are the records of <Climate Variable> from <Site> and <Climate Variable> from <Site> coherent in the frequency domain?" ;
+     <https://w3id.org/sqo#hasQuestionPattern> """:goal a hyp:CoherenceHypothesis
+:goal hyp:hasVariable ?ClimateVar
+:goal hyp:hasVariable ?OtherClimateVar
+?ClimateVar hyp:fromDataset ?Dataset1
+?OtherClimateVar hyp:fromDataset ?Dataset2
+?Dataset1 hyp:fromSite ?Site
+?Dataset2 hyp:fromSite ?OtherSite""" ;
+     <https://w3id.org/sqo#hasQuestionTemplate> "Are the records of ?ClimateVar from ?Site and ?OtherClimateVar from ?OtherSite coherent in the frequency domain" ;
+     <https://w3id.org/sqo#hasQuestionVariable> :ClimateVariable ,
+                                                :OtherClimateVariable ,
+                                                :OtherSiteVariable ,
+                                                :SiteVariable .
+
+
+###  http://disk-project.org/resources/question/HQ5
+:HQ5 rdf:type owl:NamedIndividual ,
+              <https://w3id.org/sqo#Question> ;
+     rdfs:label "Are the records of <Climate Variable> from <Site> and <Climate Variable> from <Site> significantly correlated?" ;
+     <https://w3id.org/sqo#hasQuestionPattern> """:goal a hyp:CorrelationHypothesis
+:goal hyp:usesDataset :dataset1
+:goal hyp:usesDataset :dataset2
+:dataset1 hyp:hasVariable ?ClimateVar
+:dataset1 hyp:fromSite ?Site
+:dataset2 hyp:hasVariable ?OtherClimateVar
+:dataset2 hyp:fromSite ?OtherSite""" ;
+     <https://w3id.org/sqo#hasQuestionTemplate> "Are the records of ?ClimateVar from ?Site and ?OtherClimateVar from ?OtherSite significantly correlated" ;
+     <https://w3id.org/sqo#hasQuestionVariable> :ClimateVariable ,
+                                                :OtherClimateVariable ,
+                                                :OtherSiteVariable ,
+                                                :SiteVariable .
+
+
+###  http://disk-project.org/resources/question/HQ6
+:HQ6 rdf:type owl:NamedIndividual ,
+              <https://w3id.org/sqo#Question> ;
+     rdfs:label "Is <Climate Variable> the same between observational data from record at <site> as in <Model Output>?" ;
+     <https://w3id.org/sqo#hasQuestionPattern> """:goal a hyp:CompareRecordsHypothesis
+:goal hyp:hasRecord ?record1
+:goal hyp:hasRecord ?record2""" ;
+     <https://w3id.org/sqo#hasQuestionTemplate> "Is ?ClimateVar the same between observational data from record at ?Site as in ?ModelOutput" ;
+     <https://w3id.org/sqo#hasQuestionVariable> :ClimateVariable ,
+                                                :ModelOutputVariable ,
+                                                :SiteVariable .
+
+
+###  http://disk-project.org/resources/question/ModelOutputVariable
+:ModelOutputVariable rdf:type owl:NamedIndividual ,
+                              <https://w3id.org/sqo#QuestionVariable> ;
+                     <https://w3id.org/sqo#hasVariableName> "?ModelOutput" .
+
+
+###  http://disk-project.org/resources/question/OtherClimateVariable
+:OtherClimateVariable rdf:type owl:NamedIndividual ,
+                               <https://w3id.org/sqo#QuestionVariable> ;
+                      <https://w3id.org/sqo#hasConstraints> """?OtherClimateVar a ?varType ;
+  <http://linked.earth/ontology#hasVariableID> ?OtherClimateVarLabel
+VALUES ?varType {<http://linked.earth/ontology#InferredVariable> <http://linked.earth/ontology#ProxyObservation>}""" ;
+                      <https://w3id.org/sqo#hasVariableName> "?OtherClimateVar" .
+
+
+###  http://disk-project.org/resources/question/OtherSiteVariable
+:OtherSiteVariable rdf:type owl:NamedIndividual ,
+                            <https://w3id.org/sqo#QuestionVariable> ;
+                   <https://w3id.org/sqo#hasConstraints> """?OtherSite a <http://linked.earth/ontology#Location> ;
+  <http://linked.earth/ontology#name> ?name ;
+  <http://www.w3.org/2003/01/geo/wgs84_pos#alt> ?alt ;
+  <http://www.w3.org/2003/01/geo/wgs84_pos#lat> ?lat ;
+  <http://www.w3.org/2003/01/geo/wgs84_pos#long> ?long .
+BIND(CONCAT(?name, \" - (\", ?alt, \" \", ?lat, \" \", ?long, \")\") AS ?OtherSiteLabel)""" ;
+                   <https://w3id.org/sqo#hasVariableName> "?OtherSite" .
+
+
+###  http://disk-project.org/resources/question/SiteVariable
+:SiteVariable rdf:type owl:NamedIndividual ,
+                       <https://w3id.org/sqo#QuestionVariable> ;
+              <https://w3id.org/sqo#hasConstraints> """?Site a <http://linked.earth/ontology#Location> ;
+  <http://linked.earth/ontology#name> ?name ;
+  <http://www.w3.org/2003/01/geo/wgs84_pos#alt> ?alt ;
+  <http://www.w3.org/2003/01/geo/wgs84_pos#lat> ?lat ;
+  <http://www.w3.org/2003/01/geo/wgs84_pos#long> ?long .
+BIND(CONCAT(?name, \" - (\", ?alt, \" \", ?lat, \" \", ?long, \")\") AS ?SiteLabel)""" ;
+              <https://w3id.org/sqo#hasVariableName> "?Site" .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

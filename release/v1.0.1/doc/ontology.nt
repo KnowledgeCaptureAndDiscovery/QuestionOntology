@@ -1,0 +1,145 @@
+<http://disk-project.org/resources/question/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://disk-project.org/resources/question/> <http://www.w3.org/2002/07/owl#imports> <https://w3id.org/sqo> .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/sqo#hasConstraints
+<https://w3id.org/sqo#hasConstraints> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://w3id.org/sqo#hasQuestionPattern
+<https://w3id.org/sqo#hasQuestionPattern> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://w3id.org/sqo#hasQuestionTemplate
+<https://w3id.org/sqo#hasQuestionTemplate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://w3id.org/sqo#hasQuestionVariable
+<https://w3id.org/sqo#hasQuestionVariable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://w3id.org/sqo#hasVariableName
+<https://w3id.org/sqo#hasVariableName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/sqo#Question
+<https://w3id.org/sqo#Question> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://w3id.org/sqo#QuestionVariable
+<https://w3id.org/sqo#QuestionVariable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://disk-project.org/resources/question/ClimateVariable
+<http://disk-project.org/resources/question/ClimateVariable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://disk-project.org/resources/question/ClimateVariable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/sqo#QuestionVariable> .
+<http://disk-project.org/resources/question/ClimateVariable> <https://w3id.org/sqo#hasConstraints> "[] ?prop ?ClimateVar.\n?ClimateVar <http://www.w3.org/2000/01/rdf-schema#label> ?ClimateVarLabel\nVALUES ?prop {<http://linked.earth/ontology#proxyObservationType> <http://linked.earth/ontology#inferredVariableType>}" .
+<http://disk-project.org/resources/question/ClimateVariable> <https://w3id.org/sqo#hasVariableName> "?ClimateVar" .
+# 
+# http://disk-project.org/resources/question/DatasetVariable
+<http://disk-project.org/resources/question/DatasetVariable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://disk-project.org/resources/question/DatasetVariable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/sqo#QuestionVariable> .
+<http://disk-project.org/resources/question/DatasetVariable> <https://w3id.org/sqo#hasConstraints> "?Dataset a <http://linked.earth/ontology#Dataset> ." .
+<http://disk-project.org/resources/question/DatasetVariable> <https://w3id.org/sqo#hasVariableName> "?Dataset" .
+# 
+# http://disk-project.org/resources/question/HQ1
+<http://disk-project.org/resources/question/HQ1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://disk-project.org/resources/question/HQ1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/sqo#Question> .
+<http://disk-project.org/resources/question/HQ1> <http://www.w3.org/2000/01/rdf-schema#label> "Are there periodicities present in <Climate Variable> for record at <Dataset>?" .
+<http://disk-project.org/resources/question/HQ1> <https://w3id.org/sqo#hasQuestionPattern> ":goal a hyp:PeriodicitiesExistenceHypothesis\n:goal hyp:hasVariable ?ClimateVar\n?ClimateVar hyp:fromDataset ?Dataset" .
+<http://disk-project.org/resources/question/HQ1> <https://w3id.org/sqo#hasQuestionTemplate> "Are there periodicities present in ?ClimateVar for record at ?Dataset" .
+<http://disk-project.org/resources/question/HQ1> <https://w3id.org/sqo#hasQuestionVariable> <http://disk-project.org/resources/question/ClimateVariable> .
+<http://disk-project.org/resources/question/HQ1> <https://w3id.org/sqo#hasQuestionVariable> <http://disk-project.org/resources/question/DatasetVariable> .
+# 
+# http://disk-project.org/resources/question/HQ2
+<http://disk-project.org/resources/question/HQ2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://disk-project.org/resources/question/HQ2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/sqo#Question> .
+<http://disk-project.org/resources/question/HQ2> <http://www.w3.org/2000/01/rdf-schema#label> "Are there periodicities present in <Climate Variable> for record at <Site>?" .
+<http://disk-project.org/resources/question/HQ2> <https://w3id.org/sqo#hasQuestionPattern> ":goal a hyp:PeriodicitiesExistenceHypothesis\n:goal hyp:hasVariable ?ClimateVar\n?ClimateVar hyp:fromDataset ?Dataset\n?Dataset hyp:fromSite ?Site" .
+<http://disk-project.org/resources/question/HQ2> <https://w3id.org/sqo#hasQuestionTemplate> "Are there periodicities present in ?ClimateVar for record at ?Site" .
+<http://disk-project.org/resources/question/HQ2> <https://w3id.org/sqo#hasQuestionVariable> <http://disk-project.org/resources/question/ClimateVariable> .
+<http://disk-project.org/resources/question/HQ2> <https://w3id.org/sqo#hasQuestionVariable> <http://disk-project.org/resources/question/SiteVariable> .
+# 
+# http://disk-project.org/resources/question/HQ3
+<http://disk-project.org/resources/question/HQ3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://disk-project.org/resources/question/HQ3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/sqo#Question> .
+<http://disk-project.org/resources/question/HQ3> <http://www.w3.org/2000/01/rdf-schema#label> "Are the periodicities continuous or intermittent in <Climate Variable> for record at <Site>?" .
+<http://disk-project.org/resources/question/HQ3> <https://w3id.org/sqo#hasQuestionPattern> ":goal a hyp:PeriodicitiesIntermitenceHypothesis\n:goal hyp:hasVariable ?ClimateVar\n?ClimateVar hyp:fromDataset ?Dataset\n?Dataset hyp:fromSite ?Site" .
+<http://disk-project.org/resources/question/HQ3> <https://w3id.org/sqo#hasQuestionTemplate> "Are the periodicities continuous or intermittent in ?ClimateVar for record at ?Site" .
+<http://disk-project.org/resources/question/HQ3> <https://w3id.org/sqo#hasQuestionVariable> <http://disk-project.org/resources/question/ClimateVariable> .
+<http://disk-project.org/resources/question/HQ3> <https://w3id.org/sqo#hasQuestionVariable> <http://disk-project.org/resources/question/SiteVariable> .
+# 
+# http://disk-project.org/resources/question/HQ4
+<http://disk-project.org/resources/question/HQ4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://disk-project.org/resources/question/HQ4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/sqo#Question> .
+<http://disk-project.org/resources/question/HQ4> <http://www.w3.org/2000/01/rdf-schema#label> "Are the records of <Climate Variable> from <Site> and <Climate Variable> from <Site> coherent in the frequency domain?" .
+<http://disk-project.org/resources/question/HQ4> <https://w3id.org/sqo#hasQuestionPattern> ":goal a hyp:CoherenceHypothesis\n:goal hyp:hasVariable ?ClimateVar\n:goal hyp:hasVariable ?OtherClimateVar\n?ClimateVar hyp:fromDataset ?Dataset1\n?OtherClimateVar hyp:fromDataset ?Dataset2\n?Dataset1 hyp:fromSite ?Site\n?Dataset2 hyp:fromSite ?OtherSite" .
+<http://disk-project.org/resources/question/HQ4> <https://w3id.org/sqo#hasQuestionTemplate> "Are the records of ?ClimateVar from ?Site and ?OtherClimateVar from ?OtherSite coherent in the frequency domain" .
+<http://disk-project.org/resources/question/HQ4> <https://w3id.org/sqo#hasQuestionVariable> <http://disk-project.org/resources/question/ClimateVariable> .
+<http://disk-project.org/resources/question/HQ4> <https://w3id.org/sqo#hasQuestionVariable> <http://disk-project.org/resources/question/OtherClimateVariable> .
+<http://disk-project.org/resources/question/HQ4> <https://w3id.org/sqo#hasQuestionVariable> <http://disk-project.org/resources/question/OtherSiteVariable> .
+<http://disk-project.org/resources/question/HQ4> <https://w3id.org/sqo#hasQuestionVariable> <http://disk-project.org/resources/question/SiteVariable> .
+# 
+# http://disk-project.org/resources/question/HQ5
+<http://disk-project.org/resources/question/HQ5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://disk-project.org/resources/question/HQ5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/sqo#Question> .
+<http://disk-project.org/resources/question/HQ5> <http://www.w3.org/2000/01/rdf-schema#label> "Are the records of <Climate Variable> from <Site> and <Climate Variable> from <Site> significantly correlated?" .
+<http://disk-project.org/resources/question/HQ5> <https://w3id.org/sqo#hasQuestionPattern> ":goal a hyp:CorrelationHypothesis\n:goal hyp:usesDataset :dataset1\n:goal hyp:usesDataset :dataset2\n:dataset1 hyp:hasVariable ?ClimateVar\n:dataset1 hyp:fromSite ?Site\n:dataset2 hyp:hasVariable ?OtherClimateVar\n:dataset2 hyp:fromSite ?OtherSite" .
+<http://disk-project.org/resources/question/HQ5> <https://w3id.org/sqo#hasQuestionTemplate> "Are the records of ?ClimateVar from ?Site and ?OtherClimateVar from ?OtherSite significantly correlated" .
+<http://disk-project.org/resources/question/HQ5> <https://w3id.org/sqo#hasQuestionVariable> <http://disk-project.org/resources/question/ClimateVariable> .
+<http://disk-project.org/resources/question/HQ5> <https://w3id.org/sqo#hasQuestionVariable> <http://disk-project.org/resources/question/OtherClimateVariable> .
+<http://disk-project.org/resources/question/HQ5> <https://w3id.org/sqo#hasQuestionVariable> <http://disk-project.org/resources/question/OtherSiteVariable> .
+<http://disk-project.org/resources/question/HQ5> <https://w3id.org/sqo#hasQuestionVariable> <http://disk-project.org/resources/question/SiteVariable> .
+# 
+# http://disk-project.org/resources/question/HQ6
+<http://disk-project.org/resources/question/HQ6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://disk-project.org/resources/question/HQ6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/sqo#Question> .
+<http://disk-project.org/resources/question/HQ6> <http://www.w3.org/2000/01/rdf-schema#label> "Is <Climate Variable> the same between observational data from record at <site> as in <Model Output>?" .
+<http://disk-project.org/resources/question/HQ6> <https://w3id.org/sqo#hasQuestionPattern> ":goal a hyp:CompareRecordsHypothesis\n:goal hyp:hasRecord ?record1\n:goal hyp:hasRecord ?record2" .
+<http://disk-project.org/resources/question/HQ6> <https://w3id.org/sqo#hasQuestionTemplate> "Is ?ClimateVar the same between observational data from record at ?Site as in ?ModelOutput" .
+<http://disk-project.org/resources/question/HQ6> <https://w3id.org/sqo#hasQuestionVariable> <http://disk-project.org/resources/question/ClimateVariable> .
+<http://disk-project.org/resources/question/HQ6> <https://w3id.org/sqo#hasQuestionVariable> <http://disk-project.org/resources/question/ModelOutputVariable> .
+<http://disk-project.org/resources/question/HQ6> <https://w3id.org/sqo#hasQuestionVariable> <http://disk-project.org/resources/question/SiteVariable> .
+# 
+# http://disk-project.org/resources/question/ModelOutputVariable
+<http://disk-project.org/resources/question/ModelOutputVariable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://disk-project.org/resources/question/ModelOutputVariable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/sqo#QuestionVariable> .
+<http://disk-project.org/resources/question/ModelOutputVariable> <https://w3id.org/sqo#hasVariableName> "?ModelOutput" .
+# 
+# http://disk-project.org/resources/question/OtherClimateVariable
+<http://disk-project.org/resources/question/OtherClimateVariable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://disk-project.org/resources/question/OtherClimateVariable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/sqo#QuestionVariable> .
+<http://disk-project.org/resources/question/OtherClimateVariable> <https://w3id.org/sqo#hasConstraints> "?OtherClimateVar a ?varType ;\n  <http://linked.earth/ontology#hasVariableID> ?OtherClimateVarLabel\nVALUES ?varType {<http://linked.earth/ontology#InferredVariable> <http://linked.earth/ontology#ProxyObservation>}" .
+<http://disk-project.org/resources/question/OtherClimateVariable> <https://w3id.org/sqo#hasVariableName> "?OtherClimateVar" .
+# 
+# http://disk-project.org/resources/question/OtherSiteVariable
+<http://disk-project.org/resources/question/OtherSiteVariable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://disk-project.org/resources/question/OtherSiteVariable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/sqo#QuestionVariable> .
+<http://disk-project.org/resources/question/OtherSiteVariable> <https://w3id.org/sqo#hasConstraints> "?OtherSite a <http://linked.earth/ontology#Location> ;\n  <http://linked.earth/ontology#name> ?name ;\n  <http://www.w3.org/2003/01/geo/wgs84_pos#alt> ?alt ;\n  <http://www.w3.org/2003/01/geo/wgs84_pos#lat> ?lat ;\n  <http://www.w3.org/2003/01/geo/wgs84_pos#long> ?long .\nBIND(CONCAT(?name, \" - (\", ?alt, \" \", ?lat, \" \", ?long, \")\") AS ?OtherSiteLabel)" .
+<http://disk-project.org/resources/question/OtherSiteVariable> <https://w3id.org/sqo#hasVariableName> "?OtherSite" .
+# 
+# http://disk-project.org/resources/question/SiteVariable
+<http://disk-project.org/resources/question/SiteVariable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://disk-project.org/resources/question/SiteVariable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/sqo#QuestionVariable> .
+<http://disk-project.org/resources/question/SiteVariable> <https://w3id.org/sqo#hasConstraints> "?Site a <http://linked.earth/ontology#Location> ;\n  <http://linked.earth/ontology#name> ?name ;\n  <http://www.w3.org/2003/01/geo/wgs84_pos#alt> ?alt ;\n  <http://www.w3.org/2003/01/geo/wgs84_pos#lat> ?lat ;\n  <http://www.w3.org/2003/01/geo/wgs84_pos#long> ?long .\nBIND(CONCAT(?name, \" - (\", ?alt, \" \", ?lat, \" \", ?long, \")\") AS ?SiteLabel)" .
+<http://disk-project.org/resources/question/SiteVariable> <https://w3id.org/sqo#hasVariableName> "?Site" .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
