@@ -29,7 +29,7 @@
 
     <owl:NamedIndividual rdf:about="http://disk-project.org/examples/ClimateVariable1">
         <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
-        <ns0:hasFixedOptions>Temperature, Humidity, Wind</ns0:hasFixedOptions>
+        <ns0:hasFixedOptions>Temperature, Season, Wind</ns0:hasFixedOptions>
         <ns0:hasVariableName>?ClimateVariable1</ns0:hasVariableName>
     </owl:NamedIndividual>
     
@@ -39,7 +39,7 @@
 
     <owl:NamedIndividual rdf:about="http://disk-project.org/examples/ClimateVariable2">
         <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
-        <ns0:hasFixedOptions>Temperature, Humidity, Wind</ns0:hasFixedOptions>
+        <ns0:hasFixedOptions>Temperature, Season, Wind</ns0:hasFixedOptions>
         <ns0:hasVariableName>?ClimateVariable2</ns0:hasVariableName>
     </owl:NamedIndividual>
     
@@ -49,7 +49,7 @@
 
     <owl:NamedIndividual rdf:about="http://disk-project.org/examples/ClimateVariable3">
         <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
-        <ns0:hasFixedOptions>Temperature, Humidity, Wind</ns0:hasFixedOptions>
+        <ns0:hasFixedOptions>Temperature, Season, Wind</ns0:hasFixedOptions>
         <ns0:hasVariableName>?ClimateVariable3</ns0:hasVariableName>
     </owl:NamedIndividual>
     
