@@ -33,12 +33,12 @@
 :goal hyp:associatedWith ?WeatherSensor2
 :goal hyp:associatedWith ?WeatherSensor3
 :goal hyp:associatedWith ?Region</ns0:hasQuestionPattern>
-        <ns0:hasQuestionTemplate>Is the number of rented bikes associated with ?WeatherSensor1, ?WeatherSensor2, ?WeatherSensor3 and ?Region</ns0:hasQuestionTemplate>
+        <ns0:hasQuestionTemplate>Is the number of rented bikes associated with ?WeatherSensor1, ?WeatherSensor2, ?WeatherSensor3 in ?Region</ns0:hasQuestionTemplate>
         <ns0:hasQuestionVariable rdf:resource="http://disk-project.org/examples/WeatherSensor1"/>
         <ns0:hasQuestionVariable rdf:resource="http://disk-project.org/examples/WeatherSensor2"/>
         <ns0:hasQuestionVariable rdf:resource="http://disk-project.org/examples/WeatherSensor3"/>
         <ns0:hasQuestionVariable rdf:resource="http://disk-project.org/examples/Region"/>
-        <rdfs:label>Is the number of rented bikes associated with ?WeatherSensor1, WeatherSensor2, ?WeatherSensor3 and ?Region</rdfs:label>
+        <rdfs:label>Is the number of rented bikes associated with ?WeatherSensor1, WeatherSensor2, ?WeatherSensor3 in ?Region</rdfs:label>
     </owl:NamedIndividual>
     
 
