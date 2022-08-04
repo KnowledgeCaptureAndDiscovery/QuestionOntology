@@ -35,24 +35,20 @@
 :goal hyp:associatedWith ?WeatherSensor4
 :goal hyp:associatedWith ?WeatherSensor5
 :goal hyp:associatedWith ?WeatherSensor6
-:goal hyp:associatedWith ?WeatherSensor7
-:goal hyp:associatedWith ?WeatherSensor8
-:goal hyp:associatedWith ?WeatherSensor9
-:goal hyp:associatedWith ?WeatherSensor10
 :goal hyp:associatedWith ?Region</ns0:hasQuestionPattern>
-        <ns0:hasQuestionTemplate>Is the number of rented bikes associated with ?WeatherSensor1, ?WeatherSensor2, ?WeatherSensor3, ?WeatherSensor4, ?WeatherSensor5, ?WeatherSensor6, ?WeatherSensor7, ?WeatherSensor8, ?WeatherSensor9, ?WeatherSensor10 in ?Region</ns0:hasQuestionTemplate>
+        <ns0:hasQuestionTemplate>
+            Is the number of rented bikes associated with ?WeatherSensor1, WeatherSensor2, ?WeatherSensor3, ?WeatherSensor4, ?WeatherSensor5, ?WeatherSensor6 in ?Region 
+        </ns0:hasQuestionTemplate>
         <ns0:hasQuestionVariable rdf:resource="http://disk-project.org/examples/WeatherSensor1"/>
         <ns0:hasQuestionVariable rdf:resource="http://disk-project.org/examples/WeatherSensor2"/>
         <ns0:hasQuestionVariable rdf:resource="http://disk-project.org/examples/WeatherSensor3"/>
         <ns0:hasQuestionVariable rdf:resource="http://disk-project.org/examples/WeatherSensor4"/>
         <ns0:hasQuestionVariable rdf:resource="http://disk-project.org/examples/WeatherSensor5"/>
         <ns0:hasQuestionVariable rdf:resource="http://disk-project.org/examples/WeatherSensor6"/>
-        <ns0:hasQuestionVariable rdf:resource="http://disk-project.org/examples/WeatherSensor7"/>
-        <ns0:hasQuestionVariable rdf:resource="http://disk-project.org/examples/WeatherSensor8"/>
-        <ns0:hasQuestionVariable rdf:resource="http://disk-project.org/examples/WeatherSensor9"/>
-        <ns0:hasQuestionVariable rdf:resource="http://disk-project.org/examples/WeatherSensor10"/>
         <ns0:hasQuestionVariable rdf:resource="http://disk-project.org/examples/Region"/>
-        <rdfs:label>Is the number of rented bikes associated with ?WeatherSensor1, WeatherSensor2, ?WeatherSensor3, ?WeatherSensor4, ?WeatherSensor5, ?WeatherSensor6, ?WeatherSensor7, ?WeatherSensor8, ?WeatherSensor9, ?WeatherSensor10 in ?Region </rdfs:label>
+        <rdfs:label>
+            Is the number of rented bikes associated with ?WeatherSensor1, WeatherSensor2, ?WeatherSensor3, ?WeatherSensor4, ?WeatherSensor5, ?WeatherSensor6 in ?Region 
+        </rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -72,7 +68,9 @@
     <owl:NamedIndividual rdf:about="http://disk-project.org/examples/WeatherSensor1">
         <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <ns0:hasVariableName>?WeatherSensor1</ns0:hasVariableName>
-        <ns0:hasFixedOptions>Temperature, Ambient Temperature, Humidity, Wind Speed, Season, Month, Holiday, Weekday, Workday, None</ns0:hasFixedOptions>
+        <ns0:hasFixedOptions>
+            Temperature, Ambient Temperature, Humidity, Wind Speed, Season, Month, Holiday, Weekday, Workday, Weather Situation
+        </ns0:hasFixedOptions>
     </owl:NamedIndividual>
     
 
@@ -82,7 +80,7 @@
     <owl:NamedIndividual rdf:about="http://disk-project.org/examples/WeatherSensor2">
         <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <ns0:hasVariableName>?WeatherSensor2</ns0:hasVariableName>
-        <ns0:hasFixedOptions>Temperature, Ambient Temperature, Humidity, Wind Speed, Season, Month, Holiday, Weekday, Workday, None</ns0:hasFixedOptions>
+        <ns0:hasFixedOptions>Temperature, Ambient Temperature, Humidity, Wind Speed, Season, Month, Holiday, Weekday, Workday, Weather Situation</ns0:hasFixedOptions>
     </owl:NamedIndividual>
     
 
@@ -92,7 +90,7 @@
     <owl:NamedIndividual rdf:about="http://disk-project.org/examples/WeatherSensor3">
         <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <ns0:hasVariableName>?WeatherSensor3</ns0:hasVariableName>
-        <ns0:hasFixedOptions>Temperature, Ambient Temperature, Humidity, Wind Speed, Season, Month, Holiday, Weekday, Workday, None</ns0:hasFixedOptions>
+        <ns0:hasFixedOptions>Temperature, Ambient Temperature, Humidity, Wind Speed, Season, Month, Holiday, Weekday, Workday, Weather Situation</ns0:hasFixedOptions>
     </owl:NamedIndividual>
 
 
@@ -101,7 +99,7 @@
     <owl:NamedIndividual rdf:about="http://disk-project.org/examples/WeatherSensor4">
         <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <ns0:hasVariableName>?WeatherSensor4</ns0:hasVariableName>
-        <ns0:hasFixedOptions>Temperature, Ambient Temperature, Humidity, Wind Speed, Season, Month, Holiday, Weekday, Workday, None</ns0:hasFixedOptions>
+        <ns0:hasFixedOptions>Temperature, Ambient Temperature, Humidity, Wind Speed, Season, Month, Holiday, Weekday, Workday, Weather Situation</ns0:hasFixedOptions>
     </owl:NamedIndividual>
     
 
@@ -111,7 +109,7 @@
     <owl:NamedIndividual rdf:about="http://disk-project.org/examples/WeatherSensor5">
         <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <ns0:hasVariableName>?WeatherSensor5</ns0:hasVariableName>
-        <ns0:hasFixedOptions>Temperature, Ambient Temperature, Humidity, Wind Speed, Season, Month, Holiday, Weekday, Workday, None</ns0:hasFixedOptions>
+        <ns0:hasFixedOptions>Temperature, Ambient Temperature, Humidity, Wind Speed, Season, Month, Holiday, Weekday, Workday, Weather Situation</ns0:hasFixedOptions>
     </owl:NamedIndividual>
     
     <!-- http://disk-project.org/examples/WeatherSensor6 -->
@@ -119,39 +117,7 @@
     <owl:NamedIndividual rdf:about="http://disk-project.org/examples/WeatherSensor6">
         <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <ns0:hasVariableName>?WeatherSensor6</ns0:hasVariableName>
-        <ns0:hasFixedOptions>Temperature, Ambient Temperature, Humidity, Wind Speed, Season, Month, Holiday, Weekday, Workday, None</ns0:hasFixedOptions>
-    </owl:NamedIndividual>
-    
-    <!-- http://disk-project.org/examples/WeatherSensor7 -->
-
-    <owl:NamedIndividual rdf:about="http://disk-project.org/examples/WeatherSensor7">
-        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
-        <ns0:hasVariableName>?WeatherSensor7</ns0:hasVariableName>
-        <ns0:hasFixedOptions>Temperature, Ambient Temperature, Humidity, Wind Speed, Season, Month, Holiday, Weekday, Workday, None</ns0:hasFixedOptions>
-    </owl:NamedIndividual>
-    
-    <!-- http://disk-project.org/examples/WeatherSensor8 -->
-
-    <owl:NamedIndividual rdf:about="http://disk-project.org/examples/WeatherSensor8">
-        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
-        <ns0:hasFixedOptions>Temperature, Ambient Temperature, Humidity, Wind Speed, Season, Month, Holiday, Weekday, Workday, None</ns0:hasFixedOptions>
-        <ns0:hasVariableName>?WeatherSensor8</ns0:hasVariableName>
-    </owl:NamedIndividual>
-    
-    <!-- http://disk-project.org/examples/WeatherSensor9 -->
-
-    <owl:NamedIndividual rdf:about="http://disk-project.org/examples/WeatherSensor9">
-        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
-        <ns0:hasFixedOptions>Temperature, Ambient Temperature, Humidity, Wind Speed, Season, Month, Holiday, Weekday, Workday, None</ns0:hasFixedOptions>
-        <ns0:hasVariableName>?WeatherSensor9</ns0:hasVariableName>
-    </owl:NamedIndividual>
-    
-    <!-- http://disk-project.org/examples/WeatherSensor10 -->
-
-    <owl:NamedIndividual rdf:about="http://disk-project.org/examples/WeatherSensor10">
-        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
-        <ns0:hasFixedOptions>Temperature, Ambient Temperature, Humidity, Wind Speed, Season, Month, Holiday, Weekday, Workday, None</ns0:hasFixedOptions>
-        <ns0:hasVariableName>?WeatherSensor10</ns0:hasVariableName>
+        <ns0:hasFixedOptions>Temperature, Ambient Temperature, Humidity, Wind Speed, Season, Month, Holiday, Weekday, Workday, Weather Situation</ns0:hasFixedOptions>
     </owl:NamedIndividual>
     
 </rdf:RDF>
