@@ -36,7 +36,7 @@
 :goal hyp:associatedWith ?WeatherSensor4
 :goal hyp:associatedWith ?WeatherSensor5
 :goal hyp:associatedWith ?WeatherSensor6
-:goal :inRegion ?Region
+:goal hyp:associatedWith ?Region
 </ns0:hasQuestionPattern>
         <ns0:hasQuestionTemplate>
             Is the number of rented bikes associated with ?WeatherSensor1, ?WeatherSensor2, ?WeatherSensor3, ?WeatherSensor4, ?WeatherSensor5, ?WeatherSensor6 in ?Region 
