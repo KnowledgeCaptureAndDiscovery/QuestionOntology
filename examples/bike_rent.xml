@@ -39,7 +39,7 @@
 :goal :inRegion ?Region
 </ns0:hasQuestionPattern>
         <ns0:hasQuestionTemplate>
-            Is the number of rented bikes associated with ?WeatherSensor1, WeatherSensor2, ?WeatherSensor3, ?WeatherSensor4, ?WeatherSensor5, ?WeatherSensor6 in ?Region 
+            Is the number of rented bikes associated with ?WeatherSensor1, ?WeatherSensor2, ?WeatherSensor3, ?WeatherSensor4, ?WeatherSensor5, ?WeatherSensor6 in ?Region 
         </ns0:hasQuestionTemplate>
         <ns0:hasQuestionVariable rdf:resource="http://disk-project.org/examples/WeatherSensor1"/>
         <ns0:hasQuestionVariable rdf:resource="http://disk-project.org/examples/WeatherSensor2"/>
@@ -49,7 +49,7 @@
         <ns0:hasQuestionVariable rdf:resource="http://disk-project.org/examples/WeatherSensor6"/>
         <ns0:hasQuestionVariable rdf:resource="http://disk-project.org/examples/Region"/>
         <rdfs:label>
-            Is the number of rented bikes associated with ?WeatherSensor1, WeatherSensor2, ?WeatherSensor3, ?WeatherSensor4, ?WeatherSensor5, ?WeatherSensor6 in ?Region 
+            Is the number of rented bikes associated with ?WeatherSensor1, ?WeatherSensor2, ?WeatherSensor3, ?WeatherSensor4, ?WeatherSensor5, ?WeatherSensor6 in ?Region 
         </rdfs:label>
     </owl:NamedIndividual>
     
