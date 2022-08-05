@@ -30,13 +30,13 @@
     <owl:NamedIndividual rdf:about="http://disk-project.org/examples/HQ3">
         <rdf:type rdf:resource="https://w3id.org/sqo#Question"/>
         <ns0:hasQuestionPattern>
-            :goal hyp:associatedWith ?WeatherSensor1
-:goal hyp:associatedWith ?WeatherSensor2
-:goal hyp:associatedWith ?WeatherSensor3
-:goal hyp:associatedWith ?WeatherSensor4
-:goal hyp:associatedWith ?WeatherSensor5
-:goal hyp:associatedWith ?WeatherSensor6
-:goal hyp:associatedWith ?Region
+            :goal hyp:associatedWith1 ?WeatherSensor1
+:goal hyp:associatedWith2 ?WeatherSensor2
+:goal hyp:associatedWith3 ?WeatherSensor3
+:goal hyp:associatedWith4 ?WeatherSensor4
+:goal hyp:associatedWith5 ?WeatherSensor5
+:goal hyp:associatedWith6 ?WeatherSensor6
+:goal hyp:associatedWithRegion ?Region
 </ns0:hasQuestionPattern>
         <ns0:hasQuestionTemplate>
             Is the number of rented bikes associated with ?WeatherSensor1, ?WeatherSensor2, ?WeatherSensor3, ?WeatherSensor4, ?WeatherSensor5, ?WeatherSensor6 in ?Region 
