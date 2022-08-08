@@ -70,7 +70,7 @@
     <owl:NamedIndividual rdf:about="http://disk-project.org/examples/WeatherSensor1">
         <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <ns0:hasVariableName>?WeatherSensor1</ns0:hasVariableName>
-        <ns0:hasFixedOptions>Temperature, Ambient Temperature, Humidity, Wind Speed, Season, Month, Workday, Weather Situation</ns0:hasFixedOptions>
+        <ns0:hasFixedOptions>Temperature, Ambient Temperature, Humidity, Wind Speed, Season, Month, Workday, Weather Situation, None</ns0:hasFixedOptions>
     </owl:NamedIndividual>
     
 
@@ -80,7 +80,7 @@
     <owl:NamedIndividual rdf:about="http://disk-project.org/examples/WeatherSensor2">
         <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <ns0:hasVariableName>?WeatherSensor2</ns0:hasVariableName>
-        <ns0:hasFixedOptions>Temperature, Ambient Temperature, Humidity, Wind Speed, Season, Month, Workday, Weather Situation</ns0:hasFixedOptions>
+        <ns0:hasFixedOptions>Temperature, Ambient Temperature, Humidity, Wind Speed, Season, Month, Workday, Weather Situation, None</ns0:hasFixedOptions>
     </owl:NamedIndividual>
     
 
@@ -90,7 +90,7 @@
     <owl:NamedIndividual rdf:about="http://disk-project.org/examples/WeatherSensor3">
         <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <ns0:hasVariableName>?WeatherSensor3</ns0:hasVariableName>
-        <ns0:hasFixedOptions>Temperature, Ambient Temperature, Humidity, Wind Speed, Season, Month, Workday, Weather Situation</ns0:hasFixedOptions>
+        <ns0:hasFixedOptions>Temperature, Ambient Temperature, Humidity, Wind Speed, Season, Month, Workday, Weather Situation, None</ns0:hasFixedOptions>
     </owl:NamedIndividual>
 
 
@@ -99,7 +99,7 @@
     <owl:NamedIndividual rdf:about="http://disk-project.org/examples/WeatherSensor4">
         <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <ns0:hasVariableName>?WeatherSensor4</ns0:hasVariableName>
-        <ns0:hasFixedOptions>Temperature, Ambient Temperature, Humidity, Wind Speed, Season, Month, Workday, Weather Situation</ns0:hasFixedOptions>
+        <ns0:hasFixedOptions>Temperature, Ambient Temperature, Humidity, Wind Speed, Season, Month, Workday, Weather Situation, None</ns0:hasFixedOptions>
     </owl:NamedIndividual>
     
 
@@ -109,7 +109,7 @@
     <owl:NamedIndividual rdf:about="http://disk-project.org/examples/WeatherSensor5">
         <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <ns0:hasVariableName>?WeatherSensor5</ns0:hasVariableName>
-        <ns0:hasFixedOptions>Temperature, Ambient Temperature, Humidity, Wind Speed, Season, Month, Workday, Weather Situation</ns0:hasFixedOptions>
+        <ns0:hasFixedOptions>Temperature, Ambient Temperature, Humidity, Wind Speed, Season, Month, Workday, Weather Situation, None</ns0:hasFixedOptions>
     </owl:NamedIndividual>
     
     <!-- http://disk-project.org/examples/WeatherSensor6 -->
@@ -117,7 +117,7 @@
     <owl:NamedIndividual rdf:about="http://disk-project.org/examples/WeatherSensor6">
         <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <ns0:hasVariableName>?WeatherSensor6</ns0:hasVariableName>
-        <ns0:hasFixedOptions>Temperature, Ambient Temperature, Humidity, Wind Speed, Season, Month, Workday, Weather Situation</ns0:hasFixedOptions>
+        <ns0:hasFixedOptions>Temperature, Ambient Temperature, Humidity, Wind Speed, Season, Month, Workday, Weather Situation, None</ns0:hasFixedOptions>
     </owl:NamedIndividual>
     
 </rdf:RDF>
