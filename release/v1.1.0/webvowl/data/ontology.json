@@ -1,0 +1,325 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "undefined" ],
+    "baseIris" : [ "http://www.w3.org/2000/01/rdf-schema", "http://www.w3.org/2001/XMLSchema", "https://w3id.org/sqo" ],
+    "title" : {
+      "undefined" : "The Scientific Questions Ontology"
+    },
+    "iri" : "https://w3id.org/sqo",
+    "version" : "v1.1.0",
+    "author" : [ "Hernan Vargas", "Yolanda Gil", "Daniel Garijo" ],
+    "description" : {
+      "undefined" : "An ontology to define semantic templates for scientific questions. Defines questions, variables, options and constraints."
+    },
+    "other" : {
+      "license" : [ {
+        "identifier" : "license",
+        "language" : "undefined",
+        "value" : "https://creativecommons.org/licenses/by/2.0/",
+        "type" : "label"
+      } ],
+      "creator" : [ {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "Daniel Garijo",
+        "type" : "label"
+      }, {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "Hernan Vargas",
+        "type" : "label"
+      }, {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "Yolanda Gil",
+        "type" : "label"
+      } ],
+      "versionInfo" : [ {
+        "identifier" : "versionInfo",
+        "language" : "undefined",
+        "value" : "v1.1.0",
+        "type" : "label"
+      } ],
+      "title" : [ {
+        "identifier" : "title",
+        "language" : "undefined",
+        "value" : "The Scientific Questions Ontology",
+        "type" : "label"
+      } ]
+    }
+  },
+  "namespace" : [ ],
+  "class" : [ {
+    "id" : "5",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "9",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "4",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "2",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "10",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "7",
+    "type" : "owl:Class"
+  }, {
+    "id" : "8",
+    "type" : "owl:Class"
+  }, {
+    "id" : "14",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "15",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "1",
+    "type" : "owl:Class"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "5",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "9",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "4",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "2",
+    "label" : {
+      "IRI-based" : "nonNegativeInteger"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "10",
+    "label" : {
+      "IRI-based" : "nonNegativeInteger"
+    }
+  }, {
+    "iri" : "https://w3id.org/sqo#Question",
+    "baseIri" : "https://w3id.org/sqo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Question",
+      "undefined" : "Question"
+    },
+    "comment" : {
+      "undefined" : "Class that represents a scientific question. Is linked to the template, the pattern and all the variables this question uses."
+    },
+    "id" : "7"
+  }, {
+    "iri" : "https://w3id.org/sqo#QuestionCategory",
+    "baseIri" : "https://w3id.org/sqo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "QuestionCategory",
+      "undefined" : "Question Category"
+    },
+    "comment" : {
+      "undefined" : "Class used to group together similar Questions"
+    },
+    "id" : "8"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "14",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "15",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "https://w3id.org/sqo#QuestionVariable",
+    "baseIri" : "https://w3id.org/sqo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "QuestionVariable",
+      "undefined" : "Question Variable"
+    },
+    "comment" : {
+      "undefined" : "Class that represents a variable used on a Question. This variable name must be present on the template and pattern of the question that uses it. Can have contraints in the form of a query (hasConstraint property) or a list of possible options (hasFixedOptions property)."
+    },
+    "id" : "1"
+  } ],
+  "property" : [ {
+    "id" : "0",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "3",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "6",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "11",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "12",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "13",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "16",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "17",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "18",
+    "type" : "owl:datatypeProperty"
+  } ],
+  "propertyAttribute" : [ {
+    "iri" : "https://w3id.org/sqo#maxCardinality",
+    "baseIri" : "https://w3id.org/sqo",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "maxCardinality",
+      "undefined" : "has maximum cardinality"
+    },
+    "domain" : "1",
+    "comment" : {
+      "undefined" : "Denotes maximum cardinality for this question variable values.\nAs default the cardinality is 1."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "0"
+  }, {
+    "iri" : "https://w3id.org/sqo#hasVariableName",
+    "baseIri" : "https://w3id.org/sqo",
+    "range" : "4",
+    "label" : {
+      "IRI-based" : "hasVariableName",
+      "undefined" : "Has variable name"
+    },
+    "domain" : "1",
+    "comment" : {
+      "undefined" : "SPARQL name of this variable. Used on the question pattern and template"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "3"
+  }, {
+    "iri" : "https://w3id.org/sqo#hasQuestionCategory",
+    "baseIri" : "https://w3id.org/sqo",
+    "range" : "8",
+    "label" : {
+      "IRI-based" : "hasQuestionCategory",
+      "undefined" : "Has question category"
+    },
+    "domain" : "7",
+    "comment" : {
+      "undefined" : "Link a Question with the category it belong"
+    },
+    "attributes" : [ "object" ],
+    "id" : "6"
+  }, {
+    "iri" : "https://w3id.org/sqo#hasQuestionVariable",
+    "baseIri" : "https://w3id.org/sqo",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "hasQuestionVariable",
+      "undefined" : "Has question variable"
+    },
+    "domain" : "7",
+    "comment" : {
+      "undefined" : "Link a Question with all of the Question Variables that used on the question template and pattern"
+    },
+    "attributes" : [ "object" ],
+    "id" : "11"
+  }, {
+    "iri" : "https://w3id.org/sqo#hasQuestionPattern",
+    "baseIri" : "https://w3id.org/sqo",
+    "range" : "5",
+    "label" : {
+      "IRI-based" : "hasQuestionPattern",
+      "undefined" : "Has question pattern"
+    },
+    "domain" : "7",
+    "comment" : {
+      "undefined" : "SPARQL-like pattern that defines the semantic representation that this question will have. All variables used on the question template will be replaced for the user selected values."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "12"
+  }, {
+    "iri" : "https://w3id.org/sqo#minCardinality",
+    "baseIri" : "https://w3id.org/sqo",
+    "range" : "10",
+    "label" : {
+      "IRI-based" : "minCardinality",
+      "undefined" : "has minimum cardinality"
+    },
+    "domain" : "1",
+    "comment" : {
+      "undefined" : "Denotes minimum cardinality for this question variable values.\nAs default the cardinality is 1."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "13"
+  }, {
+    "iri" : "https://w3id.org/sqo#hasConstraints",
+    "baseIri" : "https://w3id.org/sqo",
+    "range" : "14",
+    "label" : {
+      "IRI-based" : "hasConstraints",
+      "undefined" : "Has constraints"
+    },
+    "domain" : "1",
+    "comment" : {
+      "undefined" : "An SPARQL query that will determine the options for this variable"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "16"
+  }, {
+    "iri" : "https://w3id.org/sqo#hasFixedOptions",
+    "baseIri" : "https://w3id.org/sqo",
+    "range" : "15",
+    "label" : {
+      "IRI-based" : "hasFixedOptions",
+      "undefined" : "Has fixed options"
+    },
+    "domain" : "1",
+    "comment" : {
+      "undefined" : "List of possible options for this variable. Alternative to \"has contraints\" property"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "17"
+  }, {
+    "iri" : "https://w3id.org/sqo#hasQuestionTemplate",
+    "baseIri" : "https://w3id.org/sqo",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "hasQuestionTemplate",
+      "undefined" : "Has question template"
+    },
+    "domain" : "7",
+    "comment" : {
+      "undefined" : "Text representation of the question that will create a form that the user must fill. All \"question variable\" names used on this template will be replaced for inputs with constraints."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "18"
+  } ]
+}

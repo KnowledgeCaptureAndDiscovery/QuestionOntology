@@ -1,0 +1,142 @@
+@prefix : <https://w3id.org/sqo#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://w3id.org/sqo> .
+
+<https://w3id.org/sqo> rdf:type owl:Ontology ;
+                        <http://purl.org/dc/terms/creator> "Daniel Garijo" ,
+                                                           "Hernan Vargas" ,
+                                                           "Yolanda Gil" ;
+                        <http://purl.org/dc/terms/description> "An ontology to define semantic templates for scientific questions. Defines questions, variables, options and constraints." ;
+                        <http://purl.org/dc/terms/license> "https://creativecommons.org/licenses/by/2.0/" ;
+                        <http://purl.org/dc/terms/title> "The Scientific Questions Ontology" ;
+                        owl:versionInfo "v1.1.0" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://w3id.org/sqo#hasQuestionCategory
+:hasQuestionCategory rdf:type owl:ObjectProperty ;
+                     rdfs:domain :Question ;
+                     rdfs:range :QuestionCategory ;
+                     rdfs:comment "Link a Question with the category it belong" ;
+                     rdfs:label "Has question category" .
+
+
+###  https://w3id.org/sqo#hasQuestionVariable
+:hasQuestionVariable rdf:type owl:ObjectProperty ;
+                     rdfs:domain :Question ;
+                     rdfs:range :QuestionVariable ;
+                     rdfs:comment "Link a Question with all of the Question Variables that used on the question template and pattern" ;
+                     rdfs:label "Has question variable" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://w3id.org/sqo#hasConstraints
+:hasConstraints rdf:type owl:DatatypeProperty ;
+                rdfs:domain :QuestionVariable ;
+                rdfs:range xsd:string ;
+                rdfs:comment "An SPARQL query that will determine the options for this variable" ;
+                rdfs:label "Has constraints" .
+
+
+###  https://w3id.org/sqo#hasFixedOptions
+:hasFixedOptions rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :QuestionVariable ;
+                 rdfs:range xsd:string ;
+                 rdfs:comment "List of possible options for this variable. Alternative to \"has contraints\" property" ;
+                 rdfs:label "Has fixed options" .
+
+
+###  https://w3id.org/sqo#hasQuestionPattern
+:hasQuestionPattern rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :Question ;
+                    rdfs:range xsd:string ;
+                    rdfs:comment "SPARQL-like pattern that defines the semantic representation that this question will have. All variables used on the question template will be replaced for the user selected values." ;
+                    rdfs:label "Has question pattern" .
+
+
+###  https://w3id.org/sqo#hasQuestionTemplate
+:hasQuestionTemplate rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :Question ;
+                     rdfs:range xsd:string ;
+                     rdfs:comment "Text representation of the question that will create a form that the user must fill. All \"question variable\" names used on this template will be replaced for inputs with constraints." ;
+                     rdfs:label "Has question template" .
+
+
+###  https://w3id.org/sqo#hasVariableName
+:hasVariableName rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :QuestionVariable ;
+                 rdfs:range xsd:string ;
+                 rdfs:comment "SPARQL name of this variable. Used on the question pattern and template" ;
+                 rdfs:label "Has variable name" .
+
+
+###  https://w3id.org/sqo#maxCardinality
+:maxCardinality rdf:type owl:DatatypeProperty ;
+                rdfs:domain :QuestionVariable ;
+                rdfs:range xsd:nonNegativeInteger ;
+                rdfs:comment """Denotes maximum cardinality for this question variable values.
+As default the cardinality is 1.""" ;
+                rdfs:label "has maximum cardinality" .
+
+
+###  https://w3id.org/sqo#minCardinality
+:minCardinality rdf:type owl:DatatypeProperty ;
+                rdfs:domain :QuestionVariable ;
+                rdfs:range xsd:nonNegativeInteger ;
+                rdfs:comment """Denotes minimum cardinality for this question variable values.
+As default the cardinality is 1.""" ;
+                rdfs:label "has minimum cardinality" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://w3id.org/sqo#Question
+:Question rdf:type owl:Class ;
+          rdfs:comment "Class that represents a scientific question. Is linked to the template, the pattern and all the variables this question uses." ;
+          rdfs:label "Question" .
+
+
+###  https://w3id.org/sqo#QuestionCategory
+:QuestionCategory rdf:type owl:Class ;
+                  rdfs:comment "Class used to group together similar Questions" ;
+                  rdfs:label "Question Category" .
+
+
+###  https://w3id.org/sqo#QuestionVariable
+:QuestionVariable rdf:type owl:Class ;
+                  rdfs:comment "Class that represents a variable used on a Question. This variable name must be present on the template and pattern of the question that uses it. Can have contraints in the form of a query (hasConstraint property) or a list of possible options (hasFixedOptions property)." ;
+                  rdfs:label "Question Variable" .
+
+
+###  Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/

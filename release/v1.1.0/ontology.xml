@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://www.example.com/questionTemplating#"
-     xml:base="http://www.example.com/questionTemplating"
+<rdf:RDF xmlns="https://w3id.org/sqo#"
+     xml:base="https://w3id.org/sqo"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
@@ -14,7 +14,7 @@
         <terms:description>An ontology to define semantic templates for scientific questions. Defines questions, variables, options and constraints.</terms:description>
         <terms:license>https://creativecommons.org/licenses/by/2.0/</terms:license>
         <terms:title>The Scientific Questions Ontology</terms:title>
-        <owl:versionInfo>v1.0.0</owl:versionInfo>
+        <owl:versionInfo>v1.1.0</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -27,10 +27,12 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+
     
 
 
     <!-- http://purl.org/dc/terms/creator -->
+
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
     
@@ -38,17 +40,20 @@
 
     <!-- http://purl.org/dc/terms/description -->
 
+
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
     
 
 
     <!-- http://purl.org/dc/terms/license -->
 
+
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
     
 
 
     <!-- http://purl.org/dc/terms/title -->
+
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
     
@@ -62,10 +67,12 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+
     
 
 
     <!-- https://w3id.org/sqo#hasQuestionCategory -->
+
 
     <owl:ObjectProperty rdf:about="https://w3id.org/sqo#hasQuestionCategory">
         <rdfs:domain rdf:resource="https://w3id.org/sqo#Question"/>
@@ -77,6 +84,7 @@
 
 
     <!-- https://w3id.org/sqo#hasQuestionVariable -->
+
 
     <owl:ObjectProperty rdf:about="https://w3id.org/sqo#hasQuestionVariable">
         <rdfs:domain rdf:resource="https://w3id.org/sqo#Question"/>
@@ -95,10 +103,12 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+
     
 
 
     <!-- https://w3id.org/sqo#hasConstraints -->
+
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/sqo#hasConstraints">
         <rdfs:domain rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
@@ -111,6 +121,7 @@
 
     <!-- https://w3id.org/sqo#hasFixedOptions -->
 
+
     <owl:DatatypeProperty rdf:about="https://w3id.org/sqo#hasFixedOptions">
         <rdfs:domain rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -121,6 +132,7 @@
 
 
     <!-- https://w3id.org/sqo#hasQuestionPattern -->
+
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/sqo#hasQuestionPattern">
         <rdfs:domain rdf:resource="https://w3id.org/sqo#Question"/>
@@ -133,6 +145,7 @@
 
     <!-- https://w3id.org/sqo#hasQuestionTemplate -->
 
+
     <owl:DatatypeProperty rdf:about="https://w3id.org/sqo#hasQuestionTemplate">
         <rdfs:domain rdf:resource="https://w3id.org/sqo#Question"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -143,6 +156,7 @@
 
 
     <!-- https://w3id.org/sqo#hasVariableName -->
+
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/sqo#hasVariableName">
         <rdfs:domain rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
@@ -155,6 +169,7 @@
 
     <!-- https://w3id.org/sqo#maxCardinality -->
 
+
     <owl:DatatypeProperty rdf:about="https://w3id.org/sqo#maxCardinality">
         <rdfs:domain rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
@@ -166,6 +181,7 @@ As default the cardinality is 1.</rdfs:comment>
 
 
     <!-- https://w3id.org/sqo#minCardinality -->
+
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/sqo#minCardinality">
         <rdfs:domain rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
@@ -185,10 +201,12 @@ As default the cardinality is 1.</rdfs:comment>
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+
     
 
 
     <!-- https://w3id.org/sqo#Question -->
+
 
     <owl:Class rdf:about="https://w3id.org/sqo#Question">
         <rdfs:comment>Class that represents a scientific question. Is linked to the template, the pattern and all the variables this question uses.</rdfs:comment>
@@ -199,6 +217,7 @@ As default the cardinality is 1.</rdfs:comment>
 
     <!-- https://w3id.org/sqo#QuestionCategory -->
 
+
     <owl:Class rdf:about="https://w3id.org/sqo#QuestionCategory">
         <rdfs:comment>Class used to group together similar Questions</rdfs:comment>
         <rdfs:label>Question Category</rdfs:label>
@@ -208,6 +227,7 @@ As default the cardinality is 1.</rdfs:comment>
 
     <!-- https://w3id.org/sqo#QuestionVariable -->
 
+
     <owl:Class rdf:about="https://w3id.org/sqo#QuestionVariable">
         <rdfs:comment>Class that represents a variable used on a Question. This variable name must be present on the template and pattern of the question that uses it. Can have contraints in the form of a query (hasConstraint property) or a list of possible options (hasFixedOptions property).</rdfs:comment>
         <rdfs:label>Question Variable</rdfs:label>
@@ -216,5 +236,6 @@ As default the cardinality is 1.</rdfs:comment>
 
 
 
-<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/ -->
+
 
