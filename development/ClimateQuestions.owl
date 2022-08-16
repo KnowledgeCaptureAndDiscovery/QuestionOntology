@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://disk-project.org/resources/climate/"
+     xml:base="http://disk-project.org/resources/climate/"
+     xmlns:disk="http://disk-project.org/ontology/disk#"
+     xmlns:questions="http://disk-project.org/resources/climate/question#"
+     xmlns:variables="http://disk-project.org/resources/climate/variable#"
+     xmlns:sqo="https://w3id.org/sqo#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:terms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="http://disk-project.org/resources/climate/">
+        <owl:imports rdf:resource="https://w3id.org/sqo"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/variable/ClimateVariable">
+        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
+        <sqo:hasConstraints>[] ?prop ?ClimateVarariable.
+?ClimateVar &lt;http://www.w3.org/2000/01/rdf-schema#label&gt; ?ClimateVariableLabel
+VALUES ?prop {&lt;http://linked.earth/ontology#proxyObservationType&gt; &lt;http://linked.earth/ontology#inferredVariableType&gt;}</sqo:hasConstraints>
+        <sqo:hasVariableName>?ClimateVariable</sqo:hasVariableName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://disk-project.org/resources/question/Dataset -->
+
+    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/variable/Dataset">
+        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
+        <sqo:hasConstraints>?Dataset a &lt;http://linked.earth/ontology#Dataset&gt; .</sqo:hasConstraints>
+        <sqo:hasVariableName>?Dataset</sqo:hasVariableName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://disk-project.org/resources/question/HQ1 -->
+
+    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/question/HQ1">
+        <rdf:type rdf:resource="https://w3id.org/sqo#Question"/>
+        <sqo:hasQuestionCategory rdf:resource="http://disk-project.org/resources/climate/question/periodicitiesQuestion"/>
+        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable"/>
+        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/Site"/>
+        <sqo:hasQuestionPattern>:goal a hyp:PeriodicitiesExistenceHypothesis
+:goal hyp:hasVariable ?ClimateVariable
+?ClimateVariable hyp:fromDataset ?Dataset
+?Dataset hyp:fromSite ?Site</sqo:hasQuestionPattern>
+        <sqo:hasQuestionTemplate>Are there periodicities present in ?ClimateVariable for record at ?Site</sqo:hasQuestionTemplate>
+        <rdfs:label>Are there periodicities present in ?ClimateVariable for record at ?Site?</rdfs:label>
+    </owl:NamedIndividual>
+
+    <!-- http://disk-project.org/resources/question/HQ2 -->
+
+    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/question/HQ2">
+        <rdf:type rdf:resource="https://w3id.org/sqo#Question"/>
+        <sqo:hasQuestionCategory rdf:resource="http://disk-project.org/resources/climate/question/periodicitiesQuestion"/>
+        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable"/>
+        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/Dataset"/>
+        <sqo:hasQuestionPattern>:goal a hyp:PeriodicitiesExistenceHypothesis
+:goal hyp:hasVariable ?ClimateVariable
+?ClimateVariable hyp:fromDataset ?Dataset</sqo:hasQuestionPattern>
+        <sqo:hasQuestionTemplate>Are there periodicities present in ?ClimateVariable for record at ?Dataset</sqo:hasQuestionTemplate>
+        <rdfs:label>Are there periodicities present in ?ClimateVariable for record at ?Dataset?</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    
+
+
+    <!-- http://disk-project.org/resources/question/Site -->
+
+    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/question/Site">
+        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
+        <sqo:hasConstraints>?Site a &lt;http://linked.earth/ontology#Location&gt; ;
+  &lt;http://linked.earth/ontology#name&gt; ?name ;
+  &lt;http://www.w3.org/2003/01/geo/wgs84_pos#alt&gt; ?alt ;
+  &lt;http://www.w3.org/2003/01/geo/wgs84_pos#lat&gt; ?lat ;
+  &lt;http://www.w3.org/2003/01/geo/wgs84_pos#long&gt; ?long .
+BIND(CONCAT(?name, &quot; - (&quot;, ?alt, &quot; &quot;, ?lat, &quot; &quot;, ?long, &quot;)&quot;) AS ?SiteLabel)</sqo:hasConstraints>
+        <sqo:hasVariableName>?Site</sqo:hasVariableName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://disk-project.org/resources/question/periodicitiesQuestion -->
+
+    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/question/periodicitiesQuestion">
+        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionCategory"/>
+        <rdfs:label>Are there periodicities present in ?ClimateVariable...</rdfs:label>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

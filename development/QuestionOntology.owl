@@ -14,7 +14,7 @@
         <terms:description>An ontology to define semantic templates for scientific questions. Defines questions, variables, options and constraints.</terms:description>
         <terms:license>https://creativecommons.org/licenses/by/2.0/</terms:license>
         <terms:title>The Scientific Questions Ontology</terms:title>
-        <owl:versionInfo>v1.0.0</owl:versionInfo>
+        <owl:versionInfo>v1.1.0</owl:versionInfo>
     </owl:Ontology>
     
 
