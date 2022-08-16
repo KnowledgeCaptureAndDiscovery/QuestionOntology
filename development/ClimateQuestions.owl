@@ -81,9 +81,9 @@ VALUES ?prop {&lt;http://linked.earth/ontology#proxyObservationType&gt; &lt;http
     
 
 
-    <!-- http://disk-project.org/resources/question/Site -->
+    <!-- http://disk-project.org/resources/climate/variable/Site -->
 
-    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/question/Site">
+    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/variable/Site">
         <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <sqo:hasConstraints>?Site a &lt;http://linked.earth/ontology#Location&gt; ;
   &lt;http://linked.earth/ontology#name&gt; ?name ;
