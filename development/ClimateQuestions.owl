@@ -29,7 +29,7 @@
 
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/variable/ClimateVariable">
         <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
-        <sqo:hasConstraints>[] ?prop ?ClimateVarariable.
+        <sqo:hasConstraints>[] ?prop ?ClimateVariable.
 ?ClimateVar &lt;http://www.w3.org/2000/01/rdf-schema#label&gt; ?ClimateVariableLabel
 VALUES ?prop {&lt;http://linked.earth/ontology#proxyObservationType&gt; &lt;http://linked.earth/ontology#inferredVariableType&gt;}</sqo:hasConstraints>
         <sqo:hasVariableName>?ClimateVariable</sqo:hasVariableName>
