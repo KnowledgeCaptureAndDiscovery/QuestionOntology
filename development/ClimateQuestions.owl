@@ -29,9 +29,6 @@
 
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/variable/ClimateVariable">
         <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
-        <sqo:hasConstraints>[] ?prop ?ClimateVariable.
-?ClimateVariable &lt;http://www.w3.org/2000/01/rdf-schema#label&gt; ?ClimateVariableLabel
-VALUES ?prop {&lt;http://linked.earth/ontology#proxyObservationType&gt; &lt;http://linked.earth/ontology#inferredVariableType&gt;}</sqo:hasConstraints>
         <sqo:hasVariableName>?ClimateVariable</sqo:hasVariableName>
     </owl:NamedIndividual>
     
@@ -41,7 +38,6 @@ VALUES ?prop {&lt;http://linked.earth/ontology#proxyObservationType&gt; &lt;http
 
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/variable/Dataset">
         <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
-        <sqo:hasConstraints>?Dataset a &lt;http://linked.earth/ontology#Dataset&gt; .</sqo:hasConstraints>
         <sqo:hasVariableName>?Dataset</sqo:hasVariableName>
     </owl:NamedIndividual>
     
@@ -60,6 +56,22 @@ VALUES ?prop {&lt;http://linked.earth/ontology#proxyObservationType&gt; &lt;http
 ?Dataset hyp:fromSite ?Site</sqo:hasQuestionPattern>
         <sqo:hasQuestionTemplate>Are there periodicities present in ?ClimateVariable for record at ?Site</sqo:hasQuestionTemplate>
         <rdfs:label>Are there periodicities present in ?ClimateVariable for record at ?Site?</rdfs:label>
+        <sqo:hasQuestionConstraint>
+    ?Site a &lt;http://linked.earth/ontology#Location&gt; .
+    ?Site &lt;http://linked.earth/ontology#name&gt; ?LocationName .
+    ?Site &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
+    ?Site &lt;http://linked.earth/ontology#wgs84_Long&gt; ?long .
+    BIND(CONCAT(?LocationName, " (", STR(?lat), ", ", STR(?long), ")") AS ?SiteLabel)
+    ?Site &lt;http://linked.earth/ontology#coordinatesFor&gt; ?Dataset .
+    ?Dataset a &lt;http://linked.earth/ontology#Dataset&gt; .
+    ?Dataset &lt;http://linked.earth/ontology#name&gt; ?DatasetLabel .
+    ?Dataset &lt;http://linked.earth/ontology#hasUrl&gt; ?url .
+    ?Dataset &lt;http://linked.earth/ontology#includesPaleoData&gt; ?data .
+    ?data &lt;http://linked.earth/ontology#foundInMeasurementTable&gt; ?table .
+    ?table &lt;http://linked.earth/ontology#includesVariable&gt; ?ClimateVariable .
+    ?ClimateVariable &lt;http://linked.earth/ontology#hasVariableID&gt; ?varID .
+    ?ClimateVariable &lt;http://linked.earth/ontology#name&gt; ?ClimateVariableLabel .
+        </sqo:hasQuestionConstraint>
     </owl:NamedIndividual>
 
     <!-- http://disk-project.org/resources/question/HQ2 -->
@@ -73,6 +85,16 @@ VALUES ?prop {&lt;http://linked.earth/ontology#proxyObservationType&gt; &lt;http
 :goal hyp:hasVariable ?ClimateVariable
 ?ClimateVariable hyp:fromDataset ?Dataset</sqo:hasQuestionPattern>
         <sqo:hasQuestionTemplate>Are there periodicities present in ?ClimateVariable for record at ?Dataset</sqo:hasQuestionTemplate>
+        <sqo:hasQuestionConstraint>
+    ?Dataset a &lt;http://linked.earth/ontology#Dataset&gt; .
+    ?Dataset &lt;http://linked.earth/ontology#name&gt; ?DatasetLabel .
+    ?Dataset &lt;http://linked.earth/ontology#hasUrl&gt; ?url .
+    ?Dataset &lt;http://linked.earth/ontology#includesPaleoData&gt; ?data .
+    ?data &lt;http://linked.earth/ontology#foundInMeasurementTable&gt; ?table .
+    ?table &lt;http://linked.earth/ontology#includesVariable&gt; ?ClimateVariable .
+    ?ClimateVariable &lt;http://linked.earth/ontology#hasVariableID&gt; ?varID .
+    ?ClimateVariable &lt;http://linked.earth/ontology#name&gt; ?ClimateVariableLabel .
+        </sqo:hasQuestionConstraint>
         <rdfs:label>Are there periodicities present in ?ClimateVariable for record at ?Dataset?</rdfs:label>
     </owl:NamedIndividual>
     
@@ -85,12 +107,6 @@ VALUES ?prop {&lt;http://linked.earth/ontology#proxyObservationType&gt; &lt;http
 
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/variable/Site">
         <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
-        <sqo:hasConstraints>?Site a &lt;http://linked.earth/ontology#Location&gt; ;
-  &lt;http://linked.earth/ontology#name&gt; ?name ;
-  &lt;http://www.w3.org/2003/01/geo/wgs84_pos#alt&gt; ?alt ;
-  &lt;http://www.w3.org/2003/01/geo/wgs84_pos#lat&gt; ?lat ;
-  &lt;http://www.w3.org/2003/01/geo/wgs84_pos#long&gt; ?long .
-BIND(CONCAT(?name, &quot; - (&quot;, ?alt, &quot; &quot;, ?lat, &quot; &quot;, ?long, &quot;)&quot;) AS ?SiteLabel)</sqo:hasConstraints>
         <sqo:hasVariableName>?Site</sqo:hasVariableName>
     </owl:NamedIndividual>
     
