@@ -7,7 +7,7 @@
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:terms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="https://w3id.org/sqo/resource/">
         <owl:imports rdf:resource="https://w3id.org/sqo"/>
     </owl:Ontology>
@@ -113,10 +113,10 @@
 
     <owl:NamedIndividual rdf:about="https://w3id.org/sqo/resource/HQ3">
         <rdf:type rdf:resource="https://w3id.org/sqo#Question"/>
-        <sqo:hasQuestionVariable rdf:resource="https://w3id.org/sqo/resource/HQ1V3"/>
         <sqo:hasQuestionVariable rdf:resource="https://w3id.org/sqo/resource/HQ3V1"/>
         <sqo:hasQuestionVariable rdf:resource="https://w3id.org/sqo/resource/HQ3V2"/>
         <sqo:hasQuestionVariable rdf:resource="https://w3id.org/sqo/resource/HQ3V3"/>
+        <sqo:hasQuestionVariable rdf:resource="https://w3id.org/sqo/resource/HQ3V4"/>
         <sqo:hasQuestionPattern>?EffectSize neuro:sourceGene ?Genotype
 ?EffectSize neuro:targetCharacteristic ?BrainImagingTrait
 ?EffectSize neuro:targetCharacteristic ?Region
@@ -164,6 +164,25 @@ BIND(REPLACE (REPLACE (?BrainImagingTrait, &quot;SA&quot;, &quot;Surface Area&qu
     
 
 
+    <!-- https://w3id.org/sqo/resource/HQ3V4 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sqo/resource/HQ3V4">
+        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
+        <sqo:hasConstraints>?hasCohortProj rdfs:label &quot;HasCohortProject (E)&quot; .
+[] ?hasCohortProj ?CohortProjects .
+?CohortProjects ?DemographicAttribute [] .
+?DemographicAttribute rdfs:label ?DemographicAttributeLabel .
+FILTER (
+  REGEX(?DemographicAttributeLabel, &quot;HasAge Mean&quot;) ||
+  REGEX(?DemographicAttributeLabel, &quot;HasNumberOfParticipants&quot;) ||
+  REGEX(?DemographicAttributeLabel, &quot;HasNumberOfMaleSex&quot;) ||
+  REGEX(?DemographicAttributeLabel, &quot;HasNumberOfFemaleSex&quot;)
+)</sqo:hasConstraints>
+        <sqo:hasVariableName>?DemographicAttribute</sqo:hasVariableName>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://w3id.org/sqo/resource/HQ4 -->
 
     <owl:NamedIndividual rdf:about="https://w3id.org/sqo/resource/HQ4">
@@ -176,6 +195,61 @@ BIND(REPLACE (REPLACE (?BrainImagingTrait, &quot;SA&quot;, &quot;Surface Area&qu
 ?EffectSize neuro:targetCharacteristic ?Region</sqo:hasQuestionPattern>
         <sqo:hasQuestionTemplate>What is the Effect Size of ?Genotype on ?Region ?BrainImagingTrait</sqo:hasQuestionTemplate>
         <rdfs:label>What is the effect size of &lt;Genotype&gt; on &lt;Region&gt;&lt;Brain Imaging Trait&gt;?</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/sqo/resource/HQ4V1 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sqo/resource/HQ4V1">
+        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
+        <sqo:hasConstraints>[] ?hasEthnicGroupProp ?EthnicGroup .
+?hasEthnicGroupProp rdfs:label &quot;HasEthnicGroup (E)&quot; .</sqo:hasConstraints>
+        <sqo:hasVariableName>?EthnicGroup</sqo:hasVariableName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/sqo/resource/Question5 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/sqo/resource/Question5">
+        <rdf:type rdf:resource="https://w3id.org/sqo#Question"/>
+        <sqo:hasQuestionVariable rdf:resource="https://w3id.org/sqo/resource/HQ3V1"/>
+        <sqo:hasQuestionVariable rdf:resource="https://w3id.org/sqo/resource/HQ3V2"/>
+        <sqo:hasQuestionVariable rdf:resource="https://w3id.org/sqo/resource/HQ3V3"/>
+        <sqo:hasQuestionVariable rdf:resource="https://w3id.org/sqo/resource/HQ3V4"/>
+        <sqo:hasQuestionVariable rdf:resource="https://w3id.org/sqo/resource/HQ4V1"/>
+        <sqo:hasQuestionConstraint>?Cohorts a ?cohortClass .
+?cohortClass rdfs:label &quot;Cohort (E)&quot; .
+?Cohorts ?hasEthnicGroupProp ?EthnicGroup .
+?hasEthnicGroupProp rdfs:label &quot;HasEthnicGroup (E)&quot; .
+?Cohorts ?hasCohortProj ?CohortProjects .
+?hasCohortProj rdfs:label &quot;HasCohortProject (E)&quot; .
+?CohortProjects ?DemographicAttribute [] .
+?DemographicAttribute rdfs:label ?DemographicAttributeLabel .
+FILTER (
+  REGEX(?DemographicAttributeLabel, &quot;HasAge Mean&quot;) ||
+  REGEX(?DemographicAttributeLabel, &quot;HasNumberOfParticipants&quot;) ||
+  REGEX(?DemographicAttributeLabel, &quot;HasNumberOfMaleSex&quot;) ||
+  REGEX(?DemographicAttributeLabel, &quot;HasNumberOfFemaleSex&quot;)
+)
+?CohortProjects ?hasProjectResults ?ProjectResults .
+?hasProjectResults rdfs:label &quot;HasProjectResults (E)&quot; .
+?ProjectResults ?regionprop ?Region .
+?regionprop rdfs:label &quot;BrainRegion&quot; .
+?ProjectResults ?traitprop ?BrainImagingTrait .
+?traitprop rdfs:label &quot;Trait&quot; .
+?ProjectResults ?snpprop ?Genotype .
+?snpprop rdfs:label &quot;SNP&quot; .
+?ProjectResults ?contenturlProp ?CohortData .
+?contenturlProp rdfs:label &quot;HasContentUrl (E)&quot; .</sqo:hasQuestionConstraint>
+        <sqo:hasQuestionPattern>?EffectSize neuro:sourceGene ?Genotype
+?EffectSize neuro:targetCharacteristic ?BrainImagingTrait
+?EffectSize neuro:targetCharacteristic ?Region
+?EffectSize hyp:associatedWith ?DemographicAttribute
+?EffectSize hyp:collectedFrom ?EthnicGroup</sqo:hasQuestionPattern>
+        <sqo:hasQuestionTemplate>Is the effect size of ?Genotype on ?BrainImagingTrait of ?Region associated with ?DemographicAttribute for ?EthnicGroup ascendency</sqo:hasQuestionTemplate>
+        <rdfs:label>Is the effect size of Genotype on Brain Imaging Trait of Region associated with Demographic Attribute for Ethnic ascendency?</rdfs:label>
     </owl:NamedIndividual>
 </rdf:RDF>
 
