@@ -51,8 +51,7 @@
     ?Variable &lt;http://linked.earth/ontology#name&gt; ?ClimateVariable .
     FILTER (!REGEX(str(?ClimateVariable), &quot;year&quot;))
     FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))</sqo:hasQuestionConstraint>
-        <sqo:hasQuestionPattern>:goal a hyp:PeriodicitiesExistenceHypothesis
-:goal hyp:hasVariable ?ClimateVariable
+        <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
 :goal hyp:fromLocation ?Site</sqo:hasQuestionPattern>
         <sqo:hasQuestionTemplate>Are there periodicities present in ?ClimateVariable for record at ?Site</sqo:hasQuestionTemplate>
         <rdfs:label>Are there periodicities present in ?ClimateVariable for record at ?Site?</rdfs:label>
@@ -77,8 +76,7 @@
     ?Variable &lt;http://linked.earth/ontology#name&gt; ?ClimateVariable .
     FILTER (!REGEX(str(?ClimateVariable), &quot;year&quot;))
     FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))</sqo:hasQuestionConstraint>
-        <sqo:hasQuestionPattern>:goal a hyp:PeriodicitiesExistenceHypothesis
-:goal hyp:hasVariable ?ClimateVariable
+        <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
 ?ClimateVariable hyp:fromDataset ?Dataset</sqo:hasQuestionPattern>
         <sqo:hasQuestionTemplate>Are there periodicities present in ?ClimateVariable for record at ?Dataset</sqo:hasQuestionTemplate>
         <rdfs:label>Are there periodicities present in ?ClimateVariable for record at ?Dataset?</rdfs:label>
