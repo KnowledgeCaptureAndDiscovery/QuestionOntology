@@ -53,7 +53,7 @@
     FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))</sqo:hasQuestionConstraint>
         <sqo:hasQuestionPattern>:goal a hyp:PeriodicitiesExistenceHypothesis
 :goal hyp:hasVariable ?ClimateVariable
-:goal hyp:hasLocation ?Site</sqo:hasQuestionPattern>
+:goal hyp:fromLocation ?Site</sqo:hasQuestionPattern>
         <sqo:hasQuestionTemplate>Are there periodicities present in ?ClimateVariable for record at ?Site</sqo:hasQuestionTemplate>
         <rdfs:label>Are there periodicities present in ?ClimateVariable for record at ?Site?</rdfs:label>
     </owl:NamedIndividual>
