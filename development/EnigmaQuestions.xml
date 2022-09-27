@@ -248,8 +248,8 @@ FILTER (
 ?EffectSize neuro:targetCharacteristic ?Region
 ?EffectSize hyp:associatedWith ?DemographicAttribute
 ?EffectSize hyp:collectedFrom ?EthnicGroup</question:hasQuestionPattern>
-        <question:hasQuestionTemplate>Is the effect size of ?Genotype on ?BrainImagingTrait of ?Region associated with ?DemographicAttribute for ?EthnicGroup ascendency</question:hasQuestionTemplate>
-        <rdfs:label>Is the effect size of Genotype on Brain Imaging Trait of Region associated with Demographic Attribute for Ethnic ascendency?</rdfs:label>
+        <question:hasQuestionTemplate>Is the effect size of ?Genotype on ?BrainImagingTrait of ?Region associated with ?DemographicAttribute for cohors of ?EthnicGroup ancestry</question:hasQuestionTemplate>
+        <rdfs:label>Is the effect size of Genotype on Brain Imaging Trait of Region associated with Demographic Attribute for cohorts of Ethnic ancestry?</rdfs:label>
     </owl:NamedIndividual>
 </rdf:RDF>
 
