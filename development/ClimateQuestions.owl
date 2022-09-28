@@ -36,7 +36,8 @@
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/Site"/>
         <sqo:hasQuestionConstraint>?Site a &lt;http://linked.earth/ontology#Location&gt; .
-    ?Site &lt;http://linked.earth/ontology#name&gt; ?LocationName .
+    OPTIONAL {?Site &lt;http://linked.earth/ontology#name&gt; ?LocationName1 .}
+    BIND(COALESCE(?LocationName1, REPLACE(STR(?Site), &quot;(.*#)|(.Location)&quot;, &quot;&quot;,&quot;i&quot;)) as ?LocationName)
     ?Site &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
     ?Site &lt;http://linked.earth/ontology#wgs84_Long&gt; ?long .
     BIND(CONCAT(?LocationName, &quot; (&quot;, STR(?lat), &quot;, &quot;, STR(?long), &quot;)&quot;) AS ?SiteLabel)
