@@ -20,6 +20,53 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/sqo#hasQuestionCategory -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/sqo#hasQuestionCategory"/>
+    
+
+
+    <!-- https://w3id.org/sqo#hasQuestionConstraint -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/sqo#hasQuestionConstraint"/>
+    
+
+
+    <!-- https://w3id.org/sqo#hasQuestionPattern -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/sqo#hasQuestionPattern"/>
+    
+
+
+    <!-- https://w3id.org/sqo#hasQuestionTemplate -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/sqo#hasQuestionTemplate"/>
+    
+
+
+    <!-- https://w3id.org/sqo#hasQuestionVariable -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/sqo#hasQuestionVariable"/>
+    
+
+
+    <!-- https://w3id.org/sqo#hasVariableName -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/sqo#hasVariableName"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Individuals
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -41,9 +88,8 @@
 
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/SpectralAnalysisQuestion3">
         <rdf:type rdf:resource="https://w3id.org/sqo#Question"/>
+        <rdfs:label>Are there periodicities present in ?ClimateVariable for record at ?BoundingBox</rdfs:label>
         <sqo:hasQuestionCategory rdf:resource="http://disk-project.org/resources/climate/question/periodicitiesQuestion"/>
-        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/BoundingBoxVariable"/>
-        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable"/>
         <sqo:hasQuestionConstraint>?location &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
 ?location &lt;http://linked.earth/ontology#wgs84_Long&gt; ?lon .
 filter( xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
@@ -68,7 +114,43 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))</sqo:hasQuestionConstrai
 ?BoundingBox hyp:hasMinLon ?MinLon
 ?BoundingBox hyp:hasMaxLon ?MaxLon</sqo:hasQuestionPattern>
         <sqo:hasQuestionTemplate>Are there periodicities present in ?ClimateVariable for records at ?BoundingBox</sqo:hasQuestionTemplate>
-        <rdfs:label>Are there periodicities present in ?ClimateVariable for record at ?BoundingBox</rdfs:label>
+        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/BoundingBoxVariable"/>
+        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://disk-project.org/resources/climate/Are_the_periodicities_in_?ClimateVariable_..._intermittent? -->
+
+    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/Are_the_periodicities_in_?ClimateVariable_..._intermittent?">
+        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionCategory"/>
+        <rdfs:label>Are the periodicities in ?ClimateVariable ... intermittent?</rdfs:label>
+        <sqo:hasQuestionCategory rdf:resource="http://disk-project.org/resources/climate/Are_the_periodicities_in_?ClimateVariable_for_record_?Dataset_intermittent?"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://disk-project.org/resources/climate/Are_the_periodicities_in_?ClimateVariable_for_record_?Dataset_intermittent? -->
+
+    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/Are_the_periodicities_in_?ClimateVariable_for_record_?Dataset_intermittent?">
+        <rdf:type rdf:resource="https://w3id.org/sqo#Question"/>
+        <rdfs:label>Are the periodicities in ?ClimateVariable for record ?Dataset intermittent?</rdfs:label>
+        <sqo:hasQuestionCategory rdf:resource="http://disk-project.org/resources/climate/Are_the_periodicities_in_?ClimateVariable_..._intermittent?"/>
+        <sqo:hasQuestionConstraint>?Dataset a &lt;http://linked.earth/ontology#Dataset&gt; .
+    ?Dataset &lt;http://linked.earth/ontology#name&gt; ?DatasetLabel .
+    ?Dataset &lt;http://linked.earth/ontology#hasUrl&gt; ?url .
+    ?Dataset &lt;http://linked.earth/ontology#includesPaleoData&gt; ?data .
+    ?data &lt;http://linked.earth/ontology#foundInMeasurementTable&gt; ?table .
+    ?table &lt;http://linked.earth/ontology#includesVariable&gt; ?Variable .
+    ?Variable &lt;http://linked.earth/ontology#hasVariableID&gt; ?VarID .
+    ?Variable &lt;http://linked.earth/ontology#name&gt; ?ClimateVariable .
+    FILTER (!REGEX(str(?ClimateVariable), &quot;year&quot;))
+    FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))</sqo:hasQuestionConstraint>
+        <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
+?ClimateVariable hyp:fromDataset ?Dataset</sqo:hasQuestionPattern>
+        <sqo:hasQuestionTemplate>Are the periodicities in ?ClimateVariable for record at ?Dataset intermittent?</sqo:hasQuestionTemplate>
+        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable"/>
+        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/Dataset"/>
     </owl:NamedIndividual>
     
 
@@ -77,9 +159,8 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))</sqo:hasQuestionConstrai
 
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/question/HQ1">
         <rdf:type rdf:resource="https://w3id.org/sqo#Question"/>
+        <rdfs:label>Are there periodicities present in ?ClimateVariable for record at ?Site?</rdfs:label>
         <sqo:hasQuestionCategory rdf:resource="http://disk-project.org/resources/climate/question/periodicitiesQuestion"/>
-        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable"/>
-        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/Site"/>
         <sqo:hasQuestionConstraint>?Site a &lt;http://linked.earth/ontology#Location&gt; .
     OPTIONAL {?Site &lt;http://linked.earth/ontology#name&gt; ?LocationName1 .}
     BIND(COALESCE(?LocationName1, REPLACE(STR(?Site), &quot;(.*#)|(.Location)&quot;, &quot;&quot;,&quot;i&quot;)) as ?LocationName)
@@ -100,7 +181,8 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))</sqo:hasQuestionConstrai
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
 :goal hyp:fromLocation ?Site</sqo:hasQuestionPattern>
         <sqo:hasQuestionTemplate>Are there periodicities present in ?ClimateVariable for record at ?Site</sqo:hasQuestionTemplate>
-        <rdfs:label>Are there periodicities present in ?ClimateVariable for record at ?Site?</rdfs:label>
+        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable"/>
+        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/Site"/>
     </owl:NamedIndividual>
     
 
@@ -109,9 +191,8 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))</sqo:hasQuestionConstrai
 
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/question/HQ2">
         <rdf:type rdf:resource="https://w3id.org/sqo#Question"/>
+        <rdfs:label>Are there periodicities present in ?ClimateVariable for record at ?Dataset?</rdfs:label>
         <sqo:hasQuestionCategory rdf:resource="http://disk-project.org/resources/climate/question/periodicitiesQuestion"/>
-        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable"/>
-        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/Dataset"/>
         <sqo:hasQuestionConstraint>?Dataset a &lt;http://linked.earth/ontology#Dataset&gt; .
     ?Dataset &lt;http://linked.earth/ontology#name&gt; ?DatasetLabel .
     ?Dataset &lt;http://linked.earth/ontology#hasUrl&gt; ?url .
@@ -125,7 +206,8 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))</sqo:hasQuestionConstrai
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
 ?ClimateVariable hyp:fromDataset ?Dataset</sqo:hasQuestionPattern>
         <sqo:hasQuestionTemplate>Are there periodicities present in ?ClimateVariable for record at ?Dataset</sqo:hasQuestionTemplate>
-        <rdfs:label>Are there periodicities present in ?ClimateVariable for record at ?Dataset?</rdfs:label>
+        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable"/>
+        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/Dataset"/>
     </owl:NamedIndividual>
     
 
@@ -134,8 +216,8 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))</sqo:hasQuestionConstrai
 
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/question/periodicitiesQuestion">
         <rdf:type rdf:resource="https://w3id.org/sqo#QuestionCategory"/>
-        <sqo:hasQuestionCategory rdf:resource="http://disk-project.org/resources/climate/question/periodicitiesQuestion"/>
         <rdfs:label>Are there periodicities present in ?ClimateVariable...</rdfs:label>
+        <sqo:hasQuestionCategory rdf:resource="http://disk-project.org/resources/climate/question/periodicitiesQuestion"/>
     </owl:NamedIndividual>
     
 
