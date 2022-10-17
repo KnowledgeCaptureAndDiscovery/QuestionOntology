@@ -155,6 +155,74 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))</sqo:hasQuestionConstrai
     
 
 
+    <!-- http://disk-project.org/resources/climate/Are_the_periodicities_in_?ClimateVariable_for_record_at_?BoundingBox_intermittent? -->
+
+    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/Are_the_periodicities_in_?ClimateVariable_for_record_at_?BoundingBox_intermittent?">
+        <rdf:type rdf:resource="https://w3id.org/sqo#Question"/>
+        <rdfs:label>Are the periodicities in ?ClimateVariable for record at ?BoundingBox intermittent?</rdfs:label>
+        <sqo:hasQuestionCategory rdf:resource="http://disk-project.org/resources/climate/Are_the_periodicities_in_?ClimateVariable_..._intermittent?"/>
+        <sqo:hasQuestionConstraint>?location &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
+?location &lt;http://linked.earth/ontology#wgs84_Long&gt; ?lon .
+filter( xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
+        xsd:float(?lat)&gt;xsd:float(?MinLat) &amp;&amp;
+        xsd:float(?lon)&lt;xsd:float(?MaxLon) &amp;&amp; 
+        xsd:float(?lon)&gt;xsd:float(?MinLon)).
+?Dataset &lt;http://linked.earth/ontology#collectedFrom&gt; ?location .
+?Dataset a &lt;http://linked.earth/ontology#Dataset&gt; .
+?Dataset &lt;http://linked.earth/ontology#name&gt; ?DatasetLabel .
+?Dataset &lt;http://linked.earth/ontology#hasUrl&gt; ?url .
+?Dataset &lt;http://linked.earth/ontology#includesPaleoData&gt; ?data .
+?data &lt;http://linked.earth/ontology#foundInMeasurementTable&gt; ?table .
+?table &lt;http://linked.earth/ontology#includesVariable&gt; ?Variable .
+?Variable &lt;http://linked.earth/ontology#hasVariableID&gt; ?VarID .
+?Variable &lt;http://linked.earth/ontology#name&gt; ?ClimateVariable .
+FILTER (!REGEX(str(?ClimateVariable), &quot;year&quot;))
+FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))</sqo:hasQuestionConstraint>
+        <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
+:goal hyp:hasLocation ?BoundingBox
+?BoundingBox hyp:hasMinLat ?MinLat
+?BoundingBox hyp:hasMaxLat ?MaxLat
+?BoundingBox hyp:hasMinLon ?MinLon
+?BoundingBox hyp:hasMaxLon ?MaxLon</sqo:hasQuestionPattern>
+        <sqo:hasQuestionTemplate>Are the periodicities in ?ClimateVariable for record at ?BoundingBox intermittent?</sqo:hasQuestionTemplate>
+        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/BoundingBoxVariable"/>
+        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://disk-project.org/resources/climate/Are_the_periodicities_in_?ClimateVariable_for_record_at_?Site_intermittent? -->
+
+    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/Are_the_periodicities_in_?ClimateVariable_for_record_at_?Site_intermittent?">
+        <rdf:type rdf:resource="https://w3id.org/sqo#Question"/>
+        <rdfs:label>Are the periodicities in ?ClimateVariable for record at ?Site intermittent?</rdfs:label>
+        <sqo:hasQuestionCategory rdf:resource="http://disk-project.org/resources/climate/Are_the_periodicities_in_?ClimateVariable_..._intermittent?"/>
+        <sqo:hasQuestionConstraint>?Site a &lt;http://linked.earth/ontology#Location&gt; .
+    OPTIONAL {?Site &lt;http://linked.earth/ontology#name&gt; ?LocationName1 .}
+    BIND(COALESCE(?LocationName1, REPLACE(STR(?Site), &quot;(.*#)|(.Location)&quot;, &quot;&quot;,&quot;i&quot;)) as ?LocationName)
+    ?Site &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
+    ?Site &lt;http://linked.earth/ontology#wgs84_Long&gt; ?long .
+    BIND(CONCAT(?LocationName, &quot; (&quot;, STR(?lat), &quot;, &quot;, STR(?long), &quot;)&quot;) AS ?SiteLabel)
+    ?Site &lt;http://linked.earth/ontology#coordinatesFor&gt; ?Dataset .
+    ?Dataset a &lt;http://linked.earth/ontology#Dataset&gt; .
+    ?Dataset &lt;http://linked.earth/ontology#name&gt; ?DatasetLabel .
+    ?Dataset &lt;http://linked.earth/ontology#hasUrl&gt; ?url .
+    ?Dataset &lt;http://linked.earth/ontology#includesPaleoData&gt; ?data .
+    ?data &lt;http://linked.earth/ontology#foundInMeasurementTable&gt; ?table .
+    ?table &lt;http://linked.earth/ontology#includesVariable&gt; ?Variable .
+    ?Variable &lt;http://linked.earth/ontology#hasVariableID&gt; ?VarID .
+    ?Variable &lt;http://linked.earth/ontology#name&gt; ?ClimateVariable .
+    FILTER (!REGEX(str(?ClimateVariable), &quot;year&quot;))
+    FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))</sqo:hasQuestionConstraint>
+        <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
+:goal hyp:fromLocation ?Site</sqo:hasQuestionPattern>
+        <sqo:hasQuestionTemplate>Are the periodicities in ?ClimateVariable for record at ?Site intermittent?</sqo:hasQuestionTemplate>
+        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable"/>
+        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/Site"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://disk-project.org/resources/climate/question/HQ1 -->
 
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/question/HQ1">
