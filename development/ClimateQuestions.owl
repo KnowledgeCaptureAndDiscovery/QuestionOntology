@@ -84,6 +84,70 @@
     
 
 
+    <!-- http://disk-project.org/resources/climate/BoundingBoxVariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/BoundingBoxVariable1">
+        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://disk-project.org/resources/climate/BoundingBoxVariable2 -->
+
+    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/BoundingBoxVariable2">
+        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://disk-project.org/resources/climate/ClimateVariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/ClimateVariable1">
+        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://disk-project.org/resources/climate/ClimateVariable2 -->
+
+    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/ClimateVariable2">
+        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://disk-project.org/resources/climate/Dataset1 -->
+
+    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/Dataset1">
+        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://disk-project.org/resources/climate/Dataset2 -->
+
+    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/Dataset2">
+        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://disk-project.org/resources/climate/Site1 -->
+
+    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/Site1">
+        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://disk-project.org/resources/climate/Site2 -->
+
+    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/Site2">
+        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://disk-project.org/resources/climate/SpectralAnalysisQuestion3 -->
 
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/SpectralAnalysisQuestion3">
@@ -116,6 +180,55 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))</sqo:hasQuestionConstrai
         <sqo:hasQuestionTemplate>Are there periodicities present in ?ClimateVariable for records at ?BoundingBox</sqo:hasQuestionTemplate>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/BoundingBoxVariable"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://disk-project.org/resources/climate/TimeIntervalVariable -->
+
+    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/TimeIntervalVariable">
+        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://disk-project.org/resources/climate/coherence_dataset -->
+
+    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/coherence_dataset">
+        <rdf:type rdf:resource="https://w3id.org/sqo#Question"/>
+        <rdfs:label>Is ?ClimateVariable1 in ?Dataset1 coherent with ?ClimateVariable2 in ?Dataset2 ?</rdfs:label>
+        <sqo:hasQuestionCategory rdf:resource="http://disk-project.org/resources/climate/Is_?ClimateVariable1_...__coherent_with_?ClimateVariable2__....__?"/>
+        <sqo:hasQuestionConstraint>?Dataset1 a &lt;http://linked.earth/ontology#Dataset&gt; .
+    ?Dataset1 &lt;http://linked.earth/ontology#name&gt; ?DatasetLabel1 .
+    ?Dataset1 &lt;http://linked.earth/ontology#hasUrl&gt; ?url1 .
+    ?Dataset1 &lt;http://linked.earth/ontology#includesPaleoData&gt; ?data1.
+    ?data1 &lt;http://linked.earth/ontology#foundInMeasurementTable&gt; ?table1 .
+    ?table1 &lt;http://linked.earth/ontology#includesVariable&gt; ?Variable1 .
+    ?Variable1 &lt;http://linked.earth/ontology#hasVariableID&gt; ?VarID1.
+    ?Variable1 &lt;http://linked.earth/ontology#name&gt; ?ClimateVariable1.
+    FILTER (!REGEX(str(?ClimateVariable1), &quot;year&quot;))
+    FILTER (!REGEX(str(?ClimateVariable1), &quot;age&quot;))
+
+?Dataset2 a &lt;http://linked.earth/ontology#Dataset&gt; .
+    ?Dataset2 &lt;http://linked.earth/ontology#name&gt; ?DatasetLabel2.
+    ?Dataset2 &lt;http://linked.earth/ontology#hasUrl&gt; ?url2 .
+    ?Dataset2 &lt;http://linked.earth/ontology#includesPaleoData&gt; ?data2.
+    ?data2 &lt;http://linked.earth/ontology#foundInMeasurementTable&gt; ?table2 .
+    ?table2 &lt;http://linked.earth/ontology#includesVariable&gt; ?Variable2 .
+    ?Variable2 &lt;http://linked.earth/ontology#hasVariableID&gt; ?VarID2.
+    ?Variable2 &lt;http://linked.earth/ontology#name&gt; ?ClimateVariable2.
+    FILTER (!REGEX(str(?ClimateVariable2), &quot;year&quot;))
+    FILTER (!REGEX(str(?ClimateVariable2), &quot;age&quot;))
+
+FILTER (?VarID1 != ?VarID2)</sqo:hasQuestionConstraint>
+        <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable1
+:goal hyp:hasVariable ?ClimateVariable2
+?ClimateVariable1 hyp:fromDataset ?Dataset1
+?ClimateVariable2 hyp:fromDataset ?Dataset2</sqo:hasQuestionPattern>
+        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/ClimateVariable1"/>
+        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/ClimateVariable2"/>
+        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/Dataset1"/>
+        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/Dataset2"/>
     </owl:NamedIndividual>
     
 
@@ -219,6 +332,16 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))</sqo:hasQuestionConstrai
         <sqo:hasQuestionTemplate>Are the periodicities in ?ClimateVariable for record at ?Site intermittent?</sqo:hasQuestionTemplate>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/Site"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://disk-project.org/resources/climate/Is_?ClimateVariable1_...__coherent_with_?ClimateVariable2__....__? -->
+
+    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/Is_?ClimateVariable1_...__coherent_with_?ClimateVariable2__....__?">
+        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionCategory"/>
+        <rdfs:label>Is ?ClimateVariable1 ... coherent with ?ClimateVariable2 ... ?</rdfs:label>
+        <sqo:hasQuestionCategory rdf:resource="http://disk-project.org/resources/climate/Is_?ClimateVariable1_...__coherent_with_?ClimateVariable2__....__?"/>
     </owl:NamedIndividual>
     
 
