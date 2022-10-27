@@ -28,6 +28,39 @@
     
 
 
+    <!-- http://disk-project.org/resources/climate/periodicity_dataset_time -->
+
+    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/periodicity_dataset_time">
+        <rdf:type rdf:resource="https://w3id.org/sqo#Question"/>
+        <sqo:hasQuestionCategory rdf:resource="http://disk-project.org/resources/climate/category/Periodicities"/>
+        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable"/>
+        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/Dataset"/>
+        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/TimeInterval"/>
+        <sqo:hasQuestionConstraint>?Dataset a &lt;http://linked.earth/ontology#Dataset&gt; .
+    ?Dataset &lt;http://linked.earth/ontology#name&gt; ?DatasetLabel .
+    ?Dataset &lt;http://linked.earth/ontology#hasUrl&gt; ?url .
+    ?Dataset &lt;http://linked.earth/ontology#includesPaleoData&gt; ?data .
+    ?data &lt;http://linked.earth/ontology#foundInMeasurementTable&gt; ?table .
+    ?table &lt;http://linked.earth/ontology#includesVariable&gt; ?Variable .
+    ?Variable &lt;http://linked.earth/ontology#hasVariableID&gt; ?VarID .
+    ?Variable &lt;http://linked.earth/ontology#name&gt; ?ClimateVariable .
+?table &lt;http://linked.earth/ontology#includesVariable&gt; ?timevar .	
+    FILTER (!REGEX(str(?ClimateVariable), &quot;year&quot;))
+    FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))
+    ?timevar &lt;http://linked.earth/ontology#hasMinValue&gt; ?e1.
+    ?timevar &lt;http://linked.earth/ontology#hasMaxValue&gt; ?e2.
+    FILTER((?e1&gt;=MinTime &amp;&amp; ?e2&lt;=MaxTime) || (?e1&lt;=MinTime &amp;&amp; ?e2&gt;=MaxTime) || (?e1&gt;=MinTime &amp;&amp; ?e2&gt;=MaxTime) || (?e1&lt;=MinTime &amp;&amp; ?e2&gt;=MaxTime)).</sqo:hasQuestionConstraint>
+        <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
+?ClimateVariable hyp:fromDataset ?Dataset
+:goal hyp:hasTimeInterval ?TimeInterval
+?TimeInteval hyp:hasMinTime ?MinTime
+?TimeInteval hyp:hasMaxTime ?MaxTime</sqo:hasQuestionPattern>
+        <sqo:hasQuestionTemplate>Are there periodicities present in ?ClimateVaribale for record at ?Dataset during ?TimeInterval?</sqo:hasQuestionTemplate>
+        <rdfs:label>Are there periodicities present in ?ClimateVaribale for record at ?Dataset during ?TimeInterval?</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://disk-project.org/resources/climate/category/AreClimateVariablesCoherent -->
 
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/category/AreClimateVariablesCoherent">
@@ -107,7 +140,7 @@
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
 ?ClimateVariable hyp:fromDataset ?Dataset</sqo:hasQuestionPattern>
         <sqo:hasQuestionTemplate>Are there periodicities present in ?ClimateVariable for record at ?Dataset</sqo:hasQuestionTemplate>
-        <rdfs:label>Are there periodicities present in ?ClimateVariable for record at ?Dataset</rdfs:label>
+        <rdfs:label>Are there periodicities present in ?ClimateVaribale for record at ?Dataset ?</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -309,6 +342,15 @@ FILTER (?VarID1 != ?VarID2)</sqo:hasQuestionConstraint>
     
 
 
+    <!-- http://disk-project.org/resources/climate/variable/ClimateVariable -->
+
+    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/variable/ClimateVariable">
+        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
+        <sqo:hasVariableName>?ClimateVariable</sqo:hasVariableName>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://disk-project.org/resources/climate/variable/ClimateVariable1 -->
 
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/variable/ClimateVariable1">
@@ -323,15 +365,6 @@ FILTER (?VarID1 != ?VarID2)</sqo:hasQuestionConstraint>
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/variable/ClimateVariable2">
         <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <sqo:hasVariableName>?ClimateVariable2</sqo:hasVariableName>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://disk-project.org/resources/climate/variable/ClimateVariable -->
-
-    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/variable/ClimateVariable">
-        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
-        <sqo:hasVariableName>?ClimateVariable</sqo:hasVariableName>
     </owl:NamedIndividual>
     
 
