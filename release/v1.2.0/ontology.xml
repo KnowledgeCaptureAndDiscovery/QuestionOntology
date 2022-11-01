@@ -89,8 +89,20 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/sqo#hasQuestionVariable">
         <rdfs:domain rdf:resource="https://w3id.org/sqo#Question"/>
         <rdfs:range rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
-        <rdfs:comment>Link a Question with all of the Question Variables that used on the question template and pattern</rdfs:comment>
+        <rdfs:comment>Link a Question with all of the Question Variables that are used on the question template and pattern</rdfs:comment>
         <rdfs:label>Has question variable</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/sqo#hasVariableExpansion -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/sqo#hasVariableExpansion">
+        <rdfs:domain rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
+        <rdfs:range rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
+        <rdfs:comment>Links a template variable to one or more pattern variables</rdfs:comment>
+        <rdfs:label>Has variable expansion</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -217,6 +229,18 @@ As default the cardinality is 1.</rdfs:comment>
     
 
 
+    <!-- https://w3id.org/sqo#BoundingBoxQuestionVariable -->
+
+
+    <owl:Class rdf:about="https://w3id.org/sqo#BoundingBoxQuestionVariable">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
+        <rdfs:comment>Question variable that represents a geographical bounding box.
+Is expanded to minLat, maxLat, minLng, maxLng</rdfs:comment>
+        <rdfs:label>Bounding Box Question Variable</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/sqo#Question -->
 
 
@@ -243,6 +267,17 @@ As default the cardinality is 1.</rdfs:comment>
     <owl:Class rdf:about="https://w3id.org/sqo#QuestionVariable">
         <rdfs:comment>Class that represents a variable used on a Question. This variable name must be present on the template and pattern of the question that uses it. Can have contraints in the form of a query (hasConstraint property) or a list of possible options (hasFixedOptions property).</rdfs:comment>
         <rdfs:label>Question Variable</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sqo#TimeIntervalQuestionVariable -->
+
+
+    <owl:Class rdf:about="https://w3id.org/sqo#TimeIntervalQuestionVariable">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
+        <rdfs:comment>Question variable that will be expanded into a time interval (two dates)</rdfs:comment>
+        <rdfs:label>Time Interval Question Variable</rdfs:label>
     </owl:Class>
 </rdf:RDF>
 

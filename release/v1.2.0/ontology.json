@@ -33,6 +33,18 @@
     "@value" : "v1.2.0"
   } ]
 }, {
+  "@id" : "https://w3id.org/sqo#BoundingBoxQuestionVariable",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Question variable that represents a geographical bounding box.\nIs expanded to minLat, maxLat, minLng, maxLng"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Bounding Box Question Variable"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/sqo#QuestionVariable"
+  } ]
+}, {
   "@id" : "https://w3id.org/sqo#Question",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -58,6 +70,18 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Question Variable"
+  } ]
+}, {
+  "@id" : "https://w3id.org/sqo#TimeIntervalQuestionVariable",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Question variable that will be expanded into a time interval (two dates)"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Time Interval Question Variable"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/sqo#QuestionVariable"
   } ]
 }, {
   "@id" : "https://w3id.org/sqo#hasConstraints",
@@ -153,13 +177,28 @@
   "@id" : "https://w3id.org/sqo#hasQuestionVariable",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "Link a Question with all of the Question Variables that used on the question template and pattern"
+    "@value" : "Link a Question with all of the Question Variables that are used on the question template and pattern"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/sqo#Question"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Has question variable"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/sqo#QuestionVariable"
+  } ]
+}, {
+  "@id" : "https://w3id.org/sqo#hasVariableExpansion",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Links a template variable to one or more pattern variables"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/sqo#QuestionVariable"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Has variable expansion"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/sqo#QuestionVariable"

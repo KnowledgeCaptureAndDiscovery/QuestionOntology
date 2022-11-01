@@ -4,6 +4,9 @@ This section provides details for each class and property defined by The Scienti
    <h3 id="classes-headline" class="list">Classes</h3>
    <ul class="hlist">
       <li>
+         <a href="#BoundingBoxQuestionVariable" title="https://w3id.org/sqo#BoundingBoxQuestionVariable">Bounding Box Question Variable</a>
+      </li>
+      <li>
          <a href="#Question" title="https://w3id.org/sqo#Question">Question</a>
       </li>
       <li>
@@ -12,7 +15,30 @@ This section provides details for each class and property defined by The Scienti
       <li>
          <a href="#QuestionVariable" title="https://w3id.org/sqo#QuestionVariable">Question Variable</a>
       </li>
+      <li>
+         <a href="#TimeIntervalQuestionVariable"
+            title="https://w3id.org/sqo#TimeIntervalQuestionVariable">Time Interval Question Variable</a>
+      </li>
    </ul>
+   <div class="entity" id="BoundingBoxQuestionVariable">
+      <h3>Bounding Box Question Variable<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/sqo#BoundingBoxQuestionVariable</p>
+      <div class="comment">
+         <span class="markdown">Question variable that represents a geographical bounding box.
+Is expanded to minLat, maxLat, minLng, maxLng</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#QuestionVariable" title="https://w3id.org/sqo#QuestionVariable">Question Variable</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="Question">
       <h3>Question<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
@@ -64,11 +90,19 @@ This section provides details for each class and property defined by The Scienti
          <span class="markdown">Class that represents a variable used on a Question. This variable name must be present on the template and pattern of the question that uses it. Can have contraints in the form of a query (hasConstraint property) or a list of possible options (hasFixedOptions property).</span>
       </div>
       <dl class="description">
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#BoundingBoxQuestionVariable" title="https://w3id.org/sqo#BoundingBoxQuestionVariable">Bounding Box Question Variable</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#TimeIntervalQuestionVariable"
+               title="https://w3id.org/sqo#TimeIntervalQuestionVariable">Time Interval Question Variable</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
          <dt>is in domain of</dt>
          <dd>
             <a href="#hasConstraints" title="https://w3id.org/sqo#hasConstraints">Has constraints</a>
             <sup class="type-dp" title="data property">dp</sup>, <a href="#hasFixedOptions" title="https://w3id.org/sqo#hasFixedOptions">Has fixed options</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasVariableName" title="https://w3id.org/sqo#hasVariableName">Has variable name</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasVariableExpansion" title="https://w3id.org/sqo#hasVariableExpansion">Has variable expansion</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasVariableName" title="https://w3id.org/sqo#hasVariableName">Has variable name</a>
             <sup class="type-dp" title="data property">dp</sup>, <a href="#maxCardinality" title="https://w3id.org/sqo#maxCardinality">has maximum cardinality</a>
             <sup class="type-dp" title="data property">dp</sup>, <a href="#minCardinality" title="https://w3id.org/sqo#minCardinality">has minimum cardinality</a>
             <sup class="type-dp" title="data property">dp</sup>
@@ -76,7 +110,26 @@ This section provides details for each class and property defined by The Scienti
          <dt>is in range of</dt>
          <dd>
             <a href="#hasQuestionVariable" title="https://w3id.org/sqo#hasQuestionVariable">Has question variable</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasVariableExpansion" title="https://w3id.org/sqo#hasVariableExpansion">Has variable expansion</a>
             <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="TimeIntervalQuestionVariable">
+      <h3>Time Interval Question Variable<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/sqo#TimeIntervalQuestionVariable</p>
+      <div class="comment">
+         <span class="markdown">Question variable that will be expanded into a time interval (two dates)</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#QuestionVariable" title="https://w3id.org/sqo#QuestionVariable">Question Variable</a>
+            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -88,6 +141,9 @@ This section provides details for each class and property defined by The Scienti
       </li>
       <li>
          <a href="#hasQuestionVariable" title="https://w3id.org/sqo#hasQuestionVariable">Has question variable</a>
+      </li>
+      <li>
+         <a href="#hasVariableExpansion" title="https://w3id.org/sqo#hasVariableExpansion">Has variable expansion</a>
       </li>
    </ul>
    <div class="entity" id="hasQuestionCategory">
@@ -123,13 +179,38 @@ This section provides details for each class and property defined by The Scienti
       <p>
          <strong>IRI:</strong> https://w3id.org/sqo#hasQuestionVariable</p>
       <div class="comment">
-         <span class="markdown">Link a Question with all of the Question Variables that used on the question template and pattern</span>
+         <span class="markdown">Link a Question with all of the Question Variables that are used on the question template and pattern</span>
       </div>
       <div class="description">
          <dl>
             <dt>has domain</dt>
             <dd>
                <a href="#Question" title="https://w3id.org/sqo#Question">Question</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#QuestionVariable" title="https://w3id.org/sqo#QuestionVariable">Question Variable</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasVariableExpansion">
+      <h3>Has variable expansion<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/sqo#hasVariableExpansion</p>
+      <div class="comment">
+         <span class="markdown">Links a template variable to one or more pattern variables</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#QuestionVariable" title="https://w3id.org/sqo#QuestionVariable">Question Variable</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
