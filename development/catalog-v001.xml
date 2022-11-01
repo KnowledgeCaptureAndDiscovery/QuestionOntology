@@ -4,9 +4,9 @@
     <uri id="Imports Wizard Entry" name="https://w3id.org/question" uri="QuestionOntology.owl"/>
     <uri id="Imports Wizard Entry" name="https://w3id.org/question/1.0.0/" uri="QuestionOntology.owl"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1667267876803" name="http://disk-project.org/resources/climate/" uri="ClimateQuestions.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1667267876803" name="http://disk-project.org/resources/sqo/" uri="EnigmaQuestions.xml"/>
-        <uri id="Automatically generated entry, Timestamp=1667267876803" name="http://www.example.com/questionTemplating" uri="QuestionOntology.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1667267876803" name="https://w3id.org/sqo/resource/" uri="EnigmaQuestions.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1667276563531" name="http://disk-project.org/resources/climate/" uri="ClimateQuestions.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1667276563531" name="http://disk-project.org/resources/sqo/" uri="EnigmaQuestions.xml"/>
+        <uri id="Automatically generated entry, Timestamp=1667276563531" name="http://www.example.com/questionTemplating" uri="QuestionOntology.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1667276563531" name="https://w3id.org/sqo/resource/" uri="EnigmaQuestions.owl"/>
     </group>
 </catalog>

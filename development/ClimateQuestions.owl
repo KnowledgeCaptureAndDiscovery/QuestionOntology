@@ -55,7 +55,7 @@
 :goal hyp:hasTimeInterval ?TimeInterval
 ?TimeInteval hyp:hasMinTime ?MinTime
 ?TimeInteval hyp:hasMaxTime ?MaxTime</sqo:hasQuestionPattern>
-        <sqo:hasQuestionTemplate>Are there periodicities present in ?ClimateVaribale for record at ?Dataset during ?TimeInterval?</sqo:hasQuestionTemplate>
+        <sqo:hasQuestionTemplate>Are there periodicities present in ?ClimateVaribale for record at ?Dataset during ?TimeInterval</sqo:hasQuestionTemplate>
         <rdfs:label>Are there periodicities present in ?ClimateVaribale for record at ?Dataset during ?TimeInterval?</rdfs:label>
     </owl:NamedIndividual>
     
@@ -115,7 +115,7 @@
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
 :goal hyp:fromLocation ?Site</sqo:hasQuestionPattern>
         <sqo:hasQuestionTemplate>Are there periodicities present in ?ClimateVariable for record at ?Site</sqo:hasQuestionTemplate>
-        <rdfs:label>Are there periodicities present in ?ClimateVariable for record at ?Site</rdfs:label>
+        <rdfs:label>Are there periodicities present in ?ClimateVariable for record at ?Site?</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -140,7 +140,7 @@
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
 ?ClimateVariable hyp:fromDataset ?Dataset</sqo:hasQuestionPattern>
         <sqo:hasQuestionTemplate>Are there periodicities present in ?ClimateVariable for record at ?Dataset</sqo:hasQuestionTemplate>
-        <rdfs:label>Are there periodicities present in ?ClimateVaribale for record at ?Dataset ?</rdfs:label>
+        <rdfs:label>Are there periodicities present in ?ClimateVaribale for record at ?Dataset?</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -164,8 +164,8 @@
     FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))</sqo:hasQuestionConstraint>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
 ?ClimateVariable hyp:fromDataset ?Dataset</sqo:hasQuestionPattern>
-        <sqo:hasQuestionTemplate>Are the periodicities in ?ClimateVariable for record at ?Dataset intermittent?</sqo:hasQuestionTemplate>
-        <rdfs:label>Are the periodicities in ?ClimateVariable for record ?Dataset intermittent</rdfs:label>
+        <sqo:hasQuestionTemplate>Are the periodicities in ?ClimateVariable for record at ?Dataset intermittent</sqo:hasQuestionTemplate>
+        <rdfs:label>Are the periodicities in ?ClimateVariable for record ?Dataset intermittent?</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -200,8 +200,8 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))</sqo:hasQuestionConstrai
 ?BoundingBox hyp:hasMaxLat ?MaxLat
 ?BoundingBox hyp:hasMinLon ?MinLon
 ?BoundingBox hyp:hasMaxLon ?MaxLon</sqo:hasQuestionPattern>
-        <sqo:hasQuestionTemplate>Are the periodicities in ?ClimateVariable for record at ?BoundingBox intermittent?</sqo:hasQuestionTemplate>
-        <rdfs:label>Are the periodicities in ?ClimateVariable for record at ?BoundingBox intermittent</rdfs:label>
+        <sqo:hasQuestionTemplate>Are the periodicities in ?ClimateVariable for record at ?BoundingBox intermittent</sqo:hasQuestionTemplate>
+        <rdfs:label>Are the periodicities in ?ClimateVariable for record at ?BoundingBox intermittent?</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -232,8 +232,8 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))</sqo:hasQuestionConstrai
     FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))</sqo:hasQuestionConstraint>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
 :goal hyp:fromLocation ?Site</sqo:hasQuestionPattern>
-        <sqo:hasQuestionTemplate>Are the periodicities in ?ClimateVariable for record at ?Site intermittent?</sqo:hasQuestionTemplate>
-        <rdfs:label>Are the periodicities in ?ClimateVariable for record at ?Site intermittent</rdfs:label>
+        <sqo:hasQuestionTemplate>Are the periodicities in ?ClimateVariable for record at ?Site intermittent</sqo:hasQuestionTemplate>
+        <rdfs:label>Are the periodicities in ?ClimateVariable for record at ?Site intermittent?</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -269,7 +269,7 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))</sqo:hasQuestionConstrai
 ?BoundingBox hyp:hasMinLon ?MinLon
 ?BoundingBox hyp:hasMaxLon ?MaxLon</sqo:hasQuestionPattern>
         <sqo:hasQuestionTemplate>Are there periodicities present in ?ClimateVariable for records at ?BoundingBox</sqo:hasQuestionTemplate>
-        <rdfs:label>Are there periodicities present in ?ClimateVariable for record at ?BoundingBox</rdfs:label>
+        <rdfs:label>Are there periodicities present in ?ClimateVariable for record at ?BoundingBox?</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -310,7 +310,8 @@ FILTER (?VarID1 != ?VarID2)</sqo:hasQuestionConstraint>
 :goal hyp:hasVariable ?ClimateVariable2
 ?ClimateVariable1 hyp:fromDataset ?Dataset1
 ?ClimateVariable2 hyp:fromDataset ?Dataset2</sqo:hasQuestionPattern>
-        <rdfs:label>Is ?ClimateVariable1 in ?Dataset1 coherent with ?ClimateVariable2 in ?Dataset2</rdfs:label>
+        <sqo:hasQuestionTemplate>Is ?ClimateVariable1 in ?Dataset1 coherent with ?ClimateVariable2 in ?Dataset2</sqo:hasQuestionTemplate>
+        <rdfs:label>Is ?ClimateVariable1 in ?Dataset1 coherent with ?ClimateVariable2 in ?Dataset2?</rdfs:label>
     </owl:NamedIndividual>
     
 
