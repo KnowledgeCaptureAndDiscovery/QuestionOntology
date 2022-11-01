@@ -318,6 +318,7 @@ FILTER (?VarID1 != ?VarID2)</sqo:hasQuestionConstraint>
     <!-- http://disk-project.org/resources/climate/variable/BoundingBox -->
 
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/variable/BoundingBox">
+        <rdf:type rdf:resource="https://w3id.org/sqo#BoundingBoxQuestionVariable"/>
         <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <sqo:hasVariableName>?BoundingBox</sqo:hasVariableName>
     </owl:NamedIndividual>
@@ -327,6 +328,7 @@ FILTER (?VarID1 != ?VarID2)</sqo:hasQuestionConstraint>
     <!-- http://disk-project.org/resources/climate/variable/BoundingBox1 -->
 
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/variable/BoundingBox1">
+        <rdf:type rdf:resource="https://w3id.org/sqo#BoundingBoxQuestionVariable"/>
         <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <sqo:hasVariableName>?BoundingBox1</sqo:hasVariableName>
     </owl:NamedIndividual>
@@ -336,6 +338,7 @@ FILTER (?VarID1 != ?VarID2)</sqo:hasQuestionConstraint>
     <!-- http://disk-project.org/resources/climate/variable/BoundingBox2 -->
 
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/variable/BoundingBox2">
+        <rdf:type rdf:resource="https://w3id.org/sqo#BoundingBoxQuestionVariable"/>
         <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <sqo:hasVariableName>?BoundingBox2</sqo:hasVariableName>
     </owl:NamedIndividual>
@@ -427,6 +430,7 @@ FILTER (?VarID1 != ?VarID2)</sqo:hasQuestionConstraint>
 
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/variable/TimeInterval">
         <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
+        <rdf:type rdf:resource="https://w3id.org/sqo#TimeIntervalQuestionVariable"/>
         <sqo:hasVariableName>?TimeInterval</sqo:hasVariableName>
     </owl:NamedIndividual>
 </rdf:RDF>
