@@ -178,11 +178,11 @@
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/BoundingBox"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable"/>
         <sqo:hasQuestionConstraint>?location &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
-?location &lt;http://linked.earth/ontology#wgs84_Long&gt; ?lon .
+?location &lt;http://linked.earth/ontology#wgs84_Long&gt; ?lng .
 filter( xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
         xsd:float(?lat)&gt;xsd:float(?MinLat) &amp;&amp;
-        xsd:float(?lon)&lt;xsd:float(?MaxLon) &amp;&amp; 
-        xsd:float(?lon)&gt;xsd:float(?MinLon)).
+        xsd:float(?lng)&lt;xsd:float(?MaxLng) &amp;&amp; 
+        xsd:float(?lng)&gt;xsd:float(?MinLng)).
 ?Dataset &lt;http://linked.earth/ontology#collectedFrom&gt; ?location .
 ?Dataset a &lt;http://linked.earth/ontology#Dataset&gt; .
 ?Dataset &lt;http://linked.earth/ontology#name&gt; ?DatasetLabel .
@@ -198,8 +198,8 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))</sqo:hasQuestionConstrai
 :goal hyp:hasLocation ?BoundingBox
 ?BoundingBox hyp:hasMinLat ?MinLat
 ?BoundingBox hyp:hasMaxLat ?MaxLat
-?BoundingBox hyp:hasMinLon ?MinLon
-?BoundingBox hyp:hasMaxLon ?MaxLon</sqo:hasQuestionPattern>
+?BoundingBox hyp:hasMinLng ?MinLng
+?BoundingBox hyp:hasMaxLng ?MaxLng</sqo:hasQuestionPattern>
         <sqo:hasQuestionTemplate>Are the periodicities in ?ClimateVariable for record at ?BoundingBox intermittent</sqo:hasQuestionTemplate>
         <rdfs:label>Are the periodicities in ?ClimateVariable for record at ?BoundingBox intermittent?</rdfs:label>
     </owl:NamedIndividual>
@@ -246,11 +246,11 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))</sqo:hasQuestionConstrai
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/BoundingBox"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable"/>
         <sqo:hasQuestionConstraint>?location &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
-?location &lt;http://linked.earth/ontology#wgs84_Long&gt; ?lon .
+?location &lt;http://linked.earth/ontology#wgs84_Long&gt; ?lng .
 filter( xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
         xsd:float(?lat)&gt;xsd:float(?MinLat) &amp;&amp;
-        xsd:float(?lon)&lt;xsd:float(?MaxLon) &amp;&amp; 
-        xsd:float(?lon)&gt;xsd:float(?MinLon)).
+        xsd:float(?lng)&lt;xsd:float(?MaxLng) &amp;&amp; 
+        xsd:float(?lng)&gt;xsd:float(?MinLng)).
 ?Dataset &lt;http://linked.earth/ontology#collectedFrom&gt; ?location .
 ?Dataset a &lt;http://linked.earth/ontology#Dataset&gt; .
 ?Dataset &lt;http://linked.earth/ontology#name&gt; ?DatasetLabel .
@@ -266,8 +266,8 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))</sqo:hasQuestionConstrai
 :goal hyp:hasLocation ?BoundingBox
 ?BoundingBox hyp:hasMinLat ?MinLat
 ?BoundingBox hyp:hasMaxLat ?MaxLat
-?BoundingBox hyp:hasMinLon ?MinLon
-?BoundingBox hyp:hasMaxLon ?MaxLon</sqo:hasQuestionPattern>
+?BoundingBox hyp:hasMinLng ?MinLng
+?BoundingBox hyp:hasMaxLng ?MaxLng</sqo:hasQuestionPattern>
         <sqo:hasQuestionTemplate>Are there periodicities present in ?ClimateVariable for records at ?BoundingBox</sqo:hasQuestionTemplate>
         <rdfs:label>Are there periodicities present in ?ClimateVariable for record at ?BoundingBox?</rdfs:label>
     </owl:NamedIndividual>
