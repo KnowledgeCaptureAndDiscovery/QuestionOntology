@@ -49,7 +49,7 @@
     FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))
     ?timevar &lt;http://linked.earth/ontology#hasMinValue&gt; ?e1.
     ?timevar &lt;http://linked.earth/ontology#hasMaxValue&gt; ?e2.
-    FILTER((?e1&gt;=MinTime &amp;&amp; ?e2&lt;=MaxTime) || (?e1&lt;=MinTime &amp;&amp; ?e2&gt;=MaxTime) || (?e1&gt;=MinTime &amp;&amp; ?e2&gt;=MaxTime) || (?e1&lt;=MinTime &amp;&amp; ?e2&gt;=MaxTime)).</sqo:hasQuestionConstraint>
+    FILTER((?e1&gt;=?MinTime &amp;&amp; ?e2&lt;=?MaxTime) || (?e1&lt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime) || (?e1&gt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime) || (?e1&lt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime)).</sqo:hasQuestionConstraint>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
 ?ClimateVariable hyp:fromDataset ?Dataset
 :goal hyp:hasTimeInterval ?TimeInterval
