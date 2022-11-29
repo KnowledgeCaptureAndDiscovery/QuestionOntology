@@ -53,8 +53,9 @@
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
 ?ClimateVariable hyp:fromDataset ?Dataset
 :goal hyp:hasTimeInterval ?TimeInterval
-?TimeInteval hyp:hasMinTime ?MinTime
-?TimeInteval hyp:hasMaxTime ?MaxTime</sqo:hasQuestionPattern>
+?TimeInterval hyp:hasMinTime ?MinTime
+?TimeInterval hyp:hasMaxTime ?MaxTime
+?TimeInterval a ?TimeType</sqo:hasQuestionPattern>
         <sqo:hasQuestionTemplate>Are there periodicities present in ?ClimateVaribale for record at ?Dataset during ?TimeInterval</sqo:hasQuestionTemplate>
         <rdfs:label>Are there periodicities present in ?ClimateVaribale for record at ?Dataset during ?TimeInterval?</rdfs:label>
     </owl:NamedIndividual>
