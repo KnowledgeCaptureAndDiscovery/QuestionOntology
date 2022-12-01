@@ -91,7 +91,7 @@ BIND(REPLACE(?BrainCharacteristic, &quot;CorticalThickness&quot;, &quot;Cortical
         <sqo:hasOptionsQuery>?hasCohortProj rdfs:label &quot;HasCohortProject (E)&quot; .
 [] ?hasCohortProj ?CohortProjects .
 ?CohortProjects ?DemographicAttribute [] .
-?DemographicAttribute rdfs:label ?DemographicAttributeLabel .
+?DemographicAttribute rdfs:label ?OrDemographicAttributeLabel .
 FILTER (
   REGEX(?OrDemographicAttributeLabel, &quot;HasAge Mean&quot;) ||
   REGEX(?OrDemographicAttributeLabel, &quot;HasNumberOfParticipants&quot;) ||
