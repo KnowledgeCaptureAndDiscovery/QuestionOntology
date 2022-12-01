@@ -99,6 +99,14 @@
 #    Data properties
 #################################################################
 
+###  https://w3id.org/sqo#hasConstraintQuery
+:hasConstraintQuery rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :Question ;
+                    rdfs:range xsd:string ;
+                    rdfs:comment "Query that determines constraints for all variables on this Question" ;
+                    rdfs:label "Has constraint query" .
+
+
 ###  https://w3id.org/sqo#hasExplanation
 :hasExplanation rdf:type owl:DatatypeProperty ;
                 rdfs:comment "Explanation of this question variable values." ;
@@ -133,14 +141,6 @@
                  rdfs:range xsd:string ;
                  rdfs:comment "An SPARQL query that will determine the options for this variable" ;
                  rdfs:label "Has options query" .
-
-
-###  https://w3id.org/sqo#hasQuestionConstraint
-:hasQuestionConstraint rdf:type owl:DatatypeProperty ;
-                       rdfs:domain :Question ;
-                       rdfs:range xsd:string ;
-                       rdfs:comment "Querie that determines constraints for all variables on this Question" ;
-                       rdfs:label "Has question constraint" .
 
 
 ###  https://w3id.org/sqo#hasQuestionPattern

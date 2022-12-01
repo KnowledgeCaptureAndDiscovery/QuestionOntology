@@ -9,8 +9,8 @@
      xmlns:disk="http://disk-project.org/ontology/disk#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:terms="http://purl.org/dc/terms/"
-     xmlns:questions="http://disk-project.org/resources/climate/question#"
-     xmlns:variables="http://disk-project.org/resources/climate/variable#">
+     xmlns:questions="http://disk-project.org/resources/climate/question/"
+     xmlns:variables="http://disk-project.org/resources/climate/variable/">
     <owl:Ontology rdf:about="http://disk-project.org/resources/climate/">
         <owl:imports rdf:resource="https://w3id.org/sqo"/>
     </owl:Ontology>
@@ -36,7 +36,7 @@
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/Dataset"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/TimeInterval"/>
-        <sqo:hasQuestionConstraint>?Dataset a &lt;http://linked.earth/ontology#Dataset&gt; .
+        <sqo:hasConstraintQuery>?Dataset a &lt;http://linked.earth/ontology#Dataset&gt; .
     ?Dataset &lt;http://linked.earth/ontology#name&gt; ?DatasetLabel .
     ?Dataset &lt;http://linked.earth/ontology#hasUrl&gt; ?url .
     ?Dataset &lt;http://linked.earth/ontology#includesPaleoData&gt; ?data .
@@ -49,15 +49,15 @@
     FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))
     ?timevar &lt;http://linked.earth/ontology#hasMinValue&gt; ?e1.
     ?timevar &lt;http://linked.earth/ontology#hasMaxValue&gt; ?e2.
-    FILTER((?e1&gt;=?MinTime &amp;&amp; ?e2&lt;=?MaxTime) || (?e1&lt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime) || (?e1&gt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime) || (?e1&lt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime)).</sqo:hasQuestionConstraint>
+    FILTER((?e1&gt;=?MinTime &amp;&amp; ?e2&lt;=?MaxTime) || (?e1&lt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime) || (?e1&gt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime) || (?e1&lt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime)).</sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
 ?ClimateVariable hyp:fromDataset ?Dataset
 :goal hyp:hasTimeInterval ?TimeInterval
 ?TimeInterval hyp:hasMinTime ?MinTime
 ?TimeInterval hyp:hasMaxTime ?MaxTime
 ?TimeInterval a ?TimeType</sqo:hasQuestionPattern>
-        <sqo:hasQuestionTemplate>Are there periodicities present in ?ClimateVaribale for record at ?Dataset during ?TimeInterval</sqo:hasQuestionTemplate>
-        <rdfs:label>Are there periodicities present in ?ClimateVaribale for record at ?Dataset during ?TimeInterval?</rdfs:label>
+        <sqo:hasQuestionTemplate>Are there periodicities present in ?ClimateVariable for record at ?Dataset during ?TimeInterval</sqo:hasQuestionTemplate>
+        <rdfs:label>Are there periodicities present in ?ClimateVariable for record at ?Dataset during ?TimeInterval?</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -96,7 +96,7 @@
         <sqo:hasQuestionCategory rdf:resource="http://disk-project.org/resources/climate/category/Periodicities"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/Site"/>
-        <sqo:hasQuestionConstraint>?Site a &lt;http://linked.earth/ontology#Location&gt; .
+        <sqo:hasConstraintQuery>?Site a &lt;http://linked.earth/ontology#Location&gt; .
     OPTIONAL {?Site &lt;http://linked.earth/ontology#name&gt; ?LocationName1 .}
     BIND(COALESCE(?LocationName1, REPLACE(STR(?Site), &quot;(.*#)|(.Location)&quot;, &quot;&quot;,&quot;i&quot;)) as ?LocationName)
     ?Site &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
@@ -112,7 +112,7 @@
     ?Variable &lt;http://linked.earth/ontology#hasVariableID&gt; ?VarID .
     ?Variable &lt;http://linked.earth/ontology#name&gt; ?ClimateVariable .
     FILTER (!REGEX(str(?ClimateVariable), &quot;year&quot;))
-    FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))</sqo:hasQuestionConstraint>
+    FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))</sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
 :goal hyp:fromLocation ?Site</sqo:hasQuestionPattern>
         <sqo:hasQuestionTemplate>Are there periodicities present in ?ClimateVariable for record at ?Site</sqo:hasQuestionTemplate>
@@ -128,7 +128,7 @@
         <sqo:hasQuestionCategory rdf:resource="http://disk-project.org/resources/climate/category/Periodicities"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/Dataset"/>
-        <sqo:hasQuestionConstraint>?Dataset a &lt;http://linked.earth/ontology#Dataset&gt; .
+        <sqo:hasConstraintQuery>?Dataset a &lt;http://linked.earth/ontology#Dataset&gt; .
     ?Dataset &lt;http://linked.earth/ontology#name&gt; ?DatasetLabel .
     ?Dataset &lt;http://linked.earth/ontology#hasUrl&gt; ?url .
     ?Dataset &lt;http://linked.earth/ontology#includesPaleoData&gt; ?data .
@@ -137,11 +137,11 @@
     ?Variable &lt;http://linked.earth/ontology#hasVariableID&gt; ?VarID .
     ?Variable &lt;http://linked.earth/ontology#name&gt; ?ClimateVariable .
     FILTER (!REGEX(str(?ClimateVariable), &quot;year&quot;))
-    FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))</sqo:hasQuestionConstraint>
+    FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))</sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
 ?ClimateVariable hyp:fromDataset ?Dataset</sqo:hasQuestionPattern>
         <sqo:hasQuestionTemplate>Are there periodicities present in ?ClimateVariable for record at ?Dataset</sqo:hasQuestionTemplate>
-        <rdfs:label>Are there periodicities present in ?ClimateVaribale for record at ?Dataset?</rdfs:label>
+        <rdfs:label>Are there periodicities present in ?ClimateVariable for record at ?Dataset?</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -153,7 +153,7 @@
         <sqo:hasQuestionCategory rdf:resource="http://disk-project.org/resources/climate/category/PeriodicitiesIntermittent"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/Dataset"/>
-        <sqo:hasQuestionConstraint>?Dataset a &lt;http://linked.earth/ontology#Dataset&gt; .
+        <sqo:hasConstraintQuery>?Dataset a &lt;http://linked.earth/ontology#Dataset&gt; .
     ?Dataset &lt;http://linked.earth/ontology#name&gt; ?DatasetLabel .
     ?Dataset &lt;http://linked.earth/ontology#hasUrl&gt; ?url .
     ?Dataset &lt;http://linked.earth/ontology#includesPaleoData&gt; ?data .
@@ -162,7 +162,7 @@
     ?Variable &lt;http://linked.earth/ontology#hasVariableID&gt; ?VarID .
     ?Variable &lt;http://linked.earth/ontology#name&gt; ?ClimateVariable .
     FILTER (!REGEX(str(?ClimateVariable), &quot;year&quot;))
-    FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))</sqo:hasQuestionConstraint>
+    FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))</sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
 ?ClimateVariable hyp:fromDataset ?Dataset</sqo:hasQuestionPattern>
         <sqo:hasQuestionTemplate>Are the periodicities in ?ClimateVariable for record at ?Dataset intermittent</sqo:hasQuestionTemplate>
@@ -178,7 +178,7 @@
         <sqo:hasQuestionCategory rdf:resource="http://disk-project.org/resources/climate/category/PeriodicitiesIntermittent"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/BoundingBox"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable"/>
-        <sqo:hasQuestionConstraint>?location &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
+        <sqo:hasConstraintQuery>?location &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
 ?location &lt;http://linked.earth/ontology#wgs84_Long&gt; ?lng .
 filter( xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
         xsd:float(?lat)&gt;xsd:float(?MinLat) &amp;&amp;
@@ -194,7 +194,7 @@ filter( xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp;
 ?Variable &lt;http://linked.earth/ontology#hasVariableID&gt; ?VarID .
 ?Variable &lt;http://linked.earth/ontology#name&gt; ?ClimateVariable .
 FILTER (!REGEX(str(?ClimateVariable), &quot;year&quot;))
-FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))</sqo:hasQuestionConstraint>
+FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))</sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
 :goal hyp:hasLocation ?BoundingBox
 ?BoundingBox hyp:hasMinLat ?MinLat
@@ -214,7 +214,7 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))</sqo:hasQuestionConstrai
         <sqo:hasQuestionCategory rdf:resource="http://disk-project.org/resources/climate/category/PeriodicitiesIntermittent"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/Site"/>
-        <sqo:hasQuestionConstraint>?Site a &lt;http://linked.earth/ontology#Location&gt; .
+        <sqo:hasConstraintQuery>?Site a &lt;http://linked.earth/ontology#Location&gt; .
     OPTIONAL {?Site &lt;http://linked.earth/ontology#name&gt; ?LocationName1 .}
     BIND(COALESCE(?LocationName1, REPLACE(STR(?Site), &quot;(.*#)|(.Location)&quot;, &quot;&quot;,&quot;i&quot;)) as ?LocationName)
     ?Site &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
@@ -230,7 +230,7 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))</sqo:hasQuestionConstrai
     ?Variable &lt;http://linked.earth/ontology#hasVariableID&gt; ?VarID .
     ?Variable &lt;http://linked.earth/ontology#name&gt; ?ClimateVariable .
     FILTER (!REGEX(str(?ClimateVariable), &quot;year&quot;))
-    FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))</sqo:hasQuestionConstraint>
+    FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))</sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
 :goal hyp:fromLocation ?Site</sqo:hasQuestionPattern>
         <sqo:hasQuestionTemplate>Are the periodicities in ?ClimateVariable for record at ?Site intermittent</sqo:hasQuestionTemplate>
@@ -246,7 +246,7 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))</sqo:hasQuestionConstrai
         <sqo:hasQuestionCategory rdf:resource="http://disk-project.org/resources/climate/category/Periodicities"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/BoundingBox"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable"/>
-        <sqo:hasQuestionConstraint>?location &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
+        <sqo:hasConstraintQuery>?location &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
 ?location &lt;http://linked.earth/ontology#wgs84_Long&gt; ?lng .
 filter( xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
         xsd:float(?lat)&gt;xsd:float(?MinLat) &amp;&amp;
@@ -262,7 +262,7 @@ filter( xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp;
 ?Variable &lt;http://linked.earth/ontology#hasVariableID&gt; ?VarID .
 ?Variable &lt;http://linked.earth/ontology#name&gt; ?ClimateVariable .
 FILTER (!REGEX(str(?ClimateVariable), &quot;year&quot;))
-FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))</sqo:hasQuestionConstraint>
+FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))</sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
 :goal hyp:hasLocation ?BoundingBox
 ?BoundingBox hyp:hasMinLat ?MinLat
@@ -284,7 +284,7 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))</sqo:hasQuestionConstrai
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable2"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/Dataset1"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/Dataset2"/>
-        <sqo:hasQuestionConstraint>?Dataset1 a &lt;http://linked.earth/ontology#Dataset&gt; .
+        <sqo:hasConstraintQuery>?Dataset1 a &lt;http://linked.earth/ontology#Dataset&gt; .
 ?Dataset1 &lt;http://linked.earth/ontology#name&gt; ?DatasetLabel1 .
 ?Dataset1 &lt;http://linked.earth/ontology#hasUrl&gt; ?url1 .
 ?Dataset1 &lt;http://linked.earth/ontology#includesPaleoData&gt; ?data1.
@@ -306,7 +306,7 @@ FILTER (!REGEX(str(?ClimateVariable1), &quot;age&quot;))
 FILTER (!REGEX(str(?ClimateVariable2), &quot;year&quot;))
 FILTER (!REGEX(str(?ClimateVariable2), &quot;age&quot;))
 
-FILTER (?VarID1 != ?VarID2)</sqo:hasQuestionConstraint>
+FILTER (?VarID1 != ?VarID2)</sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable1
 :goal hyp:hasVariable ?ClimateVariable2
 ?ClimateVariable1 hyp:fromDataset ?Dataset1
@@ -481,4 +481,3 @@ FILTER (?VarID1 != ?VarID2)</sqo:hasQuestionConstraint>
 
 
 <!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
-

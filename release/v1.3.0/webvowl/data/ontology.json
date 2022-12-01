@@ -22,7 +22,7 @@
       "creator" : [ {
         "identifier" : "creator",
         "language" : "undefined",
-        "value" : "Daniel Garijo",
+        "value" : "Yolanda Gil",
         "type" : "label"
       }, {
         "identifier" : "creator",
@@ -32,7 +32,7 @@
       }, {
         "identifier" : "creator",
         "language" : "undefined",
-        "value" : "Yolanda Gil",
+        "value" : "Daniel Garijo",
         "type" : "label"
       } ],
       "versionInfo" : [ {
@@ -69,43 +69,43 @@
     "id" : "15",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "4",
+    "id" : "2",
     "type" : "rdfs:Datatype"
   }, {
     "id" : "16",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "19",
+    "id" : "18",
     "type" : "owl:Class"
   }, {
     "id" : "8",
     "type" : "owl:Class"
   }, {
-    "id" : "20",
+    "id" : "19",
     "type" : "owl:Class"
+  }, {
+    "id" : "20",
+    "type" : "rdfs:Datatype"
   }, {
     "id" : "21",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "22",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "2",
+    "id" : "1",
     "type" : "owl:Class"
   }, {
     "id" : "7",
     "type" : "owl:Class"
   }, {
-    "id" : "1",
+    "id" : "4",
     "type" : "owl:Class"
   }, {
-    "id" : "23",
+    "id" : "22",
     "type" : "owl:Class"
   }, {
-    "id" : "36",
+    "id" : "35",
     "type" : "rdfs:Literal"
   }, {
-    "id" : "38",
+    "id" : "37",
     "type" : "rdfs:Datatype"
   }, {
     "id" : "30",
@@ -159,7 +159,7 @@
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "4",
+    "id" : "2",
     "label" : {
       "IRI-based" : "string"
     }
@@ -181,8 +181,8 @@
     "comment" : {
       "undefined" : "Question variable that will be expanded into a time interval (two dates)"
     },
-    "id" : "19",
-    "superClasses" : [ "2" ]
+    "id" : "18",
+    "superClasses" : [ "1" ]
   }, {
     "iri" : "https://w3id.org/sqo#QuestionCategory",
     "baseIri" : "https://w3id.org/sqo",
@@ -206,20 +206,20 @@
     "comment" : {
       "undefined" : "Option for a question variable. Has a value and a label."
     },
-    "id" : "20"
+    "id" : "19"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "20",
+    "label" : {
+      "IRI-based" : "string"
+    }
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#anyURI",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
     "id" : "21",
     "label" : {
       "IRI-based" : "anyURI"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#string",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "22",
-    "label" : {
-      "IRI-based" : "string"
     }
   }, {
     "iri" : "https://w3id.org/sqo#QuestionVariable",
@@ -229,11 +229,11 @@
       "IRI-based" : "QuestionVariable",
       "undefined" : "Question Variable"
     },
-    "subClasses" : [ "1", "19", "23" ],
+    "subClasses" : [ "4", "18", "22" ],
     "comment" : {
       "undefined" : "Class that represents a variable used on a Question. This variable name must be present on the template or pattern of the question that uses it. Can have contraints in the form of a query (hasOptionsQuery property) or a list of possible options (hasOptions property)."
     },
-    "id" : "2"
+    "id" : "1"
   }, {
     "iri" : "https://w3id.org/sqo#Question",
     "baseIri" : "https://w3id.org/sqo",
@@ -257,8 +257,8 @@
     "comment" : {
       "undefined" : "Question variable that represents a geographical bounding box.\nIs expanded to minLat, maxLat, minLng, maxLng"
     },
-    "id" : "1",
-    "superClasses" : [ "2" ]
+    "id" : "4",
+    "superClasses" : [ "1" ]
   }, {
     "iri" : "https://w3id.org/sqo#UserInputQuestionVariable",
     "baseIri" : "https://w3id.org/sqo",
@@ -270,11 +270,11 @@
     "comment" : {
       "undefined" : "Variable set by users"
     },
-    "id" : "23",
-    "superClasses" : [ "2" ]
+    "id" : "22",
+    "superClasses" : [ "1" ]
   }, {
     "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "36",
+    "id" : "35",
     "label" : {
       "IRI-based" : "Literal",
       "undefined" : "Literal"
@@ -282,7 +282,7 @@
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "38",
+    "id" : "37",
     "label" : {
       "IRI-based" : "nonNegativeInteger"
     }
@@ -303,10 +303,10 @@
   } ],
   "property" : [ {
     "id" : "0",
-    "type" : "owl:objectProperty"
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "3",
-    "type" : "owl:datatypeProperty"
+    "type" : "owl:objectProperty"
   }, {
     "id" : "6",
     "type" : "owl:objectProperty"
@@ -318,16 +318,16 @@
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "17",
-    "type" : "owl:datatypeProperty"
+    "type" : "owl:objectProperty"
   }, {
-    "id" : "18",
+    "id" : "23",
     "type" : "owl:objectProperty"
   }, {
     "id" : "24",
     "type" : "owl:objectProperty"
   }, {
     "id" : "25",
-    "type" : "owl:objectProperty"
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "26",
     "type" : "owl:datatypeProperty"
@@ -342,25 +342,25 @@
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "32",
-    "type" : "owl:datatypeProperty"
+    "type" : "owl:objectProperty"
   }, {
     "id" : "33",
-    "type" : "owl:objectProperty"
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "34",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "35",
+    "id" : "36",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "37",
+    "id" : "38",
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "39",
-    "type" : "owl:datatypeProperty"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "40",
-    "type" : "rdfs:SubClassOf"
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "41",
     "type" : "rdfs:SubClassOf"
@@ -372,32 +372,32 @@
     "type" : "owl:datatypeProperty"
   } ],
   "propertyAttribute" : [ {
-    "iri" : "https://w3id.org/sqo#hasMinLng",
-    "baseIri" : "https://w3id.org/sqo",
-    "range" : "2",
-    "label" : {
-      "IRI-based" : "hasMinLng",
-      "undefined" : "Has minimum longitude"
-    },
-    "domain" : "1",
-    "comment" : {
-      "undefined" : "Minimum longitude of a bounding box"
-    },
-    "attributes" : [ "object" ],
-    "id" : "0"
-  }, {
     "iri" : "https://w3id.org/sqo#hasVariableName",
     "baseIri" : "https://w3id.org/sqo",
-    "range" : "4",
+    "range" : "2",
     "label" : {
       "IRI-based" : "hasVariableName",
       "undefined" : "Has variable name"
     },
-    "domain" : "2",
+    "domain" : "1",
     "comment" : {
       "undefined" : "SPARQL name of this variable. Used on the question pattern and template"
     },
     "attributes" : [ "datatype" ],
+    "id" : "0"
+  }, {
+    "iri" : "https://w3id.org/sqo#hasMinLng",
+    "baseIri" : "https://w3id.org/sqo",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "hasMinLng",
+      "undefined" : "Has minimum longitude"
+    },
+    "domain" : "4",
+    "comment" : {
+      "undefined" : "Minimum longitude of a bounding box"
+    },
+    "attributes" : [ "object" ],
     "id" : "3"
   }, {
     "iri" : "https://w3id.org/sqo#hasQuestionCategory",
@@ -416,7 +416,7 @@
   }, {
     "iri" : "https://w3id.org/sqo#hasQuestionVariable",
     "baseIri" : "https://w3id.org/sqo",
-    "range" : "2",
+    "range" : "1",
     "label" : {
       "IRI-based" : "hasQuestionVariable",
       "undefined" : "Has question variable"
@@ -430,70 +430,56 @@
   }, {
     "iri" : "https://w3id.org/sqo#hasOptionsQuery",
     "baseIri" : "https://w3id.org/sqo",
-    "range" : "5",
+    "range" : "9",
     "label" : {
       "IRI-based" : "hasOptionsQuery",
       "undefined" : "Has options query"
     },
-    "domain" : "2",
+    "domain" : "1",
     "comment" : {
       "undefined" : "An SPARQL query that will determine the options for this variable"
     },
     "attributes" : [ "datatype" ],
     "id" : "14"
   }, {
-    "iri" : "https://w3id.org/sqo#hasQuestionConstraint",
-    "baseIri" : "https://w3id.org/sqo",
-    "range" : "9",
-    "label" : {
-      "IRI-based" : "hasQuestionConstraint",
-      "undefined" : "Has question constraint"
-    },
-    "domain" : "7",
-    "comment" : {
-      "undefined" : "Querie that determines constraints for all variables on this Question"
-    },
-    "attributes" : [ "datatype" ],
-    "id" : "17"
-  }, {
     "iri" : "https://w3id.org/sqo#hasMaxLat",
     "baseIri" : "https://w3id.org/sqo",
-    "range" : "2",
+    "range" : "1",
     "label" : {
       "IRI-based" : "hasMaxLat",
       "undefined" : "Has maximum latitude"
     },
-    "domain" : "1",
+    "domain" : "4",
     "comment" : {
       "undefined" : "Maximum latitude of a bounding box"
     },
     "attributes" : [ "object" ],
-    "id" : "18"
+    "id" : "17"
   }, {
     "iri" : "https://w3id.org/sqo#hasMinLat",
     "baseIri" : "https://w3id.org/sqo",
-    "range" : "2",
+    "range" : "1",
     "label" : {
       "IRI-based" : "hasMinLat",
       "undefined" : "Has minimum latitude"
     },
-    "domain" : "1",
+    "domain" : "4",
     "comment" : {
       "undefined" : "Minimum latitude of a bounding box"
     },
     "attributes" : [ "object" ],
-    "id" : "24"
+    "id" : "23"
   }, {
     "iri" : "https://w3id.org/sqo#hasOptions",
     "baseIri" : "https://w3id.org/sqo",
-    "range" : "20",
+    "range" : "19",
     "label" : {
       "IRI-based" : "hasOptions",
       "undefined" : "Links a question variable with the possible options that can take."
     },
-    "domain" : "2",
+    "domain" : "1",
     "attributes" : [ "object" ],
-    "id" : "25"
+    "id" : "24"
   }, {
     "iri" : "https://w3id.org/sqo#hasValue",
     "baseIri" : "https://w3id.org/sqo",
@@ -502,12 +488,12 @@
       "IRI-based" : "hasValue",
       "undefined" : "Has value"
     },
-    "domain" : "20",
+    "domain" : "19",
     "comment" : {
       "undefined" : "Value (URL or Literal) for this option."
     },
     "attributes" : [ "datatype" ],
-    "id" : "26"
+    "id" : "25"
   }, {
     "iri" : "https://w3id.org/sqo#maxCardinality",
     "baseIri" : "https://w3id.org/sqo",
@@ -516,9 +502,23 @@
       "IRI-based" : "maxCardinality",
       "undefined" : "has maximum cardinality"
     },
-    "domain" : "2",
+    "domain" : "1",
     "comment" : {
       "undefined" : "Denotes maximum cardinality for this question variable values.\nAs default the cardinality is 1."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "26"
+  }, {
+    "iri" : "https://w3id.org/sqo#hasRepresentation",
+    "baseIri" : "https://w3id.org/sqo",
+    "range" : "12",
+    "label" : {
+      "IRI-based" : "hasRepresentation",
+      "undefined" : "Has representation"
+    },
+    "domain" : "1",
+    "comment" : {
+      "undefined" : "Custom representation of a variable."
     },
     "attributes" : [ "datatype" ],
     "id" : "27"
@@ -537,47 +537,33 @@
     "attributes" : [ "datatype" ],
     "id" : "28"
   }, {
-    "iri" : "https://w3id.org/sqo#hasRepresentation",
-    "baseIri" : "https://w3id.org/sqo",
-    "range" : "12",
-    "label" : {
-      "IRI-based" : "hasRepresentation",
-      "undefined" : "Has representation"
-    },
-    "domain" : "2",
-    "comment" : {
-      "undefined" : "Custom representation of a variable."
-    },
-    "attributes" : [ "datatype" ],
-    "id" : "31"
-  }, {
     "iri" : "https://w3id.org/sqo#hasLabel",
     "baseIri" : "https://w3id.org/sqo",
-    "range" : "22",
+    "range" : "5",
     "label" : {
       "IRI-based" : "hasLabel",
       "undefined" : "Has label"
     },
-    "domain" : "20",
+    "domain" : "19",
     "comment" : {
       "undefined" : "Label for this option."
     },
     "attributes" : [ "datatype" ],
-    "id" : "32"
+    "id" : "31"
   }, {
     "iri" : "https://w3id.org/sqo#hasMaxLng",
     "baseIri" : "https://w3id.org/sqo",
-    "range" : "2",
+    "range" : "1",
     "label" : {
       "IRI-based" : "hasMaxLng",
       "undefined" : "Has maximum longitude"
     },
-    "domain" : "1",
+    "domain" : "4",
     "comment" : {
       "undefined" : "Maximum longitude of a bounding box"
     },
     "attributes" : [ "object" ],
-    "id" : "33"
+    "id" : "32"
   }, {
     "iri" : "https://w3id.org/sqo#hasQuestionPattern",
     "baseIri" : "https://w3id.org/sqo",
@@ -591,11 +577,11 @@
       "undefined" : "SPARQL-like pattern that defines the semantic representation that this question will have. All variables used on the question template will be replaced for the user selected values."
     },
     "attributes" : [ "datatype" ],
-    "id" : "34"
+    "id" : "33"
   }, {
     "iri" : "https://w3id.org/sqo#hasExplanation",
     "baseIri" : "https://w3id.org/sqo",
-    "range" : "36",
+    "range" : "35",
     "label" : {
       "IRI-based" : "hasExplanation",
       "undefined" : "Has explanation"
@@ -605,21 +591,21 @@
       "undefined" : "Explanation of this question variable values."
     },
     "attributes" : [ "datatype" ],
-    "id" : "35"
+    "id" : "34"
   }, {
     "iri" : "https://w3id.org/sqo#minCardinality",
     "baseIri" : "https://w3id.org/sqo",
-    "range" : "38",
+    "range" : "37",
     "label" : {
       "IRI-based" : "minCardinality",
       "undefined" : "has minimum cardinality"
     },
-    "domain" : "2",
+    "domain" : "1",
     "comment" : {
       "undefined" : "Denotes minimum cardinality for this question variable values.\nAs default the cardinality is 1."
     },
     "attributes" : [ "datatype" ],
-    "id" : "37"
+    "id" : "36"
   }, {
     "iri" : "https://w3id.org/sqo#hasInputDatatype",
     "baseIri" : "https://w3id.org/sqo",
@@ -628,25 +614,39 @@
       "IRI-based" : "hasInputDatatype",
       "undefined" : "Has input datatype"
     },
-    "domain" : "23",
+    "domain" : "22",
     "comment" : {
       "undefined" : "Datatype of the variable that the user will input."
     },
     "attributes" : [ "datatype" ],
+    "id" : "38"
+  }, {
+    "range" : "1",
+    "domain" : "4",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "39"
   }, {
-    "range" : "2",
-    "domain" : "1",
-    "attributes" : [ "anonymous", "object" ],
+    "iri" : "https://w3id.org/sqo#hasConstraintQuery",
+    "baseIri" : "https://w3id.org/sqo",
+    "range" : "20",
+    "label" : {
+      "IRI-based" : "hasConstraintQuery",
+      "undefined" : "Has constraint query"
+    },
+    "domain" : "7",
+    "comment" : {
+      "undefined" : "Query that determines constraints for all variables on this Question"
+    },
+    "attributes" : [ "datatype" ],
     "id" : "40"
   }, {
-    "range" : "2",
-    "domain" : "23",
+    "range" : "1",
+    "domain" : "22",
     "attributes" : [ "anonymous", "object" ],
     "id" : "41"
   }, {
-    "range" : "2",
-    "domain" : "19",
+    "range" : "1",
+    "domain" : "18",
     "attributes" : [ "anonymous", "object" ],
     "id" : "42"
   }, {

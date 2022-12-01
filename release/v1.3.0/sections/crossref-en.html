@@ -66,9 +66,9 @@ Is expanded to minLat, maxLat, minLng, maxLng</span>
       <dl class="description">
          <dt>is in domain of</dt>
          <dd>
-            <a href="#hasQuestionCategory" title="https://w3id.org/sqo#hasQuestionCategory">Has question category</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#hasQuestionConstraint" title="https://w3id.org/sqo#hasQuestionConstraint">Has question constraint</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasQuestionPattern" title="https://w3id.org/sqo#hasQuestionPattern">Has question pattern</a>
+            <a href="#hasConstraintQuery" title="https://w3id.org/sqo#hasConstraintQuery">Has constraint query</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasQuestionCategory" title="https://w3id.org/sqo#hasQuestionCategory">Has question category</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasQuestionPattern" title="https://w3id.org/sqo#hasQuestionPattern">Has question pattern</a>
             <sup class="type-dp" title="data property">dp</sup>, <a href="#hasQuestionTemplate" title="https://w3id.org/sqo#hasQuestionTemplate">Has question template</a>
             <sup class="type-dp" title="data property">dp</sup>, <a href="#hasQuestionVariable" title="https://w3id.org/sqo#hasQuestionVariable">Has question variable</a>
             <sup class="type-op" title="object property">op</sup>
@@ -399,6 +399,9 @@ Is expanded to minLat, maxLat, minLng, maxLng</span>
    <h3 id="dataproperties-headline" class="list">Data Properties</h3>
    <ul class="hlist">
       <li>
+         <a href="#hasConstraintQuery" title="https://w3id.org/sqo#hasConstraintQuery">Has constraint query</a>
+      </li>
+      <li>
          <a href="#hasExplanation" title="https://w3id.org/sqo#hasExplanation">Has explanation</a>
       </li>
       <li>
@@ -420,9 +423,6 @@ Is expanded to minLat, maxLat, minLng, maxLng</span>
          <a href="#hasOptionsQuery" title="https://w3id.org/sqo#hasOptionsQuery">Has options query</a>
       </li>
       <li>
-         <a href="#hasQuestionConstraint" title="https://w3id.org/sqo#hasQuestionConstraint">Has question constraint</a>
-      </li>
-      <li>
          <a href="#hasQuestionPattern" title="https://w3id.org/sqo#hasQuestionPattern">Has question pattern</a>
       </li>
       <li>
@@ -438,6 +438,30 @@ Is expanded to minLat, maxLat, minLng, maxLng</span>
          <a href="#hasVariableName" title="https://w3id.org/sqo#hasVariableName">Has variable name</a>
       </li>
    </ul>
+   <div class="entity" id="hasConstraintQuery">
+      <h3>Has constraint query<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/sqo#hasConstraintQuery</p>
+      <div class="comment">
+         <span class="markdown">Query that determines constraints for all variables on this Question</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Question" title="https://w3id.org/sqo#Question">Question</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
    <div class="entity" id="hasExplanation">
       <h3>Has explanation<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
@@ -575,30 +599,6 @@ As default the cardinality is 1.</span>
             <dt>has domain</dt>
             <dd>
                <a href="#QuestionVariable" title="https://w3id.org/sqo#QuestionVariable">Question Variable</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="hasQuestionConstraint">
-      <h3>Has question constraint<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/sqo#hasQuestionConstraint</p>
-      <div class="comment">
-         <span class="markdown">Querie that determines constraints for all variables on this Question</span>
-      </div>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Question" title="https://w3id.org/sqo#Question">Question</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>

@@ -94,6 +94,13 @@
 # #################################################################
 # 
 # 
+# https://w3id.org/sqo#hasConstraintQuery
+<https://w3id.org/sqo#hasConstraintQuery> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/sqo#hasConstraintQuery> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/sqo#Question> .
+<https://w3id.org/sqo#hasConstraintQuery> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/sqo#hasConstraintQuery> <http://www.w3.org/2000/01/rdf-schema#comment> "Query that determines constraints for all variables on this Question" .
+<https://w3id.org/sqo#hasConstraintQuery> <http://www.w3.org/2000/01/rdf-schema#label> "Has constraint query" .
+# 
 # https://w3id.org/sqo#hasExplanation
 <https://w3id.org/sqo#hasExplanation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://w3id.org/sqo#hasExplanation> <http://www.w3.org/2000/01/rdf-schema#comment> "Explanation of this question variable values." .
@@ -124,13 +131,6 @@
 <https://w3id.org/sqo#hasOptionsQuery> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
 <https://w3id.org/sqo#hasOptionsQuery> <http://www.w3.org/2000/01/rdf-schema#comment> "An SPARQL query that will determine the options for this variable" .
 <https://w3id.org/sqo#hasOptionsQuery> <http://www.w3.org/2000/01/rdf-schema#label> "Has options query" .
-# 
-# https://w3id.org/sqo#hasQuestionConstraint
-<https://w3id.org/sqo#hasQuestionConstraint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/sqo#hasQuestionConstraint> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/sqo#Question> .
-<https://w3id.org/sqo#hasQuestionConstraint> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<https://w3id.org/sqo#hasQuestionConstraint> <http://www.w3.org/2000/01/rdf-schema#comment> "Querie that determines constraints for all variables on this Question" .
-<https://w3id.org/sqo#hasQuestionConstraint> <http://www.w3.org/2000/01/rdf-schema#label> "Has question constraint" .
 # 
 # https://w3id.org/sqo#hasQuestionPattern
 <https://w3id.org/sqo#hasQuestionPattern> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
