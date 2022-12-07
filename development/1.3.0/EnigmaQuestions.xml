@@ -228,7 +228,6 @@ FILTER (
         <sqo:hasQuestionTemplate>Is the effect size of ?Genotype on ?BrainImagingTrait of ?Region associated with ?DemographicAttribute for cohorts of ?EthnicGroup ancestry</sqo:hasQuestionTemplate>
         <rdfs:label>Is the effect size of ?Genotype on ?Brain Imaging Trait of ?Region associated with ?Demographic Attribute for cohorts of ?Ethnic ancestry?</rdfs:label>
     </owl:NamedIndividual>
-</rdf:RDF>
 
 
     <!-- https://w3id.org/sqo/resource/EnigmaQuestion6 -->
