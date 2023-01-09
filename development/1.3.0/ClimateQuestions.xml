@@ -613,8 +613,8 @@ FILTER (?VarID != ?VarID2)
     <!-- http://disk-project.org/resources/climate/question/CoherenceDatasetTime -->
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/question/CoherenceDatasetTime">
         <rdf:type rdf:resource="https://w3id.org/sqo#Question"/>
-        <rdfs:label>Are the periodicities in ?ClimateVariable for record ?Dataset during ?TimeInterval? intermittent over ?TimeInterval?</rdfs:label>
-        <sqo:hasQuestionTemplate>Are the periodicities in ?ClimateVariable for record at ?Dataset during ?TimeInterval? intermittent over ?TimeInterval</sqo:hasQuestionTemplate>
+        <rdfs:label>Is ?ClimateVariable in ?Dataset coherent with ?ClimateVariable2 in ?Dataset2 over ?TimeInterval?</rdfs:label>
+        <sqo:hasQuestionTemplate>Is ?ClimateVariable in ?Dataset coherent with ?ClimateVariable2 in ?Dataset2 over ?TimeInterval</sqo:hasQuestionTemplate>
         <sqo:hasQuestionCategory rdf:resource="http://disk-project.org/resources/climate/category/Coherence"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable2"/>
@@ -1004,8 +1004,8 @@ FILTER (?VarID != ?VarID2)
     <!-- http://disk-project.org/resources/climate/question/CorrelationDatasetTime -->
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/question/CorrelationDatasetTime">
         <rdf:type rdf:resource="https://w3id.org/sqo#Question"/>
-        <rdfs:label>Are the periodicities in ?ClimateVariable for record ?Dataset during ?TimeInterval? intermittent over ?TimeInterval?</rdfs:label>
-        <sqo:hasQuestionTemplate>Are the periodicities in ?ClimateVariable for record at ?Dataset during ?TimeInterval? intermittent over ?TimeInterval</sqo:hasQuestionTemplate>
+        <rdfs:label>Is ?ClimateVariable in ?Dataset correlated with ?ClimateVariable2 in ?Dataset2 over ?TimeInterval?</rdfs:label>
+        <sqo:hasQuestionTemplate>Is ?ClimateVariable in ?Dataset correlated with ?ClimateVariable2 in ?Dataset2 over ?TimeInterval</sqo:hasQuestionTemplate>
         <sqo:hasQuestionCategory rdf:resource="http://disk-project.org/resources/climate/category/Correlation"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable2"/>
@@ -1547,8 +1547,8 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))
     <!-- http://disk-project.org/resources/climate/question/CausalityBoundingBoxTime -->
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/question/CausalityBoundingBoxTime">
         <rdf:type rdf:resource="https://w3id.org/sqo#Question"/>
-        <rdfs:label>Does ?ClimateVariable1 at ?BoundingBox1 cause changes in ?ClimateVariable2 at ?BoundingBox2 over ?TimeInterval?</rdfs:label>
-        <sqo:hasQuestionTemplate>Does ?ClimateVariable1 at ?BoundingBox1 cause changes in ?ClimateVariable2 at ?BoundingBox2 over ?TimeInterval</sqo:hasQuestionTemplate>
+        <rdfs:label>Does ?ClimateVariable at ?BoundingBox cause changes in ?ClimateVariable2 at ?BoundingBox2 over ?TimeInterval?</rdfs:label>
+        <sqo:hasQuestionTemplate>Does ?ClimateVariable at ?BoundingBox cause changes in ?ClimateVariable2 at ?BoundingBox2 over ?TimeInterval</sqo:hasQuestionTemplate>
         <sqo:hasQuestionCategory rdf:resource="http://disk-project.org/resources/climate/category/Causality"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/BoundingBox"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/BoundingBox2"/>
