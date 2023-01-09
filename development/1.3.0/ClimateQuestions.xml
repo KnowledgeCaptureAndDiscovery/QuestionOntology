@@ -279,8 +279,7 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))
 ?timevar &lt;http://linked.earth/ontology#hasMinValue&gt; ?e1.
 ?timevar &lt;http://linked.earth/ontology#hasMaxValue&gt; ?e2.
 FILTER(
-    (?e1&gt;=?MinTime &amp;&amp; ?e2&lt;=?MaxTime) || (?e1&lt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime) ||
-    (?e1&gt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime) || (?e1&lt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime)
+        !bound(?MinTime) || !bound(?MaxTime) || (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime))
 ).
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
@@ -298,7 +297,8 @@ FILTER(
         <sqo:hasConstraintQuery>
 ?location &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
 ?location &lt;http://linked.earth/ontology#wgs84_Long&gt; ?lon .
-filter( xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
+filter( !bound(?MinLat) || !bound(?MaxLat) || 
+        xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
         xsd:float(?lat)&gt;xsd:float(?MinLat) &amp;&amp;
         xsd:float(?lon)&lt;xsd:float(?MaxLon) &amp;&amp; 
         xsd:float(?lon)&gt;xsd:float(?MinLon)).
@@ -334,7 +334,8 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))
         <sqo:hasConstraintQuery>
 ?location &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
 ?location &lt;http://linked.earth/ontology#wgs84_Long&gt; ?lon .
-filter( xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
+filter( !bound(?MinLat) || !bound(?MaxLat) || 
+        xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
         xsd:float(?lat)&gt;xsd:float(?MinLat) &amp;&amp;
         xsd:float(?lon)&lt;xsd:float(?MaxLon) &amp;&amp; 
         xsd:float(?lon)&gt;xsd:float(?MinLon)).
@@ -353,8 +354,7 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;)) .
 ?timevar &lt;http://linked.earth/ontology#hasMinValue&gt; ?e1.
 ?timevar &lt;http://linked.earth/ontology#hasMaxValue&gt; ?e2.
 FILTER(
-    (?e1&gt;=?MinTime &amp;&amp; ?e2&lt;=?MaxTime) || (?e1&lt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime) ||
-    (?e1&gt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime) || (?e1&lt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime)
+        !bound(?MinTime) || !bound(?MaxTime) || (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime))
 ).
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
@@ -415,8 +415,7 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))
 ?timevar &lt;http://linked.earth/ontology#hasMinValue&gt; ?e1.
 ?timevar &lt;http://linked.earth/ontology#hasMaxValue&gt; ?e2.
 FILTER(
-    (?e1&gt;=?MinTime &amp;&amp; ?e2&lt;=?MaxTime) || (?e1&lt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime) ||
-    (?e1&gt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime) || (?e1&lt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime)
+        !bound(?MinTime) || !bound(?MaxTime) || (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime))
 ).
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
@@ -485,8 +484,7 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))
 ?timevar &lt;http://linked.earth/ontology#hasMinValue&gt; ?e1.
 ?timevar &lt;http://linked.earth/ontology#hasMaxValue&gt; ?e2.
 FILTER(
-    (?e1&gt;=?MinTime &amp;&amp; ?e2&lt;=?MaxTime) || (?e1&lt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime) ||
-    (?e1&gt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime) || (?e1&lt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime)
+        !bound(?MinTime) || !bound(?MaxTime) || (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime))
 ).
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
@@ -504,7 +502,8 @@ FILTER(
         <sqo:hasConstraintQuery>
 ?location &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
 ?location &lt;http://linked.earth/ontology#wgs84_Long&gt; ?lon .
-filter( xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
+filter( !bound(?MinLat) || !bound(?MaxLat) || 
+        xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
         xsd:float(?lat)&gt;xsd:float(?MinLat) &amp;&amp;
         xsd:float(?lon)&lt;xsd:float(?MaxLon) &amp;&amp; 
         xsd:float(?lon)&gt;xsd:float(?MinLon)).
@@ -540,7 +539,8 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))
         <sqo:hasConstraintQuery>
 ?location &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
 ?location &lt;http://linked.earth/ontology#wgs84_Long&gt; ?lon .
-filter( xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
+filter( !bound(?MinLat) || !bound(?MaxLat) || 
+        xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
         xsd:float(?lat)&gt;xsd:float(?MinLat) &amp;&amp;
         xsd:float(?lon)&lt;xsd:float(?MaxLon) &amp;&amp; 
         xsd:float(?lon)&gt;xsd:float(?MinLon)).
@@ -559,8 +559,7 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;)) .
 ?timevar &lt;http://linked.earth/ontology#hasMinValue&gt; ?e1.
 ?timevar &lt;http://linked.earth/ontology#hasMaxValue&gt; ?e2.
 FILTER(
-    (?e1&gt;=?MinTime &amp;&amp; ?e2&lt;=?MaxTime) || (?e1&lt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime) ||
-    (?e1&gt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime) || (?e1&lt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime)
+        !bound(?MinTime) || !bound(?MaxTime) || (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime))
 ).
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
@@ -636,8 +635,7 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))
 ?timevar &lt;http://linked.earth/ontology#hasMinValue&gt; ?e1.
 ?timevar &lt;http://linked.earth/ontology#hasMaxValue&gt; ?e2.
 FILTER(
-    (?e1&gt;=?MinTime &amp;&amp; ?e2&lt;=?MaxTime) || (?e1&lt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime) ||
-    (?e1&gt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime) || (?e1&lt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime)
+        !bound(?MinTime) || !bound(?MaxTime) || (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime))
 ).
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
@@ -710,8 +708,7 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))
 ?timevar &lt;http://linked.earth/ontology#hasMinValue&gt; ?e1.
 ?timevar &lt;http://linked.earth/ontology#hasMaxValue&gt; ?e2.
 FILTER(
-    (?e1&gt;=?MinTime &amp;&amp; ?e2&lt;=?MaxTime) || (?e1&lt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime) ||
-    (?e1&gt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime) || (?e1&lt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime)
+        !bound(?MinTime) || !bound(?MaxTime) || (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime))
 ).
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
@@ -731,7 +728,8 @@ FILTER(
         <sqo:hasConstraintQuery>
 ?location &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
 ?location &lt;http://linked.earth/ontology#wgs84_Long&gt; ?lon .
-filter( xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
+filter( !bound(?MinLat) || !bound(?MaxLat) || 
+        xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
         xsd:float(?lat)&gt;xsd:float(?MinLat) &amp;&amp;
         xsd:float(?lon)&lt;xsd:float(?MaxLon) &amp;&amp; 
         xsd:float(?lon)&gt;xsd:float(?MinLon)).
@@ -769,7 +767,8 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))
         <sqo:hasConstraintQuery>
 ?location &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
 ?location &lt;http://linked.earth/ontology#wgs84_Long&gt; ?lon .
-filter( xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
+filter( !bound(?MinLat) || !bound(?MaxLat) || 
+        xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
         xsd:float(?lat)&gt;xsd:float(?MinLat) &amp;&amp;
         xsd:float(?lon)&lt;xsd:float(?MaxLon) &amp;&amp; 
         xsd:float(?lon)&gt;xsd:float(?MinLon)).
@@ -788,8 +787,7 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;)) .
 ?timevar &lt;http://linked.earth/ontology#hasMinValue&gt; ?e1.
 ?timevar &lt;http://linked.earth/ontology#hasMaxValue&gt; ?e2.
 FILTER(
-    (?e1&gt;=?MinTime &amp;&amp; ?e2&lt;=?MaxTime) || (?e1&lt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime) ||
-    (?e1&gt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime) || (?e1&lt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime)
+        !bound(?MinTime) || !bound(?MaxTime) || (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime))
 ).
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
@@ -812,7 +810,8 @@ FILTER(
         <sqo:hasConstraintQuery>
 ?location &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
 ?location &lt;http://linked.earth/ontology#wgs84_Long&gt; ?lon .
-filter( xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
+filter( !bound(?MinLat) || !bound(?MaxLat) || 
+        xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
         xsd:float(?lat)&gt;xsd:float(?MinLat) &amp;&amp;
         xsd:float(?lon)&lt;xsd:float(?MaxLon) &amp;&amp; 
         xsd:float(?lon)&gt;xsd:float(?MinLon)).
@@ -849,7 +848,8 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))
         <sqo:hasConstraintQuery>
 ?location &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
 ?location &lt;http://linked.earth/ontology#wgs84_Long&gt; ?lon .
-filter( xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
+filter( !bound(?MinLat) || !bound(?MaxLat) || 
+        xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
         xsd:float(?lat)&gt;xsd:float(?MinLat) &amp;&amp;
         xsd:float(?lon)&lt;xsd:float(?MaxLon) &amp;&amp; 
         xsd:float(?lon)&gt;xsd:float(?MinLon)).
@@ -868,8 +868,7 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;)) .
 ?timevar &lt;http://linked.earth/ontology#hasMinValue&gt; ?e1.
 ?timevar &lt;http://linked.earth/ontology#hasMaxValue&gt; ?e2.
 FILTER(
-    (?e1&gt;=?MinTime &amp;&amp; ?e2&lt;=?MaxTime) || (?e1&lt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime) ||
-    (?e1&gt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime) || (?e1&lt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime)
+        !bound(?MinTime) || !bound(?MaxTime) || (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime))
 ).
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
@@ -893,7 +892,8 @@ FILTER(
         <sqo:hasConstraintQuery>
 ?location &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
 ?location &lt;http://linked.earth/ontology#wgs84_Long&gt; ?lon .
-filter( xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
+filter( !bound(?MinLat) || !bound(?MaxLat) || 
+        xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
         xsd:float(?lat)&gt;xsd:float(?MinLat) &amp;&amp;
         xsd:float(?lon)&lt;xsd:float(?MaxLon) &amp;&amp; 
         xsd:float(?lon)&gt;xsd:float(?MinLon)).
@@ -931,7 +931,8 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))
         <sqo:hasConstraintQuery>
 ?location &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
 ?location &lt;http://linked.earth/ontology#wgs84_Long&gt; ?lon .
-filter( xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
+filter( !bound(?MinLat) || !bound(?MaxLat) || 
+        xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
         xsd:float(?lat)&gt;xsd:float(?MinLat) &amp;&amp;
         xsd:float(?lon)&lt;xsd:float(?MaxLon) &amp;&amp; 
         xsd:float(?lon)&gt;xsd:float(?MinLon)).
@@ -950,8 +951,7 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;)) .
 ?timevar &lt;http://linked.earth/ontology#hasMinValue&gt; ?e1.
 ?timevar &lt;http://linked.earth/ontology#hasMaxValue&gt; ?e2.
 FILTER(
-    (?e1&gt;=?MinTime &amp;&amp; ?e2&lt;=?MaxTime) || (?e1&lt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime) ||
-    (?e1&gt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime) || (?e1&lt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime)
+        !bound(?MinTime) || !bound(?MaxTime) || (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime))
 ).
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
@@ -1027,8 +1027,7 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))
 ?timevar &lt;http://linked.earth/ontology#hasMinValue&gt; ?e1.
 ?timevar &lt;http://linked.earth/ontology#hasMaxValue&gt; ?e2.
 FILTER(
-    (?e1&gt;=?MinTime &amp;&amp; ?e2&lt;=?MaxTime) || (?e1&lt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime) ||
-    (?e1&gt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime) || (?e1&lt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime)
+        !bound(?MinTime) || !bound(?MaxTime) || (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime))
 ).
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
@@ -1101,8 +1100,7 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))
 ?timevar &lt;http://linked.earth/ontology#hasMinValue&gt; ?e1.
 ?timevar &lt;http://linked.earth/ontology#hasMaxValue&gt; ?e2.
 FILTER(
-    (?e1&gt;=?MinTime &amp;&amp; ?e2&lt;=?MaxTime) || (?e1&lt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime) ||
-    (?e1&gt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime) || (?e1&lt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime)
+        !bound(?MinTime) || !bound(?MaxTime) || (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime))
 ).
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
@@ -1122,7 +1120,8 @@ FILTER(
         <sqo:hasConstraintQuery>
 ?location &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
 ?location &lt;http://linked.earth/ontology#wgs84_Long&gt; ?lon .
-filter( xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
+filter( !bound(?MinLat) || !bound(?MaxLat) || 
+        xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
         xsd:float(?lat)&gt;xsd:float(?MinLat) &amp;&amp;
         xsd:float(?lon)&lt;xsd:float(?MaxLon) &amp;&amp; 
         xsd:float(?lon)&gt;xsd:float(?MinLon)).
@@ -1160,7 +1159,8 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))
         <sqo:hasConstraintQuery>
 ?location &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
 ?location &lt;http://linked.earth/ontology#wgs84_Long&gt; ?lon .
-filter( xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
+filter( !bound(?MinLat) || !bound(?MaxLat) || 
+        xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
         xsd:float(?lat)&gt;xsd:float(?MinLat) &amp;&amp;
         xsd:float(?lon)&lt;xsd:float(?MaxLon) &amp;&amp; 
         xsd:float(?lon)&gt;xsd:float(?MinLon)).
@@ -1179,8 +1179,7 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;)) .
 ?timevar &lt;http://linked.earth/ontology#hasMinValue&gt; ?e1.
 ?timevar &lt;http://linked.earth/ontology#hasMaxValue&gt; ?e2.
 FILTER(
-    (?e1&gt;=?MinTime &amp;&amp; ?e2&lt;=?MaxTime) || (?e1&lt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime) ||
-    (?e1&gt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime) || (?e1&lt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime)
+        !bound(?MinTime) || !bound(?MaxTime) || (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime))
 ).
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
@@ -1203,7 +1202,8 @@ FILTER(
         <sqo:hasConstraintQuery>
 ?location &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
 ?location &lt;http://linked.earth/ontology#wgs84_Long&gt; ?lon .
-filter( xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
+filter( !bound(?MinLat) || !bound(?MaxLat) || 
+        xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
         xsd:float(?lat)&gt;xsd:float(?MinLat) &amp;&amp;
         xsd:float(?lon)&lt;xsd:float(?MaxLon) &amp;&amp; 
         xsd:float(?lon)&gt;xsd:float(?MinLon)).
@@ -1240,7 +1240,8 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))
         <sqo:hasConstraintQuery>
 ?location &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
 ?location &lt;http://linked.earth/ontology#wgs84_Long&gt; ?lon .
-filter( xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
+filter( !bound(?MinLat) || !bound(?MaxLat) || 
+        xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
         xsd:float(?lat)&gt;xsd:float(?MinLat) &amp;&amp;
         xsd:float(?lon)&lt;xsd:float(?MaxLon) &amp;&amp; 
         xsd:float(?lon)&gt;xsd:float(?MinLon)).
@@ -1259,8 +1260,7 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;)) .
 ?timevar &lt;http://linked.earth/ontology#hasMinValue&gt; ?e1.
 ?timevar &lt;http://linked.earth/ontology#hasMaxValue&gt; ?e2.
 FILTER(
-    (?e1&gt;=?MinTime &amp;&amp; ?e2&lt;=?MaxTime) || (?e1&lt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime) ||
-    (?e1&gt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime) || (?e1&lt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime)
+        !bound(?MinTime) || !bound(?MaxTime) || (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime))
 ).
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
@@ -1284,7 +1284,8 @@ FILTER(
         <sqo:hasConstraintQuery>
 ?location &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
 ?location &lt;http://linked.earth/ontology#wgs84_Long&gt; ?lon .
-filter( xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
+filter( !bound(?MinLat) || !bound(?MaxLat) || 
+        xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
         xsd:float(?lat)&gt;xsd:float(?MinLat) &amp;&amp;
         xsd:float(?lon)&lt;xsd:float(?MaxLon) &amp;&amp; 
         xsd:float(?lon)&gt;xsd:float(?MinLon)).
@@ -1322,7 +1323,8 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))
         <sqo:hasConstraintQuery>
 ?location &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
 ?location &lt;http://linked.earth/ontology#wgs84_Long&gt; ?lon .
-filter( xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
+filter( !bound(?MinLat) || !bound(?MaxLat) || 
+        xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
         xsd:float(?lat)&gt;xsd:float(?MinLat) &amp;&amp;
         xsd:float(?lon)&lt;xsd:float(?MaxLon) &amp;&amp; 
         xsd:float(?lon)&gt;xsd:float(?MinLon)).
@@ -1341,8 +1343,7 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;)) .
 ?timevar &lt;http://linked.earth/ontology#hasMinValue&gt; ?e1.
 ?timevar &lt;http://linked.earth/ontology#hasMaxValue&gt; ?e2.
 FILTER(
-    (?e1&gt;=?MinTime &amp;&amp; ?e2&lt;=?MaxTime) || (?e1&lt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime) ||
-    (?e1&gt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime) || (?e1&lt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime)
+        !bound(?MinTime) || !bound(?MaxTime) || (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime))
 ).
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
@@ -1425,8 +1426,7 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))
 ?timevar &lt;http://linked.earth/ontology#hasMinValue&gt; ?e1.
 ?timevar &lt;http://linked.earth/ontology#hasMaxValue&gt; ?e2.
 FILTER(
-    (?e1&gt;=?MinTime &amp;&amp; ?e2&lt;=?MaxTime) || (?e1&lt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime) ||
-    (?e1&gt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime) || (?e1&lt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime)
+        !bound(?MinTime) || !bound(?MaxTime) || (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime))
 ).
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
@@ -1499,8 +1499,7 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))
 ?timevar &lt;http://linked.earth/ontology#hasMinValue&gt; ?e1.
 ?timevar &lt;http://linked.earth/ontology#hasMaxValue&gt; ?e2.
 FILTER(
-    (?e1&gt;=?MinTime &amp;&amp; ?e2&lt;=?MaxTime) || (?e1&lt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime) ||
-    (?e1&gt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime) || (?e1&lt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime)
+        !bound(?MinTime) || !bound(?MaxTime) || (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime))
 ).
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
@@ -1520,7 +1519,8 @@ FILTER(
         <sqo:hasConstraintQuery>
 ?location &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
 ?location &lt;http://linked.earth/ontology#wgs84_Long&gt; ?lon .
-filter( xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
+filter( !bound(?MinLat) || !bound(?MaxLat) || 
+        xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
         xsd:float(?lat)&gt;xsd:float(?MinLat) &amp;&amp;
         xsd:float(?lon)&lt;xsd:float(?MaxLon) &amp;&amp; 
         xsd:float(?lon)&gt;xsd:float(?MinLon)).
@@ -1558,7 +1558,8 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))
         <sqo:hasConstraintQuery>
 ?location &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
 ?location &lt;http://linked.earth/ontology#wgs84_Long&gt; ?lon .
-filter( xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
+filter( !bound(?MinLat) || !bound(?MaxLat) || 
+        xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
         xsd:float(?lat)&gt;xsd:float(?MinLat) &amp;&amp;
         xsd:float(?lon)&lt;xsd:float(?MaxLon) &amp;&amp; 
         xsd:float(?lon)&gt;xsd:float(?MinLon)).
@@ -1577,8 +1578,7 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;)) .
 ?timevar &lt;http://linked.earth/ontology#hasMinValue&gt; ?e1.
 ?timevar &lt;http://linked.earth/ontology#hasMaxValue&gt; ?e2.
 FILTER(
-    (?e1&gt;=?MinTime &amp;&amp; ?e2&lt;=?MaxTime) || (?e1&lt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime) ||
-    (?e1&gt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime) || (?e1&lt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime)
+        !bound(?MinTime) || !bound(?MaxTime) || (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime))
 ).
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
@@ -1601,7 +1601,8 @@ FILTER(
         <sqo:hasConstraintQuery>
 ?location &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
 ?location &lt;http://linked.earth/ontology#wgs84_Long&gt; ?lon .
-filter( xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
+filter( !bound(?MinLat) || !bound(?MaxLat) || 
+        xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
         xsd:float(?lat)&gt;xsd:float(?MinLat) &amp;&amp;
         xsd:float(?lon)&lt;xsd:float(?MaxLon) &amp;&amp; 
         xsd:float(?lon)&gt;xsd:float(?MinLon)).
@@ -1638,7 +1639,8 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))
         <sqo:hasConstraintQuery>
 ?location &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
 ?location &lt;http://linked.earth/ontology#wgs84_Long&gt; ?lon .
-filter( xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
+filter( !bound(?MinLat) || !bound(?MaxLat) || 
+        xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
         xsd:float(?lat)&gt;xsd:float(?MinLat) &amp;&amp;
         xsd:float(?lon)&lt;xsd:float(?MaxLon) &amp;&amp; 
         xsd:float(?lon)&gt;xsd:float(?MinLon)).
@@ -1657,8 +1659,7 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;)) .
 ?timevar &lt;http://linked.earth/ontology#hasMinValue&gt; ?e1.
 ?timevar &lt;http://linked.earth/ontology#hasMaxValue&gt; ?e2.
 FILTER(
-    (?e1&gt;=?MinTime &amp;&amp; ?e2&lt;=?MaxTime) || (?e1&lt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime) ||
-    (?e1&gt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime) || (?e1&lt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime)
+        !bound(?MinTime) || !bound(?MaxTime) || (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime))
 ).
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
@@ -1682,7 +1683,8 @@ FILTER(
         <sqo:hasConstraintQuery>
 ?location &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
 ?location &lt;http://linked.earth/ontology#wgs84_Long&gt; ?lon .
-filter( xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
+filter( !bound(?MinLat) || !bound(?MaxLat) || 
+        xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
         xsd:float(?lat)&gt;xsd:float(?MinLat) &amp;&amp;
         xsd:float(?lon)&lt;xsd:float(?MaxLon) &amp;&amp; 
         xsd:float(?lon)&gt;xsd:float(?MinLon)).
@@ -1720,7 +1722,8 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))
         <sqo:hasConstraintQuery>
 ?location &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
 ?location &lt;http://linked.earth/ontology#wgs84_Long&gt; ?lon .
-filter( xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
+filter( !bound(?MinLat) || !bound(?MaxLat) || 
+        xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
         xsd:float(?lat)&gt;xsd:float(?MinLat) &amp;&amp;
         xsd:float(?lon)&lt;xsd:float(?MaxLon) &amp;&amp; 
         xsd:float(?lon)&gt;xsd:float(?MinLon)).
@@ -1739,8 +1742,7 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;)) .
 ?timevar &lt;http://linked.earth/ontology#hasMinValue&gt; ?e1.
 ?timevar &lt;http://linked.earth/ontology#hasMaxValue&gt; ?e2.
 FILTER(
-    (?e1&gt;=?MinTime &amp;&amp; ?e2&lt;=?MaxTime) || (?e1&lt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime) ||
-    (?e1&gt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime) || (?e1&lt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime)
+        !bound(?MinTime) || !bound(?MaxTime) || (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime))
 ).
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
