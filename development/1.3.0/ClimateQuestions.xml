@@ -179,7 +179,7 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;year&quot;))
 FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
-?ClimateVariable hyp:fromDataset ?Dataset</sqo:hasQuestionPattern>
+:goal hyp:fromDataset ?Dataset</sqo:hasQuestionPattern>
     </owl:NamedIndividual>
     
     <!-- http://disk-project.org/resources/climate/question/PeriodicityDatasetTime -->
@@ -211,7 +211,7 @@ FILTER(
 ).
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
-?ClimateVariable hyp:fromDataset ?Dataset
+:goal hyp:fromDataset ?Dataset
 :goal hyp:hasTimeInterval ?TimeInterval
 ?TimeInteval hyp:hasMinTime ?MinTime
 ?TimeInteval hyp:hasMaxTime ?MaxTime</sqo:hasQuestionPattern>
@@ -388,7 +388,7 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;year&quot;))
 FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
-?ClimateVariable hyp:fromDataset ?Dataset</sqo:hasQuestionPattern>
+:goal hyp:fromDataset ?Dataset</sqo:hasQuestionPattern>
     </owl:NamedIndividual>
 
     <!-- http://disk-project.org/resources/climate/question/IntermittentDatasetTime -->
@@ -419,7 +419,7 @@ FILTER(
 ).
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
-?ClimateVariable hyp:fromDataset ?Dataset</sqo:hasQuestionPattern>
+:goal hyp:fromDataset ?Dataset</sqo:hasQuestionPattern>
     </owl:NamedIndividual>
 
     <!-- http://disk-project.org/resources/climate/question/IntermittentSite -->
@@ -606,7 +606,7 @@ FILTER (!REGEX(str(?ClimateVariable2), &quot;age&quot;))
 FILTER (?VarID != ?VarID2)
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
-?ClimateVariable hyp:fromDataset ?Dataset</sqo:hasQuestionPattern>
+:goal hyp:fromDataset ?Dataset</sqo:hasQuestionPattern>
     </owl:NamedIndividual>
 
     <!-- http://disk-project.org/resources/climate/question/CoherenceDatasetTime -->
@@ -639,7 +639,7 @@ FILTER(
 ).
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
-?ClimateVariable hyp:fromDataset ?Dataset</sqo:hasQuestionPattern>
+:goal hyp:fromDataset ?Dataset</sqo:hasQuestionPattern>
     </owl:NamedIndividual>
 
     <!-- http://disk-project.org/resources/climate/question/CoherenceSite -->
@@ -998,7 +998,7 @@ FILTER (!REGEX(str(?ClimateVariable2), &quot;age&quot;))
 FILTER (?VarID != ?VarID2)
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
-?ClimateVariable hyp:fromDataset ?Dataset</sqo:hasQuestionPattern>
+:goal hyp:fromDataset ?Dataset</sqo:hasQuestionPattern>
     </owl:NamedIndividual>
 
     <!-- http://disk-project.org/resources/climate/question/CorrelationDatasetTime -->
@@ -1031,7 +1031,7 @@ FILTER(
 ).
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
-?ClimateVariable hyp:fromDataset ?Dataset</sqo:hasQuestionPattern>
+:goal hyp:fromDataset ?Dataset</sqo:hasQuestionPattern>
     </owl:NamedIndividual>
 
     <!-- http://disk-project.org/resources/climate/question/CorrelationSite -->
@@ -1397,7 +1397,7 @@ FILTER (!REGEX(str(?ClimateVariable2), &quot;age&quot;))
 FILTER (?VarID != ?VarID2)
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
-?ClimateVariable hyp:fromDataset ?Dataset</sqo:hasQuestionPattern>
+:goal hyp:fromDataset ?Dataset</sqo:hasQuestionPattern>
     </owl:NamedIndividual>
 
     <!-- http://disk-project.org/resources/climate/question/CausalityDatasetTime -->
@@ -1430,7 +1430,7 @@ FILTER(
 ).
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
-?ClimateVariable hyp:fromDataset ?Dataset</sqo:hasQuestionPattern>
+:goal hyp:fromDataset ?Dataset</sqo:hasQuestionPattern>
     </owl:NamedIndividual>
 
     <!-- http://disk-project.org/resources/climate/question/CausalitySite -->
