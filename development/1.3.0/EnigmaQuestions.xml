@@ -25,38 +25,54 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <!-- http://disk-project.org/resources/enigma/variable/genotype -->
+    
 
-    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/enigma/variable/genotype">
-        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
-        <sqo:hasOptionsQuery>[] ?SNPprop ?Genotype .
-?SNPprop rdfs:label &quot;SNP&quot; .
-BIND(STR(?Genotype) as ?GenotypeLabel)</sqo:hasOptionsQuery>
-        <sqo:hasVariableName>?Genotype</sqo:hasVariableName>
+
+    <!-- http://disk-project.org/resources/enigma/question/EnigmaQuestion1 -->
+
+    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/enigma/question/EnigmaQuestion1">
+        <rdf:type rdf:resource="https://w3id.org/sqo#Question"/>
+        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/enigma/variable/brainImagingTrait"/>
+        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/enigma/variable/demographicAttribute"/>
+        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/enigma/variable/genotype"/>
+        <sqo:hasQuestionPattern>?EffectSize neuro:sourceGene ?Genotype
+?EffectSize neuro:targetCharacteristic ?BrainImagingTrait
+?EffectSize hyp:associatedWith ?DemographicAttribute</sqo:hasQuestionPattern>
+        <sqo:hasQuestionTemplate>Is the effect size of ?Genotype on ?BrainImagingTrait associated with ?DemographicAttribute</sqo:hasQuestionTemplate>
+        <rdfs:label>Is the effect size of ?Genotype in ?Brain Imaging Trait associated with ?Demographic Attribute?</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://disk-project.org/resources/enigma/variable/brainImagingTrait -->
+    <!-- http://disk-project.org/resources/enigma/question/EnigmaQuestion2 -->
 
-    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/enigma/variable/brainImagingTrait">
-        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
-        <sqo:hasOptionsQuery>[] ?traitprop ?BrainImagingTrait .
-?traitprop rdfs:label &quot;Trait&quot; .
-BIND(REPLACE (REPLACE (?BrainImagingTrait, &quot;SA&quot;, &quot;Surface Area&quot;), &quot;TH&quot;, &quot;Thickness&quot;)
-  AS ?BrainImagingTraitLabel)</sqo:hasOptionsQuery>
-        <sqo:hasVariableName>?BrainImagingTrait</sqo:hasVariableName>
+    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/enigma/question/EnigmaQuestion2">
+        <rdf:type rdf:resource="https://w3id.org/sqo#Question"/>
+        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/enigma/variable/brainCharacteristic"/>
+        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/enigma/variable/neurologicalDisorder"/>
+        <sqo:hasQuestionPattern>?BrainCharacteristic hyp:associatedWith ?NeurologicalDisorder</sqo:hasQuestionPattern>
+        <sqo:hasQuestionTemplate>Is ?BrainCharacteristic associated with ?NeurologicalDisorder</sqo:hasQuestionTemplate>
+        <rdfs:label>Is ?Brain Characteristic associated with ?Neurological Disorder in comparison to healthy controls?</rdfs:label>
     </owl:NamedIndividual>
+    
 
 
-    <!-- http://disk-project.org/resources/enigma/variable/brainRegion -->
+    <!-- http://disk-project.org/resources/enigma/question/EnigmaQuestion3 -->
 
-    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/enigma/variable/brainRegion">
-        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
-        <sqo:hasOptionsQuery>[] ?regprop ?Region .
-?regprop rdfs:label &quot;BrainRegion&quot; .
-BIND(REPLACE(REPLACE(REPLACE(REPLACE(?Region,&quot;AvgTH&quot;,&quot;Average Thickness&quot;),&quot;TotalSA&quot;,&quot;Total Surface Area&quot;),&quot;RostralMiddleFrontal&quot;,&quot;Rostral Middle Frontal&quot;),&quot;InferiorParietal&quot;,&quot;Inferior Parietal&quot;) as ?RegionLabel)</sqo:hasOptionsQuery>
-        <sqo:hasVariableName>?Region</sqo:hasVariableName>
+    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/enigma/question/EnigmaQuestion3">
+        <rdf:type rdf:resource="https://w3id.org/sqo#Question"/>
+        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/enigma/variable/brainImagingTrait"/>
+        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/enigma/variable/brainRegion"/>
+        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/enigma/variable/demographicAttribute"/>
+        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/enigma/variable/genotype"/>
+        <sqo:hasQuestionPattern>?EffectSize neuro:sourceGene ?Genotype
+?EffectSize neuro:targetCharacteristic ?BrainImagingTrait
+?EffectSize neuro:targetCharacteristic ?Region
+?EffectSize hyp:associatedWith ?DemographicAttribute
+optional { ?DemographicAttribute hyp:lessThan ?maxAge }
+optional { ?DemographicAttribute hyp:moreThan ?minAge }</sqo:hasQuestionPattern>
+        <sqo:hasQuestionTemplate>Is the EffectSize of ?Genotype on ?BrainImagingTrait of ?Region associated with ?DemographicAttribute</sqo:hasQuestionTemplate>
+        <rdfs:label>Is the effect size of ?Genotype on ?Brain Imaging Trait of ?Region associated with ?Demographic Attribute?</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -73,13 +89,27 @@ BIND(REPLACE(?BrainCharacteristic, &quot;CorticalThickness&quot;, &quot;Cortical
     
 
 
-    <!-- http://disk-project.org/resources/enigma/variable/neurologicalDisorder -->
+    <!-- http://disk-project.org/resources/enigma/variable/brainImagingTrait -->
 
-    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/enigma/variable/neurologicalDisorder">
+    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/enigma/variable/brainImagingTrait">
         <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
-        <sqo:hasOptionsQuery>[] ?studiesDiseaseProp ?NeurologicalDisorder .
-?studiesDiseaseProp rdfs:label &quot;StudiesDisorder (E)&quot; .</sqo:hasOptionsQuery>
-        <sqo:hasVariableName>?NeurologicalDisorder</sqo:hasVariableName>
+        <sqo:hasOptionsQuery>[] ?traitprop ?BrainImagingTrait .
+?traitprop rdfs:label &quot;Trait&quot; .
+BIND(REPLACE (REPLACE (?BrainImagingTrait, &quot;SA&quot;, &quot;Surface Area&quot;), &quot;TH&quot;, &quot;Thickness&quot;)
+  AS ?BrainImagingTraitLabel)</sqo:hasOptionsQuery>
+        <sqo:hasVariableName>?BrainImagingTrait</sqo:hasVariableName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://disk-project.org/resources/enigma/variable/brainRegion -->
+
+    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/enigma/variable/brainRegion">
+        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
+        <sqo:hasOptionsQuery>[] ?regprop ?Region .
+?regprop rdfs:label &quot;BrainRegion&quot; .
+BIND(REPLACE(REPLACE(REPLACE(REPLACE(?Region,&quot;AvgTH&quot;,&quot;Average Thickness&quot;),&quot;TotalSA&quot;,&quot;Total Surface Area&quot;),&quot;RostralMiddleFrontal&quot;,&quot;Rostral Middle Frontal&quot;),&quot;InferiorParietal&quot;,&quot;Inferior Parietal&quot;) as ?RegionLabel)</sqo:hasOptionsQuery>
+        <sqo:hasVariableName>?Region</sqo:hasVariableName>
     </owl:NamedIndividual>
     
 
@@ -103,8 +133,6 @@ BIND(REPLACE(REPLACE(REPLACE(REPLACE(?OrDemographicAttributeLabel,&quot;leSe&quo
     </owl:NamedIndividual>
     
 
-    
-
 
     <!-- http://disk-project.org/resources/enigma/variable/ethnicGroup -->
 
@@ -114,70 +142,39 @@ BIND(REPLACE(REPLACE(REPLACE(REPLACE(?OrDemographicAttributeLabel,&quot;leSe&quo
 ?hasEthnicGroupProp rdfs:label &quot;HasEthnicGroup (E)&quot; .</sqo:hasOptionsQuery>
         <sqo:hasVariableName>?EthnicGroup</sqo:hasVariableName>
     </owl:NamedIndividual>
-
     
 
 
-    <!-- http://disk-project.org/resources/enigma/question/EnigmaQuestion1 -->
+    <!-- http://disk-project.org/resources/enigma/variable/genotype -->
 
-    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/enigma/question/EnigmaQuestion1">
-        <rdf:type rdf:resource="https://w3id.org/sqo#Question"/>
-        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/enigma/variable/genotype"/>
-        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/enigma/variable/brainImagingTrait"/>
-        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/enigma/variable/demographicAttribute"/>
-        <sqo:hasQuestionPattern>?EffectSize neuro:sourceGene ?Genotype
-?EffectSize neuro:targetCharacteristic ?BrainImagingTrait
-?EffectSize hyp:associatedWith ?DemographicAttribute</sqo:hasQuestionPattern>
-        <sqo:hasQuestionTemplate>Is the effect size of ?Genotype on ?BrainImagingTrait associated with ?DemographicAttribute</sqo:hasQuestionTemplate>
-        <rdfs:label>Is the effect size of ?Genotype in ?Brain Imaging Trait associated with ?Demographic Attribute?</rdfs:label>
+    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/enigma/variable/genotype">
+        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
+        <sqo:hasOptionsQuery>[] ?SNPprop ?Genotype .
+?SNPprop rdfs:label &quot;SNP&quot; .
+BIND(STR(?Genotype) as ?GenotypeLabel)</sqo:hasOptionsQuery>
+        <sqo:hasVariableName>?Genotype</sqo:hasVariableName>
     </owl:NamedIndividual>
     
 
 
-    
+    <!-- http://disk-project.org/resources/enigma/variable/neurologicalDisorder -->
 
-
-    <!-- http://disk-project.org/resources/enigma/question/EnigmaQuestion2 -->
-
-    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/enigma/question/EnigmaQuestion2">
-        <rdf:type rdf:resource="https://w3id.org/sqo#Question"/>
-        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/enigma/variable/brainCharacteristic"/>
-        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/enigma/variable/neurologicalDisorder"/>
-        <sqo:hasQuestionPattern>?BrainCharacteristic hyp:associatedWith ?NeurologicalDisorder</sqo:hasQuestionPattern>
-        <sqo:hasQuestionTemplate>Is ?BrainCharacteristic associated with ?NeurologicalDisorder</sqo:hasQuestionTemplate>
-        <rdfs:label>Is ?Brain Characteristic associated with ?Neurological Disorder in comparison to healthy controls?</rdfs:label>
+    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/enigma/variable/neurologicalDisorder">
+        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
+        <sqo:hasOptionsQuery>[] ?studiesDiseaseProp ?NeurologicalDisorder .
+?studiesDiseaseProp rdfs:label &quot;StudiesDisorder (E)&quot; .</sqo:hasOptionsQuery>
+        <sqo:hasVariableName>?NeurologicalDisorder</sqo:hasVariableName>
     </owl:NamedIndividual>
     
-
-
-    <!-- http://disk-project.org/resources/enigma/question/EnigmaQuestion3 -->
-
-    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/enigma/question/EnigmaQuestion3">
-        <rdf:type rdf:resource="https://w3id.org/sqo#Question"/>
-        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/enigma/variable/genotype"/>
-        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/enigma/variable/brainImagingTrait"/>
-        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/enigma/variable/brainRegion"/>
-        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/enigma/variable/demographicAttribute"/>
-        <sqo:hasQuestionPattern>?EffectSize neuro:sourceGene ?Genotype
-?EffectSize neuro:targetCharacteristic ?BrainImagingTrait
-?EffectSize neuro:targetCharacteristic ?Region
-?EffectSize hyp:associatedWith ?DemographicAttribute
-optional { ?DemographicAttribute hyp:lessThan ?maxAge }
-optional { ?DemographicAttribute hyp:moreThan ?minAge }</sqo:hasQuestionPattern>
-        <sqo:hasQuestionTemplate>Is the EffectSize of ?Genotype on ?BrainImagingTrait of ?Region associated with ?DemographicAttribute</sqo:hasQuestionTemplate>
-        <rdfs:label>Is the effect size of ?Genotype on ?Brain Imaging Trait of ?Region associated with ?Demographic Attribute?</rdfs:label>
-    </owl:NamedIndividual>
-    
-
 
 
     <!-- https://w3id.org/sqo/resource/EnigmaQuestion4 -->
 
     <owl:NamedIndividual rdf:about="https://w3id.org/sqo/resource/EnigmaQuestion4">
         <rdf:type rdf:resource="https://w3id.org/sqo#Question"/>
-        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/enigma/variable/genotype"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/enigma/variable/brainImagingTrait"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/enigma/variable/brainRegion"/>
+        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/enigma/variable/genotype"/>
         <sqo:hasQuestionPattern>?EffectSize neuro:sourceGene ?Genotype
 ?EffectSize neuro:targetCharacteristic ?BrainImagingTrait
 ?EffectSize neuro:targetCharacteristic ?Region</sqo:hasQuestionPattern>
@@ -191,35 +188,27 @@ optional { ?DemographicAttribute hyp:moreThan ?minAge }</sqo:hasQuestionPattern>
 
     <owl:NamedIndividual rdf:about="https://w3id.org/sqo/resource/EnigmaQuestion5">
         <rdf:type rdf:resource="https://w3id.org/sqo#Question"/>
-        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/enigma/variable/genotype"/>
-        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/enigma/variable/ethnicGroup"/>
-        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/enigma/variable/demographicAttribute"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/enigma/variable/brainImagingTrait"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/enigma/variable/brainRegion"/>
-        <sqo:hasConstraintQuery>?Cohorts a ?cohortClass .
-?cohortClass rdfs:label &quot;Cohort (E)&quot; .
-?Cohorts ?hasEthnicGroupProp ?EthnicGroup .
-?hasEthnicGroupProp rdfs:label &quot;HasEthnicGroup (E)&quot; .
-?Cohorts ?hasCohortProj ?CohortProjects .
-?hasCohortProj rdfs:label &quot;HasCohortProject (E)&quot; .
+        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/enigma/variable/demographicAttribute"/>
+        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/enigma/variable/ethnicGroup"/>
+        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/enigma/variable/genotype"/>
+        <sqo:hasConstraintQuery>?Cohorts a &lt;http://localhost:8080/enigma_dev/special:uriresolver/Category-3ACohort_-28E-29&gt; .
+?Cohorts &lt;http://localhost:8080/enigma_dev/special:uriresolver/Property-3AHasEthnicGroup_-28E-29&gt; ?EthnicGroup .
+?Cohorts &lt;http://localhost:8080/enigma_dev/special:uriresolver/Property-3AHasCohortProject_-28E-29&gt; ?CohortProjects .
 ?CohortProjects ?DemographicAttribute [] .
+  VALUES ?DemographicAttribute {
+    &lt;http://localhost:8080/enigma_dev/Special:URIResolver/Property-3AHasAge_Mean_-28E-29&gt;
+    &lt;http://localhost:8080/enigma_dev/Special:URIResolver/Property-3AHasNumberOfFemaleSex_-28E-29&gt;
+    &lt;http://localhost:8080/enigma_dev/Special:URIResolver/Property-3AHasNumberOfMaleSex_-28E-29&gt;
+    &lt;http://localhost:8080/enigma_dev/Special:URIResolver/Property-3AHasNumberOfParticipants_-28E-29&gt;
+  }
 ?DemographicAttribute rdfs:label ?DemographicAttributeLabel .
-FILTER (
-  REGEX(?DemographicAttributeLabel, &quot;HasAge Mean&quot;) ||
-  REGEX(?DemographicAttributeLabel, &quot;HasNumberOfParticipants&quot;) ||
-  REGEX(?DemographicAttributeLabel, &quot;HasNumberOfMaleSex&quot;) ||
-  REGEX(?DemographicAttributeLabel, &quot;HasNumberOfFemaleSex&quot;)
-)
-?CohortProjects ?hasProjectResults ?ProjectResults .
-?hasProjectResults rdfs:label &quot;HasProjectResults (E)&quot; .
-?ProjectResults ?regionprop ?Region .
-?regionprop rdfs:label &quot;BrainRegion&quot; .
-?ProjectResults ?traitprop ?BrainImagingTrait .
-?traitprop rdfs:label &quot;Trait&quot; .
-?ProjectResults ?snpprop ?Genotype .
-?snpprop rdfs:label &quot;SNP&quot; .
-?ProjectResults ?contenturlProp ?CohortData .
-?contenturlProp rdfs:label &quot;HasContentUrl (E)&quot; .</sqo:hasConstraintQuery>
+?CohortProjects &lt;http://localhost:8080/enigma_dev/special:uriresolver/Property-3AHasProjectResults_-28E-29&gt; ?ProjectResults .
+?ProjectResults &lt;http://localhost:8080/enigma_dev/special:uriresolver/Property-3ABrainRegion&gt; ?Region .
+?ProjectResults &lt;http://localhost:8080/enigma_dev/special:uriresolver/Property-3ATrait&gt; ?BrainImagingTrait .
+?ProjectResults &lt;http://localhost:8080/enigma_dev/special:uriresolver/Property-3ASNP&gt; ?Genotype .
+?ProjectResults &lt;http://localhost:8080/enigma_dev/special:uriresolver/Property-3AHasContentUrl_-28E-29&gt; ?CohortData .</sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>?EffectSize neuro:sourceGene ?Genotype
 ?EffectSize neuro:targetCharacteristic ?BrainImagingTrait
 ?EffectSize neuro:targetCharacteristic ?Region
@@ -228,32 +217,25 @@ FILTER (
         <sqo:hasQuestionTemplate>Is the effect size of ?Genotype on ?BrainImagingTrait of ?Region associated with ?DemographicAttribute for cohorts of ?EthnicGroup ancestry</sqo:hasQuestionTemplate>
         <rdfs:label>Is the effect size of ?Genotype on ?Brain Imaging Trait of ?Region associated with ?Demographic Attribute for cohorts of ?Ethnic ancestry?</rdfs:label>
     </owl:NamedIndividual>
+    
 
 
     <!-- https://w3id.org/sqo/resource/EnigmaQuestion6 -->
 
     <owl:NamedIndividual rdf:about="https://w3id.org/sqo/resource/EnigmaQuestion6">
         <rdf:type rdf:resource="https://w3id.org/sqo#Question"/>
-        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/enigma/variable/genotype"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/enigma/variable/brainImagingTrait"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/enigma/variable/brainRegion"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/enigma/variable/ethnicGroup"/>
-        <sqo:hasConstraintQuery>?Cohorts a ?cohortClass .
-?cohortClass rdfs:label &quot;Cohort (E)&quot; .
-?Cohorts ?hasEthnicGroupProp ?EthnicGroup .
-?hasEthnicGroupProp rdfs:label &quot;HasEthnicGroup (E)&quot; .
-?Cohorts ?hasCohortProj ?CohortProjects .
-?hasCohortProj rdfs:label &quot;HasCohortProject (E)&quot; .
-?CohortProjects ?hasProjectResults ?ProjectResults .
-?hasProjectResults rdfs:label &quot;HasProjectResults (E)&quot; .
-?ProjectResults ?regionprop ?Region .
-?regionprop rdfs:label &quot;BrainRegion&quot; .
-?ProjectResults ?traitprop ?BrainImagingTrait .
-?traitprop rdfs:label &quot;Trait&quot; .
-?ProjectResults ?snpprop ?Genotype .
-?snpprop rdfs:label &quot;SNP&quot; .
-?ProjectResults ?contenturlProp ?CohortData .
-?contenturlProp rdfs:label &quot;HasContentUrl (E)&quot; .</sqo:hasConstraintQuery>
+        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/enigma/variable/genotype"/>
+        <sqo:hasConstraintQuery>?Cohorts a &lt;http://localhost:8080/enigma_dev/special:uriresolver/Category-3ACohort_-28E-29&gt; .
+?Cohorts &lt;http://localhost:8080/enigma_dev/special:uriresolver/Property-3AHasEthnicGroup_-28E-29&gt; ?EthnicGroup .
+?Cohorts &lt;http://localhost:8080/enigma_dev/special:uriresolver/Property-3AHasCohortProject_-28E-29&gt; ?CohortProjects .
+?CohortProjects &lt;http://localhost:8080/enigma_dev/special:uriresolver/Property-3AHasProjectResults_-28E-29&gt; ?ProjectResults .
+?ProjectResults &lt;http://localhost:8080/enigma_dev/special:uriresolver/Property-3ABrainRegion&gt; ?Region .
+?ProjectResults &lt;http://localhost:8080/enigma_dev/special:uriresolver/Property-3ATrait&gt; ?BrainImagingTrait .
+?ProjectResults &lt;http://localhost:8080/enigma_dev/special:uriresolver/Property-3ASNP&gt; ?Genotype .
+?ProjectResults &lt;http://localhost:8080/enigma_dev/special:uriresolver/Property-3AHasContentUrl_-28E-29&gt; ?CohortData .</sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>?EffectSize neuro:sourceGene ?Genotype
 ?EffectSize neuro:targetCharacteristic ?BrainImagingTrait
 ?EffectSize neuro:targetCharacteristic ?Region
@@ -264,4 +246,6 @@ FILTER (
 </rdf:RDF>
 
 
+
 <!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
