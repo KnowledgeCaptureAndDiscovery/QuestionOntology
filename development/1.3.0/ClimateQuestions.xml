@@ -115,6 +115,35 @@
         <rdf:type rdf:resource="https://w3id.org/sqo#BoundingBoxQuestionVariable"/>
         <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <sqo:hasVariableName>?BoundingBox2</sqo:hasVariableName>
+        <sqo:hasMaxLat rdf:resource="http://disk-project.org/resources/climate/variable/MaxLatVariable2"/>
+        <sqo:hasMaxLng rdf:resource="http://disk-project.org/resources/climate/variable/MaxLngVariable2"/>
+        <sqo:hasMinLat rdf:resource="http://disk-project.org/resources/climate/variable/MinLatVariable2"/>
+        <sqo:hasMinLng rdf:resource="http://disk-project.org/resources/climate/variable/MinLngVariable2"/>
+        <sqo:hasRepresentation>(?MinLat,?MaxLat ?MinLng,?MaxLng)</sqo:hasRepresentation>
+    </owl:NamedIndividual>
+
+    <!-- http://disk-project.org/resources/climate/variable/MaxLatVariable -->
+    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/variable/MaxLatVariable2">
+        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
+        <sqo:hasVariableName>?MaxLat</sqo:hasVariableName>
+    </owl:NamedIndividual>
+
+    <!-- http://disk-project.org/resources/climate/variable/MaxLngVariable -->
+    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/variable/MaxLngVariable2">
+        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
+        <sqo:hasVariableName>?MaxLng</sqo:hasVariableName>
+    </owl:NamedIndividual>
+
+    <!-- http://disk-project.org/resources/climate/variable/MinLatVariable -->
+    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/variable/MinLatVariable2">
+        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
+        <sqo:hasVariableName>?MinLat</sqo:hasVariableName>
+    </owl:NamedIndividual>
+
+    <!-- http://disk-project.org/resources/climate/variable/MinLngVariable -->
+    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/variable/MinLngVariable2">
+        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
+        <sqo:hasVariableName>?MinLng</sqo:hasVariableName>
     </owl:NamedIndividual>
 
     <!-- http://disk-project.org/resources/climate/variable/Dataset -->
