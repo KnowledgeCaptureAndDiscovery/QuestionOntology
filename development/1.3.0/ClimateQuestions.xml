@@ -263,8 +263,8 @@ FILTER (
 ?Site a &lt;http://linked.earth/ontology#Location&gt; .
 OPTIONAL {?Site &lt;http://linked.earth/ontology#name&gt; ?LocationName1 .}
 BIND(COALESCE(?LocationName1, REPLACE(STR(?Site), &quot;(.*#)|(.Location)&quot;, &quot;&quot;,&quot;i&quot;)) as ?LocationName)
-?Site &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
-?Site &lt;http://linked.earth/ontology#wgs84_Long&gt; ?long .
+?Site &lt;http://www.w3.org/2003/01/geo/wgs84_pos#lat&gt; ?lat .
+?Site &lt;http://www.w3.org/2003/01/geo/wgs84_pos#long&gt; ?long .
 BIND(CONCAT(?LocationName, &quot; (&quot;, STR(?lat), &quot;, &quot;, STR(?long), &quot;)&quot;) AS ?SiteLabel)
 ?Site &lt;http://linked.earth/ontology#coordinatesFor&gt; ?Dataset .
 ?Dataset a &lt;http://linked.earth/ontology#Dataset&gt; .
@@ -295,8 +295,8 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))
 ?Site a &lt;http://linked.earth/ontology#Location&gt; .
 OPTIONAL {?Site &lt;http://linked.earth/ontology#name&gt; ?LocationName1 .}
 BIND(COALESCE(?LocationName1, REPLACE(STR(?Site), &quot;(.*#)|(.Location)&quot;, &quot;&quot;,&quot;i&quot;)) as ?LocationName)
-?Site &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
-?Site &lt;http://linked.earth/ontology#wgs84_Long&gt; ?long .
+?Site &lt;http://www.w3.org/2003/01/geo/wgs84_pos#lat&gt; ?lat .
+?Site &lt;http://www.w3.org/2003/01/geo/wgs84_pos#long&gt; ?long .
 BIND(CONCAT(?LocationName, &quot; (&quot;, STR(?lat), &quot;, &quot;, STR(?long), &quot;)&quot;) AS ?SiteLabel)
 ?Site &lt;http://linked.earth/ontology#coordinatesFor&gt; ?Dataset .
 ?Dataset a &lt;http://linked.earth/ontology#Dataset&gt; .
@@ -338,8 +338,8 @@ FILTER (
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/BoundingBox"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable"/>
         <sqo:hasConstraintQuery>
-?location &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
-?location &lt;http://linked.earth/ontology#wgs84_Long&gt; ?lon .
+?location &lt;http://www.w3.org/2003/01/geo/wgs84_pos#lat&gt; ?lat .
+?location &lt;http://www.w3.org/2003/01/geo/wgs84_pos#long&gt; ?lon .
 filter( !bound(?MinLat) || !bound(?MaxLat) || 
         xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
         xsd:float(?lat)&gt;xsd:float(?MinLat) &amp;&amp;
@@ -375,8 +375,8 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/TimeInterval"/>
         <sqo:hasConstraintQuery>
-?location &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
-?location &lt;http://linked.earth/ontology#wgs84_Long&gt; ?lon .
+?location &lt;http://www.w3.org/2003/01/geo/wgs84_pos#lat&gt; ?lat .
+?location &lt;http://www.w3.org/2003/01/geo/wgs84_pos#long&gt; ?lon .
 filter( !bound(?MinLat) || !bound(?MaxLat) || 
         xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
         xsd:float(?lat)&gt;xsd:float(?MinLat) &amp;&amp;
@@ -495,8 +495,8 @@ FILTER (
 ?Site a &lt;http://linked.earth/ontology#Location&gt; .
 OPTIONAL {?Site &lt;http://linked.earth/ontology#name&gt; ?LocationName1 .}
 BIND(COALESCE(?LocationName1, REPLACE(STR(?Site), &quot;(.*#)|(.Location)&quot;, &quot;&quot;,&quot;i&quot;)) as ?LocationName)
-?Site &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
-?Site &lt;http://linked.earth/ontology#wgs84_Long&gt; ?long .
+?Site &lt;http://www.w3.org/2003/01/geo/wgs84_pos#lat&gt; ?lat .
+?Site &lt;http://www.w3.org/2003/01/geo/wgs84_pos#long&gt; ?long .
 BIND(CONCAT(?LocationName, &quot; (&quot;, STR(?lat), &quot;, &quot;, STR(?long), &quot;)&quot;) AS ?SiteLabel)
 ?Site &lt;http://linked.earth/ontology#coordinatesFor&gt; ?Dataset .
 ?Dataset a &lt;http://linked.earth/ontology#Dataset&gt; .
@@ -527,8 +527,8 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))
 ?Site a &lt;http://linked.earth/ontology#Location&gt; .
 OPTIONAL {?Site &lt;http://linked.earth/ontology#name&gt; ?LocationName1 .}
 BIND(COALESCE(?LocationName1, REPLACE(STR(?Site), &quot;(.*#)|(.Location)&quot;, &quot;&quot;,&quot;i&quot;)) as ?LocationName)
-?Site &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
-?Site &lt;http://linked.earth/ontology#wgs84_Long&gt; ?long .
+?Site &lt;http://www.w3.org/2003/01/geo/wgs84_pos#lat&gt; ?lat .
+?Site &lt;http://www.w3.org/2003/01/geo/wgs84_pos#long&gt; ?long .
 BIND(CONCAT(?LocationName, &quot; (&quot;, STR(?lat), &quot;, &quot;, STR(?long), &quot;)&quot;) AS ?SiteLabel)
 ?Site &lt;http://linked.earth/ontology#coordinatesFor&gt; ?Dataset .
 ?Dataset a &lt;http://linked.earth/ontology#Dataset&gt; .
@@ -570,8 +570,8 @@ FILTER (
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/BoundingBox"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable"/>
         <sqo:hasConstraintQuery>
-?location &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
-?location &lt;http://linked.earth/ontology#wgs84_Long&gt; ?lon .
+?location &lt;http://www.w3.org/2003/01/geo/wgs84_pos#lat&gt; ?lat .
+?location &lt;http://www.w3.org/2003/01/geo/wgs84_pos#long&gt; ?lon .
 filter( !bound(?MinLat) || !bound(?MaxLat) || 
         xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
         xsd:float(?lat)&gt;xsd:float(?MinLat) &amp;&amp;
@@ -607,8 +607,8 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/TimeInterval"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable"/>
         <sqo:hasConstraintQuery>
-?location &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
-?location &lt;http://linked.earth/ontology#wgs84_Long&gt; ?lon .
+?location &lt;http://www.w3.org/2003/01/geo/wgs84_pos#lat&gt; ?lat .
+?location &lt;http://www.w3.org/2003/01/geo/wgs84_pos#long&gt; ?lon .
 filter( !bound(?MinLat) || !bound(?MaxLat) || 
         xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
         xsd:float(?lat)&gt;xsd:float(?MinLat) &amp;&amp;
@@ -747,8 +747,8 @@ FILTER (
 ?Site a &lt;http://linked.earth/ontology#Location&gt; .
 OPTIONAL {?Site &lt;http://linked.earth/ontology#name&gt; ?LocationName1 .}
 BIND(COALESCE(?LocationName1, REPLACE(STR(?Site), &quot;(.*#)|(.Location)&quot;, &quot;&quot;,&quot;i&quot;)) as ?LocationName)
-?Site &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
-?Site &lt;http://linked.earth/ontology#wgs84_Long&gt; ?long .
+?Site &lt;http://www.w3.org/2003/01/geo/wgs84_pos#lat&gt; ?lat .
+?Site &lt;http://www.w3.org/2003/01/geo/wgs84_pos#long&gt; ?long .
 BIND(CONCAT(?LocationName, &quot; (&quot;, STR(?lat), &quot;, &quot;, STR(?long), &quot;)&quot;) AS ?SiteLabel)
 ?Site &lt;http://linked.earth/ontology#coordinatesFor&gt; ?Dataset .
 ?Dataset a &lt;http://linked.earth/ontology#Dataset&gt; .
@@ -783,8 +783,8 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))
 ?Site a &lt;http://linked.earth/ontology#Location&gt; .
 OPTIONAL {?Site &lt;http://linked.earth/ontology#name&gt; ?LocationName1 .}
 BIND(COALESCE(?LocationName1, REPLACE(STR(?Site), &quot;(.*#)|(.Location)&quot;, &quot;&quot;,&quot;i&quot;)) as ?LocationName)
-?Site &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
-?Site &lt;http://linked.earth/ontology#wgs84_Long&gt; ?long .
+?Site &lt;http://www.w3.org/2003/01/geo/wgs84_pos#lat&gt; ?lat .
+?Site &lt;http://www.w3.org/2003/01/geo/wgs84_pos#long&gt; ?long .
 BIND(CONCAT(?LocationName, &quot; (&quot;, STR(?lat), &quot;, &quot;, STR(?long), &quot;)&quot;) AS ?SiteLabel)
 ?Site &lt;http://linked.earth/ontology#coordinatesFor&gt; ?Dataset .
 ?Dataset a &lt;http://linked.earth/ontology#Dataset&gt; .
@@ -830,8 +830,8 @@ FILTER (
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable2"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable"/>
         <sqo:hasConstraintQuery>
-?location &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
-?location &lt;http://linked.earth/ontology#wgs84_Long&gt; ?lon .
+?location &lt;http://www.w3.org/2003/01/geo/wgs84_pos#lat&gt; ?lat .
+?location &lt;http://www.w3.org/2003/01/geo/wgs84_pos#long&gt; ?lon .
 filter( !bound(?MinLat) || !bound(?MaxLat) || 
         xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
         xsd:float(?lat)&gt;xsd:float(?MinLat) &amp;&amp;
@@ -869,8 +869,8 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/TimeInterval"/>
         <sqo:hasConstraintQuery>
-?location &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
-?location &lt;http://linked.earth/ontology#wgs84_Long&gt; ?lon .
+?location &lt;http://www.w3.org/2003/01/geo/wgs84_pos#lat&gt; ?lat .
+?location &lt;http://www.w3.org/2003/01/geo/wgs84_pos#long&gt; ?lon .
 filter( !bound(?MinLat) || !bound(?MaxLat) || 
         xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
         xsd:float(?lat)&gt;xsd:float(?MinLat) &amp;&amp;
@@ -922,8 +922,8 @@ FILTER (
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable2"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable"/>
         <sqo:hasConstraintQuery>
-?location &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
-?location &lt;http://linked.earth/ontology#wgs84_Long&gt; ?lon .
+?location &lt;http://www.w3.org/2003/01/geo/wgs84_pos#lat&gt; ?lat .
+?location &lt;http://www.w3.org/2003/01/geo/wgs84_pos#long&gt; ?lon .
 filter( !bound(?MinLat) || !bound(?MaxLat) || 
         xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
         xsd:float(?lat)&gt;xsd:float(?MinLat) &amp;&amp;
@@ -961,8 +961,8 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/TimeInterval"/>
         <sqo:hasConstraintQuery>
-?location &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
-?location &lt;http://linked.earth/ontology#wgs84_Long&gt; ?lon .
+?location &lt;http://www.w3.org/2003/01/geo/wgs84_pos#lat&gt; ?lat .
+?location &lt;http://www.w3.org/2003/01/geo/wgs84_pos#long&gt; ?lon .
 filter( !bound(?MinLat) || !bound(?MaxLat) || 
         xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
         xsd:float(?lat)&gt;xsd:float(?MinLat) &amp;&amp;
@@ -1015,8 +1015,8 @@ FILTER (
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable2"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable"/>
         <sqo:hasConstraintQuery>
-?location &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
-?location &lt;http://linked.earth/ontology#wgs84_Long&gt; ?lon .
+?location &lt;http://www.w3.org/2003/01/geo/wgs84_pos#lat&gt; ?lat .
+?location &lt;http://www.w3.org/2003/01/geo/wgs84_pos#long&gt; ?lon .
 filter( !bound(?MinLat) || !bound(?MaxLat) || 
         xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
         xsd:float(?lat)&gt;xsd:float(?MinLat) &amp;&amp;
@@ -1054,8 +1054,8 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/TimeInterval"/>
         <sqo:hasConstraintQuery>
-?location &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
-?location &lt;http://linked.earth/ontology#wgs84_Long&gt; ?lon .
+?location &lt;http://www.w3.org/2003/01/geo/wgs84_pos#lat&gt; ?lat .
+?location &lt;http://www.w3.org/2003/01/geo/wgs84_pos#long&gt; ?lon .
 filter( !bound(?MinLat) || !bound(?MaxLat) || 
         xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
         xsd:float(?lat)&gt;xsd:float(?MinLat) &amp;&amp;
@@ -1206,8 +1206,8 @@ FILTER (
 ?Site a &lt;http://linked.earth/ontology#Location&gt; .
 OPTIONAL {?Site &lt;http://linked.earth/ontology#name&gt; ?LocationName1 .}
 BIND(COALESCE(?LocationName1, REPLACE(STR(?Site), &quot;(.*#)|(.Location)&quot;, &quot;&quot;,&quot;i&quot;)) as ?LocationName)
-?Site &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
-?Site &lt;http://linked.earth/ontology#wgs84_Long&gt; ?long .
+?Site &lt;http://www.w3.org/2003/01/geo/wgs84_pos#lat&gt; ?lat .
+?Site &lt;http://www.w3.org/2003/01/geo/wgs84_pos#long&gt; ?long .
 BIND(CONCAT(?LocationName, &quot; (&quot;, STR(?lat), &quot;, &quot;, STR(?long), &quot;)&quot;) AS ?SiteLabel)
 ?Site &lt;http://linked.earth/ontology#coordinatesFor&gt; ?Dataset .
 ?Dataset a &lt;http://linked.earth/ontology#Dataset&gt; .
@@ -1240,8 +1240,8 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))
 ?Site a &lt;http://linked.earth/ontology#Location&gt; .
 OPTIONAL {?Site &lt;http://linked.earth/ontology#name&gt; ?LocationName1 .}
 BIND(COALESCE(?LocationName1, REPLACE(STR(?Site), &quot;(.*#)|(.Location)&quot;, &quot;&quot;,&quot;i&quot;)) as ?LocationName)
-?Site &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
-?Site &lt;http://linked.earth/ontology#wgs84_Long&gt; ?long .
+?Site &lt;http://www.w3.org/2003/01/geo/wgs84_pos#lat&gt; ?lat .
+?Site &lt;http://www.w3.org/2003/01/geo/wgs84_pos#long&gt; ?long .
 BIND(CONCAT(?LocationName, &quot; (&quot;, STR(?lat), &quot;, &quot;, STR(?long), &quot;)&quot;) AS ?SiteLabel)
 ?Site &lt;http://linked.earth/ontology#coordinatesFor&gt; ?Dataset .
 ?Dataset a &lt;http://linked.earth/ontology#Dataset&gt; .
@@ -1285,8 +1285,8 @@ FILTER (
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable2"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable"/>
         <sqo:hasConstraintQuery>
-?location &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
-?location &lt;http://linked.earth/ontology#wgs84_Long&gt; ?lon .
+?location &lt;http://www.w3.org/2003/01/geo/wgs84_pos#lat&gt; ?lat .
+?location &lt;http://www.w3.org/2003/01/geo/wgs84_pos#long&gt; ?lon .
 filter( !bound(?MinLat) || !bound(?MaxLat) || 
         xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
         xsd:float(?lat)&gt;xsd:float(?MinLat) &amp;&amp;
@@ -1324,8 +1324,8 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/TimeInterval"/>
         <sqo:hasConstraintQuery>
-?location &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
-?location &lt;http://linked.earth/ontology#wgs84_Long&gt; ?lon .
+?location &lt;http://www.w3.org/2003/01/geo/wgs84_pos#lat&gt; ?lat .
+?location &lt;http://www.w3.org/2003/01/geo/wgs84_pos#long&gt; ?lon .
 filter( !bound(?MinLat) || !bound(?MaxLat) || 
         xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
         xsd:float(?lat)&gt;xsd:float(?MinLat) &amp;&amp;
@@ -1376,8 +1376,8 @@ FILTER (
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable2"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable"/>
         <sqo:hasConstraintQuery>
-?location &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
-?location &lt;http://linked.earth/ontology#wgs84_Long&gt; ?lon .
+?location &lt;http://www.w3.org/2003/01/geo/wgs84_pos#lat&gt; ?lat .
+?location &lt;http://www.w3.org/2003/01/geo/wgs84_pos#long&gt; ?lon .
 filter( !bound(?MinLat) || !bound(?MaxLat) || 
         xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
         xsd:float(?lat)&gt;xsd:float(?MinLat) &amp;&amp;
@@ -1414,8 +1414,8 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/TimeInterval"/>
         <sqo:hasConstraintQuery>
-?location &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
-?location &lt;http://linked.earth/ontology#wgs84_Long&gt; ?lon .
+?location &lt;http://www.w3.org/2003/01/geo/wgs84_pos#lat&gt; ?lat .
+?location &lt;http://www.w3.org/2003/01/geo/wgs84_pos#long&gt; ?lon .
 filter( !bound(?MinLat) || !bound(?MaxLat) || 
         xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
         xsd:float(?lat)&gt;xsd:float(?MinLat) &amp;&amp;
@@ -1467,8 +1467,8 @@ FILTER (
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable2"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable"/>
         <sqo:hasConstraintQuery>
-?location &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
-?location &lt;http://linked.earth/ontology#wgs84_Long&gt; ?lon .
+?location &lt;http://www.w3.org/2003/01/geo/wgs84_pos#lat&gt; ?lat .
+?location &lt;http://www.w3.org/2003/01/geo/wgs84_pos#long&gt; ?lon .
 filter( !bound(?MinLat) || !bound(?MaxLat) || 
         xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
         xsd:float(?lat)&gt;xsd:float(?MinLat) &amp;&amp;
@@ -1506,8 +1506,8 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/TimeInterval"/>
         <sqo:hasConstraintQuery>
-?location &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
-?location &lt;http://linked.earth/ontology#wgs84_Long&gt; ?lon .
+?location &lt;http://www.w3.org/2003/01/geo/wgs84_pos#lat&gt; ?lat .
+?location &lt;http://www.w3.org/2003/01/geo/wgs84_pos#long&gt; ?lon .
 filter( !bound(?MinLat) || !bound(?MaxLat) || 
         xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
         xsd:float(?lat)&gt;xsd:float(?MinLat) &amp;&amp;
@@ -1650,8 +1650,8 @@ FILTER (
 ?Site a &lt;http://linked.earth/ontology#Location&gt; .
 OPTIONAL {?Site &lt;http://linked.earth/ontology#name&gt; ?LocationName1 .}
 BIND(COALESCE(?LocationName1, REPLACE(STR(?Site), &quot;(.*#)|(.Location)&quot;, &quot;&quot;,&quot;i&quot;)) as ?LocationName)
-?Site &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
-?Site &lt;http://linked.earth/ontology#wgs84_Long&gt; ?long .
+?Site &lt;http://www.w3.org/2003/01/geo/wgs84_pos#lat&gt; ?lat .
+?Site &lt;http://www.w3.org/2003/01/geo/wgs84_pos#long&gt; ?long .
 BIND(CONCAT(?LocationName, &quot; (&quot;, STR(?lat), &quot;, &quot;, STR(?long), &quot;)&quot;) AS ?SiteLabel)
 ?Site &lt;http://linked.earth/ontology#coordinatesFor&gt; ?Dataset .
 ?Dataset a &lt;http://linked.earth/ontology#Dataset&gt; .
@@ -1684,8 +1684,8 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))
 ?Site a &lt;http://linked.earth/ontology#Location&gt; .
 OPTIONAL {?Site &lt;http://linked.earth/ontology#name&gt; ?LocationName1 .}
 BIND(COALESCE(?LocationName1, REPLACE(STR(?Site), &quot;(.*#)|(.Location)&quot;, &quot;&quot;,&quot;i&quot;)) as ?LocationName)
-?Site &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
-?Site &lt;http://linked.earth/ontology#wgs84_Long&gt; ?long .
+?Site &lt;http://www.w3.org/2003/01/geo/wgs84_pos#lat&gt; ?lat .
+?Site &lt;http://www.w3.org/2003/01/geo/wgs84_pos#long&gt; ?long .
 BIND(CONCAT(?LocationName, &quot; (&quot;, STR(?lat), &quot;, &quot;, STR(?long), &quot;)&quot;) AS ?SiteLabel)
 ?Site &lt;http://linked.earth/ontology#coordinatesFor&gt; ?Dataset .
 ?Dataset a &lt;http://linked.earth/ontology#Dataset&gt; .
@@ -1729,8 +1729,8 @@ FILTER (
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable2"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable"/>
         <sqo:hasConstraintQuery>
-?location &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
-?location &lt;http://linked.earth/ontology#wgs84_Long&gt; ?lon .
+?location &lt;http://www.w3.org/2003/01/geo/wgs84_pos#lat&gt; ?lat .
+?location &lt;http://www.w3.org/2003/01/geo/wgs84_pos#long&gt; ?lon .
 filter( !bound(?MinLat) || !bound(?MaxLat) || 
         xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
         xsd:float(?lat)&gt;xsd:float(?MinLat) &amp;&amp;
@@ -1768,8 +1768,8 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/TimeInterval"/>
         <sqo:hasConstraintQuery>
-?location &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
-?location &lt;http://linked.earth/ontology#wgs84_Long&gt; ?lon .
+?location &lt;http://www.w3.org/2003/01/geo/wgs84_pos#lat&gt; ?lat .
+?location &lt;http://www.w3.org/2003/01/geo/wgs84_pos#long&gt; ?lon .
 filter( !bound(?MinLat) || !bound(?MaxLat) || 
         xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
         xsd:float(?lat)&gt;xsd:float(?MinLat) &amp;&amp;
@@ -1820,8 +1820,8 @@ FILTER (
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable2"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable"/>
         <sqo:hasConstraintQuery>
-?location &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
-?location &lt;http://linked.earth/ontology#wgs84_Long&gt; ?lon .
+?location &lt;http://www.w3.org/2003/01/geo/wgs84_pos#lat&gt; ?lat .
+?location &lt;http://www.w3.org/2003/01/geo/wgs84_pos#long&gt; ?lon .
 filter( !bound(?MinLat) || !bound(?MaxLat) || 
         xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
         xsd:float(?lat)&gt;xsd:float(?MinLat) &amp;&amp;
@@ -1858,8 +1858,8 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/TimeInterval"/>
         <sqo:hasConstraintQuery>
-?location &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
-?location &lt;http://linked.earth/ontology#wgs84_Long&gt; ?lon .
+?location &lt;http://www.w3.org/2003/01/geo/wgs84_pos#lat&gt; ?lat .
+?location &lt;http://www.w3.org/2003/01/geo/wgs84_pos#long&gt; ?lon .
 filter( !bound(?MinLat) || !bound(?MaxLat) || 
         xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
         xsd:float(?lat)&gt;xsd:float(?MinLat) &amp;&amp;
@@ -1911,8 +1911,8 @@ FILTER (
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable2"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable"/>
         <sqo:hasConstraintQuery>
-?location &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
-?location &lt;http://linked.earth/ontology#wgs84_Long&gt; ?lon .
+?location &lt;http://www.w3.org/2003/01/geo/wgs84_pos#lat&gt; ?lat .
+?location &lt;http://www.w3.org/2003/01/geo/wgs84_pos#long&gt; ?lon .
 filter( !bound(?MinLat) || !bound(?MaxLat) || 
         xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
         xsd:float(?lat)&gt;xsd:float(?MinLat) &amp;&amp;
@@ -1950,8 +1950,8 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariable"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/TimeInterval"/>
         <sqo:hasConstraintQuery>
-?location &lt;http://linked.earth/ontology#wgs84_Lat&gt; ?lat .
-?location &lt;http://linked.earth/ontology#wgs84_Long&gt; ?lon .
+?location &lt;http://www.w3.org/2003/01/geo/wgs84_pos#lat&gt; ?lat .
+?location &lt;http://www.w3.org/2003/01/geo/wgs84_pos#long&gt; ?lon .
 filter( !bound(?MinLat) || !bound(?MaxLat) || 
         xsd:float(?lat)&lt;xsd:float(?MaxLat) &amp;&amp; 
         xsd:float(?lat)&gt;xsd:float(?MinLat) &amp;&amp;
