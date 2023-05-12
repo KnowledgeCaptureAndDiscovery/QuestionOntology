@@ -234,16 +234,21 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))
 ?table &lt;http://linked.earth/ontology#includesVariable&gt; ?timevar .	
 ?timevar &lt;http://linked.earth/ontology#hasMinValue&gt; ?e1.
 ?timevar &lt;http://linked.earth/ontology#hasMaxValue&gt; ?e2.
-FILTER(
-    (?e1&gt;=?MinTime &amp;&amp; ?e2&lt;=?MaxTime) || (?e1&lt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime) ||
-    (?e1&gt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime) || (?e1&lt;=?MinTime &amp;&amp; ?e2&gt;=?MaxTime)
+?timevar &lt;http://linked.earth/ontology#name&gt; ?TimeType
+FILTER (
+    !bound(?MinTime) || !bound(?MaxTime) ||
+    (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime)) || #Overlap entire matching datasets
+    (?e1&lt;xsd:float(?MinTime) &amp;&amp; ?e2&gt;xsd:float(?MaxTime)) ||   #Are entirely overlapped by matching datasets
+    ( (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;xsd:float(?MinTime)) ||
+    (?e2&lt;=xsd:float(?MaxTime) &amp;&amp; ?e1&gt;xsd:float(?MaxTime)) ) #Overlap any portion of matching datasets
 ).
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
-:goal hyp:fromDataset ?Dataset
+?ClimateVariable hyp:fromDataset ?Dataset
 :goal hyp:hasTimeInterval ?TimeInterval
-?TimeInteval hyp:hasMinTime ?MinTime
-?TimeInteval hyp:hasMaxTime ?MaxTime</sqo:hasQuestionPattern>
+?TimeInterval hyp:hasMinTime ?MinTime
+?TimeInterval hyp:hasMaxTime ?MaxTime
+?TimeInterval a ?TimeType</sqo:hasQuestionPattern>
     </owl:NamedIndividual>
     
     <!-- http://disk-project.org/resources/climate/question/PeriodicitySite -->
@@ -307,12 +312,21 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))
 ?table &lt;http://linked.earth/ontology#includesVariable&gt; ?timevar .	
 ?timevar &lt;http://linked.earth/ontology#hasMinValue&gt; ?e1.
 ?timevar &lt;http://linked.earth/ontology#hasMaxValue&gt; ?e2.
-FILTER(
-        !bound(?MinTime) || !bound(?MaxTime) || (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime))
+?timevar &lt;http://linked.earth/ontology#name&gt; ?TimeType
+FILTER (
+    !bound(?MinTime) || !bound(?MaxTime) ||
+    (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime)) || #Overlap entire matching datasets
+    (?e1&lt;xsd:float(?MinTime) &amp;&amp; ?e2&gt;xsd:float(?MaxTime)) ||   #Are entirely overlapped by matching datasets
+    ( (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;xsd:float(?MinTime)) ||
+    (?e2&lt;=xsd:float(?MaxTime) &amp;&amp; ?e1&gt;xsd:float(?MaxTime)) ) #Overlap any portion of matching datasets
 ).
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
-:goal hyp:fromLocation ?Site</sqo:hasQuestionPattern>
+:goal hyp:fromLocation ?Site
+:goal hyp:hasTimeInterval ?TimeInterval
+?TimeInterval hyp:hasMinTime ?MinTime
+?TimeInterval hyp:hasMaxTime ?MaxTime
+?TimeInterval a ?TimeType</sqo:hasQuestionPattern>
     </owl:NamedIndividual>
     
     <!-- http://disk-project.org/resources/climate/question/PeriodicityBoundingBox -->
@@ -377,13 +391,18 @@ filter( !bound(?MinLat) || !bound(?MaxLat) ||
 ?table &lt;http://linked.earth/ontology#includesVariable&gt; ?Variable .
 ?Variable &lt;http://linked.earth/ontology#hasVariableID&gt; ?VarID .
 ?Variable &lt;http://linked.earth/ontology#name&gt; ?ClimateVariable .
-FILTER (!REGEX(str(?ClimateVariable), &quot;year&quot;)) .
-FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;)) .
+FILTER (!REGEX(str(?ClimateVariable), &quot;year&quot;))
+FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))
 ?table &lt;http://linked.earth/ontology#includesVariable&gt; ?timevar .	
 ?timevar &lt;http://linked.earth/ontology#hasMinValue&gt; ?e1.
 ?timevar &lt;http://linked.earth/ontology#hasMaxValue&gt; ?e2.
-FILTER(
-        !bound(?MinTime) || !bound(?MaxTime) || (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime))
+?timevar &lt;http://linked.earth/ontology#name&gt; ?TimeType
+FILTER (
+    !bound(?MinTime) || !bound(?MaxTime) ||
+    (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime)) || #Overlap entire matching datasets
+    (?e1&lt;xsd:float(?MinTime) &amp;&amp; ?e2&gt;xsd:float(?MaxTime)) ||   #Are entirely overlapped by matching datasets
+    ( (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;xsd:float(?MinTime)) ||
+    (?e2&lt;=xsd:float(?MaxTime) &amp;&amp; ?e1&gt;xsd:float(?MaxTime)) ) #Overlap any portion of matching datasets
 ).
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
@@ -391,7 +410,11 @@ FILTER(
 ?BoundingBox hyp:hasMinLat ?MinLat
 ?BoundingBox hyp:hasMaxLat ?MaxLat
 ?BoundingBox hyp:hasMinLng ?MinLng
-?BoundingBox hyp:hasMaxLng ?MaxLng</sqo:hasQuestionPattern>
+?BoundingBox hyp:hasMaxLng ?MaxLng
+:goal hyp:hasTimeInterval ?TimeInterval
+?TimeInterval hyp:hasMinTime ?MinTime
+?TimeInterval hyp:hasMaxTime ?MaxTime
+?TimeInterval a ?TimeType</sqo:hasQuestionPattern>
     </owl:NamedIndividual>
 
     <!-- Periodicities Intermitent Questions  -->
@@ -443,12 +466,21 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))
 ?table &lt;http://linked.earth/ontology#includesVariable&gt; ?timevar .	
 ?timevar &lt;http://linked.earth/ontology#hasMinValue&gt; ?e1.
 ?timevar &lt;http://linked.earth/ontology#hasMaxValue&gt; ?e2.
-FILTER(
-        !bound(?MinTime) || !bound(?MaxTime) || (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime))
+?timevar &lt;http://linked.earth/ontology#name&gt; ?TimeType
+FILTER (
+    !bound(?MinTime) || !bound(?MaxTime) ||
+    (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime)) || #Overlap entire matching datasets
+    (?e1&lt;xsd:float(?MinTime) &amp;&amp; ?e2&gt;xsd:float(?MaxTime)) ||   #Are entirely overlapped by matching datasets
+    ( (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;xsd:float(?MinTime)) ||
+    (?e2&lt;=xsd:float(?MaxTime) &amp;&amp; ?e1&gt;xsd:float(?MaxTime)) ) #Overlap any portion of matching datasets
 ).
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
-:goal hyp:fromDataset ?Dataset</sqo:hasQuestionPattern>
+:goal hyp:fromDataset ?Dataset
+:goal hyp:hasTimeInterval ?TimeInterval
+?TimeInterval hyp:hasMinTime ?MinTime
+?TimeInterval hyp:hasMaxTime ?MaxTime
+?TimeInterval a ?TimeType</sqo:hasQuestionPattern>
     </owl:NamedIndividual>
 
     <!-- http://disk-project.org/resources/climate/question/IntermittentSite -->
@@ -512,12 +544,21 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))
 ?table &lt;http://linked.earth/ontology#includesVariable&gt; ?timevar .	
 ?timevar &lt;http://linked.earth/ontology#hasMinValue&gt; ?e1.
 ?timevar &lt;http://linked.earth/ontology#hasMaxValue&gt; ?e2.
-FILTER(
-        !bound(?MinTime) || !bound(?MaxTime) || (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime))
+?timevar &lt;http://linked.earth/ontology#name&gt; ?TimeType
+FILTER (
+    !bound(?MinTime) || !bound(?MaxTime) ||
+    (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime)) || #Overlap entire matching datasets
+    (?e1&lt;xsd:float(?MinTime) &amp;&amp; ?e2&gt;xsd:float(?MaxTime)) ||   #Are entirely overlapped by matching datasets
+    ( (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;xsd:float(?MinTime)) ||
+    (?e2&lt;=xsd:float(?MaxTime) &amp;&amp; ?e1&gt;xsd:float(?MaxTime)) ) #Overlap any portion of matching datasets
 ).
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
-:goal hyp:fromLocation ?Site</sqo:hasQuestionPattern>
+:goal hyp:fromLocation ?Site
+:goal hyp:hasTimeInterval ?TimeInterval
+?TimeInterval hyp:hasMinTime ?MinTime
+?TimeInterval hyp:hasMaxTime ?MaxTime
+?TimeInterval a ?TimeType</sqo:hasQuestionPattern>
     </owl:NamedIndividual>
     
     <!-- http://disk-project.org/resources/climate/question/IntermittentBoundingBox -->
@@ -587,8 +628,13 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;)) .
 ?table &lt;http://linked.earth/ontology#includesVariable&gt; ?timevar .	
 ?timevar &lt;http://linked.earth/ontology#hasMinValue&gt; ?e1.
 ?timevar &lt;http://linked.earth/ontology#hasMaxValue&gt; ?e2.
-FILTER(
-        !bound(?MinTime) || !bound(?MaxTime) || (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime))
+?timevar &lt;http://linked.earth/ontology#name&gt; ?TimeType
+FILTER (
+    !bound(?MinTime) || !bound(?MaxTime) ||
+    (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime)) || #Overlap entire matching datasets
+    (?e1&lt;xsd:float(?MinTime) &amp;&amp; ?e2&gt;xsd:float(?MaxTime)) ||   #Are entirely overlapped by matching datasets
+    ( (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;xsd:float(?MinTime)) ||
+    (?e2&lt;=xsd:float(?MaxTime) &amp;&amp; ?e1&gt;xsd:float(?MaxTime)) ) #Overlap any portion of matching datasets
 ).
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
@@ -596,10 +642,13 @@ FILTER(
 ?BoundingBox hyp:hasMinLat ?MinLat
 ?BoundingBox hyp:hasMaxLat ?MaxLat
 ?BoundingBox hyp:hasMinLng ?MinLng
-?BoundingBox hyp:hasMaxLng ?MaxLng</sqo:hasQuestionPattern>
+?BoundingBox hyp:hasMaxLng ?MaxLng
+:goal hyp:hasTimeInterval ?TimeInterval
+?TimeInterval hyp:hasMinTime ?MinTime
+?TimeInterval hyp:hasMaxTime ?MaxTime
+?TimeInterval a ?TimeType</sqo:hasQuestionPattern>
     </owl:NamedIndividual>
     
-    <!-- Coherence Questions  -->
 
     <!-- http://disk-project.org/resources/climate/question/CoherenceDataset -->
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/question/CoherenceDataset">
@@ -635,7 +684,9 @@ FILTER (!REGEX(str(?ClimateVariable2), &quot;age&quot;))
 FILTER (?VarID != ?VarID2)
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
-:goal hyp:fromDataset ?Dataset</sqo:hasQuestionPattern>
+:goal hyp:hasVariable ?ClimateVariable2
+:goal hyp:fromDataset ?Dataset
+:goal hyp:fromDataset ?Dataset2</sqo:hasQuestionPattern>
     </owl:NamedIndividual>
 
     <!-- http://disk-project.org/resources/climate/question/CoherenceDatasetTime -->
@@ -663,12 +714,23 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))
 ?table &lt;http://linked.earth/ontology#includesVariable&gt; ?timevar .	
 ?timevar &lt;http://linked.earth/ontology#hasMinValue&gt; ?e1.
 ?timevar &lt;http://linked.earth/ontology#hasMaxValue&gt; ?e2.
-FILTER(
-        !bound(?MinTime) || !bound(?MaxTime) || (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime))
+?timevar &lt;http://linked.earth/ontology#name&gt; ?TimeType
+FILTER (
+    !bound(?MinTime) || !bound(?MaxTime) ||
+    (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime)) || #Overlap entire matching datasets
+    (?e1&lt;xsd:float(?MinTime) &amp;&amp; ?e2&gt;xsd:float(?MaxTime)) ||   #Are entirely overlapped by matching datasets
+    ( (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;xsd:float(?MinTime)) ||
+    (?e2&lt;=xsd:float(?MaxTime) &amp;&amp; ?e1&gt;xsd:float(?MaxTime)) ) #Overlap any portion of matching datasets
 ).
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
-:goal hyp:fromDataset ?Dataset</sqo:hasQuestionPattern>
+:goal hyp:hasVariable ?ClimateVariable2
+:goal hyp:fromDataset ?Dataset
+:goal hyp:fromDataset ?Dataset2
+:goal hyp:hasTimeInterval ?TimeInterval
+?TimeInterval hyp:hasMinTime ?MinTime
+?TimeInterval hyp:hasMaxTime ?MaxTime
+?TimeInterval a ?TimeType</sqo:hasQuestionPattern>
     </owl:NamedIndividual>
 
     <!-- http://disk-project.org/resources/climate/question/CoherenceSite -->
@@ -701,7 +763,9 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;year&quot;))
 FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
-:goal hyp:fromLocation ?Site</sqo:hasQuestionPattern>
+:goal hyp:hasVariable ?ClimateVariable2
+:goal hyp:fromLocation ?Site
+:goal hyp:fromLocation ?Site2</sqo:hasQuestionPattern>
     </owl:NamedIndividual>
 
     <!-- http://disk-project.org/resources/climate/question/CoherenceSiteTime -->
@@ -736,12 +800,23 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))
 ?table &lt;http://linked.earth/ontology#includesVariable&gt; ?timevar .	
 ?timevar &lt;http://linked.earth/ontology#hasMinValue&gt; ?e1.
 ?timevar &lt;http://linked.earth/ontology#hasMaxValue&gt; ?e2.
-FILTER(
-        !bound(?MinTime) || !bound(?MaxTime) || (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime))
+?timevar &lt;http://linked.earth/ontology#name&gt; ?TimeType
+FILTER (
+    !bound(?MinTime) || !bound(?MaxTime) ||
+    (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime)) || #Overlap entire matching datasets
+    (?e1&lt;xsd:float(?MinTime) &amp;&amp; ?e2&gt;xsd:float(?MaxTime)) ||   #Are entirely overlapped by matching datasets
+    ( (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;xsd:float(?MinTime)) ||
+    (?e2&lt;=xsd:float(?MaxTime) &amp;&amp; ?e1&gt;xsd:float(?MaxTime)) ) #Overlap any portion of matching datasets
 ).
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
-:goal hyp:fromLocation ?Site</sqo:hasQuestionPattern>
+:goal hyp:hasVariable ?ClimateVariable2
+:goal hyp:fromLocation ?Site
+:goal hyp:fromLocation ?Site2
+:goal hyp:hasTimeInterval ?TimeInterval
+?TimeInterval hyp:hasMinTime ?MinTime
+?TimeInterval hyp:hasMaxTime ?MaxTime
+?TimeInterval a ?TimeType</sqo:hasQuestionPattern>
     </owl:NamedIndividual>
     
     <!-- http://disk-project.org/resources/climate/question/CoherenceBoundingBox -->
@@ -815,16 +890,26 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;)) .
 ?table &lt;http://linked.earth/ontology#includesVariable&gt; ?timevar .	
 ?timevar &lt;http://linked.earth/ontology#hasMinValue&gt; ?e1.
 ?timevar &lt;http://linked.earth/ontology#hasMaxValue&gt; ?e2.
-FILTER(
-        !bound(?MinTime) || !bound(?MaxTime) || (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime))
+?timevar &lt;http://linked.earth/ontology#name&gt; ?TimeType
+FILTER (
+    !bound(?MinTime) || !bound(?MaxTime) ||
+    (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime)) || #Overlap entire matching datasets
+    (?e1&lt;xsd:float(?MinTime) &amp;&amp; ?e2&gt;xsd:float(?MaxTime)) ||   #Are entirely overlapped by matching datasets
+    ( (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;xsd:float(?MinTime)) ||
+    (?e2&lt;=xsd:float(?MaxTime) &amp;&amp; ?e1&gt;xsd:float(?MaxTime)) ) #Overlap any portion of matching datasets
 ).
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
+:goal hyp:hasVariable ?ClimateVariable2
 :goal hyp:hasLocation ?BoundingBox
 ?BoundingBox hyp:hasMinLat ?MinLat
 ?BoundingBox hyp:hasMaxLat ?MaxLat
 ?BoundingBox hyp:hasMinLng ?MinLng
-?BoundingBox hyp:hasMaxLng ?MaxLng</sqo:hasQuestionPattern>
+?BoundingBox hyp:hasMaxLng ?MaxLng
+:goal hyp:hasTimeInterval ?TimeInterval
+?TimeInterval hyp:hasMinTime ?MinTime
+?TimeInterval hyp:hasMaxTime ?MaxTime
+?TimeInterval a ?TimeType</sqo:hasQuestionPattern>
     </owl:NamedIndividual>
     
     <!-- http://disk-project.org/resources/climate/question/CoherenceSameBoundingBox -->
@@ -857,6 +942,7 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;year&quot;))
 FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
+:goal hyp:hasVariable ?ClimateVariable2
 :goal hyp:hasLocation ?BoundingBox
 ?BoundingBox hyp:hasMinLat ?MinLat
 ?BoundingBox hyp:hasMaxLat ?MaxLat
@@ -896,16 +982,26 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;)) .
 ?table &lt;http://linked.earth/ontology#includesVariable&gt; ?timevar .	
 ?timevar &lt;http://linked.earth/ontology#hasMinValue&gt; ?e1.
 ?timevar &lt;http://linked.earth/ontology#hasMaxValue&gt; ?e2.
-FILTER(
-        !bound(?MinTime) || !bound(?MaxTime) || (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime))
+?timevar &lt;http://linked.earth/ontology#name&gt; ?TimeType
+FILTER (
+    !bound(?MinTime) || !bound(?MaxTime) ||
+    (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime)) || #Overlap entire matching datasets
+    (?e1&lt;xsd:float(?MinTime) &amp;&amp; ?e2&gt;xsd:float(?MaxTime)) ||   #Are entirely overlapped by matching datasets
+    ( (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;xsd:float(?MinTime)) ||
+    (?e2&lt;=xsd:float(?MaxTime) &amp;&amp; ?e1&gt;xsd:float(?MaxTime)) ) #Overlap any portion of matching datasets
 ).
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
+:goal hyp:hasVariable ?ClimateVariable2
 :goal hyp:hasLocation ?BoundingBox
 ?BoundingBox hyp:hasMinLat ?MinLat
 ?BoundingBox hyp:hasMaxLat ?MaxLat
 ?BoundingBox hyp:hasMinLng ?MinLng
-?BoundingBox hyp:hasMaxLng ?MaxLng</sqo:hasQuestionPattern>
+?BoundingBox hyp:hasMaxLng ?MaxLng
+:goal hyp:hasTimeInterval ?TimeInterval
+?TimeInterval hyp:hasMinTime ?MinTime
+?TimeInterval hyp:hasMaxTime ?MaxTime
+?TimeInterval a ?TimeType</sqo:hasQuestionPattern>
     </owl:NamedIndividual>
     
     <!-- http://disk-project.org/resources/climate/question/CoherenceDatasetBoundingBox -->
@@ -979,8 +1075,13 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;)) .
 ?table &lt;http://linked.earth/ontology#includesVariable&gt; ?timevar .	
 ?timevar &lt;http://linked.earth/ontology#hasMinValue&gt; ?e1.
 ?timevar &lt;http://linked.earth/ontology#hasMaxValue&gt; ?e2.
-FILTER(
-        !bound(?MinTime) || !bound(?MaxTime) || (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime))
+?timevar &lt;http://linked.earth/ontology#name&gt; ?TimeType
+FILTER (
+    !bound(?MinTime) || !bound(?MaxTime) ||
+    (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime)) || #Overlap entire matching datasets
+    (?e1&lt;xsd:float(?MinTime) &amp;&amp; ?e2&gt;xsd:float(?MaxTime)) ||   #Are entirely overlapped by matching datasets
+    ( (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;xsd:float(?MinTime)) ||
+    (?e2&lt;=xsd:float(?MaxTime) &amp;&amp; ?e1&gt;xsd:float(?MaxTime)) ) #Overlap any portion of matching datasets
 ).
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
@@ -988,7 +1089,11 @@ FILTER(
 ?BoundingBox hyp:hasMinLat ?MinLat
 ?BoundingBox hyp:hasMaxLat ?MaxLat
 ?BoundingBox hyp:hasMinLng ?MinLng
-?BoundingBox hyp:hasMaxLng ?MaxLng</sqo:hasQuestionPattern>
+?BoundingBox hyp:hasMaxLng ?MaxLng
+:goal hyp:hasTimeInterval ?TimeInterval
+?TimeInterval hyp:hasMinTime ?MinTime
+?TimeInterval hyp:hasMaxTime ?MaxTime
+?TimeInterval a ?TimeType</sqo:hasQuestionPattern>
     </owl:NamedIndividual>
     
     <!-- Correlation Questions  -->
@@ -1027,7 +1132,9 @@ FILTER (!REGEX(str(?ClimateVariable2), &quot;age&quot;))
 FILTER (?VarID != ?VarID2)
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
-:goal hyp:fromDataset ?Dataset</sqo:hasQuestionPattern>
+:goal hyp:hasVariable ?ClimateVariable2
+:goal hyp:fromDataset ?Dataset
+:goal hyp:fromDataset ?Dataset2</sqo:hasQuestionPattern>
     </owl:NamedIndividual>
 
     <!-- http://disk-project.org/resources/climate/question/CorrelationDatasetTime -->
@@ -1052,15 +1159,37 @@ FILTER (?VarID != ?VarID2)
 ?Variable &lt;http://linked.earth/ontology#name&gt; ?ClimateVariable .
 FILTER (!REGEX(str(?ClimateVariable), &quot;year&quot;))
 FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))
+?Dataset2 a &lt;http://linked.earth/ontology#Dataset&gt; .
+?Dataset2 &lt;http://linked.earth/ontology#name&gt; ?DatasetLabel2.
+?Dataset2 &lt;http://linked.earth/ontology#hasUrl&gt; ?url2 .
+?Dataset2 &lt;http://linked.earth/ontology#includesPaleoData&gt; ?data2.
+?data2 &lt;http://linked.earth/ontology#foundInMeasurementTable&gt; ?table2 .
+?table2 &lt;http://linked.earth/ontology#includesVariable&gt; ?Variable2 .
+?Variable2 &lt;http://linked.earth/ontology#hasVariableID&gt; ?VarID2.
+?Variable2 &lt;http://linked.earth/ontology#name&gt; ?ClimateVariable2.
+FILTER (!REGEX(str(?ClimateVariable2), &quot;year&quot;))
+FILTER (!REGEX(str(?ClimateVariable2), &quot;age&quot;))
+FILTER (?VarID != ?VarID2)
 ?table &lt;http://linked.earth/ontology#includesVariable&gt; ?timevar .	
 ?timevar &lt;http://linked.earth/ontology#hasMinValue&gt; ?e1.
 ?timevar &lt;http://linked.earth/ontology#hasMaxValue&gt; ?e2.
-FILTER(
-        !bound(?MinTime) || !bound(?MaxTime) || (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime))
+?timevar &lt;http://linked.earth/ontology#name&gt; ?TimeType
+FILTER (
+    !bound(?MinTime) || !bound(?MaxTime) ||
+    (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime)) || #Overlap entire matching datasets
+    (?e1&lt;xsd:float(?MinTime) &amp;&amp; ?e2&gt;xsd:float(?MaxTime)) ||   #Are entirely overlapped by matching datasets
+    ( (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;xsd:float(?MinTime)) ||
+    (?e2&lt;=xsd:float(?MaxTime) &amp;&amp; ?e1&gt;xsd:float(?MaxTime)) ) #Overlap any portion of matching datasets
 ).
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
-:goal hyp:fromDataset ?Dataset</sqo:hasQuestionPattern>
+:goal hyp:hasVariable ?ClimateVariable2
+:goal hyp:fromDataset ?Dataset
+:goal hyp:fromDataset ?Dataset2
+:goal hyp:hasTimeInterval ?TimeInterval
+?TimeInterval hyp:hasMinTime ?MinTime
+?TimeInterval hyp:hasMaxTime ?MaxTime
+?TimeInterval a ?TimeType</sqo:hasQuestionPattern>
     </owl:NamedIndividual>
 
     <!-- http://disk-project.org/resources/climate/question/CorrelationSite -->
@@ -1128,12 +1257,21 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))
 ?table &lt;http://linked.earth/ontology#includesVariable&gt; ?timevar .	
 ?timevar &lt;http://linked.earth/ontology#hasMinValue&gt; ?e1.
 ?timevar &lt;http://linked.earth/ontology#hasMaxValue&gt; ?e2.
-FILTER(
-        !bound(?MinTime) || !bound(?MaxTime) || (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime))
+?timevar &lt;http://linked.earth/ontology#name&gt; ?TimeType
+FILTER (
+    !bound(?MinTime) || !bound(?MaxTime) ||
+    (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime)) || #Overlap entire matching datasets
+    (?e1&lt;xsd:float(?MinTime) &amp;&amp; ?e2&gt;xsd:float(?MaxTime)) ||   #Are entirely overlapped by matching datasets
+    ( (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;xsd:float(?MinTime)) ||
+    (?e2&lt;=xsd:float(?MaxTime) &amp;&amp; ?e1&gt;xsd:float(?MaxTime)) ) #Overlap any portion of matching datasets
 ).
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
-:goal hyp:fromLocation ?Site</sqo:hasQuestionPattern>
+:goal hyp:fromLocation ?Site
+:goal hyp:hasTimeInterval ?TimeInterval
+?TimeInterval hyp:hasMinTime ?MinTime
+?TimeInterval hyp:hasMaxTime ?MaxTime
+?TimeInterval a ?TimeType</sqo:hasQuestionPattern>
     </owl:NamedIndividual>
     
     <!-- http://disk-project.org/resources/climate/question/CorrelationBoundingBox -->
@@ -1207,8 +1345,13 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;)) .
 ?table &lt;http://linked.earth/ontology#includesVariable&gt; ?timevar .	
 ?timevar &lt;http://linked.earth/ontology#hasMinValue&gt; ?e1.
 ?timevar &lt;http://linked.earth/ontology#hasMaxValue&gt; ?e2.
-FILTER(
-        !bound(?MinTime) || !bound(?MaxTime) || (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime))
+?timevar &lt;http://linked.earth/ontology#name&gt; ?TimeType
+FILTER (
+    !bound(?MinTime) || !bound(?MaxTime) ||
+    (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime)) || #Overlap entire matching datasets
+    (?e1&lt;xsd:float(?MinTime) &amp;&amp; ?e2&gt;xsd:float(?MaxTime)) ||   #Are entirely overlapped by matching datasets
+    ( (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;xsd:float(?MinTime)) ||
+    (?e2&lt;=xsd:float(?MaxTime) &amp;&amp; ?e1&gt;xsd:float(?MaxTime)) ) #Overlap any portion of matching datasets
 ).
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
@@ -1216,7 +1359,11 @@ FILTER(
 ?BoundingBox hyp:hasMinLat ?MinLat
 ?BoundingBox hyp:hasMaxLat ?MaxLat
 ?BoundingBox hyp:hasMinLng ?MinLng
-?BoundingBox hyp:hasMaxLng ?MaxLng</sqo:hasQuestionPattern>
+?BoundingBox hyp:hasMaxLng ?MaxLng
+:goal hyp:hasTimeInterval ?TimeInterval
+?TimeInterval hyp:hasMinTime ?MinTime
+?TimeInterval hyp:hasMaxTime ?MaxTime
+?TimeInterval a ?TimeType</sqo:hasQuestionPattern>
     </owl:NamedIndividual>
     
     <!-- http://disk-project.org/resources/climate/question/CorrelationSameBoundingBox -->
@@ -1288,8 +1435,13 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;)) .
 ?table &lt;http://linked.earth/ontology#includesVariable&gt; ?timevar .	
 ?timevar &lt;http://linked.earth/ontology#hasMinValue&gt; ?e1.
 ?timevar &lt;http://linked.earth/ontology#hasMaxValue&gt; ?e2.
-FILTER(
-        !bound(?MinTime) || !bound(?MaxTime) || (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime))
+?timevar &lt;http://linked.earth/ontology#name&gt; ?TimeType
+FILTER (
+    !bound(?MinTime) || !bound(?MaxTime) ||
+    (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime)) || #Overlap entire matching datasets
+    (?e1&lt;xsd:float(?MinTime) &amp;&amp; ?e2&gt;xsd:float(?MaxTime)) ||   #Are entirely overlapped by matching datasets
+    ( (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;xsd:float(?MinTime)) ||
+    (?e2&lt;=xsd:float(?MaxTime) &amp;&amp; ?e1&gt;xsd:float(?MaxTime)) ) #Overlap any portion of matching datasets
 ).
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
@@ -1297,7 +1449,11 @@ FILTER(
 ?BoundingBox hyp:hasMinLat ?MinLat
 ?BoundingBox hyp:hasMaxLat ?MaxLat
 ?BoundingBox hyp:hasMinLng ?MinLng
-?BoundingBox hyp:hasMaxLng ?MaxLng</sqo:hasQuestionPattern>
+?BoundingBox hyp:hasMaxLng ?MaxLng
+:goal hyp:hasTimeInterval ?TimeInterval
+?TimeInterval hyp:hasMinTime ?MinTime
+?TimeInterval hyp:hasMaxTime ?MaxTime
+?TimeInterval a ?TimeType</sqo:hasQuestionPattern>
     </owl:NamedIndividual>
     
     <!-- http://disk-project.org/resources/climate/question/CorrelationDatasetBoundingBox -->
@@ -1371,8 +1527,13 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;)) .
 ?table &lt;http://linked.earth/ontology#includesVariable&gt; ?timevar .	
 ?timevar &lt;http://linked.earth/ontology#hasMinValue&gt; ?e1.
 ?timevar &lt;http://linked.earth/ontology#hasMaxValue&gt; ?e2.
-FILTER(
-        !bound(?MinTime) || !bound(?MaxTime) || (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime))
+?timevar &lt;http://linked.earth/ontology#name&gt; ?TimeType
+FILTER (
+    !bound(?MinTime) || !bound(?MaxTime) ||
+    (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime)) || #Overlap entire matching datasets
+    (?e1&lt;xsd:float(?MinTime) &amp;&amp; ?e2&gt;xsd:float(?MaxTime)) ||   #Are entirely overlapped by matching datasets
+    ( (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;xsd:float(?MinTime)) ||
+    (?e2&lt;=xsd:float(?MaxTime) &amp;&amp; ?e1&gt;xsd:float(?MaxTime)) ) #Overlap any portion of matching datasets
 ).
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
@@ -1380,7 +1541,11 @@ FILTER(
 ?BoundingBox hyp:hasMinLat ?MinLat
 ?BoundingBox hyp:hasMaxLat ?MaxLat
 ?BoundingBox hyp:hasMinLng ?MinLng
-?BoundingBox hyp:hasMaxLng ?MaxLng</sqo:hasQuestionPattern>
+?BoundingBox hyp:hasMaxLng ?MaxLng
+:goal hyp:hasTimeInterval ?TimeInterval
+?TimeInterval hyp:hasMinTime ?MinTime
+?TimeInterval hyp:hasMaxTime ?MaxTime
+?TimeInterval a ?TimeType</sqo:hasQuestionPattern>
     </owl:NamedIndividual>
 
 
@@ -1454,12 +1619,21 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))
 ?table &lt;http://linked.earth/ontology#includesVariable&gt; ?timevar .	
 ?timevar &lt;http://linked.earth/ontology#hasMinValue&gt; ?e1.
 ?timevar &lt;http://linked.earth/ontology#hasMaxValue&gt; ?e2.
-FILTER(
-        !bound(?MinTime) || !bound(?MaxTime) || (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime))
+?timevar &lt;http://linked.earth/ontology#name&gt; ?TimeType
+FILTER (
+    !bound(?MinTime) || !bound(?MaxTime) ||
+    (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime)) || #Overlap entire matching datasets
+    (?e1&lt;xsd:float(?MinTime) &amp;&amp; ?e2&gt;xsd:float(?MaxTime)) ||   #Are entirely overlapped by matching datasets
+    ( (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;xsd:float(?MinTime)) ||
+    (?e2&lt;=xsd:float(?MaxTime) &amp;&amp; ?e1&gt;xsd:float(?MaxTime)) ) #Overlap any portion of matching datasets
 ).
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
-:goal hyp:fromDataset ?Dataset</sqo:hasQuestionPattern>
+:goal hyp:fromDataset ?Dataset
+:goal hyp:hasTimeInterval ?TimeInterval
+?TimeInterval hyp:hasMinTime ?MinTime
+?TimeInterval hyp:hasMaxTime ?MaxTime
+?TimeInterval a ?TimeType</sqo:hasQuestionPattern>
     </owl:NamedIndividual>
 
     <!-- http://disk-project.org/resources/climate/question/CausalitySite -->
@@ -1527,12 +1701,21 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;))
 ?table &lt;http://linked.earth/ontology#includesVariable&gt; ?timevar .	
 ?timevar &lt;http://linked.earth/ontology#hasMinValue&gt; ?e1.
 ?timevar &lt;http://linked.earth/ontology#hasMaxValue&gt; ?e2.
-FILTER(
-        !bound(?MinTime) || !bound(?MaxTime) || (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime))
+?timevar &lt;http://linked.earth/ontology#name&gt; ?TimeType
+FILTER (
+    !bound(?MinTime) || !bound(?MaxTime) ||
+    (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime)) || #Overlap entire matching datasets
+    (?e1&lt;xsd:float(?MinTime) &amp;&amp; ?e2&gt;xsd:float(?MaxTime)) ||   #Are entirely overlapped by matching datasets
+    ( (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;xsd:float(?MinTime)) ||
+    (?e2&lt;=xsd:float(?MaxTime) &amp;&amp; ?e1&gt;xsd:float(?MaxTime)) ) #Overlap any portion of matching datasets
 ).
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
-:goal hyp:fromLocation ?Site</sqo:hasQuestionPattern>
+:goal hyp:fromLocation ?Site
+:goal hyp:hasTimeInterval ?TimeInterval
+?TimeInterval hyp:hasMinTime ?MinTime
+?TimeInterval hyp:hasMaxTime ?MaxTime
+?TimeInterval a ?TimeType</sqo:hasQuestionPattern>
     </owl:NamedIndividual>
     
     <!-- http://disk-project.org/resources/climate/question/CausalityBoundingBox -->
@@ -1606,8 +1789,13 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;)) .
 ?table &lt;http://linked.earth/ontology#includesVariable&gt; ?timevar .	
 ?timevar &lt;http://linked.earth/ontology#hasMinValue&gt; ?e1.
 ?timevar &lt;http://linked.earth/ontology#hasMaxValue&gt; ?e2.
-FILTER(
-        !bound(?MinTime) || !bound(?MaxTime) || (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime))
+?timevar &lt;http://linked.earth/ontology#name&gt; ?TimeType
+FILTER (
+    !bound(?MinTime) || !bound(?MaxTime) ||
+    (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime)) || #Overlap entire matching datasets
+    (?e1&lt;xsd:float(?MinTime) &amp;&amp; ?e2&gt;xsd:float(?MaxTime)) ||   #Are entirely overlapped by matching datasets
+    ( (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;xsd:float(?MinTime)) ||
+    (?e2&lt;=xsd:float(?MaxTime) &amp;&amp; ?e1&gt;xsd:float(?MaxTime)) ) #Overlap any portion of matching datasets
 ).
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
@@ -1615,7 +1803,11 @@ FILTER(
 ?BoundingBox hyp:hasMinLat ?MinLat
 ?BoundingBox hyp:hasMaxLat ?MaxLat
 ?BoundingBox hyp:hasMinLng ?MinLng
-?BoundingBox hyp:hasMaxLng ?MaxLng</sqo:hasQuestionPattern>
+?BoundingBox hyp:hasMaxLng ?MaxLng
+:goal hyp:hasTimeInterval ?TimeInterval
+?TimeInterval hyp:hasMinTime ?MinTime
+?TimeInterval hyp:hasMaxTime ?MaxTime
+?TimeInterval a ?TimeType</sqo:hasQuestionPattern>
     </owl:NamedIndividual>
     
     <!-- http://disk-project.org/resources/climate/question/CausalitySameBoundingBox -->
@@ -1687,8 +1879,13 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;)) .
 ?table &lt;http://linked.earth/ontology#includesVariable&gt; ?timevar .	
 ?timevar &lt;http://linked.earth/ontology#hasMinValue&gt; ?e1.
 ?timevar &lt;http://linked.earth/ontology#hasMaxValue&gt; ?e2.
-FILTER(
-        !bound(?MinTime) || !bound(?MaxTime) || (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime))
+?timevar &lt;http://linked.earth/ontology#name&gt; ?TimeType
+FILTER (
+    !bound(?MinTime) || !bound(?MaxTime) ||
+    (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime)) || #Overlap entire matching datasets
+    (?e1&lt;xsd:float(?MinTime) &amp;&amp; ?e2&gt;xsd:float(?MaxTime)) ||   #Are entirely overlapped by matching datasets
+    ( (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;xsd:float(?MinTime)) ||
+    (?e2&lt;=xsd:float(?MaxTime) &amp;&amp; ?e1&gt;xsd:float(?MaxTime)) ) #Overlap any portion of matching datasets
 ).
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
@@ -1696,7 +1893,11 @@ FILTER(
 ?BoundingBox hyp:hasMinLat ?MinLat
 ?BoundingBox hyp:hasMaxLat ?MaxLat
 ?BoundingBox hyp:hasMinLng ?MinLng
-?BoundingBox hyp:hasMaxLng ?MaxLng</sqo:hasQuestionPattern>
+?BoundingBox hyp:hasMaxLng ?MaxLng
+:goal hyp:hasTimeInterval ?TimeInterval
+?TimeInterval hyp:hasMinTime ?MinTime
+?TimeInterval hyp:hasMaxTime ?MaxTime
+?TimeInterval a ?TimeType</sqo:hasQuestionPattern>
     </owl:NamedIndividual>
     
     <!-- http://disk-project.org/resources/climate/question/CausalityDatasetBoundingBox -->
@@ -1770,8 +1971,13 @@ FILTER (!REGEX(str(?ClimateVariable), &quot;age&quot;)) .
 ?table &lt;http://linked.earth/ontology#includesVariable&gt; ?timevar .	
 ?timevar &lt;http://linked.earth/ontology#hasMinValue&gt; ?e1.
 ?timevar &lt;http://linked.earth/ontology#hasMaxValue&gt; ?e2.
-FILTER(
-        !bound(?MinTime) || !bound(?MaxTime) || (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime))
+?timevar &lt;http://linked.earth/ontology#name&gt; ?TimeType
+FILTER (
+    !bound(?MinTime) || !bound(?MaxTime) ||
+    (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;=xsd:float(?MaxTime)) || #Overlap entire matching datasets
+    (?e1&lt;xsd:float(?MinTime) &amp;&amp; ?e2&gt;xsd:float(?MaxTime)) ||   #Are entirely overlapped by matching datasets
+    ( (?e1&gt;=xsd:float(?MinTime) &amp;&amp; ?e2&lt;xsd:float(?MinTime)) ||
+    (?e2&lt;=xsd:float(?MaxTime) &amp;&amp; ?e1&gt;xsd:float(?MaxTime)) ) #Overlap any portion of matching datasets
 ).
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionPattern>:goal hyp:hasVariable ?ClimateVariable
@@ -1779,7 +1985,11 @@ FILTER(
 ?BoundingBox hyp:hasMinLat ?MinLat
 ?BoundingBox hyp:hasMaxLat ?MaxLat
 ?BoundingBox hyp:hasMinLng ?MinLng
-?BoundingBox hyp:hasMaxLng ?MaxLng</sqo:hasQuestionPattern>
+?BoundingBox hyp:hasMaxLng ?MaxLng
+:goal hyp:hasTimeInterval ?TimeInterval
+?TimeInterval hyp:hasMinTime ?MinTime
+?TimeInterval hyp:hasMaxTime ?MaxTime
+?TimeInterval a ?TimeType</sqo:hasQuestionPattern>
     </owl:NamedIndividual>
 
 

@@ -2,9 +2,9 @@
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
     <uri id="User Entered Import Resolution" name="https://w3id.org/sqo" uri="file:/Users/hvargas/ISI/QuestionOntology/development/QuestionOntology.owl"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1677728739906" name="duplicate:http://disk-project.org/resources/climate/" uri="ClimateQuestions.xml"/>
-        <uri id="Automatically generated entry, Timestamp=1677728739906" name="duplicate:http://disk-project.org/resources/climate/" uri="ClimateQuestions.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1677728739906" name="http://disk-project.org/resources/enigma/" uri="EnigmaQuestions.xml"/>
-        <uri id="Automatically generated entry, Timestamp=1677728739906" name="shadowed:http://disk-project.org/resources/climate/" uri="or1.3/ClimateQuestions.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1680020086635" name="duplicate:http://disk-project.org/resources/climate/" uri="ClimateQuestions.xml"/>
+        <uri id="Automatically generated entry, Timestamp=1680020086635" name="duplicate:http://disk-project.org/resources/climate/" uri="ClimateQuestions.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1680020086635" name="http://disk-project.org/resources/enigma/" uri="EnigmaQuestions.xml"/>
+        <uri id="Automatically generated entry, Timestamp=1680020086635" name="shadowed:http://disk-project.org/resources/climate/" uri="or1.3/ClimateQuestions.owl"/>
     </group>
 </catalog>
