@@ -1,0 +1,1022 @@
+<h2 id="crossreference" class="list">Cross reference for The Scientific Questions Ontology classes, properties and dataproperties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by The Scientific Questions Ontology.
+<div id="classes">
+   <h3 id="classes-headline" class="list">Classes</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#BoundingBoxQuestionVariable" title="https://w3id.org/sqo#BoundingBoxQuestionVariable">Bounding Box Question Variable</a>
+      </li>
+      <li>
+         <a href="#DynamicOptionsQuestionVariable"
+            title="https://w3id.org/sqo#DynamicOptionsQuestionVariable">Dynamic Options Question Variable</a>
+      </li>
+      <li>
+         <a href="#Question" title="https://w3id.org/sqo#Question">Question</a>
+      </li>
+      <li>
+         <a href="#QuestionCategory" title="https://w3id.org/sqo#QuestionCategory">Question Category</a>
+      </li>
+      <li>
+         <a href="#QuestionVariable" title="https://w3id.org/sqo#QuestionVariable">Question Variable</a>
+      </li>
+      <li>
+         <a href="#StaticOptionsQuestionVariable"
+            title="https://w3id.org/sqo#StaticOptionsQuestionVariable">Static Options Question Variable</a>
+      </li>
+      <li>
+         <a href="#TimeIntervalQuestionVariable"
+            title="https://w3id.org/sqo#TimeIntervalQuestionVariable">Time Interval Question Variable</a>
+      </li>
+      <li>
+         <a href="#UserInputQuestionVariable" title="https://w3id.org/sqo#UserInputQuestionVariable">User Input Question Variable</a>
+      </li>
+      <li>
+         <a href="#VariableOption" title="https://w3id.org/sqo#VariableOption">Variable Option</a>
+      </li>
+   </ul>
+   <div class="entity" id="BoundingBoxQuestionVariable">
+      <h3>Bounding Box Question Variable<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/sqo#BoundingBoxQuestionVariable</p>
+      <div class="comment">
+         <span class="markdown">Question variable that represents a geographical bounding box.
+Is expanded to minLat, maxLat, minLng, maxLng</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#DynamicOptionsQuestionVariable"
+               title="https://w3id.org/sqo#DynamicOptionsQuestionVariable">Dynamic Options Question Variable</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#hasMaxLat" title="https://w3id.org/sqo#hasMaxLat">Has maximum latitude</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasMaxLng" title="https://w3id.org/sqo#hasMaxLng">Has maximum longitude</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasMinLat" title="https://w3id.org/sqo#hasMinLat">Has minimum latitude</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasMinLng" title="https://w3id.org/sqo#hasMinLng">Has minimum longitude</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="DynamicOptionsQuestionVariable">
+      <h3>Dynamic Options Question Variable<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/sqo#DynamicOptionsQuestionVariable</p>
+      <div class="comment">
+         <span class="markdown">Question variable with options queried to a data souce</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#QuestionVariable" title="https://w3id.org/sqo#QuestionVariable">Question Variable</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#BoundingBoxQuestionVariable" title="https://w3id.org/sqo#BoundingBoxQuestionVariable">Bounding Box Question Variable</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#TimeIntervalQuestionVariable"
+               title="https://w3id.org/sqo#TimeIntervalQuestionVariable">Time Interval Question Variable</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#hasOptionsQuery" title="https://w3id.org/sqo#hasOptionsQuery">Has options query</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Question">
+      <h3>Question<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/sqo#Question</p>
+      <div class="comment">
+         <span class="markdown">Class that represents a scientific question. Is linked to the template, the pattern and all the variables this question uses.</span>
+      </div>
+      <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#hasConstraintQuery" title="https://w3id.org/sqo#hasConstraintQuery">Has constraint query</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasQuestionCategory" title="https://w3id.org/sqo#hasQuestionCategory">Has question category</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasQuestionPattern" title="https://w3id.org/sqo#hasQuestionPattern">Has question pattern</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasQuestionTemplate" title="https://w3id.org/sqo#hasQuestionTemplate">Has question template</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasQuestionVariable" title="https://w3id.org/sqo#hasQuestionVariable">Has question variable</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="QuestionCategory">
+      <h3>Question Category<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/sqo#QuestionCategory</p>
+      <div class="comment">
+         <span class="markdown">Class used to group together similar Questions</span>
+      </div>
+      <dl class="description">
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasQuestionCategory" title="https://w3id.org/sqo#hasQuestionCategory">Has question category</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="QuestionVariable">
+      <h3>Question Variable<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/sqo#QuestionVariable</p>
+      <div class="comment">
+         <span class="markdown">Class that represents a variable used on a Question. This variable name must be present on the template or pattern of the question that uses it. Can have contraints in the form of a query (hasOptionsQuery property) or a list of possible options (hasOptions property).</span>
+      </div>
+      <dl class="description">
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#DynamicOptionsQuestionVariable"
+               title="https://w3id.org/sqo#DynamicOptionsQuestionVariable">Dynamic Options Question Variable</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#StaticOptionsQuestionVariable"
+               title="https://w3id.org/sqo#StaticOptionsQuestionVariable">Static Options Question Variable</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#UserInputQuestionVariable" title="https://w3id.org/sqo#UserInputQuestionVariable">User Input Question Variable</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#hasExplanation" title="https://w3id.org/sqo#hasExplanation">Has explanation</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasPatternFragment" title="https://w3id.org/sqo#hasPatternFragment">Has pattern fragment</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasRepresentation" title="https://w3id.org/sqo#hasRepresentation">Has representation</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasVariableName" title="https://w3id.org/sqo#hasVariableName">Has variable name</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#maxCardinality" title="https://w3id.org/sqo#maxCardinality">has maximum cardinality</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#minCardinality" title="https://w3id.org/sqo#minCardinality">has minimum cardinality</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasQuestionVariable" title="https://w3id.org/sqo#hasQuestionVariable">Has question variable</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="StaticOptionsQuestionVariable">
+      <h3>Static Options Question Variable<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/sqo#StaticOptionsQuestionVariable</p>
+      <div class="comment">
+         <span class="markdown">Question variable with an static list of options</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#QuestionVariable" title="https://w3id.org/sqo#QuestionVariable">Question Variable</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#hasOption" title="https://w3id.org/sqo#hasOption">Has option</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasTimeType" title="https://w3id.org/sqo#hasTimeType">Has time type</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="TimeIntervalQuestionVariable">
+      <h3>Time Interval Question Variable<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/sqo#TimeIntervalQuestionVariable</p>
+      <div class="comment">
+         <span class="markdown">Question variable that will be expanded into a time interval (two dates)</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#DynamicOptionsQuestionVariable"
+               title="https://w3id.org/sqo#DynamicOptionsQuestionVariable">Dynamic Options Question Variable</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#hasEndTime" title="https://w3id.org/sqo#hasEndTime">Has end time</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasStartTime" title="https://w3id.org/sqo#hasStartTime">Has start time</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasTimeType" title="https://w3id.org/sqo#hasTimeType">Has time type</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="UserInputQuestionVariable">
+      <h3>User Input Question Variable<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/sqo#UserInputQuestionVariable</p>
+      <div class="comment">
+         <span class="markdown">Variable set by users</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#QuestionVariable" title="https://w3id.org/sqo#QuestionVariable">Question Variable</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#hasInputDatatype" title="https://w3id.org/sqo#hasInputDatatype">Has input datatype</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasEndTime" title="https://w3id.org/sqo#hasEndTime">Has end time</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasMaxLat" title="https://w3id.org/sqo#hasMaxLat">Has maximum latitude</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasMaxLng" title="https://w3id.org/sqo#hasMaxLng">Has maximum longitude</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasMinLat" title="https://w3id.org/sqo#hasMinLat">Has minimum latitude</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasMinLng" title="https://w3id.org/sqo#hasMinLng">Has minimum longitude</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasStartTime" title="https://w3id.org/sqo#hasStartTime">Has start time</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="VariableOption">
+      <h3>Variable Option<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/sqo#VariableOption</p>
+      <div class="comment">
+         <span class="markdown">Option for a question variable. Has a value and a label.</span>
+      </div>
+      <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#hasComment" title="https://w3id.org/sqo#hasComment">Has comment</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasLabel" title="https://w3id.org/sqo#hasLabel">Has label</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasValue" title="https://w3id.org/sqo#hasValue">Has value</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasOption" title="https://w3id.org/sqo#hasOption">Has option</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+</div><div id="objectproperties">
+   <h3 id="properties" class="list">Object Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#hasEndTime" title="https://w3id.org/sqo#hasEndTime">Has end time</a>
+      </li>
+      <li>
+         <a href="#hasMaxLat" title="https://w3id.org/sqo#hasMaxLat">Has maximum latitude</a>
+      </li>
+      <li>
+         <a href="#hasMaxLng" title="https://w3id.org/sqo#hasMaxLng">Has maximum longitude</a>
+      </li>
+      <li>
+         <a href="#hasMinLat" title="https://w3id.org/sqo#hasMinLat">Has minimum latitude</a>
+      </li>
+      <li>
+         <a href="#hasMinLng" title="https://w3id.org/sqo#hasMinLng">Has minimum longitude</a>
+      </li>
+      <li>
+         <a href="#hasOption" title="https://w3id.org/sqo#hasOption">Has option</a>
+      </li>
+      <li>
+         <a href="#hasPatternFragment" title="https://w3id.org/sqo#hasPatternFragment">Has pattern fragment</a>
+      </li>
+      <li>
+         <a href="#hasQuestionCategory" title="https://w3id.org/sqo#hasQuestionCategory">Has question category</a>
+      </li>
+      <li>
+         <a href="#hasQuestionPattern" title="https://w3id.org/sqo#hasQuestionPattern">Has question pattern</a>
+      </li>
+      <li>
+         <a href="#hasQuestionVariable" title="https://w3id.org/sqo#hasQuestionVariable">Has question variable</a>
+      </li>
+      <li>
+         <a href="#hasStartTime" title="https://w3id.org/sqo#hasStartTime">Has start time</a>
+      </li>
+      <li>
+         <a href="#hasTimeType" title="https://w3id.org/sqo#hasTimeType">Has time type</a>
+      </li>
+   </ul>
+   <div class="entity" id="hasEndTime">
+      <h3>Has end time<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/sqo#hasEndTime</p>
+      <div class="comment">
+         <span class="markdown">End time of a time interval</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#TimeIntervalQuestionVariable"
+                  title="https://w3id.org/sqo#TimeIntervalQuestionVariable">Time Interval Question Variable</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#UserInputQuestionVariable" title="https://w3id.org/sqo#UserInputQuestionVariable">User Input Question Variable</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasMaxLat">
+      <h3>Has maximum latitude<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/sqo#hasMaxLat</p>
+      <div class="comment">
+         <span class="markdown">Maximum latitude of a bounding box</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#BoundingBoxQuestionVariable" title="https://w3id.org/sqo#BoundingBoxQuestionVariable">Bounding Box Question Variable</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#UserInputQuestionVariable" title="https://w3id.org/sqo#UserInputQuestionVariable">User Input Question Variable</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasMaxLng">
+      <h3>Has maximum longitude<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/sqo#hasMaxLng</p>
+      <div class="comment">
+         <span class="markdown">Maximum longitude of a bounding box</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#BoundingBoxQuestionVariable" title="https://w3id.org/sqo#BoundingBoxQuestionVariable">Bounding Box Question Variable</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#UserInputQuestionVariable" title="https://w3id.org/sqo#UserInputQuestionVariable">User Input Question Variable</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasMinLat">
+      <h3>Has minimum latitude<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/sqo#hasMinLat</p>
+      <div class="comment">
+         <span class="markdown">Minimum latitude of a bounding box</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#BoundingBoxQuestionVariable" title="https://w3id.org/sqo#BoundingBoxQuestionVariable">Bounding Box Question Variable</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#UserInputQuestionVariable" title="https://w3id.org/sqo#UserInputQuestionVariable">User Input Question Variable</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasMinLng">
+      <h3>Has minimum longitude<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/sqo#hasMinLng</p>
+      <div class="comment">
+         <span class="markdown">Minimum longitude of a bounding box</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#BoundingBoxQuestionVariable" title="https://w3id.org/sqo#BoundingBoxQuestionVariable">Bounding Box Question Variable</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#UserInputQuestionVariable" title="https://w3id.org/sqo#UserInputQuestionVariable">User Input Question Variable</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasOption">
+      <h3>Has option<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/sqo#hasOption</p>
+      <div class="comment">
+         <span class="markdown">Links a question variable with the possible options that can take.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#StaticOptionsQuestionVariable"
+                  title="https://w3id.org/sqo#StaticOptionsQuestionVariable">Static Options Question Variable</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#VariableOption" title="https://w3id.org/sqo#VariableOption">Variable Option</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasPatternFragment">
+      <h3>Has pattern fragment<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/sqo#hasPatternFragment</p>
+      <div class="comment">
+         <span class="markdown">Fragment of a pattern that this variable add to a question</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#QuestionVariable" title="https://w3id.org/sqo#QuestionVariable">Question Variable</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2000/01/rdf-schema#Statement">statement</span>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasQuestionCategory">
+      <h3>Has question category<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/sqo#hasQuestionCategory</p>
+      <div class="comment">
+         <span class="markdown">Link a Question with the category it belong</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Question" title="https://w3id.org/sqo#Question">Question</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#QuestionCategory" title="https://w3id.org/sqo#QuestionCategory">Question Category</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasQuestionPattern">
+      <h3>Has question pattern<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/sqo#hasQuestionPattern</p>
+      <div class="comment">
+         <span class="markdown">SPARQL-like pattern that defines the semantic representation that this question will have. All variables used on the question template will be replaced for the user selected values.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Question" title="https://w3id.org/sqo#Question">Question</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2000/01/rdf-schema#Statement">statement</span>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasQuestionVariable">
+      <h3>Has question variable<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/sqo#hasQuestionVariable</p>
+      <div class="comment">
+         <span class="markdown">Link a Question with all of the Question Variables that are used on the question template and pattern</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Question" title="https://w3id.org/sqo#Question">Question</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#QuestionVariable" title="https://w3id.org/sqo#QuestionVariable">Question Variable</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasStartTime">
+      <h3>Has start time<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/sqo#hasStartTime</p>
+      <div class="comment">
+         <span class="markdown">Start time of a time interval</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#TimeIntervalQuestionVariable"
+                  title="https://w3id.org/sqo#TimeIntervalQuestionVariable">Time Interval Question Variable</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#UserInputQuestionVariable" title="https://w3id.org/sqo#UserInputQuestionVariable">User Input Question Variable</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasTimeType">
+      <h3>Has time type<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/sqo#hasTimeType</p>
+      <div class="comment">
+         <span class="markdown">Type of time interval</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#TimeIntervalQuestionVariable"
+                  title="https://w3id.org/sqo#TimeIntervalQuestionVariable">Time Interval Question Variable</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#StaticOptionsQuestionVariable"
+                  title="https://w3id.org/sqo#StaticOptionsQuestionVariable">Static Options Question Variable</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div id="dataproperties">
+   <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#hasComment" title="https://w3id.org/sqo#hasComment">
+            <span>Has comment</span>
+         </a>
+      </li>
+      <li>
+         <a href="#hasConstraintQuery" title="https://w3id.org/sqo#hasConstraintQuery">Has constraint query</a>
+      </li>
+      <li>
+         <a href="#hasExplanation" title="https://w3id.org/sqo#hasExplanation">Has explanation</a>
+      </li>
+      <li>
+         <a href="#hasInputDatatype" title="https://w3id.org/sqo#hasInputDatatype">Has input datatype</a>
+      </li>
+      <li>
+         <a href="#hasLabel" title="https://w3id.org/sqo#hasLabel">
+            <span>Has label</span>
+         </a>
+      </li>
+      <li>
+         <a href="#maxCardinality" title="https://w3id.org/sqo#maxCardinality">has maximum cardinality</a>
+      </li>
+      <li>
+         <a href="#minCardinality" title="https://w3id.org/sqo#minCardinality">has minimum cardinality</a>
+      </li>
+      <li>
+         <a href="#hasOptionsQuery" title="https://w3id.org/sqo#hasOptionsQuery">Has options query</a>
+      </li>
+      <li>
+         <a href="#hasQuestionTemplate" title="https://w3id.org/sqo#hasQuestionTemplate">Has question template</a>
+      </li>
+      <li>
+         <a href="#hasRepresentation" title="https://w3id.org/sqo#hasRepresentation">Has representation</a>
+      </li>
+      <li>
+         <a href="#hasValue" title="https://w3id.org/sqo#hasValue">Has value</a>
+      </li>
+      <li>
+         <a href="#hasVariableName" title="https://w3id.org/sqo#hasVariableName">Has variable name</a>
+      </li>
+   </ul>
+   <div class="entity" id="hasComment">
+      <h3>Has comment<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/sqo#hasComment</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#VariableOption" title="https://w3id.org/sqo#VariableOption">Variable Option</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+            </dd>
+            <dt>is same as</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2000/01/rdf-schema#comment">comment</span>
+            </dd>
+            <dt>is also defined as</dt>
+            <dd>named individual</dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasConstraintQuery">
+      <h3>Has constraint query<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/sqo#hasConstraintQuery</p>
+      <div class="comment">
+         <span class="markdown">Query that determines constraints for all variables on this Question</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Question" title="https://w3id.org/sqo#Question">Question</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasExplanation">
+      <h3>Has explanation<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/sqo#hasExplanation</p>
+      <div class="comment">
+         <span class="markdown">Explanation of this question variable.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#QuestionVariable" title="https://w3id.org/sqo#QuestionVariable">Question Variable</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasInputDatatype">
+      <h3>Has input datatype<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/sqo#hasInputDatatype</p>
+      <div class="comment">
+         <span class="markdown">Datatype of the variable that the user will input.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#UserInputQuestionVariable" title="https://w3id.org/sqo#UserInputQuestionVariable">User Input Question Variable</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#anyURI">any u r i</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasLabel">
+      <h3>Has label<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/sqo#hasLabel</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#VariableOption" title="https://w3id.org/sqo#VariableOption">Variable Option</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+            </dd>
+            <dt>is same as</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2000/01/rdf-schema#label">label</span>
+            </dd>
+            <dt>is also defined as</dt>
+            <dd>named individual</dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="maxCardinality">
+      <h3>has maximum cardinality<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/sqo#maxCardinality</p>
+      <div class="comment">
+         <span class="markdown">Denotes maximum cardinality for this question variable values.
+As default the cardinality is 1.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#QuestionVariable" title="https://w3id.org/sqo#QuestionVariable">Question Variable</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted"
+                     title="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">non negative integer</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="minCardinality">
+      <h3>has minimum cardinality<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/sqo#minCardinality</p>
+      <div class="comment">
+         <span class="markdown">Denotes minimum cardinality for this question variable values.
+As default the cardinality is 1.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#QuestionVariable" title="https://w3id.org/sqo#QuestionVariable">Question Variable</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted"
+                     title="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">non negative integer</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasOptionsQuery">
+      <h3>Has options query<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/sqo#hasOptionsQuery</p>
+      <div class="comment">
+         <span class="markdown">An SPARQL query that will determine the options for this variable</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#DynamicOptionsQuestionVariable"
+                  title="https://w3id.org/sqo#DynamicOptionsQuestionVariable">Dynamic Options Question Variable</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasQuestionTemplate">
+      <h3>Has question template<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/sqo#hasQuestionTemplate</p>
+      <div class="comment">
+         <span class="markdown">Text representation of the question that will create a form that the user must fill. All "question variable" names used on this template will be replaced for inputs with constraints.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Question" title="https://w3id.org/sqo#Question">Question</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasRepresentation">
+      <h3>Has representation<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/sqo#hasRepresentation</p>
+      <div class="comment">
+         <span class="markdown">Custom representation of a variable.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#QuestionVariable" title="https://w3id.org/sqo#QuestionVariable">Question Variable</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasValue">
+      <h3>Has value<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/sqo#hasValue</p>
+      <div class="comment">
+         <span class="markdown">Value (URL or Literal) for this option.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#VariableOption" title="https://w3id.org/sqo#VariableOption">Variable Option</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasVariableName">
+      <h3>Has variable name<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/sqo#hasVariableName</p>
+      <div class="comment">
+         <span class="markdown">SPARQL name of this variable. Used on the question pattern and template</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#QuestionVariable" title="https://w3id.org/sqo#QuestionVariable">Question Variable</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div id="namedindividuals">
+   <h3 id="namedindividuals" class="list">Named Individuals</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#http://www.w3.org/2000/01/rdf-schema#comment" title="http://www.w3.org/2000/01/rdf-schema#comment">
+            <span>comment</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://www.w3.org/2000/01/rdf-schema#label" title="http://www.w3.org/2000/01/rdf-schema#label">
+            <span>label</span>
+         </a>
+      </li>
+   </ul>
+   <div class="entity" id="http://www.w3.org/2000/01/rdf-schema#comment">
+      <h3>comment<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.w3.org/2000/01/rdf-schema#comment</p>
+      <dl class="description">
+         <dt>is same as</dt>
+         <dd>
+            <a href="#hasComment" title="https://w3id.org/sqo#hasComment">Has comment</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://www.w3.org/2000/01/rdf-schema#label">
+      <h3>label<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.w3.org/2000/01/rdf-schema#label</p>
+      <dl class="description">
+         <dt>is same as</dt>
+         <dd>
+            <a href="#hasLabel" title="https://w3id.org/sqo#hasLabel">Has label</a>
+         </dd>
+      </dl>
+   </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+<sup class="type-ni" title="Named Individuals">ni</sup>: Named Individuals
+</div>
+</div>

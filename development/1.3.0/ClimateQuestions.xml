@@ -175,6 +175,13 @@
         <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <rdf:type rdf:resource="https://w3id.org/sqo#TimeIntervalQuestionVariable"/>
         <sqo:hasVariableName>?TimeInterval</sqo:hasVariableName>
+
+        <sqo:has rdf:resource="http://disk-project.org/resources/climate/variable/MaxLatVariable"/>
+        <sqo:hasMaxLng rdf:resource="http://disk-project.org/resources/climate/variable/MaxLngVariable"/>
+        <sqo:hasMinLat rdf:resource="http://disk-project.org/resources/climate/variable/MinLatVariable"/>
+        <sqo:hasMinLng rdf:resource="http://disk-project.org/resources/climate/variable/MinLngVariable"/>
+
+        <sqo:hasRepresentation>from ?StartTime to ?StopTime (?TimeType)</sqo:hasRepresentation>
     </owl:NamedIndividual>
 
     

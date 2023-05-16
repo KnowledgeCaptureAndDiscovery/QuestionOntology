@@ -1,0 +1,338 @@
+@prefix : <https://w3id.org/sqo#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://w3id.org/sqo> .
+
+<https://w3id.org/sqo> rdf:type owl:Ontology ;
+                        <http://purl.org/dc/terms/creator> "Daniel Garijo" ,
+                                                           "Hernan Vargas" ,
+                                                           "Yolanda Gil" ;
+                        <http://purl.org/dc/terms/description> "An ontology to define semantic templates for scientific questions. Defines questions, variables, options and constraints." ;
+                        <http://purl.org/dc/terms/license> "https://creativecommons.org/licenses/by/2.0/" ;
+                        <http://purl.org/dc/terms/title> "The Scientific Questions Ontology" ;
+                        owl:versionInfo "v1.3.1" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://w3id.org/sqo#hasEndTime
+:hasEndTime rdf:type owl:ObjectProperty ;
+            rdfs:domain :TimeIntervalQuestionVariable ;
+            rdfs:range :UserInputQuestionVariable ;
+            rdfs:comment "End time of a time interval" ;
+            rdfs:label "Has end time" .
+
+
+###  https://w3id.org/sqo#hasMaxLat
+:hasMaxLat rdf:type owl:ObjectProperty ;
+           rdfs:domain :BoundingBoxQuestionVariable ;
+           rdfs:range :UserInputQuestionVariable ;
+           rdfs:comment "Maximum latitude of a bounding box" ;
+           rdfs:label "Has maximum latitude" .
+
+
+###  https://w3id.org/sqo#hasMaxLng
+:hasMaxLng rdf:type owl:ObjectProperty ;
+           rdfs:domain :BoundingBoxQuestionVariable ;
+           rdfs:range :UserInputQuestionVariable ;
+           rdfs:comment "Maximum longitude of a bounding box" ;
+           rdfs:label "Has maximum longitude" .
+
+
+###  https://w3id.org/sqo#hasMinLat
+:hasMinLat rdf:type owl:ObjectProperty ;
+           rdfs:domain :BoundingBoxQuestionVariable ;
+           rdfs:range :UserInputQuestionVariable ;
+           rdfs:comment "Minimum latitude of a bounding box" ;
+           rdfs:label "Has minimum latitude" .
+
+
+###  https://w3id.org/sqo#hasMinLng
+:hasMinLng rdf:type owl:ObjectProperty ;
+           rdfs:domain :BoundingBoxQuestionVariable ;
+           rdfs:range :UserInputQuestionVariable ;
+           rdfs:comment "Minimum longitude of a bounding box" ;
+           rdfs:label "Has minimum longitude" .
+
+
+###  https://w3id.org/sqo#hasOption
+:hasOption rdf:type owl:ObjectProperty ;
+           rdfs:domain :StaticOptionsQuestionVariable ;
+           rdfs:range :VariableOption ;
+           rdfs:comment "Links a question variable with the possible options that can take." ;
+           rdfs:label "Has option" .
+
+
+###  https://w3id.org/sqo#hasPatternFragment
+:hasPatternFragment rdf:type owl:ObjectProperty ;
+                    rdfs:domain :QuestionVariable ;
+                    rdfs:range rdfs:Statement ;
+                    rdfs:comment "Fragment of a pattern that this variable add to a question" ;
+                    rdfs:label "Has pattern fragment" .
+
+
+###  https://w3id.org/sqo#hasQuestionCategory
+:hasQuestionCategory rdf:type owl:ObjectProperty ;
+                     rdfs:domain :Question ;
+                     rdfs:range :QuestionCategory ;
+                     rdfs:comment "Link a Question with the category it belong" ;
+                     rdfs:label "Has question category" .
+
+
+###  https://w3id.org/sqo#hasQuestionPattern
+:hasQuestionPattern rdf:type owl:ObjectProperty ;
+                    rdfs:domain :Question ;
+                    rdfs:range rdfs:Statement ;
+                    rdfs:comment "SPARQL-like pattern that defines the semantic representation that this question will have. All variables used on the question template will be replaced for the user selected values." ;
+                    rdfs:label "Has question pattern" .
+
+
+###  https://w3id.org/sqo#hasQuestionVariable
+:hasQuestionVariable rdf:type owl:ObjectProperty ;
+                     rdfs:domain :Question ;
+                     rdfs:range :QuestionVariable ;
+                     rdfs:comment "Link a Question with all of the Question Variables that are used on the question template and pattern" ;
+                     rdfs:label "Has question variable" .
+
+
+###  https://w3id.org/sqo#hasStartTime
+:hasStartTime rdf:type owl:ObjectProperty ;
+              rdfs:domain :TimeIntervalQuestionVariable ;
+              rdfs:range :UserInputQuestionVariable ;
+              rdfs:comment "Start time of a time interval" ;
+              rdfs:label "Has start time" .
+
+
+###  https://w3id.org/sqo#hasTimeType
+:hasTimeType rdf:type owl:ObjectProperty ;
+             rdfs:domain :TimeIntervalQuestionVariable ;
+             rdfs:range :StaticOptionsQuestionVariable ;
+             rdfs:comment "Type of time interval" ;
+             rdfs:label "Has time type" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://w3id.org/sqo#hasComment
+:hasComment rdf:type owl:DatatypeProperty ;
+            rdfs:domain :VariableOption ;
+            rdfs:range xsd:string .
+
+
+###  https://w3id.org/sqo#hasConstraintQuery
+:hasConstraintQuery rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :Question ;
+                    rdfs:range xsd:string ;
+                    rdfs:comment "Query that determines constraints for all variables on this Question" ;
+                    rdfs:label "Has constraint query" .
+
+
+###  https://w3id.org/sqo#hasExplanation
+:hasExplanation rdf:type owl:DatatypeProperty ;
+                rdfs:domain :QuestionVariable ;
+                rdfs:range xsd:string ;
+                rdfs:comment "Explanation of this question variable." ;
+                rdfs:label "Has explanation" .
+
+
+###  https://w3id.org/sqo#hasInputDatatype
+:hasInputDatatype rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :UserInputQuestionVariable ;
+                  rdfs:range xsd:anyURI ;
+                  rdfs:comment "Datatype of the variable that the user will input." ;
+                  rdfs:label "Has input datatype" .
+
+
+###  https://w3id.org/sqo#hasLabel
+:hasLabel rdf:type owl:DatatypeProperty ;
+          rdfs:domain :VariableOption ;
+          rdfs:range xsd:string .
+
+
+###  https://w3id.org/sqo#hasOptionsQuery
+:hasOptionsQuery rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :DynamicOptionsQuestionVariable ;
+                 rdfs:range xsd:string ;
+                 rdfs:comment "An SPARQL query that will determine the options for this variable" ;
+                 rdfs:label "Has options query" .
+
+
+###  https://w3id.org/sqo#hasQuestionTemplate
+:hasQuestionTemplate rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :Question ;
+                     rdfs:range xsd:string ;
+                     rdfs:comment "Text representation of the question that will create a form that the user must fill. All \"question variable\" names used on this template will be replaced for inputs with constraints." ;
+                     rdfs:label "Has question template" .
+
+
+###  https://w3id.org/sqo#hasRepresentation
+:hasRepresentation rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :QuestionVariable ;
+                   rdfs:range xsd:string ;
+                   rdfs:comment "Custom representation of a variable." ;
+                   rdfs:label "Has representation" .
+
+
+###  https://w3id.org/sqo#hasValue
+:hasValue rdf:type owl:DatatypeProperty ;
+          rdfs:domain :VariableOption ;
+          rdfs:range xsd:string ;
+          rdfs:comment "Value (URL or Literal) for this option." ;
+          rdfs:label "Has value" .
+
+
+###  https://w3id.org/sqo#hasVariableName
+:hasVariableName rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :QuestionVariable ;
+                 rdfs:range xsd:string ;
+                 rdfs:comment "SPARQL name of this variable. Used on the question pattern and template" ;
+                 rdfs:label "Has variable name" .
+
+
+###  https://w3id.org/sqo#maxCardinality
+:maxCardinality rdf:type owl:DatatypeProperty ;
+                rdfs:domain :QuestionVariable ;
+                rdfs:range xsd:nonNegativeInteger ;
+                rdfs:comment """Denotes maximum cardinality for this question variable values.
+As default the cardinality is 1.""" ;
+                rdfs:label "has maximum cardinality" .
+
+
+###  https://w3id.org/sqo#minCardinality
+:minCardinality rdf:type owl:DatatypeProperty ;
+                rdfs:domain :QuestionVariable ;
+                rdfs:range xsd:nonNegativeInteger ;
+                rdfs:comment """Denotes minimum cardinality for this question variable values.
+As default the cardinality is 1.""" ;
+                rdfs:label "has minimum cardinality" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.w3.org/2000/01/rdf-schema#Statement
+rdfs:Statement rdf:type owl:Class .
+
+
+###  https://w3id.org/sqo#BoundingBoxQuestionVariable
+:BoundingBoxQuestionVariable rdf:type owl:Class ;
+                             rdfs:subClassOf :DynamicOptionsQuestionVariable ;
+                             rdfs:comment """Question variable that represents a geographical bounding box.
+Is expanded to minLat, maxLat, minLng, maxLng""" ;
+                             rdfs:label "Bounding Box Question Variable" .
+
+
+###  https://w3id.org/sqo#DynamicOptionsQuestionVariable
+:DynamicOptionsQuestionVariable rdf:type owl:Class ;
+                                rdfs:subClassOf :QuestionVariable ;
+                                rdfs:comment "Question variable with options queried to a data souce" ;
+                                rdfs:label "Dynamic Options Question Variable" .
+
+
+###  https://w3id.org/sqo#Question
+:Question rdf:type owl:Class ;
+          rdfs:comment "Class that represents a scientific question. Is linked to the template, the pattern and all the variables this question uses." ;
+          rdfs:label "Question" .
+
+
+###  https://w3id.org/sqo#QuestionCategory
+:QuestionCategory rdf:type owl:Class ;
+                  rdfs:comment "Class used to group together similar Questions" ;
+                  rdfs:label "Question Category" .
+
+
+###  https://w3id.org/sqo#QuestionVariable
+:QuestionVariable rdf:type owl:Class ;
+                  rdfs:comment "Class that represents a variable used on a Question. This variable name must be present on the template or pattern of the question that uses it. Can have contraints in the form of a query (hasOptionsQuery property) or a list of possible options (hasOptions property)." ;
+                  rdfs:label "Question Variable" .
+
+
+###  https://w3id.org/sqo#StaticOptionsQuestionVariable
+:StaticOptionsQuestionVariable rdf:type owl:Class ;
+                               rdfs:subClassOf :QuestionVariable ;
+                               rdfs:comment "Question variable with an static list of options" ;
+                               rdfs:label "Static Options Question Variable" .
+
+
+###  https://w3id.org/sqo#TimeIntervalQuestionVariable
+:TimeIntervalQuestionVariable rdf:type owl:Class ;
+                              rdfs:subClassOf :DynamicOptionsQuestionVariable ;
+                              rdfs:comment "Question variable that will be expanded into a time interval (two dates)" ;
+                              rdfs:label "Time Interval Question Variable" .
+
+
+###  https://w3id.org/sqo#UserInputQuestionVariable
+:UserInputQuestionVariable rdf:type owl:Class ;
+                           rdfs:subClassOf :QuestionVariable ;
+                           rdfs:comment "Variable set by users" ;
+                           rdfs:label "User Input Question Variable" .
+
+
+###  https://w3id.org/sqo#VariableOption
+:VariableOption rdf:type owl:Class ;
+                rdfs:comment "Option for a question variable. Has a value and a label." ;
+                rdfs:label "Variable Option" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.w3.org/2000/01/rdf-schema#comment
+rdfs:comment rdf:type owl:NamedIndividual ;
+             owl:sameAs :hasComment .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#label
+rdfs:label rdf:type owl:NamedIndividual ;
+           owl:sameAs :hasLabel .
+
+
+###  https://w3id.org/sqo#hasComment
+:hasComment rdf:type owl:NamedIndividual .
+
+
+###  https://w3id.org/sqo#hasLabel
+:hasLabel rdf:type owl:NamedIndividual .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+:hasComment rdfs:comment "Comment for a question variable option" ;
+            rdfs:label "Has comment" .
+
+
+:hasLabel rdfs:comment "Label for this option." ;
+          rdfs:label "Has label" .
+
+
+###  Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/
