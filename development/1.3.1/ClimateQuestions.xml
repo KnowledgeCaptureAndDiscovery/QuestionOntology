@@ -191,7 +191,7 @@ filter( !bound(?MinLat) || !bound(?MaxLat) || !bound(?MinLng) || !bound(?MaxLng)
         <sqo:hasMinLat rdf:resource="http://disk-project.org/resources/climate/variable/MinLatVariable2"/>
         <sqo:hasMinLng rdf:resource="http://disk-project.org/resources/climate/variable/MinLngVariable2"/>
         <sqo:hasRepresentation>(?MinLat2,?MaxLat2 ?MinLng2,?MaxLng2)</sqo:hasRepresentation>
-        <sqo:hasPatternFragment>
+        <sqo:hasPatternFragment rdf:parseType="Collection">
             <rdf:Statement>
                 <rdf:predicate rdf:resource="http://disk-project.org/ontology/hypothesis#fromLocation"/>
                 <rdf:object rdf:resource="http://disk-project.org/resources/climate/variable/BoundingBox2"/>
