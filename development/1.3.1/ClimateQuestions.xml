@@ -74,7 +74,7 @@ FILTER (!REGEX(str(?ClimateVariableName), &quot;year&quot;) &amp;&amp; !REGEX(st
 FILTER (REGEX(str(?CompilationName), &quot;Temp12k&quot;) || REGEX(str(?CompilationName), &quot;Pages2kTemperature&quot;)
         || REGEX(str(?CompilationName), &quot;iso2k&quot;)|| REGEX(str(?CompilationName) , &quot;wNAm&quot;))
         </sqo:hasOptionsQuery>
-        <sqo:hasPatternFragment>
+        <sqo:hasPatternFragment rdf:parseType="Collection">
             <rdf:Statement>
                 <rdf:predicate rdf:resource="http://disk-project.org/ontology/hypothesis#hasVariable"/>
                 <rdf:object rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariableName"/>
@@ -94,7 +94,7 @@ FILTER (!REGEX(str(?ClimateVariableName2), &quot;year&quot;) &amp;&amp; !REGEX(s
 FILTER (REGEX(str(?CompilationName2), &quot;Temp12k&quot;) || REGEX(str(?CompilationName2), &quot;Pages2kTemperature&quot;)
         || REGEX(str(?CompilationName2), &quot;iso2k&quot;)|| REGEX(str(?CompilationName2) , &quot;wNAm&quot;))
         </sqo:hasOptionsQuery>
-        <sqo:hasPatternFragment>
+        <sqo:hasPatternFragment rdf:parseType="Collection">
             <rdf:Statement>
                 <rdf:predicate rdf:resource="http://disk-project.org/ontology/hypothesis#hasVariable"/>
                 <rdf:object rdf:resource="http://disk-project.org/resources/climate/variable/ClimateVariableName2"/>
@@ -121,35 +121,30 @@ filter( !bound(?MinLat) || !bound(?MaxLat) || !bound(?MinLng) || !bound(?MaxLng)
         xsd:float(?lon)&gt;xsd:float(?MinLng)).
         </sqo:hasOptionsQuery>
         <sqo:hasPatternFragment rdf:parseType="Collection">
-            <owl:NamedIndividual>
-                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
+            <rdf:Statement>
                 <rdf:predicate rdf:resource="http://disk-project.org/ontology/hypothesis#fromLocation"/>
                 <rdf:object rdf:resource="http://disk-project.org/resources/climate/variable/BoundingBox"/>
-            </owl:NamedIndividual>
-            <owl:NamedIndividual>
-                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
+            </rdf:Statement>
+            <rdf:Statement>
                 <rdf:subject rdf:resource="http://disk-project.org/resources/climate/variable/BoundingBox"/>
                 <rdf:predicate rdf:resource="http://disk-project.org/ontology/hypothesis#hasMinLat"/>
                 <rdf:object rdf:resource="http://disk-project.org/resources/climate/variable/MinLatVariable"/>
-            </owl:NamedIndividual>
-            <owl:NamedIndividual>
-                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
+            </rdf:Statement>
+            <rdf:Statement>
                 <rdf:subject rdf:resource="http://disk-project.org/resources/climate/variable/BoundingBox"/>
                 <rdf:predicate rdf:resource="http://disk-project.org/ontology/hypothesis#hasMaxLat"/>
                 <rdf:object rdf:resource="http://disk-project.org/resources/climate/variable/MaxLatVariable"/>
-            </owl:NamedIndividual>
-            <owl:NamedIndividual>
-                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
+            </rdf:Statement>
+            <rdf:Statement>
                 <rdf:subject rdf:resource="http://disk-project.org/resources/climate/variable/BoundingBox"/>
                 <rdf:predicate rdf:resource="http://disk-project.org/ontology/hypothesis#hasMaxLng"/>
                 <rdf:object rdf:resource="http://disk-project.org/resources/climate/variable/MaxLngVariable"/>
-            </owl:NamedIndividual>
-            <owl:NamedIndividual>
-                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
+            </rdf:Statement>
+            <rdf:Statement>
                 <rdf:subject rdf:resource="http://disk-project.org/resources/climate/variable/BoundingBox"/>
                 <rdf:predicate rdf:resource="http://disk-project.org/ontology/hypothesis#hasMinLng"/>
                 <rdf:object rdf:resource="http://disk-project.org/resources/climate/variable/MinLngVariable"/>
-            </owl:NamedIndividual>
+            </rdf:Statement>
         </sqo:hasPatternFragment>
     </owl:NamedIndividual>
 
@@ -265,7 +260,7 @@ filter( !bound(?MinLat2) || !bound(?MaxLat2) || !bound(?MinLng2) || !bound(?MaxL
 ?Dataset &lt;http://linked.earth/ontology#name&gt; ?DatasetLabel .
 ?Dataset &lt;http://linked.earth/ontology#hasUrl&gt; ?url .
         </sqo:hasOptionsQuery>
-        <sqo:hasPatternFragment>
+        <sqo:hasPatternFragment rdf:parseType="Collection">
             <rdf:Statement>
                 <rdf:predicate rdf:resource="http://disk-project.org/ontology/hypothesis#fromDataset"/>
                 <rdf:object rdf:resource="http://disk-project.org/resources/climate/variable/Dataset"/>
@@ -282,7 +277,7 @@ filter( !bound(?MinLat2) || !bound(?MaxLat2) || !bound(?MinLng2) || !bound(?MaxL
 ?Dataset2 &lt;http://linked.earth/ontology#name&gt; ?Dataset2Label .
 ?Dataset2 &lt;http://linked.earth/ontology#hasUrl&gt; ?url2 .
         </sqo:hasOptionsQuery>
-        <sqo:hasPatternFragment>
+        <sqo:hasPatternFragment rdf:parseType="Collection">
             <rdf:Statement>
                 <rdf:predicate rdf:resource="http://disk-project.org/ontology/hypothesis#fromDataset"/>
                 <rdf:object rdf:resource="http://disk-project.org/resources/climate/variable/Dataset2"/>
@@ -302,7 +297,7 @@ BIND(COALESCE(?LocationName1, REPLACE(STR(?Site), &quot;(.*#)|(.Location)&quot;,
 ?Site &lt;http://www.w3.org/2003/01/geo/wgs84_pos#long&gt; ?long .
 BIND(CONCAT(?LocationName, &quot; (&quot;, STR(?lat), &quot;, &quot;, STR(?long), &quot;)&quot;) AS ?SiteLabel)
         </sqo:hasOptionsQuery>
-        <sqo:hasPatternFragment>
+        <sqo:hasPatternFragment rdf:parseType="Collection">
             <rdf:Statement>
                 <rdf:predicate rdf:resource="http://disk-project.org/ontology/hypothesis#fromLocation"/>
                 <rdf:object rdf:resource="http://disk-project.org/resources/climate/variable/Site"/>
@@ -322,7 +317,7 @@ BIND(COALESCE(?LocationName2, REPLACE(STR(?Site2), &quot;(.*#)|(.Location)&quot;
 ?Site2 &lt;http://www.w3.org/2003/01/geo/wgs84_pos#long&gt; ?long2 .
 BIND(CONCAT(?LocationName0, &quot; (&quot;, STR(?lat2), &quot;, &quot;, STR(?long2), &quot;)&quot;) AS ?Site2Label)
         </sqo:hasOptionsQuery>
-        <sqo:hasPatternFragment>
+        <sqo:hasPatternFragment rdf:parseType="Collection">
             <rdf:Statement>
                 <rdf:predicate rdf:resource="http://disk-project.org/ontology/hypothesis#fromLocation"/>
                 <rdf:object rdf:resource="http://disk-project.org/resources/climate/variable/Site2"/>
@@ -350,7 +345,7 @@ FILTER (
     (?e2&lt;=xsd:float(?EndTime) &amp;&amp; ?e1&gt;xsd:float(?EndTime)) ) #Overlap any portion of matching datasets
 ).
         </sqo:hasOptionsQuery>
-        <sqo:hasPatternFragment>
+        <sqo:hasPatternFragment rdf:parseType="Collection">
             <rdf:Statement>
                 <rdf:predicate rdf:resource="http://disk-project.org/ontology/hypothesis#hasTimeInterval"/>
                 <rdf:object rdf:resource="http://disk-project.org/resources/climate/variable/TimeInterval"/>
