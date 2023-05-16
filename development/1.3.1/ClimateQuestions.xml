@@ -413,7 +413,6 @@ FILTER (
     <!-- http://disk-project.org/resources/climate/option/CETime -->
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/option/CETime">
         <rdf:type rdf:resource="https://w3id.org/sqo#VariableOption"/>
-        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <sqo:hasLabel>CE</sqo:hasLabel>
         <sqo:hasValue>year</sqo:hasValue>
     </owl:NamedIndividual>
@@ -421,7 +420,6 @@ FILTER (
     <!-- http://disk-project.org/resources/climate/option/BPTime -->
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/option/BPTime">
         <rdf:type rdf:resource="https://w3id.org/sqo#VariableOption"/>
-        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <sqo:hasLabel>cal yr BP</sqo:hasLabel>
         <sqo:hasValue>age</sqo:hasValue>
         <sqo:hasComment>0 = 1950CE</sqo:hasComment>
