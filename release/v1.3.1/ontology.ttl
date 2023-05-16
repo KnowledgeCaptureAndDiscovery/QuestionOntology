@@ -90,7 +90,7 @@
 ###  https://w3id.org/sqo#hasPatternFragment
 :hasPatternFragment rdf:type owl:ObjectProperty ;
                     rdfs:domain :QuestionVariable ;
-                    rdfs:range rdfs:Statement ;
+                    rdfs:range rdf:Statement ;
                     rdfs:comment "Fragment of a pattern that this variable add to a question" ;
                     rdfs:label "Has pattern fragment" .
 
@@ -106,7 +106,7 @@
 ###  https://w3id.org/sqo#hasQuestionPattern
 :hasQuestionPattern rdf:type owl:ObjectProperty ;
                     rdfs:domain :Question ;
-                    rdfs:range rdfs:Statement ;
+                    rdfs:range rdf:Statement ;
                     rdfs:comment "SPARQL-like pattern that defines the semantic representation that this question will have. All variables used on the question template will be replaced for the user selected values." ;
                     rdfs:label "Has question pattern" .
 
@@ -237,8 +237,8 @@ As default the cardinality is 1.""" ;
 #    Classes
 #################################################################
 
-###  http://www.w3.org/2000/01/rdf-schema#Statement
-rdfs:Statement rdf:type owl:Class .
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement
+rdf:Statement rdf:type owl:Class .
 
 
 ###  https://w3id.org/sqo#BoundingBoxQuestionVariable

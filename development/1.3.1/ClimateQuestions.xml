@@ -122,30 +122,32 @@ filter( !bound(?MinLat) || !bound(?MaxLat) || !bound(?MinLng) || !bound(?MaxLng)
         xsd:float(?lon)&gt;xsd:float(?MinLng)).
         </sqo:hasOptionsQuery>
         <sqo:hasPatternFragment>
-            <rdf:Statement>
-                <rdf:predicate rdf:resource="http://disk-project.org/ontology/hypothesis#fromLocation"/>
-                <rdf:object rdf:resource="http://disk-project.org/resources/climate/variable/BoundingBox"/>
-            </rdf:Statement>
-            <rdf:Statement>
-                <rdf:subject rdf:resource="http://disk-project.org/resources/climate/variable/BoundingBox"/>
-                <rdf:predicate rdf:resource="http://disk-project.org/ontology/hypothesis#hasMinLat"/>
-                <rdf:object rdf:resource="http://disk-project.org/resources/climate/variable/MinLatVariable"/>
-            </rdf:Statement>
-            <rdf:Statement>
-                <rdf:subject rdf:resource="http://disk-project.org/resources/climate/variable/BoundingBox"/>
-                <rdf:predicate rdf:resource="http://disk-project.org/ontology/hypothesis#hasMaxLat"/>
-                <rdf:object rdf:resource="http://disk-project.org/resources/climate/variable/MaxLatVariable"/>
-            </rdf:Statement>
-            <rdf:Statement>
-                <rdf:subject rdf:resource="http://disk-project.org/resources/climate/variable/BoundingBox"/>
-                <rdf:predicate rdf:resource="http://disk-project.org/ontology/hypothesis#hasMaxLng"/>
-                <rdf:object rdf:resource="http://disk-project.org/resources/climate/variable/MaxLngVariable"/>
-            </rdf:Statement>
-            <rdf:Statement>
-                <rdf:subject rdf:resource="http://disk-project.org/resources/climate/variable/BoundingBox"/>
-                <rdf:predicate rdf:resource="http://disk-project.org/ontology/hypothesis#hasMinLng"/>
-                <rdf:object rdf:resource="http://disk-project.org/resources/climate/variable/MinLngVariable"/>
-            </rdf:Statement>
+            <rdfs:Container>
+                <rdf:Statement>
+                    <rdf:predicate rdf:resource="http://disk-project.org/ontology/hypothesis#fromLocation"/>
+                    <rdf:object rdf:resource="http://disk-project.org/resources/climate/variable/BoundingBox"/>
+                </rdf:Statement>
+                <rdf:Statement>
+                    <rdf:subject rdf:resource="http://disk-project.org/resources/climate/variable/BoundingBox"/>
+                    <rdf:predicate rdf:resource="http://disk-project.org/ontology/hypothesis#hasMinLat"/>
+                    <rdf:object rdf:resource="http://disk-project.org/resources/climate/variable/MinLatVariable"/>
+                </rdf:Statement>
+                <rdf:Statement>
+                    <rdf:subject rdf:resource="http://disk-project.org/resources/climate/variable/BoundingBox"/>
+                    <rdf:predicate rdf:resource="http://disk-project.org/ontology/hypothesis#hasMaxLat"/>
+                    <rdf:object rdf:resource="http://disk-project.org/resources/climate/variable/MaxLatVariable"/>
+                </rdf:Statement>
+                <rdf:Statement>
+                    <rdf:subject rdf:resource="http://disk-project.org/resources/climate/variable/BoundingBox"/>
+                    <rdf:predicate rdf:resource="http://disk-project.org/ontology/hypothesis#hasMaxLng"/>
+                    <rdf:object rdf:resource="http://disk-project.org/resources/climate/variable/MaxLngVariable"/>
+                </rdf:Statement>
+                <rdf:Statement>
+                    <rdf:subject rdf:resource="http://disk-project.org/resources/climate/variable/BoundingBox"/>
+                    <rdf:predicate rdf:resource="http://disk-project.org/ontology/hypothesis#hasMinLng"/>
+                    <rdf:object rdf:resource="http://disk-project.org/resources/climate/variable/MinLngVariable"/>
+                </rdf:Statement>
+            </rdfs:Container>
         </sqo:hasPatternFragment>
     </owl:NamedIndividual>
 

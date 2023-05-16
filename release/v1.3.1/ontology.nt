@@ -81,8 +81,8 @@
 # https://w3id.org/sqo#hasPatternFragment
 <https://w3id.org/sqo#hasPatternFragment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/sqo#hasPatternFragment> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/sqo#QuestionVariable> .
-<https://w3id.org/sqo#hasPatternFragment> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Statement> .
-<http://www.w3.org/2000/01/rdf-schema#Statement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/sqo#hasPatternFragment> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement> .
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/sqo#hasPatternFragment> <http://www.w3.org/2000/01/rdf-schema#comment> "Fragment of a pattern that this variable add to a question" .
 <https://w3id.org/sqo#hasPatternFragment> <http://www.w3.org/2000/01/rdf-schema#label> "Has pattern fragment" .
 # 
@@ -96,7 +96,7 @@
 # https://w3id.org/sqo#hasQuestionPattern
 <https://w3id.org/sqo#hasQuestionPattern> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/sqo#hasQuestionPattern> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/sqo#Question> .
-<https://w3id.org/sqo#hasQuestionPattern> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Statement> .
+<https://w3id.org/sqo#hasQuestionPattern> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement> .
 <https://w3id.org/sqo#hasQuestionPattern> <http://www.w3.org/2000/01/rdf-schema#comment> "SPARQL-like pattern that defines the semantic representation that this question will have. All variables used on the question template will be replaced for the user selected values." .
 <https://w3id.org/sqo#hasQuestionPattern> <http://www.w3.org/2000/01/rdf-schema#label> "Has question pattern" .
 # 
@@ -219,7 +219,7 @@
 # #################################################################
 # 
 # 
-# http://www.w3.org/2000/01/rdf-schema#Statement
+# http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement
 # 
 # https://w3id.org/sqo#BoundingBoxQuestionVariable
 <https://w3id.org/sqo#BoundingBoxQuestionVariable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
