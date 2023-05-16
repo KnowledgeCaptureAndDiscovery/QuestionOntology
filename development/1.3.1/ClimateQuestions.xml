@@ -105,7 +105,6 @@ FILTER (REGEX(str(?CompilationName2), &quot;Temp12k&quot;) || REGEX(str(?Compila
     <!-- http://disk-project.org/resources/climate/variable/BoundingBox -->
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/variable/BoundingBox">
         <rdf:type rdf:resource="https://w3id.org/sqo#BoundingBoxQuestionVariable"/>
-        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <sqo:hasVariableName>?BoundingBox</sqo:hasVariableName>
         <sqo:hasMaxLat rdf:resource="http://disk-project.org/resources/climate/variable/MaxLatVariable"/>
         <sqo:hasMaxLng rdf:resource="http://disk-project.org/resources/climate/variable/MaxLngVariable"/>
@@ -121,33 +120,36 @@ filter( !bound(?MinLat) || !bound(?MaxLat) || !bound(?MinLng) || !bound(?MaxLng)
         xsd:float(?lon)&lt;xsd:float(?MaxLng) &amp;&amp; 
         xsd:float(?lon)&gt;xsd:float(?MinLng)).
         </sqo:hasOptionsQuery>
-        <sqo:hasPatternFragment>
-            <rdfs:Container>
-                <rdf:Statement>
-                    <rdf:predicate rdf:resource="http://disk-project.org/ontology/hypothesis#fromLocation"/>
-                    <rdf:object rdf:resource="http://disk-project.org/resources/climate/variable/BoundingBox"/>
-                </rdf:Statement>
-                <rdf:Statement>
-                    <rdf:subject rdf:resource="http://disk-project.org/resources/climate/variable/BoundingBox"/>
-                    <rdf:predicate rdf:resource="http://disk-project.org/ontology/hypothesis#hasMinLat"/>
-                    <rdf:object rdf:resource="http://disk-project.org/resources/climate/variable/MinLatVariable"/>
-                </rdf:Statement>
-                <rdf:Statement>
-                    <rdf:subject rdf:resource="http://disk-project.org/resources/climate/variable/BoundingBox"/>
-                    <rdf:predicate rdf:resource="http://disk-project.org/ontology/hypothesis#hasMaxLat"/>
-                    <rdf:object rdf:resource="http://disk-project.org/resources/climate/variable/MaxLatVariable"/>
-                </rdf:Statement>
-                <rdf:Statement>
-                    <rdf:subject rdf:resource="http://disk-project.org/resources/climate/variable/BoundingBox"/>
-                    <rdf:predicate rdf:resource="http://disk-project.org/ontology/hypothesis#hasMaxLng"/>
-                    <rdf:object rdf:resource="http://disk-project.org/resources/climate/variable/MaxLngVariable"/>
-                </rdf:Statement>
-                <rdf:Statement>
-                    <rdf:subject rdf:resource="http://disk-project.org/resources/climate/variable/BoundingBox"/>
-                    <rdf:predicate rdf:resource="http://disk-project.org/ontology/hypothesis#hasMinLng"/>
-                    <rdf:object rdf:resource="http://disk-project.org/resources/climate/variable/MinLngVariable"/>
-                </rdf:Statement>
-            </rdfs:Container>
+        <sqo:hasPatternFragment rdf:parseType="Collection">
+            <owl:NamedIndividual>
+                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
+                <rdf:predicate rdf:resource="http://disk-project.org/ontology/hypothesis#fromLocation"/>
+                <rdf:object rdf:resource="http://disk-project.org/resources/climate/variable/BoundingBox"/>
+            </owl:NamedIndividual>
+            <owl:NamedIndividual>
+                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
+                <rdf:subject rdf:resource="http://disk-project.org/resources/climate/variable/BoundingBox"/>
+                <rdf:predicate rdf:resource="http://disk-project.org/ontology/hypothesis#hasMinLat"/>
+                <rdf:object rdf:resource="http://disk-project.org/resources/climate/variable/MinLatVariable"/>
+            </owl:NamedIndividual>
+            <owl:NamedIndividual>
+                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
+                <rdf:subject rdf:resource="http://disk-project.org/resources/climate/variable/BoundingBox"/>
+                <rdf:predicate rdf:resource="http://disk-project.org/ontology/hypothesis#hasMaxLat"/>
+                <rdf:object rdf:resource="http://disk-project.org/resources/climate/variable/MaxLatVariable"/>
+            </owl:NamedIndividual>
+            <owl:NamedIndividual>
+                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
+                <rdf:subject rdf:resource="http://disk-project.org/resources/climate/variable/BoundingBox"/>
+                <rdf:predicate rdf:resource="http://disk-project.org/ontology/hypothesis#hasMaxLng"/>
+                <rdf:object rdf:resource="http://disk-project.org/resources/climate/variable/MaxLngVariable"/>
+            </owl:NamedIndividual>
+            <owl:NamedIndividual>
+                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
+                <rdf:subject rdf:resource="http://disk-project.org/resources/climate/variable/BoundingBox"/>
+                <rdf:predicate rdf:resource="http://disk-project.org/ontology/hypothesis#hasMinLng"/>
+                <rdf:object rdf:resource="http://disk-project.org/resources/climate/variable/MinLngVariable"/>
+            </owl:NamedIndividual>
         </sqo:hasPatternFragment>
     </owl:NamedIndividual>
 
@@ -183,7 +185,6 @@ filter( !bound(?MinLat) || !bound(?MaxLat) || !bound(?MinLng) || !bound(?MaxLng)
     <!-- http://disk-project.org/resources/climate/variable/BoundingBox2 -->
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/variable/BoundingBox2">
         <rdf:type rdf:resource="https://w3id.org/sqo#BoundingBoxQuestionVariable"/>
-        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <sqo:hasVariableName>?BoundingBox2</sqo:hasVariableName>
         <sqo:hasMaxLat rdf:resource="http://disk-project.org/resources/climate/variable/MaxLatVariable2"/>
         <sqo:hasMaxLng rdf:resource="http://disk-project.org/resources/climate/variable/MaxLngVariable2"/>
@@ -331,7 +332,6 @@ BIND(CONCAT(?LocationName0, &quot; (&quot;, STR(?lat2), &quot;, &quot;, STR(?lon
 
     <!-- http://disk-project.org/resources/climate/variable/TimeInterval -->
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/variable/TimeInterval">
-        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <rdf:type rdf:resource="https://w3id.org/sqo#TimeIntervalQuestionVariable"/>
         <sqo:hasVariableName>?TimeInterval</sqo:hasVariableName>
         <sqo:hasRepresentation>from ?StartTime to ?StopTime (?TimeType)</sqo:hasRepresentation>
