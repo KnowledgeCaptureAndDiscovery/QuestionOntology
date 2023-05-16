@@ -65,6 +65,7 @@
     <!-- http://disk-project.org/resources/climate/variable/ClimateVariableName -->
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/variable/ClimateVariableName">
         <rdf:type rdf:resource="https://w3id.org/sqo#DynamicOptionsQuestionVariable"/>
+        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <sqo:hasVariableName>?ClimateVariableName</sqo:hasVariableName>
         <sqo:hasOptionsQuery>
 ?ClimateVariable &lt;http://linked.earth/ontology#partOfCompilation&gt; ?Compilation .
@@ -85,6 +86,7 @@ FILTER (REGEX(str(?CompilationName), &quot;Temp12k&quot;) || REGEX(str(?Compilat
     <!-- http://disk-project.org/resources/climate/variable/ClimateVariableName2 -->
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/variable/ClimateVariableName2">
         <rdf:type rdf:resource="https://w3id.org/sqo#DynamicOptionsQuestionVariable"/>
+        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <sqo:hasVariableName>?ClimateVariableName2</sqo:hasVariableName>
         <sqo:hasOptionsQuery>
 ?ClimateVariable2 &lt;http://linked.earth/ontology#partOfCompilation&gt; ?Compilation2 .
@@ -105,6 +107,7 @@ FILTER (REGEX(str(?CompilationName2), &quot;Temp12k&quot;) || REGEX(str(?Compila
     <!-- http://disk-project.org/resources/climate/variable/BoundingBox -->
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/variable/BoundingBox">
         <rdf:type rdf:resource="https://w3id.org/sqo#BoundingBoxQuestionVariable"/>
+        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <sqo:hasVariableName>?BoundingBox</sqo:hasVariableName>
         <sqo:hasMaxLat rdf:resource="http://disk-project.org/resources/climate/variable/MaxLatVariable"/>
         <sqo:hasMaxLng rdf:resource="http://disk-project.org/resources/climate/variable/MaxLngVariable"/>
@@ -151,6 +154,7 @@ filter( !bound(?MinLat) || !bound(?MaxLat) || !bound(?MinLng) || !bound(?MaxLng)
     <!-- http://disk-project.org/resources/climate/variable/MaxLatVariable -->
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/variable/MaxLatVariable">
         <rdf:type rdf:resource="https://w3id.org/sqo#UserInputQuestionVariable"/>
+        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <sqo:hasVariableName>?MaxLat</sqo:hasVariableName>
         <sqo:hasInputDatatype>http://www.w3.org/2001/XMLSchema#double</sqo:hasInputDatatype>
     </owl:NamedIndividual>
@@ -158,6 +162,7 @@ filter( !bound(?MinLat) || !bound(?MaxLat) || !bound(?MinLng) || !bound(?MaxLng)
     <!-- http://disk-project.org/resources/climate/variable/MaxLngVariable -->
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/variable/MaxLngVariable">
         <rdf:type rdf:resource="https://w3id.org/sqo#UserInputQuestionVariable"/>
+        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <sqo:hasVariableName>?MaxLng</sqo:hasVariableName>
         <sqo:hasInputDatatype>http://www.w3.org/2001/XMLSchema#double</sqo:hasInputDatatype>
     </owl:NamedIndividual>
@@ -165,6 +170,7 @@ filter( !bound(?MinLat) || !bound(?MaxLat) || !bound(?MinLng) || !bound(?MaxLng)
     <!-- http://disk-project.org/resources/climate/variable/MinLatVariable -->
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/variable/MinLatVariable">
         <rdf:type rdf:resource="https://w3id.org/sqo#UserInputQuestionVariable"/>
+        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <sqo:hasVariableName>?MinLat</sqo:hasVariableName>
         <sqo:hasInputDatatype>http://www.w3.org/2001/XMLSchema#double</sqo:hasInputDatatype>
     </owl:NamedIndividual>
@@ -172,6 +178,7 @@ filter( !bound(?MinLat) || !bound(?MaxLat) || !bound(?MinLng) || !bound(?MaxLng)
     <!-- http://disk-project.org/resources/climate/variable/MinLngVariable -->
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/variable/MinLngVariable">
         <rdf:type rdf:resource="https://w3id.org/sqo#UserInputQuestionVariable"/>
+        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <sqo:hasVariableName>?MinLng</sqo:hasVariableName>
         <sqo:hasInputDatatype>http://www.w3.org/2001/XMLSchema#double</sqo:hasInputDatatype>
     </owl:NamedIndividual>
@@ -180,6 +187,7 @@ filter( !bound(?MinLat) || !bound(?MaxLat) || !bound(?MinLng) || !bound(?MaxLng)
     <!-- http://disk-project.org/resources/climate/variable/BoundingBox2 -->
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/variable/BoundingBox2">
         <rdf:type rdf:resource="https://w3id.org/sqo#BoundingBoxQuestionVariable"/>
+        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <sqo:hasVariableName>?BoundingBox2</sqo:hasVariableName>
         <sqo:hasMaxLat rdf:resource="http://disk-project.org/resources/climate/variable/MaxLatVariable2"/>
         <sqo:hasMaxLng rdf:resource="http://disk-project.org/resources/climate/variable/MaxLngVariable2"/>
@@ -226,6 +234,7 @@ filter( !bound(?MinLat2) || !bound(?MaxLat2) || !bound(?MinLng2) || !bound(?MaxL
     <!-- http://disk-project.org/resources/climate/variable/MaxLatVariable -->
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/variable/MaxLatVariable2">
         <rdf:type rdf:resource="https://w3id.org/sqo#UserInputQuestionVariable"/>
+        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <sqo:hasVariableName>?MaxLat2</sqo:hasVariableName>
         <sqo:hasInputDatatype>http://www.w3.org/2001/XMLSchema#double</sqo:hasInputDatatype>
     </owl:NamedIndividual>
@@ -233,6 +242,7 @@ filter( !bound(?MinLat2) || !bound(?MaxLat2) || !bound(?MinLng2) || !bound(?MaxL
     <!-- http://disk-project.org/resources/climate/variable/MaxLngVariable -->
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/variable/MaxLngVariable2">
         <rdf:type rdf:resource="https://w3id.org/sqo#UserInputQuestionVariable"/>
+        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <sqo:hasVariableName>?MaxLng2</sqo:hasVariableName>
         <sqo:hasInputDatatype>http://www.w3.org/2001/XMLSchema#double</sqo:hasInputDatatype>
     </owl:NamedIndividual>
@@ -240,6 +250,7 @@ filter( !bound(?MinLat2) || !bound(?MaxLat2) || !bound(?MinLng2) || !bound(?MaxL
     <!-- http://disk-project.org/resources/climate/variable/MinLatVariable -->
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/variable/MinLatVariable2">
         <rdf:type rdf:resource="https://w3id.org/sqo#UserInputQuestionVariable"/>
+        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <sqo:hasVariableName>?MinLat2</sqo:hasVariableName>
         <sqo:hasInputDatatype>http://www.w3.org/2001/XMLSchema#double</sqo:hasInputDatatype>
     </owl:NamedIndividual>
@@ -247,6 +258,7 @@ filter( !bound(?MinLat2) || !bound(?MaxLat2) || !bound(?MinLng2) || !bound(?MaxL
     <!-- http://disk-project.org/resources/climate/variable/MinLngVariable -->
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/variable/MinLngVariable2">
         <rdf:type rdf:resource="https://w3id.org/sqo#UserInputQuestionVariable"/>
+        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <sqo:hasVariableName>?MinLng2</sqo:hasVariableName>
         <sqo:hasInputDatatype>http://www.w3.org/2001/XMLSchema#double</sqo:hasInputDatatype>
     </owl:NamedIndividual>
@@ -254,6 +266,7 @@ filter( !bound(?MinLat2) || !bound(?MaxLat2) || !bound(?MinLng2) || !bound(?MaxL
     <!-- http://disk-project.org/resources/climate/variable/Dataset -->
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/variable/Dataset">
         <rdf:type rdf:resource="https://w3id.org/sqo#DynamicOptionsQuestionVariable"/>
+        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <sqo:hasVariableName>?Dataset</sqo:hasVariableName>
         <sqo:hasOptionsQuery>
 ?Dataset a &lt;http://linked.earth/ontology#Dataset&gt; .
@@ -271,6 +284,7 @@ filter( !bound(?MinLat2) || !bound(?MaxLat2) || !bound(?MinLng2) || !bound(?MaxL
     <!-- http://disk-project.org/resources/climate/variable/Dataset2 -->
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/variable/Dataset2">
         <rdf:type rdf:resource="https://w3id.org/sqo#DynamicOptionsQuestionVariable"/>
+        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <sqo:hasVariableName>?Dataset2</sqo:hasVariableName>
         <sqo:hasOptionsQuery>
 ?Dataset2 a &lt;http://linked.earth/ontology#Dataset&gt; .
@@ -288,6 +302,7 @@ filter( !bound(?MinLat2) || !bound(?MaxLat2) || !bound(?MinLng2) || !bound(?MaxL
     <!-- http://disk-project.org/resources/climate/variable/Site -->
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/variable/Site">
         <rdf:type rdf:resource="https://w3id.org/sqo#DynamicOptionsQuestionVariable"/>
+        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <sqo:hasVariableName>?Site</sqo:hasVariableName>
         <sqo:hasOptionsQuery>
 ?Site a &lt;http://linked.earth/ontology#Location&gt; .
@@ -308,6 +323,7 @@ BIND(CONCAT(?LocationName, &quot; (&quot;, STR(?lat), &quot;, &quot;, STR(?long)
     <!-- http://disk-project.org/resources/climate/variable/Site2 -->
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/variable/Site2">
         <rdf:type rdf:resource="https://w3id.org/sqo#DynamicOptionsQuestionVariable"/>
+        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <sqo:hasVariableName>?Site2</sqo:hasVariableName>
         <sqo:hasOptionsQuery>
 ?Site2 a &lt;http://linked.earth/ontology#Location&gt; .
@@ -328,6 +344,7 @@ BIND(CONCAT(?LocationName0, &quot; (&quot;, STR(?lat2), &quot;, &quot;, STR(?lon
     <!-- http://disk-project.org/resources/climate/variable/TimeInterval -->
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/variable/TimeInterval">
         <rdf:type rdf:resource="https://w3id.org/sqo#TimeIntervalQuestionVariable"/>
+        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <sqo:hasVariableName>?TimeInterval</sqo:hasVariableName>
         <sqo:hasRepresentation>from ?StartTime to ?StopTime (?TimeType)</sqo:hasRepresentation>
         <sqo:hasStartTime rdf:resource="http://disk-project.org/resources/climate/variable/StartTimeVariable"/>
@@ -371,6 +388,7 @@ FILTER (
     <!-- http://disk-project.org/resources/climate/variable/StartTimeVariable -->
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/variable/StartTimeVariable">
         <rdf:type rdf:resource="https://w3id.org/sqo#UserInputQuestionVariable"/>
+        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <sqo:hasVariableName>?StartTime</sqo:hasVariableName>
         <sqo:hasInputDatatype>http://www.w3.org/2001/XMLSchema#integer</sqo:hasInputDatatype>
     </owl:NamedIndividual>
@@ -378,6 +396,7 @@ FILTER (
     <!-- http://disk-project.org/resources/climate/variable/EndTimeVariable -->
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/variable/EndTimeVariable">
         <rdf:type rdf:resource="https://w3id.org/sqo#UserInputQuestionVariable"/>
+        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <sqo:hasVariableName>?EndTime</sqo:hasVariableName>
         <sqo:hasInputDatatype>http://www.w3.org/2001/XMLSchema#integer</sqo:hasInputDatatype>
     </owl:NamedIndividual>
@@ -385,6 +404,7 @@ FILTER (
     <!-- http://disk-project.org/resources/climate/variable/TimeTypeVariable -->
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/variable/TimeTypeVariable">
         <rdf:type rdf:resource="https://w3id.org/sqo#StaticOptionsQuestionVariable"/>
+        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <sqo:hasVariableName>?TimeType</sqo:hasVariableName>
         <sqo:hasOption rdf:resource="http://disk-project.org/resources/climate/option/CETime"/>
         <sqo:hasOption rdf:resource="http://disk-project.org/resources/climate/option/BPTime"/>
@@ -393,6 +413,7 @@ FILTER (
     <!-- http://disk-project.org/resources/climate/option/CETime -->
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/option/CETime">
         <rdf:type rdf:resource="https://w3id.org/sqo#VariableOption"/>
+        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <sqo:hasLabel>CE</sqo:hasLabel>
         <sqo:hasValue>year</sqo:hasValue>
     </owl:NamedIndividual>
@@ -400,6 +421,7 @@ FILTER (
     <!-- http://disk-project.org/resources/climate/option/BPTime -->
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/option/BPTime">
         <rdf:type rdf:resource="https://w3id.org/sqo#VariableOption"/>
+        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <sqo:hasLabel>cal yr BP</sqo:hasLabel>
         <sqo:hasValue>age</sqo:hasValue>
         <sqo:hasComment>0 = 1950CE</sqo:hasComment>
