@@ -68,12 +68,16 @@
         <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <sqo:hasVariableName>?ClimateVariableName</sqo:hasVariableName>
         <sqo:hasOptionsQuery>
-?ClimateVariable &lt;http://linked.earth/ontology#partOfCompilation&gt; ?Compilation .
-?Compilation &lt;http://linked.earth/ontology#name&gt; ?CompilationName .
+?ClimateVariable &lt;http://linked.earth/ontology#hasVariableID&gt; ?ClVarId .
 ?ClimateVariable &lt;http://linked.earth/ontology#name&gt; ?ClimateVariableName .
 FILTER (!REGEX(str(?ClimateVariableName), &quot;year&quot;) &amp;&amp; !REGEX(str(?ClimateVariableName), &quot;age&quot;))
-FILTER (REGEX(str(?CompilationName), &quot;Temp12k&quot;) || REGEX(str(?CompilationName), &quot;Pages2kTemperature&quot;)
-        || REGEX(str(?CompilationName), &quot;iso2k&quot;)|| REGEX(str(?CompilationName) , &quot;wNAm&quot;))
+optional {
+  ?ClimateVariable &lt;http://linked.earth/ontology#partOfCompilation&gt; ?Compilation .
+  ?Compilation &lt;http://linked.earth/ontology#name&gt; ?CompilationName .
+}
+FILTER (!bound(?CompilationName) || REGEX(str(?CompilationName), &quot;Temp12k&quot;) 
+  || REGEX(str(?CompilationName), &quot;Pages2kTemperature&quot;)
+  || REGEX(str(?CompilationName), &quot;iso2k&quot;)|| REGEX(str(?CompilationName) , &quot;wNAm&quot;))
         </sqo:hasOptionsQuery>
         <sqo:hasPatternFragment rdf:parseType="Collection">
             <rdf:Statement>
@@ -89,12 +93,16 @@ FILTER (REGEX(str(?CompilationName), &quot;Temp12k&quot;) || REGEX(str(?Compilat
         <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <sqo:hasVariableName>?ClimateVariableName2</sqo:hasVariableName>
         <sqo:hasOptionsQuery>
-?ClimateVariable2 &lt;http://linked.earth/ontology#partOfCompilation&gt; ?Compilation2 .
-?Compilation2 &lt;http://linked.earth/ontology#name&gt; ?CompilationName2 .
+?ClimateVariable2 &lt;http://linked.earth/ontology#hasVariableID&gt; ?ClVarId2 .
 ?ClimateVariable2 &lt;http://linked.earth/ontology#name&gt; ?ClimateVariableName2 .
 FILTER (!REGEX(str(?ClimateVariableName2), &quot;year&quot;) &amp;&amp; !REGEX(str(?ClimateVariableName2), &quot;age&quot;))
-FILTER (REGEX(str(?CompilationName2), &quot;Temp12k&quot;) || REGEX(str(?CompilationName2), &quot;Pages2kTemperature&quot;)
-        || REGEX(str(?CompilationName2), &quot;iso2k&quot;)|| REGEX(str(?CompilationName2) , &quot;wNAm&quot;))
+optional {
+  ?ClimateVariable2 &lt;http://linked.earth/ontology#partOfCompilation&gt; ?Compilation2 .
+  ?Compilation2 &lt;http://linked.earth/ontology#name&gt; ?CompilationName2 .
+}
+FILTER (!bound(?CompilationName2) || REGEX(str(?CompilationName2), &quot;Temp12k&quot;) 
+  || REGEX(str(?CompilationName2), &quot;Pages2kTemperature&quot;)
+  || REGEX(str(?CompilationName2), &quot;iso2k&quot;)|| REGEX(str(?CompilationName2) , &quot;wNAm&quot;))
         </sqo:hasOptionsQuery>
         <sqo:hasPatternFragment rdf:parseType="Collection">
             <rdf:Statement>
