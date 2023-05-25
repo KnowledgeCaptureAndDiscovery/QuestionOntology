@@ -161,6 +161,14 @@
                 rdfs:label "Has explanation" .
 
 
+###  https://w3id.org/sqo#hasGoalName
+:hasGoalName rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Question ;
+             rdfs:range xsd:string ;
+             rdfs:comment "Name of the goal of this question. Will be used as variable name for the results." ;
+             rdfs:label "Has goal name" .
+
+
 ###  https://w3id.org/sqo#hasInputDatatype
 :hasInputDatatype rdf:type owl:DatatypeProperty ;
                   rdfs:domain :UserInputQuestionVariable ;

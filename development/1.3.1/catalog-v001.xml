@@ -2,6 +2,6 @@
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
     <uri id="User Entered Import Resolution" name="https://w3id.org/sqo" uri="file:/Users/hvargas/ISI/QuestionOntology/development/QuestionOntology.owl"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1684256353173" name="http://disk-project.org/resources/climate/" uri="ClimateQuestions.xml"/>
+        <uri id="Automatically generated entry, Timestamp=1684868674817" name="http://disk-project.org/resources/climate/" uri="ClimateQuestions.xml"/>
     </group>
 </catalog>

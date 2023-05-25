@@ -82,7 +82,6 @@
 <https://w3id.org/sqo#hasPatternFragment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/sqo#hasPatternFragment> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/sqo#QuestionVariable> .
 <https://w3id.org/sqo#hasPatternFragment> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement> .
-<http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/sqo#hasPatternFragment> <http://www.w3.org/2000/01/rdf-schema#comment> "Fragment of a pattern that this variable add to a question" .
 <https://w3id.org/sqo#hasPatternFragment> <http://www.w3.org/2000/01/rdf-schema#label> "Has pattern fragment" .
 # 
@@ -148,6 +147,13 @@
 <https://w3id.org/sqo#hasExplanation> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
 <https://w3id.org/sqo#hasExplanation> <http://www.w3.org/2000/01/rdf-schema#comment> "Explanation of this question variable." .
 <https://w3id.org/sqo#hasExplanation> <http://www.w3.org/2000/01/rdf-schema#label> "Has explanation" .
+# 
+# https://w3id.org/sqo#hasGoalName
+<https://w3id.org/sqo#hasGoalName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/sqo#hasGoalName> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/sqo#Question> .
+<https://w3id.org/sqo#hasGoalName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/sqo#hasGoalName> <http://www.w3.org/2000/01/rdf-schema#comment> "Name of the goal of this question. Will be used as variable name for the results." .
+<https://w3id.org/sqo#hasGoalName> <http://www.w3.org/2000/01/rdf-schema#label> "Has goal name" .
 # 
 # https://w3id.org/sqo#hasInputDatatype
 <https://w3id.org/sqo#hasInputDatatype> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
@@ -220,6 +226,7 @@
 # 
 # 
 # http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
 # https://w3id.org/sqo#BoundingBoxQuestionVariable
 <https://w3id.org/sqo#BoundingBoxQuestionVariable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .

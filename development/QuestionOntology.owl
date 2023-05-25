@@ -131,6 +131,17 @@
     
 
 
+    <!-- https://w3id.org/sqo#hasPatternFragment -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/sqo#hasPatternFragment">
+        <rdfs:domain rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
+        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
+        <rdfs:comment>Fragment of a pattern that this variable add to a question</rdfs:comment>
+        <rdfs:label>Has pattern fragment</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/sqo#hasQuestionCategory -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/sqo#hasQuestionCategory">
@@ -138,6 +149,17 @@
         <rdfs:range rdf:resource="https://w3id.org/sqo#QuestionCategory"/>
         <rdfs:comment>Link a Question with the category it belong</rdfs:comment>
         <rdfs:label>Has question category</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/sqo#hasQuestionPattern -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/sqo#hasQuestionPattern">
+        <rdfs:domain rdf:resource="https://w3id.org/sqo#Question"/>
+        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
+        <rdfs:comment>SPARQL-like pattern that defines the semantic representation that this question will have. All variables used on the question template will be replaced for the user selected values.</rdfs:comment>
+        <rdfs:label>Has question pattern</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -206,6 +228,17 @@
     
 
 
+    <!-- https://w3id.org/sqo#hasGoalName -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/sqo#hasGoalName">
+        <rdfs:domain rdf:resource="https://w3id.org/sqo#Question"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Name of the goal of this question. Will be used as variable name for the results.</rdfs:comment>
+        <rdfs:label>Has goal name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/sqo#hasExplanation -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/sqo#hasExplanation">
@@ -245,28 +278,6 @@
         <rdfs:comment>An SPARQL query that will determine the options for this variable</rdfs:comment>
         <rdfs:label>Has options query</rdfs:label>
     </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/sqo#hasPatternFragment -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/sqo#hasPatternFragment">
-        <rdfs:domain rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
-        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
-        <rdfs:comment>Fragment of a pattern that this variable add to a question</rdfs:comment>
-        <rdfs:label>Has pattern fragment</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/sqo#hasQuestionPattern -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/sqo#hasQuestionPattern">
-        <rdfs:domain rdf:resource="https://w3id.org/sqo#Question"/>
-        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
-        <rdfs:comment>SPARQL-like pattern that defines the semantic representation that this question will have. All variables used on the question template will be replaced for the user selected values.</rdfs:comment>
-        <rdfs:label>Has question pattern</rdfs:label>
-    </owl:ObjectProperty>
     
 
 
@@ -346,6 +357,12 @@ As default the cardinality is 1.</rdfs:comment>
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement -->
+
+    <owl:Class rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
     
 
 
