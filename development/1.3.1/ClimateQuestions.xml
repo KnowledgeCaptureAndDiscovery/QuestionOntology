@@ -1854,6 +1854,40 @@ FILTER (?ClimateVariable != ?ClimateVariable2)
     </owl:NamedIndividual>
 
 
+    <!-- http://disk-project.org/resources/climate/variable/BoundingBox -->
+    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/variable/Compilation">
+        <rdf:type rdf:resource="https://w3id.org/sqo#DynamicOptionsQuestionVariable"/>
+        <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
+        <sqo:hasVariableName>?Compilation</sqo:hasVariableName>
+        <sqo:hasOptionsQuery>
+?c a &lt;http://linked.earth/ontology#Compilation&gt; .
+?c &lt;http://linked.earth/ontology#name&gt; ?compilation.
+        </sqo:hasOptionsQuery>
+        <sqo:hasPatternFragment rdf:parseType="Collection">
+            <rdf:Statement>
+                <rdf:predicate rdf:resource="http://disk-project.org/ontology/hypothesis#fromDataset"/>
+                <rdf:object rdf:resource="http://disk-project.org/resources/climate/variable/Compilation"/>
+            </rdf:Statement>
+        </sqo:hasPatternFragment>
+    </owl:NamedIndividual>
+
+
+    <!-- http://disk-project.org/resources/climate/question/CoherenceSiteTime -->
+    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/question/HockeyStick">
+        <rdf:type rdf:resource="https://w3id.org/sqo#Question"/>
+        <rdfs:label>Create a temperature composite using datasets from ?Compilation over the Common Era</rdfs:label>
+        <sqo:hasQuestionTemplate>Create a temperature composite using datasets from ?Compilation over the Common Era</sqo:hasQuestionTemplate>
+        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/climate/variable/Compilation"/>
+        <sqo:hasQuestionPattern rdf:parseType="Collection">
+            <rdf:Statement>
+                <rdf:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#type"/>
+                <rdf:object rdf:resource="http://disk-project.org/ontology/hypothesis#CoherenceHypothesis"/>
+            </rdf:Statement>
+        </sqo:hasQuestionPattern>
+    </owl:NamedIndividual>
+
+
+
 </rdf:RDF>
 
 
