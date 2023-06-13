@@ -1861,7 +1861,7 @@ FILTER (?ClimateVariable != ?ClimateVariable2)
         <sqo:hasVariableName>?Compilation</sqo:hasVariableName>
         <sqo:hasOptionsQuery>
 ?c a &lt;http://linked.earth/ontology#Compilation&gt; .
-?c &lt;http://linked.earth/ontology#name&gt; ?compilation.
+?c &lt;http://linked.earth/ontology#name&gt; ?Compilation.
         </sqo:hasOptionsQuery>
         <sqo:hasPatternFragment rdf:parseType="Collection">
             <rdf:Statement>
