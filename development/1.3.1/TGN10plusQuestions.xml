@@ -57,7 +57,7 @@
         <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <sqo:hasVariableName>?BehavioralVariable</sqo:hasVariableName>
         <sqo:hasOptionsQuery>
-?BehavioralVariable a &lt;http://www.w3id.org/TGN10Plus#Behavioral&gt;
+?BehavioralVariable a &lt;http://www.w3id.org/TGN10Plus#Behavioral&gt; .
         </sqo:hasOptionsQuery>
         <sqo:hasPatternFragment rdf:parseType="Collection">
             <rdf:Statement>
@@ -76,7 +76,7 @@
         <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <sqo:hasVariableName>?DemographicVariable</sqo:hasVariableName>
         <sqo:hasOptionsQuery>
-?DemographicVariable a &lt;http://www.w3id.org/TGN10Plus#Demographic&gt;
+?DemographicVariable a &lt;http://www.w3id.org/TGN10Plus#Demographic&gt; .
         </sqo:hasOptionsQuery>
         <sqo:hasPatternFragment rdf:parseType="Collection">
             <rdf:Statement>
@@ -95,7 +95,7 @@
         <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <sqo:hasVariableName>?Group1</sqo:hasVariableName>
         <sqo:hasOptionsQuery>
-?Group1 a &lt;http://www.w3id.org/TGN10Plus#Group&gt;
+?Group1 a &lt;http://www.w3id.org/TGN10Plus#Group&gt; .
         </sqo:hasOptionsQuery>
         <sqo:hasPatternFragment rdf:parseType="Collection">
             <rdf:Statement>
@@ -114,7 +114,7 @@
         <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <sqo:hasVariableName>?Group2</sqo:hasVariableName>
         <sqo:hasOptionsQuery>
-?Group2 a &lt;http://www.w3id.org/TGN10Plus#Group&gt;
+?Group2 a &lt;http://www.w3id.org/TGN10Plus#Group&gt; .
         </sqo:hasOptionsQuery>
         <sqo:hasPatternFragment rdf:parseType="Collection">
             <rdf:Statement>
