@@ -25,6 +25,15 @@
     <!-- http://www.w3id.org/TGN10Plus/resources/QT-1 -->
     <owl:NamedIndividual rdf:about="http://www.w3id.org/TGN10Plus/resources/QT-1">
         <rdf:type rdf:resource="https://w3id.org/sqo#Question"/>
+        <rdfs:label>What are differences in primarily day shift nurses and primarily night shift nurses for ?DemographicVariable?</rdfs:label>
+        <sqo:hasQuestionTemplate>What are differences in primarily day shift nurses and primarily night shift nurses for ?DemographicVariable</sqo:hasQuestionTemplate>
+        <sqo:hasQuestionVariable rdf:resource="http://www.w3id.org/TGN10Plus/resources/DemographicVariable"/>
+    </owl:NamedIndividual>
+
+
+    <!-- http://www.w3id.org/TGN10Plus/resources/QT-1 -->
+    <owl:NamedIndividual rdf:about="http://www.w3id.org/TGN10Plus/resources/QT-1">
+        <rdf:type rdf:resource="https://w3id.org/sqo#Question"/>
         <rdfs:label>What are differences in primarily ?Group1 nurses and primarily ?Group2 nurses for ?DemographicVariable?</rdfs:label>
         <sqo:hasQuestionTemplate>What are differences in primarily ?Group1 nurses and primarily ?Group2 nurses for ?DemographicVariable</sqo:hasQuestionTemplate>
         <sqo:hasQuestionVariable rdf:resource="http://www.w3id.org/TGN10Plus/resources/DemographicVariable"/>
