@@ -448,6 +448,28 @@ Is expanded to minLat, maxLat, minLng, maxLng</rdfs:comment>
     
 
 
+    <!-- https://w3id.org/sqo#Conjunction -->
+
+
+    <owl:Class rdf:about="https://w3id.org/sqo#Conjunction">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
+        <rdfs:comment>If this variable has multiple values they are added together using the AND logical operator</rdfs:comment>
+        <rdfs:label>Conjuctive Question Variable</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/sqo#Disjunction -->
+
+
+    <owl:Class rdf:about="https://w3id.org/sqo#Disjunction">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
+        <rdfs:comment>If this variable has multiple values they are added together using the OR logical operator</rdfs:comment>
+        <rdfs:label>Disjuntive Question Variable</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/sqo#DynamicOptionsQuestionVariable -->
 
 

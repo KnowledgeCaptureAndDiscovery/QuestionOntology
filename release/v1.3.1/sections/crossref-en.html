@@ -7,6 +7,12 @@ This section provides details for each class and property defined by The Scienti
          <a href="#BoundingBoxQuestionVariable" title="https://w3id.org/sqo#BoundingBoxQuestionVariable">Bounding Box Question Variable</a>
       </li>
       <li>
+         <a href="#Conjunction" title="https://w3id.org/sqo#Conjunction">Conjuctive Question Variable</a>
+      </li>
+      <li>
+         <a href="#Disjunction" title="https://w3id.org/sqo#Disjunction">Disjuntive Question Variable</a>
+      </li>
+      <li>
          <a href="#DynamicOptionsQuestionVariable"
             title="https://w3id.org/sqo#DynamicOptionsQuestionVariable">Dynamic Options Question Variable</a>
       </li>
@@ -59,6 +65,42 @@ Is expanded to minLat, maxLat, minLng, maxLng</span>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasMinLat" title="https://w3id.org/sqo#hasMinLat">Has minimum latitude</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasMinLng" title="https://w3id.org/sqo#hasMinLng">Has minimum longitude</a>
             <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Conjunction">
+      <h3>Conjuctive Question Variable<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/sqo#Conjunction</p>
+      <div class="comment">
+         <span class="markdown">If this variable has multiple values they are added together using the AND logical operator</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#QuestionVariable" title="https://w3id.org/sqo#QuestionVariable">Question Variable</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Disjunction">
+      <h3>Disjuntive Question Variable<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/sqo#Disjunction</p>
+      <div class="comment">
+         <span class="markdown">If this variable has multiple values they are added together using the OR logical operator</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#QuestionVariable" title="https://w3id.org/sqo#QuestionVariable">Question Variable</a>
+            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -146,7 +188,9 @@ Is expanded to minLat, maxLat, minLng, maxLng</span>
       <dl class="description">
          <dt>has sub-classes</dt>
          <dd>
-            <a href="#DynamicOptionsQuestionVariable"
+            <a href="#Conjunction" title="https://w3id.org/sqo#Conjunction">Conjuctive Question Variable</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Disjunction" title="https://w3id.org/sqo#Disjunction">Disjuntive Question Variable</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#DynamicOptionsQuestionVariable"
                title="https://w3id.org/sqo#DynamicOptionsQuestionVariable">Dynamic Options Question Variable</a>
             <sup class="type-c" title="class">c</sup>, <a href="#StaticOptionsQuestionVariable"
                title="https://w3id.org/sqo#StaticOptionsQuestionVariable">Static Options Question Variable</a>

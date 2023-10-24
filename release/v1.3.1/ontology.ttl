@@ -279,6 +279,20 @@ Is expanded to minLat, maxLat, minLng, maxLng""" ;
                              rdfs:label "Bounding Box Question Variable" .
 
 
+###  https://w3id.org/sqo#Conjunction
+:Conjunction rdf:type owl:Class ;
+             rdfs:subClassOf :QuestionVariable ;
+             rdfs:comment "If this variable has multiple values they are added together using the AND logical operator" ;
+             rdfs:label "Conjuctive Question Variable" .
+
+
+###  https://w3id.org/sqo#Disjunction
+:Disjunction rdf:type owl:Class ;
+             rdfs:subClassOf :QuestionVariable ;
+             rdfs:comment "If this variable has multiple values they are added together using the OR logical operator" ;
+             rdfs:label "Disjuntive Question Variable" .
+
+
 ###  https://w3id.org/sqo#DynamicOptionsQuestionVariable
 :DynamicOptionsQuestionVariable rdf:type owl:Class ;
                                 rdfs:subClassOf :QuestionVariable ;
