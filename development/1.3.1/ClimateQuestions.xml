@@ -1858,6 +1858,7 @@ FILTER (?ClimateVariable != ?ClimateVariable2)
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/climate/variable/Compilation">
         <rdf:type rdf:resource="https://w3id.org/sqo#DynamicOptionsQuestionVariable"/>
         <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
+        <rdf:type rdf:resource="https://w3id.org/sqo#Conjunction"/>
         <sqo:hasVariableName>?Compilation</sqo:hasVariableName>
         <sqo:hasOptionsQuery>
 ?c a &lt;http://linked.earth/ontology#Compilation&gt; .
@@ -1869,6 +1870,8 @@ FILTER (?ClimateVariable != ?ClimateVariable2)
                 <rdf:object rdf:resource="http://disk-project.org/resources/climate/variable/Compilation"/>
             </rdf:Statement>
         </sqo:hasPatternFragment>
+        <sqo:minCardinality>1</sqo:minCardinality>
+        <sqo:maxCardinality>0</sqo:maxCardinality>
     </owl:NamedIndividual>
 
 
