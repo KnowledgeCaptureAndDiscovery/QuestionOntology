@@ -165,19 +165,19 @@ BIND(REPLACE(REPLACE(REPLACE(REPLACE(?OrDemographicAttributeLabel,&quot;leSe&quo
     
 
 
-    <!-- http://disk-project.org/resources/enigma/variable/ethnicGroup -->
+    <!-- http://disk-project.org/resources/enigma/variable/GeneticGroup -->
 
-    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/enigma/variable/ethnicGroup">
+    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/enigma/variable/GeneticGroup">
         <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <rdf:type rdf:resource="https://w3id.org/sqo#DynamicOptionsQuestionVariable"/>
         <sqo:hasOptionsQuery>
-?Cohorts &lt;http://localhost:8080/enigma_dev/Special:URIResolver/Property-3AHasEthnicGroup_-28E-29&gt; ?EthnicGroup .
+?Cohorts &lt;http://localhost:8080/enigma_dev/Special:URIResolver/Property-3AHasEthnicGroup_-28E-29&gt; ?GeneticGroup .
         </sqo:hasOptionsQuery>
-        <sqo:hasVariableName>?EthnicGroup</sqo:hasVariableName>
+        <sqo:hasVariableName>?GeneticGroup</sqo:hasVariableName>
         <sqo:hasPatternFragment rdf:parseType="Collection">
             <rdf:Statement>
                 <rdf:predicate rdf:resource="https://w3id.org/disk/ontology/enigma_hypothesis#collectedFrom"/>
-                <rdf:object rdf:resource="http://disk-project.org/resources/enigma/variable/ethnicGroup"/>
+                <rdf:object rdf:resource="http://disk-project.org/resources/enigma/variable/GeneticGroup"/>
             </rdf:Statement>
         </sqo:hasPatternFragment>
     </owl:NamedIndividual>
@@ -244,7 +244,7 @@ BIND(STR(?Genotype) as ?GenotypeLabel)
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/enigma/variable/brainImagingTrait"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/enigma/variable/brainRegion"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/enigma/variable/demographicAttribute"/>
-        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/enigma/variable/ethnicGroup"/>
+        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/enigma/variable/GeneticGroup"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/enigma/variable/genotype"/>
         <sqo:hasConstraintQuery>
 ?Cohorts a &lt;http://localhost:8080/enigma_dev/Special:URIResolver/Category-3ACohort_-28E-29&gt; .
@@ -252,8 +252,8 @@ BIND(STR(?Genotype) as ?GenotypeLabel)
 ?CohortProjects &lt;http://localhost:8080/enigma_dev/Special:URIResolver/Property-3AHasProjectResults_-28E-29&gt; ?ProjectResults .
 ?ProjectResults &lt;http://localhost:8080/enigma_dev/Special:URIResolver/Property-3AHasContentUrl_-28E-29&gt; ?CohortData .
         </sqo:hasConstraintQuery>
-        <sqo:hasQuestionTemplate>Is the effect size of ?Genotype on ?BrainImagingTrait of ?Region associated with ?DemographicAttribute for cohorts of ?EthnicGroup ancestry</sqo:hasQuestionTemplate>
-        <rdfs:label>Is the effect size of ?Genotype on ?Brain Imaging Trait of ?Region associated with ?Demographic Attribute for cohorts of ?Ethnic ancestry?</rdfs:label>
+        <sqo:hasQuestionTemplate>Is the effect size of ?Genotype on ?BrainImagingTrait of ?Region associated with ?DemographicAttribute for cohorts of ?GeneticGroup ancestry</sqo:hasQuestionTemplate>
+        <rdfs:label>Is the effect size of ?Genotype on ?Brain Imaging Trait of ?Region associated with ?Demographic Attribute for cohorts of ?Genetic ancestry?</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -264,7 +264,7 @@ BIND(STR(?Genotype) as ?GenotypeLabel)
         <rdf:type rdf:resource="https://w3id.org/sqo#Question"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/enigma/variable/brainImagingTrait"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/enigma/variable/brainRegion"/>
-        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/enigma/variable/ethnicGroup"/>
+        <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/enigma/variable/GeneticGroup"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/enigma/variable/genotype"/>
         <sqo:hasConstraintQuery>
 ?Cohorts a &lt;http://localhost:8080/enigma_dev/Special:URIResolver/Category-3ACohort_-28E-29&gt; .
@@ -272,8 +272,8 @@ BIND(STR(?Genotype) as ?GenotypeLabel)
 ?CohortProjects &lt;http://localhost:8080/enigma_dev/Special:URIResolver/Property-3AHasProjectResults_-28E-29&gt; ?ProjectResults .
 ?ProjectResults &lt;http://localhost:8080/enigma_dev/Special:URIResolver/Property-3AHasContentUrl_-28E-29&gt; ?CohortData .
         </sqo:hasConstraintQuery>
-        <sqo:hasQuestionTemplate>What is the Effect Size of ?Genotype on ?Region ?BrainImagingTrait for cohorts of ?EthnicGroup ancestry</sqo:hasQuestionTemplate>
-        <rdfs:label>What is the effect size of ?Genotype on ?Region ?Brain Imaging Trait for cohorts of ?Ethnic ancestry?</rdfs:label>
+        <sqo:hasQuestionTemplate>What is the Effect Size of ?Genotype on ?Region ?BrainImagingTrait for cohorts of ?GeneticGroup ancestry</sqo:hasQuestionTemplate>
+        <rdfs:label>What is the effect size of ?Genotype on ?Region ?Brain Imaging Trait for cohorts of ?Genetic ancestry?</rdfs:label>
     </owl:NamedIndividual>
 </rdf:RDF>
 
