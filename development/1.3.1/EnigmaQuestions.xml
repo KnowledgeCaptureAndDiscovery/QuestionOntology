@@ -146,7 +146,7 @@ BIND(REPLACE(REPLACE(REPLACE(REPLACE(?Region,&quot;AvgTH&quot;,&quot;Average Thi
 ?Cohorts &lt;http://localhost:8080/enigma_dev/Special:URIResolver/Property-3AHasCohortProject_-28E-29&gt; ?CohortProjects .
 ?CohortProjects ?DemographicAttribute [] .
   VALUES ?DemographicAttribute {
-    &lt;http://localhost:8080/enigma_dev/Special:URIResolver/Property-3AHasAge_Mean_-28E-29&gt;
+    &lt;https://w3id.org/enigma#hasAge_Mean&gt;
     &lt;http://localhost:8080/enigma_dev/Special:URIResolver/Property-3AHasNumberOfFemaleSex_-28E-29&gt;
     &lt;http://localhost:8080/enigma_dev/Special:URIResolver/Property-3AHasNumberOfMaleSex_-28E-29&gt;
     &lt;http://localhost:8080/enigma_dev/Special:URIResolver/Property-3AHasNumberOfParticipants_-28E-29&gt;
@@ -249,7 +249,7 @@ BIND(STR(?Genotype) as ?GenotypeLabel)
         <sqo:hasConstraintQuery>
 ?Cohorts a &lt;http://localhost:8080/enigma_dev/Special:URIResolver/Category-3ACohort_-28E-29&gt; .
 ?Cohorts &lt;http://localhost:8080/enigma_dev/Special:URIResolver/Property-3AHasCohortProject_-28E-29&gt; ?CohortProjects .
-?CohortProjects &lt;http://localhost:8080/enigma_dev/Special:URIResolver/Property-3AHasProjectResults_-28E-29&gt; ?ProjectResults .
+?CohortProjects &lt;https://w3id.org/enigma#hasProjectResults&gt; ?ProjectResults .
 ?ProjectResults &lt;http://localhost:8080/enigma_dev/Special:URIResolver/Property-3AHasContentUrl_-28E-29&gt; ?CohortData .
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionTemplate>Is the effect size of ?Genotype on ?BrainImagingTrait of ?Region associated with ?DemographicAttribute for cohorts of ?GeneticGroup ancestry</sqo:hasQuestionTemplate>
@@ -269,7 +269,7 @@ BIND(STR(?Genotype) as ?GenotypeLabel)
         <sqo:hasConstraintQuery>
 ?Cohorts a &lt;http://localhost:8080/enigma_dev/Special:URIResolver/Category-3ACohort_-28E-29&gt; .
 ?Cohorts &lt;http://localhost:8080/enigma_dev/Special:URIResolver/Property-3AHasCohortProject_-28E-29&gt; ?CohortProjects .
-?CohortProjects &lt;http://localhost:8080/enigma_dev/Special:URIResolver/Property-3AHasProjectResults_-28E-29&gt; ?ProjectResults .
+?CohortProjects &lt;https://w3id.org/enigma#hasProjectResults&gt; ?ProjectResults .
 ?ProjectResults &lt;http://localhost:8080/enigma_dev/Special:URIResolver/Property-3AHasContentUrl_-28E-29&gt; ?CohortData .
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionTemplate>What is the Effect Size of ?Genotype on ?Region ?BrainImagingTrait for cohorts of ?GeneticGroup ancestry</sqo:hasQuestionTemplate>
