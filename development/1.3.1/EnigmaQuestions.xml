@@ -177,7 +177,7 @@ BIND(REPLACE(REPLACE(REPLACE(REPLACE(?OrDemographicAttributeLabel,&quot;leSe&quo
     <!-- http://disk-project.org/resources/enigma/option/CriterionCohortGroup -->
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/enigma/option/CriterionCohortGroup">
         <rdf:type rdf:resource="https://w3id.org/sqo#VariableOption"/>
-        <sqo:hasLabel>Genetic Group</sqo:hasLabel>
+        <sqo:hasLabel>HasGeneticGroup (E)</sqo:hasLabel>
         <sqo:hasValue>HasGeneticGroup (E)</sqo:hasValue>
     </owl:NamedIndividual>
     
