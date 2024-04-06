@@ -267,11 +267,12 @@ BIND(STR(?Genotype) as ?GenotypeLabel)
         <sqo:hasConstraintQuery>
 ?Cohorts a &lt;http://localhost:8080/enigma_dev/Special:URIResolver/Category-3ACohort_-28E-29&gt; .
 ?Cohorts &lt;http://localhost:8080/enigma_dev/Special:URIResolver/Property-3AHasCohortProject_-28E-29&gt; ?CohortProjects .
-?CohortProjects &lt;https://w3id.org/enigma#hasProjectResults&gt; ?ProjectResults .
+?CohortProjects ?ProjectResultsProp ?ProjectResults .
+?ProjectResultsProp &lt;http://www.w3.org/2000/01/rdf-schema#label&gt; &quot;HasProjectResults (E)&quot; .
 ?ProjectResults &lt;http://localhost:8080/enigma_dev/Special:URIResolver/Property-3AHasContentUrl_-28E-29&gt; ?CohortData .
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionTemplate>Is the effect size of ?Genotype on ?BrainImagingTrait of ?Region associated with ?DemographicAttribute for cohorts groups filtered by ?Criterion for ?Value</sqo:hasQuestionTemplate>
-        <rdfs:label>Is the effect size of ?Genotype on ?Brain Imaging Trait of ?Region associated with ?Demographic Attribute for cohorts groups filtered by ?Criterion for ?Value</rdfs:label>
+        <rdfs:label>Is the effect size of ?Genotype on ?Brain Imaging Trait of ?Region associated with ?Demographic Attribute for cohorts groups filtered by ?Criterion for ?Value?</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -288,7 +289,8 @@ BIND(STR(?Genotype) as ?GenotypeLabel)
         <sqo:hasConstraintQuery>
 ?Cohorts a &lt;http://localhost:8080/enigma_dev/Special:URIResolver/Category-3ACohort_-28E-29&gt; .
 ?Cohorts &lt;http://localhost:8080/enigma_dev/Special:URIResolver/Property-3AHasCohortProject_-28E-29&gt; ?CohortProjects .
-?CohortProjects &lt;https://w3id.org/enigma#hasProjectResults&gt; ?ProjectResults .
+?CohortProjects ?ProjectResultsProp ?ProjectResults .
+?ProjectResultsProp &lt;http://www.w3.org/2000/01/rdf-schema#label&gt; &quot;HasProjectResults (E)&quot; .
 ?ProjectResults &lt;http://localhost:8080/enigma_dev/Special:URIResolver/Property-3AHasContentUrl_-28E-29&gt; ?CohortData .
         </sqo:hasConstraintQuery>
         <sqo:hasQuestionTemplate>What is the Effect Size of ?Genotype on ?Region ?BrainImagingTrait for cohorts groups filtered by ?Criterion for ?Value</sqo:hasQuestionTemplate>
