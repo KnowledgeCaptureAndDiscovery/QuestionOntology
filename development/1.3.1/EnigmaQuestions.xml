@@ -143,16 +143,9 @@ BIND(REPLACE(REPLACE(REPLACE(REPLACE(?Region,&quot;AvgTH&quot;,&quot;Average Thi
         <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <rdf:type rdf:resource="https://w3id.org/sqo#DynamicOptionsQuestionVariable"/>
         <sqo:hasOptionsQuery>
-?Cohorts &lt;http://localhost:8080/enigma_dev/Special:URIResolver/Property-3AHasCohortProject_-28E-29&gt; ?CohortProjects .
-?CohortProjects ?DemographicAttribute [] .
-  VALUES ?DemographicAttribute {
-    &lt;https://w3id.org/enigma#hasAge_Mean&gt;
-    &lt;http://localhost:8080/enigma_dev/Special:URIResolver/Property-3AHasNumberOfFemaleSex_-28E-29&gt;
-    &lt;http://localhost:8080/enigma_dev/Special:URIResolver/Property-3AHasNumberOfMaleSex_-28E-29&gt;
-    &lt;http://localhost:8080/enigma_dev/Special:URIResolver/Property-3AHasNumberOfParticipants_-28E-29&gt;
-  }
-?DemographicAttribute rdfs:label ?OrDemographicAttributeLabel .
-BIND(REPLACE(REPLACE(REPLACE(REPLACE(?OrDemographicAttributeLabel,&quot;leSe&quot;,&quot;le Se&quot;),&quot; \\(E\\)&quot;,&quot;&quot;),&quot;NumberOf&quot;,&quot;Number Of &quot;), &quot;Has&quot;, &quot;Has &quot;) AS ?DemographicAttributeLabel)
+VALUES ?DemographicAttribute {
+    &quot;HasAge Mean (E)&quot; &quot;HasNumberOfFemaleSex (E)&quot; &quot;HasNumberOfMaleSex (E)&quot;
+}
         </sqo:hasOptionsQuery>
         <sqo:hasVariableName>?DemographicAttribute</sqo:hasVariableName>
         <sqo:hasPatternFragment rdf:parseType="Collection">
@@ -189,6 +182,7 @@ BIND(REPLACE(REPLACE(REPLACE(REPLACE(?OrDemographicAttributeLabel,&quot;leSe&quo
         <rdf:type rdf:resource="https://w3id.org/sqo#DynamicOptionsQuestionVariable"/>
         <sqo:hasOptionsQuery>
 ?Cohorts &lt;http://localhost:8080/enigma_dev/Special:URIResolver/Property-3AHasAncestry_-28E-29&gt; ?Value .
+BIND(concat(REPLACE(?Value, &quot;_&quot;, &quot; &quot;), &quot; Ancestry&quot; ) as ?ValueLabel)
         </sqo:hasOptionsQuery>
         <sqo:hasVariableName>?Value</sqo:hasVariableName>
         <sqo:hasPatternFragment rdf:parseType="Collection">
