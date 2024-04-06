@@ -170,15 +170,15 @@ BIND(REPLACE(REPLACE(REPLACE(REPLACE(?OrDemographicAttributeLabel,&quot;leSe&quo
     <owl:NamedIndividual rdf:about="http://disk-project.org/resources/enigma/variable/Criterion">
         <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <rdf:type rdf:resource="https://w3id.org/sqo#StaticOptionsQuestionVariable"/>
-        <sqo:hasOption rdf:resource="http://disk-project.org/resources/enigma/option/CriterionCohortGroup"/>
+        <sqo:hasOption rdf:resource="http://disk-project.org/resources/enigma/option/CriterionAncestry"/>
         <sqo:hasVariableName>?Criterion</sqo:hasVariableName>
     </owl:NamedIndividual>
 
-    <!-- http://disk-project.org/resources/enigma/option/CriterionCohortGroup -->
-    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/enigma/option/CriterionCohortGroup">
+    <!-- http://disk-project.org/resources/enigma/option/CriterionAncestry -->
+    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/enigma/option/CriterionAncestry">
         <rdf:type rdf:resource="https://w3id.org/sqo#VariableOption"/>
-        <sqo:hasLabel>HasGeneticGroup (E)</sqo:hasLabel>
-        <sqo:hasValue>HasGeneticGroup (E)</sqo:hasValue>
+        <sqo:hasLabel>HasAncestry (E)</sqo:hasLabel>
+        <sqo:hasValue>HasAncestry (E)</sqo:hasValue>
     </owl:NamedIndividual>
     
 
@@ -188,9 +188,9 @@ BIND(REPLACE(REPLACE(REPLACE(REPLACE(?OrDemographicAttributeLabel,&quot;leSe&quo
         <rdf:type rdf:resource="https://w3id.org/sqo#QuestionVariable"/>
         <rdf:type rdf:resource="https://w3id.org/sqo#DynamicOptionsQuestionVariable"/>
         <sqo:hasOptionsQuery>
-?Cohorts &lt;http://localhost:8080/enigma_dev/Special:URIResolver/Property-3AHasGeneticGroup_-28E-29&gt; ?CriterionValue .
+?Cohorts &lt;http://localhost:8080/enigma_dev/Special:URIResolver/Property-3AHasAncestry_-28E-29&gt; ?Value .
         </sqo:hasOptionsQuery>
-        <sqo:hasVariableName>?CriterionValue</sqo:hasVariableName>
+        <sqo:hasVariableName>?Value</sqo:hasVariableName>
         <sqo:hasPatternFragment rdf:parseType="Collection">
             <rdf:Statement>
                 <rdf:predicate rdf:resource="https://w3id.org/disk/ontology/enigma_hypothesis#collectedFrom"/>
@@ -270,8 +270,8 @@ BIND(STR(?Genotype) as ?GenotypeLabel)
 ?CohortProjects &lt;https://w3id.org/enigma#hasProjectResults&gt; ?ProjectResults .
 ?ProjectResults &lt;http://localhost:8080/enigma_dev/Special:URIResolver/Property-3AHasContentUrl_-28E-29&gt; ?CohortData .
         </sqo:hasConstraintQuery>
-        <sqo:hasQuestionTemplate>Is the effect size of ?Genotype on ?BrainImagingTrait of ?Region associated with ?DemographicAttribute for cohorts groups filtered by ?Criterion for ?CriterionValue</sqo:hasQuestionTemplate>
-        <rdfs:label>Is the effect size of ?Genotype on ?Brain Imaging Trait of ?Region associated with ?Demographic Attribute for cohorts groups filtered by ?Criterion for ?Criterion value</rdfs:label>
+        <sqo:hasQuestionTemplate>Is the effect size of ?Genotype on ?BrainImagingTrait of ?Region associated with ?DemographicAttribute for cohorts groups filtered by ?Criterion for ?Value</sqo:hasQuestionTemplate>
+        <rdfs:label>Is the effect size of ?Genotype on ?Brain Imaging Trait of ?Region associated with ?Demographic Attribute for cohorts groups filtered by ?Criterion for ?Value</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -291,8 +291,8 @@ BIND(STR(?Genotype) as ?GenotypeLabel)
 ?CohortProjects &lt;https://w3id.org/enigma#hasProjectResults&gt; ?ProjectResults .
 ?ProjectResults &lt;http://localhost:8080/enigma_dev/Special:URIResolver/Property-3AHasContentUrl_-28E-29&gt; ?CohortData .
         </sqo:hasConstraintQuery>
-        <sqo:hasQuestionTemplate>What is the Effect Size of ?Genotype on ?Region ?BrainImagingTrait for cohorts groups filtered by ?Criterion for ?CriterionValue</sqo:hasQuestionTemplate>
-        <rdfs:label>What is the effect size of ?Genotype on ?Region ?Brain Imaging Trait for cohorts groups filtered by ?Criterion for ?Criterion Value?</rdfs:label>
+        <sqo:hasQuestionTemplate>What is the Effect Size of ?Genotype on ?Region ?BrainImagingTrait for cohorts groups filtered by ?Criterion for ?Value</sqo:hasQuestionTemplate>
+        <rdfs:label>What is the effect size of ?Genotype on ?Region ?Brain Imaging Trait for cohorts groups filtered by ?Criterion for ?Value?</rdfs:label>
     </owl:NamedIndividual>
 </rdf:RDF>
 
