@@ -259,8 +259,10 @@ BIND(STR(?Genotype) as ?GenotypeLabel)
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/enigma/variable/Criterion"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/enigma/variable/genotype"/>
         <sqo:hasConstraintQuery>
-?Cohorts a &lt;http://localhost:8080/enigma_dev/Special:URIResolver/Category-3ACohort_-28E-29&gt; .
-?Cohorts &lt;http://localhost:8080/enigma_dev/Special:URIResolver/Property-3AHasCohortProject_-28E-29&gt; ?CohortProjects .
+?Cohorts a ?CohortClass .
+?CohortClass  &lt;http://www.w3.org/2000/01/rdf-schema#label&gt; &quot;Cohort (E)&quot; .
+?Cohorts ?CohortProjectProps ?CohortProjects .
+?CohortProjectProps  &lt;http://www.w3.org/2000/01/rdf-schema#label&gt; &quot;HasCohortProject (E)&quot; .
 ?CohortProjects ?ProjectResultsProp ?ProjectResults .
 ?ProjectResultsProp &lt;http://www.w3.org/2000/01/rdf-schema#label&gt; &quot;HasProjectResults (E)&quot; .
 ?ProjectResults &lt;http://localhost:8080/enigma_dev/Special:URIResolver/Property-3AHasContentUrl_-28E-29&gt; ?CohortData .
@@ -281,8 +283,10 @@ BIND(STR(?Genotype) as ?GenotypeLabel)
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/enigma/variable/Criterion"/>
         <sqo:hasQuestionVariable rdf:resource="http://disk-project.org/resources/enigma/variable/genotype"/>
         <sqo:hasConstraintQuery>
-?Cohorts a &lt;http://localhost:8080/enigma_dev/Special:URIResolver/Category-3ACohort_-28E-29&gt; .
-?Cohorts &lt;http://localhost:8080/enigma_dev/Special:URIResolver/Property-3AHasCohortProject_-28E-29&gt; ?CohortProjects .
+?Cohorts a ?CohortClass .
+?CohortClass  &lt;http://www.w3.org/2000/01/rdf-schema#label&gt; &quot;Cohort (E)&quot; .
+?Cohorts ?CohortProjectProps ?CohortProjects .
+?CohortProjectProps  &lt;http://www.w3.org/2000/01/rdf-schema#label&gt; &quot;HasCohortProject (E)&quot; .
 ?CohortProjects ?ProjectResultsProp ?ProjectResults .
 ?ProjectResultsProp &lt;http://www.w3.org/2000/01/rdf-schema#label&gt; &quot;HasProjectResults (E)&quot; .
 ?ProjectResults &lt;http://localhost:8080/enigma_dev/Special:URIResolver/Property-3AHasContentUrl_-28E-29&gt; ?CohortData .
